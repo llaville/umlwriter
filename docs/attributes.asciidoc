@@ -1,0 +1,17 @@
+:author:      Laurent Laville
+:keywords:    PHP, UML, Graphviz, PlantUML
+:revnumber:   1.0.0-RC1
+:revdate:     2015-03-19
+:toc2:
+:toc-placement: right
+:brand:       UmlWriter
+:brandref:    https://github.com/llaville/asciidoc-bootstrap-backend
+:brandver:
+:footer:
+:footer-fullwidth:
+:navinfo1:
+:imagesdir:   ./images
+:idprefix:    _
+:gitbranch:   master
+:rawbaseurl:  https://raw.github.com/llaville/umlwriter/{gitbranch}
+:gitproject:  https://github.com/llaville/umlwriter

@@ -1,0 +1,43 @@
+= UmlWriter
+
+**UmlWriter** is a library that
+adds the ability to generate UML class diagram in both Graphviz and PlantUML formats.
+
+You have also choice to switch between two reverse-engine :
+
+* https://github.com/llaville/php-reflect[Bartlett\Reflect]
+* https://github.com/Andrewsville/PHP-Token-Reflection[Andrewsville\TokenReflection]
+
+Follow development on the http://php5.laurent-laville.org/umlwriter/blog/[official Blog].
+
+== Install
+
+Clone the git repository
+
+[source,bash]
+.HTTPS
+----
+$ git clone https://github.com/llaville/umlwriter.git
+----
+
+[source,bash]
+.SSH
+----
+$ git clone git@github.com:llaville/umlwriter.git
+----
+
+Install composer dependencies
+
+[source,bash]
+----
+$ cd umlwriter
+$ php composer.phar require bartlett/php-reflect 3.0.0-RC1
+----
+
+Or
+
+[source,bash]
+----
+$ cd umlwriter
+$ php composer.phar require andrewsville/php-token-reflection ~1.4
+----

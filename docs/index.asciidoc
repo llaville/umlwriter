@@ -1,0 +1,124 @@
+= {title}
+:title:       UmlWriter
+:description: Create UML class diagrams from your PHP source.
+include::attributes.asciidoc[]
+:stable:            1.0.0-RC1
+:stablePubDate :    Marth 19, 2015
+:navbar!:
+:icons!:
+:toc!:
+:toc2!:
+:themeswitcher!:
+:jumboinfo:
+:iconsfont:   font-awesome
+:jumbotron:
+:jumbotron-fullwidth:
+:footer:
+:footer-fullwidth:
+:reflector-engine-1: https://github.com/llaville/php-reflect[Bartlett\Reflect]
+:reflector-engine-2: https://github.com/Andrewsville/PHP-Token-Reflection[Andrewsville\TokenReflection]
+
+== Releases
+
+[role="col-md-6 col-md-offset-3"]
+====
+[panel,primary]
+.v1
+--
+*Release Candidate* [label label-primary]#{stable}#
+
+It was published on {stablePubDate}.
+
+--
+====
+
+unfloat::[]
+
+== Features
+
+This tool wil generate UML class diagrams with all class, interface and trait definitions in your PHP project.
+
+* reverse-engine interchangeable (currently support {reflector-engine-1} and {reflector-engine-2})
+
+* UML syntax processor interchangeable (currently support
+http://graphviz.org/[Graphviz] and
+http://plantuml.sourceforge.net/[PlantUML])
+
+* generates a class and its direct dependencies
+
+* generates a namespace with all objects
+
+* generates a full package with all namespaces and objects
+
+== What will do and what won't do
+
+* *WILL* generates UML class diagram statements (depending of processor used)
+
+* *WON'T* generates images corresponding to graph (you have to install Graphviz or PlantUML)
+
+== Requirements
+
+* Only PHP 5.3.0 or better is required.
+
+* For additional dependencies, see reverse-engine projects {reflector-engine-1} or {reflector-engine-2}
+
+== Examples
+
+[role="col-md-6"]
+====
+[panel,info]
+.Graphviz
+--
+image::graphviz_sample1.png[options="responsive"]
+--
+Built with {rawbaseurl}/examples/graphviz.php[examples/graphviz.php]
+====
+
+[role="col-md-6"]
+====
+[panel,info]
+.PlantUML
+--
+image::plantuml_sample1.png[options="responsive"]
+--
+Built with {rawbaseurl}/examples/plantuml.php[examples/plantuml.php]
+====
+
+unfloat::[]
+
+== Open Source
+
+[role="lead"]
+{brand} is open source. It's hosted, developed, and maintained on GitHub.
+
+ifdef::basebackend-bootstrap[]
+link:{gitproject}["View the GitHub Project",role="primary",icon="glyphicon-eye-open",options="block"]
+endif::[]
+
+ifndef::basebackend-bootstrap[]
+{gitproject}[View the GitHub Project]
+endif::[]
+
+== Licenses
+
+[role="col-md-6"]
+====
+[panel,success]
+--
+[bg-success]*Documentation*
+
+All documentation provided in +docs+ folder are
+in http://asciidoc.org[AsciiDoc] format (files with extension +.asciidoc+),
+and is released under the http://creativecommons.org/licenses/by-sa/3.0/[Attribution-Share Alike 3.0 Unported] license.
+--
+====
+
+[role="col-md-6"]
+====
+[panel,success]
+--
+[bg-success]*Code*
+
+All source code is released under the https://github.com/llaville/umlwriter/blob/master/LICENSE[Apache Licence Version 2.0].
+--
+====
