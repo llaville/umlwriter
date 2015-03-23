@@ -12,7 +12,7 @@
         "php": ">=5.3.0"
     },
     "require-dev": {
-        "bartlett/php-reflect": "3.0.0-RC1",
+        "bartlett/php-reflect": "3.0.*@dev",
         "andrewsville/php-token-reflection": "~1.4"
     },
     "suggest": {
