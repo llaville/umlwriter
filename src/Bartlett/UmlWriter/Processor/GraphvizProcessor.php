@@ -28,7 +28,7 @@ namespace Bartlett\UmlWriter\Processor;
  */
 class GraphvizProcessor extends AbstractProcessor implements ProcessorInterface
 {
-    protected static $namespaceSeparator = '\\';
+    protected $namespaceSeparator = '\\';
 
     /**
      * Prints all objects (class, interface, trait)
