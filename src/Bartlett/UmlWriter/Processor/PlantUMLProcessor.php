@@ -85,7 +85,7 @@ class PlantUMLProcessor extends AbstractProcessor implements ProcessorInterface
      */
     protected function writeGraphHeader()
     {
-        return '';
+        return $this->formatLine('@startuml');
     }
 
     /**
@@ -95,7 +95,7 @@ class PlantUMLProcessor extends AbstractProcessor implements ProcessorInterface
      */
     protected function writeGraphFooter()
     {
-        return '';
+        return $this->formatLine('@enduml');
     }
 
     /**
