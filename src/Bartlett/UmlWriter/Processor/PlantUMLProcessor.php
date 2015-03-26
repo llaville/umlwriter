@@ -16,7 +16,7 @@
 namespace Bartlett\UmlWriter\Processor;
 
 /**
- * Diagram processor for PlanUML engine (http://plantuml.sourceforge.net/)
+ * Diagram processor for PlantUML engine (http://plantuml.sourceforge.net/)
  *
  * @category PHP
  * @package  UmlWriter
