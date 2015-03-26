@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+$appName = 'umlWriter';
+
+if (\Phar::running()) {
+    $vendorDir = 'phar://' . strtolower($appName) . '.phar/vendor';
+} else {
+    $baseDir   = dirname(__DIR__);
+    $vendorDir = $baseDir . '/vendor';
+
+    if (!file_exists($vendorDir . '/autoload.php')) {
+        $vendorDir = dirname(dirname($baseDir));
+    }
+}
+require_once $vendorDir . '/autoload.php';
+
+if (PHP_SAPI !== 'cli') {
+    return;
+}
+
+use Bartlett\UmlWriter\Console\Application;
+
+$application = new Application($appName, '1.0');
+$application->run();
