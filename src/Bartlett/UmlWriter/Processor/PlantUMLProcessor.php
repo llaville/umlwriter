@@ -42,8 +42,9 @@ class PlantUMLProcessor extends AbstractProcessor implements ProcessorInterface
         $undeclared = false;
 
         foreach ($this->objects as $ns => $objects) {
-            $clusterString .= $this->formatLine('namespace ' . str_replace('\\', '.', $ns) . ' %fillcolor% {');
-
+            if (!empty($ns)) {
+                $clusterString .= $this->formatLine('namespace ' . str_replace('\\', '.', $ns) . ' %fillcolor% {');
+            }
             foreach ($objects as $shortName => $values) {
                 $clusterString .= $values['pre'];
                 if ($values['undeclared']) {
@@ -51,14 +52,16 @@ class PlantUMLProcessor extends AbstractProcessor implements ProcessorInterface
                 }
             }
 
-            if ($undeclared) {
-                // set background-color of undeclared namespace elements
-                $clusterString = str_replace('%fillcolor%', '#EB937F', $clusterString);
-            } else {
-                $clusterString = str_replace('%fillcolor%', '', $clusterString);
-            }
+            if (!empty($ns)) {
+                if ($undeclared) {
+                    // set background-color of undeclared namespace elements
+                    $clusterString = str_replace('%fillcolor%', '#EB937F', $clusterString);
+                } else {
+                    $clusterString = str_replace('%fillcolor%', '', $clusterString);
+                }
 
-            $clusterString .= $this->formatLine('}');
+                $clusterString .= $this->formatLine('}');
+            }
         }
         return $clusterString;
     }
