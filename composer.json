@@ -9,15 +9,17 @@
         "issues": "https://github.com/llaville/umlwriter/issues"
     },
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.3.0",
+        "symfony/console": "~2.5",
+        "sebastian/version": "~1.0"
     },
     "require-dev": {
         "bartlett/php-reflect": "3.0.*@dev",
         "andrewsville/php-token-reflection": "~1.4"
     },
     "suggest": {
-        "bartlett/php-reflect": "Reverse-engine compatible solution 1",
-        "andrewsville/php-token-reflection": "Reverse-engine compatible solution 2"
+        "bartlett/php-reflect": "Reverse-engine, default solution",
+        "andrewsville/php-token-reflection": "Reverse-engine, alternative solution"
     },
     "authors": [
         {
@@ -26,6 +28,9 @@
             "homepage": "https://github.com/llaville",
             "role": "Lead"
         }
+    ],
+    "bin": [
+        "bin/umlwriter"
     ],
     "autoload": {
         "psr-0": {
