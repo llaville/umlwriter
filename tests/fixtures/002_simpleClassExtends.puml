@@ -1,0 +1,5 @@
+	class OneClass << class >> {
+	}
+	class TwoClass << class >> {
+	}
+TwoClass --|> OneClass

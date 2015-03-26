@@ -1,0 +1,8 @@
+	class ParentClass << class >> {
+		+PARENT_CONSTANT
+		+INHERIT_CONSTANT
+	}
+	class ExtendingClass << class >> {
+		+PARENT_CONSTANT
+	}
+ExtendingClass --|> ParentClass

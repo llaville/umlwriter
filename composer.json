@@ -31,5 +31,10 @@
         "psr-0": {
             "Bartlett\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-0": {
+            "Bartlett\\Tests\\UmlWriter\\": "tests/"
+        }
     }
 }

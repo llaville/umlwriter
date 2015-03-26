@@ -1,0 +1,23 @@
+	class OneClass << class >> {
+		+STRING_CONSTANT
+		+INTEGER_CONSTANT
+		+FLOAT_CONSTANT
+		+LF_CONSTANT
+		+CR_CONSTANT
+		+TAB_CONSTANT
+		..
+		+NOVALUE_STATIC
+		+STRING_STATIC
+		+INTEGER_STATIC
+		+FLOAT_STATIC
+		+LF_STATIC
+		+CR_STATIC
+		+TAB_STATIC
+		+PUBLIC_STATIC
+		#PROTECTED_STATIC
+		-PRIVATE_STATIC
+		--
+		+<u>staticPublic</u>()
+		#<u>staticProtected</u>()
+		-<u>staticPrivate</u>()
+	}

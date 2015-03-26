@@ -1,0 +1,36 @@
+digraph G1 {
+	overlap = false;
+	node [fontname="Verdana", fontsize="8", shape="none", margin="0", fillcolor="#FEFECE", style="filled"];
+	edge [fontname="Verdana", fontsize="8"];
+	subgraph cluster_5 {
+		label="";
+		"OneClass" [label=<
+<table border="0" cellborder="1" cellspacing="0">
+<tr><td align="center">&lt;&lt; <font color="black"><i>class</i></font> &gt;&gt;<br/><b>OneClass</b></td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left">+ STRING_CONSTANT</td></tr>
+<tr><td align="left">+ INTEGER_CONSTANT</td></tr>
+<tr><td align="left">+ FLOAT_CONSTANT</td></tr>
+<tr><td align="left">+ LF_CONSTANT</td></tr>
+<tr><td align="left">+ CR_CONSTANT</td></tr>
+<tr><td align="left">+ TAB_CONSTANT</td></tr>
+<tr><td align="left">+ NOVALUE_STATIC</td></tr>
+<tr><td align="left">+ STRING_STATIC</td></tr>
+<tr><td align="left">+ INTEGER_STATIC</td></tr>
+<tr><td align="left">+ FLOAT_STATIC</td></tr>
+<tr><td align="left">+ LF_STATIC</td></tr>
+<tr><td align="left">+ CR_STATIC</td></tr>
+<tr><td align="left">+ TAB_STATIC</td></tr>
+<tr><td align="left">+ PUBLIC_STATIC</td></tr>
+<tr><td align="left"># PROTECTED_STATIC</td></tr>
+<tr><td align="left">- PRIVATE_STATIC</td></tr>
+</table></td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left">+<u>staticPublic</u>()</td></tr>
+<tr><td align="left">#<u>staticProtected</u>()</td></tr>
+<tr><td align="left">-<u>staticPrivate</u>()</td></tr>
+</table></td></tr>
+</table>
+>];
+	}
+}

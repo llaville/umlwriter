@@ -1,0 +1,28 @@
+digraph G1 {
+	overlap = false;
+	node [fontname="Verdana", fontsize="8", shape="none", margin="0", fillcolor="#FEFECE", style="filled"];
+	edge [fontname="Verdana", fontsize="8"];
+	subgraph cluster_4 {
+		label="";
+		"ParentClass" [label=<
+<table border="0" cellborder="1" cellspacing="0">
+<tr><td align="center">&lt;&lt; <font color="black"><i>class</i></font> &gt;&gt;<br/><b>ParentClass</b></td></tr>
+<tr><td> </td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left">+someParentMethod()</td></tr>
+<tr><td align="left">+methodToOverride()</td></tr>
+</table></td></tr>
+</table>
+>];
+		"ExtendingClass" [label=<
+<table border="0" cellborder="1" cellspacing="0">
+<tr><td align="center">&lt;&lt; <font color="black"><i>class</i></font> &gt;&gt;<br/><b>ExtendingClass</b></td></tr>
+<tr><td> </td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left">+methodToOverride()</td></tr>
+</table></td></tr>
+</table>
+>];
+	}
+	"ExtendingClass" -> "ParentClass";
+}

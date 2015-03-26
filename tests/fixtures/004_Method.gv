@@ -1,0 +1,22 @@
+digraph G1 {
+	overlap = false;
+	node [fontname="Verdana", fontsize="8", shape="none", margin="0", fillcolor="#FEFECE", style="filled"];
+	edge [fontname="Verdana", fontsize="8"];
+	subgraph cluster_3 {
+		label="";
+		"OneClass" [label=<
+<table border="0" cellborder="1" cellspacing="0">
+<tr><td align="center">&lt;&lt; <font color="black"><i>class</i></font> &gt;&gt;<br/><b>OneClass</b></td></tr>
+<tr><td> </td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left">+zeroMethod()</td></tr>
+<tr><td align="left">+objectTypeHint()</td></tr>
+<tr><td align="left">+objectTypeHintAndDocComment()</td></tr>
+<tr><td align="left">#scalarParameters()</td></tr>
+<tr><td align="left">-typeHintWinsOverDocComment()</td></tr>
+<tr><td align="left">+parametersWithValues()</td></tr>
+</table></td></tr>
+</table>
+>];
+	}
+}

@@ -1,0 +1,7 @@
+	class OneClass << class >> {
+		-stringProperty
+		#intProperty
+		+booleanProperty
+		#arrayProperty
+		+floatProperty
+	}

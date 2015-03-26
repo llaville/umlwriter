@@ -1,0 +1,39 @@
+digraph G1 {
+	overlap = false;
+	node [fontname="Verdana", fontsize="8", shape="none", margin="0", fillcolor="#FEFECE", style="filled"];
+	edge [fontname="Verdana", fontsize="8"];
+	subgraph cluster_2 {
+		label="";
+		"OneInterface" [label=<
+<table border="0" cellborder="1" cellspacing="0">
+<tr><td align="center">&lt;&lt; <font color="black"><i>interface</i></font> &gt;&gt;<br/><b>OneInterface</b></td></tr>
+<tr><td> </td></tr>
+<tr><td> </td></tr>
+</table>
+>];
+		"TwoInterface" [label=<
+<table border="0" cellborder="1" cellspacing="0">
+<tr><td align="center">&lt;&lt; <font color="black"><i>interface</i></font> &gt;&gt;<br/><b>TwoInterface</b></td></tr>
+<tr><td> </td></tr>
+<tr><td> </td></tr>
+</table>
+>];
+		"OneClass" [label=<
+<table border="0" cellborder="1" cellspacing="0">
+<tr><td align="center">&lt;&lt; <font color="black"><i>class</i></font> &gt;&gt;<br/><b>OneClass</b></td></tr>
+<tr><td> </td></tr>
+<tr><td> </td></tr>
+</table>
+>];
+		"TwoClass" [label=<
+<table border="0" cellborder="1" cellspacing="0">
+<tr><td align="center">&lt;&lt; <font color="black"><i>class</i></font> &gt;&gt;<br/><b>TwoClass</b></td></tr>
+<tr><td> </td></tr>
+<tr><td> </td></tr>
+</table>
+>];
+	}
+	"TwoInterface" -> "OneInterface";
+	"OneClass" -> "OneInterface" [arrowhead="empty", style="dashed"];
+	"TwoClass" -> "TwoInterface" [arrowhead="empty", style="dashed"];
+}
