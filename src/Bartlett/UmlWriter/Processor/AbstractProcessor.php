@@ -217,7 +217,7 @@ abstract class AbstractProcessor
             $parts       = explode('\\', $parentName);
             $shortName   = array_pop($parts);
             $longName    = $parentName;
-            $ns          = implode(self::$namespaceSeparator, $parts);
+            $ns          = implode($this->namespaceSeparator, $parts);
 
             if (!isset($this->objects[$ns])) {
                 $this->objects[$ns] = array();
@@ -254,7 +254,7 @@ abstract class AbstractProcessor
                 $parts       = explode('\\', $interfaceName);
                 $shortName   = array_pop($parts);
                 $longName    = $interfaceName;
-                $ns          = implode(self::$namespaceSeparator, $parts);
+                $ns          = implode($this->namespaceSeparator, $parts);
 
                 if (!isset($this->objects[$ns])) {
                     $this->objects[$ns] = array();
