@@ -1,17 +1,21 @@
 :author:      Laurent Laville
 :keywords:    PHP, UML, Graphviz, PlantUML
-:revnumber:   1.0.0-RC1
-:revdate:     2015-03-19
+:brand:       UmlWriter
+:brandref:    http://php5.laurent-laville.org/umlwriter/
+:brandver:
 :toc2:
 :toc-placement: right
-:brand:       UmlWriter
-:brandref:    https://github.com/llaville/asciidoc-bootstrap-backend
-:brandver:
+:jumbotron:
+:jumbotron-fullwidth:
 :footer:
 :footer-fullwidth:
 :navinfo1:
+:icons!:
+:iconsfont:   font-awesome
 :imagesdir:   ./images
 :idprefix:    _
 :gitbranch:   master
 :rawbaseurl:  https://raw.github.com/llaville/umlwriter/{gitbranch}
 :gitproject:  https://github.com/llaville/umlwriter
+:reflector-engine-1: https://github.com/llaville/php-reflect[Bartlett\Reflect]
+:reflector-engine-2: https://github.com/Andrewsville/PHP-Token-Reflection[Andrewsville\TokenReflection]

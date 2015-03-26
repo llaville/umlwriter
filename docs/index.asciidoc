@@ -1,22 +1,14 @@
 = {title}
 :title:       UmlWriter
 :description: Create UML class diagrams from your PHP source.
+include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:stable:            1.0.0-RC1
-:stablePubDate :    Marth 19, 2015
-:navbar!:
-:icons!:
 :toc!:
 :toc2!:
+:navbar!:
 :themeswitcher!:
 :jumboinfo:
-:iconsfont:   font-awesome
-:jumbotron:
-:jumbotron-fullwidth:
-:footer:
-:footer-fullwidth:
-:reflector-engine-1: https://github.com/llaville/php-reflect[Bartlett\Reflect]
-:reflector-engine-2: https://github.com/Andrewsville/PHP-Token-Reflection[Andrewsville\TokenReflection]
+
 
 == Releases
 
@@ -25,10 +17,17 @@ include::attributes.asciidoc[]
 [panel,primary]
 .v1
 --
-*Release Candidate* [label label-primary]#{stable}#
+*Release Candidate* [label label-primary]#{revnumber}#
 
 It was published on {stablePubDate}.
 
+ifdef::basebackend-bootstrap[]
+link:./manual/current/en/getting-started.html["Learn more",role="primary",icon="glyphicon-book",options="block"]
+endif::[]
+
+ifndef::basebackend-bootstrap[]
+link:./manual/current/en/getting-started.html[Learn more]
+endif::[]
 --
 ====
 
@@ -70,8 +69,9 @@ http://plantuml.sourceforge.net/[PlantUML])
 .Graphviz
 --
 image::graphviz_sample1.png[options="responsive"]
---
+
 Built with {rawbaseurl}/examples/graphviz.php[examples/graphviz.php]
+--
 ====
 
 [role="col-md-6"]
@@ -80,8 +80,9 @@ Built with {rawbaseurl}/examples/graphviz.php[examples/graphviz.php]
 .PlantUML
 --
 image::plantuml_sample1.png[options="responsive"]
---
+
 Built with {rawbaseurl}/examples/plantuml.php[examples/plantuml.php]
+--
 ====
 
 unfloat::[]
@@ -119,6 +120,6 @@ and is released under the http://creativecommons.org/licenses/by-sa/3.0/[Attribu
 --
 [bg-success]*Code*
 
-All source code is released under the https://github.com/llaville/umlwriter/blob/master/LICENSE[Apache Licence Version 2.0].
+All source code is released under the https://github.com/llaville/umlwriter/blob/master/LICENSE[BSD 3-Clause].
 --
 ====

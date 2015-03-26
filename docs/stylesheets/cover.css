@@ -1,0 +1,20 @@
+h1#_umlwriter {
+    margin-top: 20px;
+}
+
+.cover {
+    height: 30em;
+}
+
+footer {
+    display: none;
+}
+
+.panels {
+    margin-top: 5em;
+}
+
+.ulist ul {
+    list-style-type: none;
+    padding-left: 1em;
+}

@@ -1,0 +1,3 @@
+:revdate:       2015-03-26
+:revnumber:     1.0.0-RC2
+:stablePubDate: Marth 26, 2015
