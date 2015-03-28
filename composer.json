@@ -14,7 +14,7 @@
         "sebastian/version": "~1.0"
     },
     "require-dev": {
-        "bartlett/php-reflect": "3.0.*@dev",
+        "bartlett/php-reflect": "~3.0",
         "andrewsville/php-token-reflection": "~1.4"
     },
     "suggest": {
