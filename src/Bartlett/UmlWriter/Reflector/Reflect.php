@@ -86,7 +86,9 @@ class Reflect implements ReflectorInterface
     {
         $collect = $this->models->filter(
             function ($element) use ($namespaceName) {
-                return $element->getNamespaceName() === $namespaceName;
+                $accept = ($element->getNamespaceName() === $namespaceName)
+                    && ($element instanceof ClassModel);
+                return $accept;
             }
         );
 
