@@ -41,9 +41,9 @@ class GraphvizProcessor extends AbstractProcessor implements ProcessorInterface
 
         $clusterString = '';
         $indent        = 1;
-        $undeclared    = false;
 
         foreach ($this->objects as $ns => $objects) {
+            $undeclared     = false;
             $clusterString .= $this->formatLine('subgraph cluster_' . $cluster . ' {', $indent);
             $cluster++;
 
