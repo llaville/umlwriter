@@ -1,3 +1,4 @@
+@startuml
 	class ParentClass << class >> {
 		+someParentMethod()
 		+methodToOverride()
@@ -6,3 +7,4 @@
 		+methodToOverride()
 	}
 ExtendingClass --|> ParentClass
+@enduml

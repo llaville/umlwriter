@@ -1,2 +1,4 @@
+@startuml
 	class OneClass << class >> {
 	}
+@enduml

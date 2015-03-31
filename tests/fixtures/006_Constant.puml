@@ -1,3 +1,4 @@
+@startuml
 	class OneClass << class >> {
 		+STRING_CONSTANT
 		+INTEGER_CONSTANT
@@ -21,3 +22,4 @@
 		#<u>staticProtected</u>()
 		-<u>staticPrivate</u>()
 	}
+@enduml

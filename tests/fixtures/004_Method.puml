@@ -1,3 +1,4 @@
+@startuml
 	class OneClass << class >> {
 		+zeroMethod()
 		+objectTypeHint()
@@ -6,3 +7,4 @@
 		-typeHintWinsOverDocComment()
 		+parametersWithValues()
 	}
+@enduml

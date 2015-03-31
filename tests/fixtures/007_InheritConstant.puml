@@ -1,3 +1,4 @@
+@startuml
 	class ParentClass << class >> {
 		+PARENT_CONSTANT
 		+INHERIT_CONSTANT
@@ -6,3 +7,4 @@
 		+PARENT_CONSTANT
 	}
 ExtendingClass --|> ParentClass
+@enduml

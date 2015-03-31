@@ -1,3 +1,4 @@
+@startuml
 	class OneClass << class >> {
 		-stringProperty
 		#intProperty
@@ -5,3 +6,4 @@
 		#arrayProperty
 		+floatProperty
 	}
+@enduml
