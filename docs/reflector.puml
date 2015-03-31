@@ -1,0 +1,28 @@
+@startuml
+namespace Bartlett.UmlWriter.Reflector  {
+	class Reflect << class >> {
+		-models
+		--
+		+__construct()
+		+getClass()
+		+getClasses()
+		+getNamespace()
+	}
+	interface ReflectorInterface << interface >> {
+		+getClass()
+		+getClasses()
+		+getNamespace()
+	}
+	class TokenReflection << class >> {
+		-broker
+		--
+		+__construct()
+		+getClass()
+		+getClasses()
+		+getNamespace()
+	}
+}
+Bartlett.UmlWriter.Reflector.Reflect ..|> Bartlett.UmlWriter.Reflector.ReflectorInterface
+Bartlett.UmlWriter.Reflector.TokenReflection ..|> Bartlett.UmlWriter.Reflector.ReflectorInterface
+@enduml
+

@@ -1,0 +1,63 @@
+@startuml
+namespace Bartlett.UmlWriter.Processor  {
+	abstract AbstractProcessor << abstract >> {
+		#reflector
+		#graphId
+		#objects
+		#edges
+		-spaces
+		-linebreak
+		--
+		+__construct()
+		+setGraphId()
+		+renderClass()
+		+renderNamespace()
+		+render()
+		#renderEdges()
+		#formatLine()
+		#writeObjectElement()
+		#writeObjectInheritance()
+		#writeObjectInterfaces()
+		#writeConstantElements()
+		#writePropertyElements()
+		#writeMethodElements()
+		#<i>pushObject</i>()
+		#<i>pushEdge</i>()
+		#formatClassStereotype()
+		-reset()
+	}
+	class GraphvizProcessor << class >> {
+		#namespaceSeparator
+		--
+		#renderObjects()
+		#renderEdges()
+		#writeGraphHeader()
+		#writeGraphFooter()
+		#pushObject()
+		#pushEdge()
+		-attributes()
+	}
+	interface ProcessorInterface << interface >> {
+		+GLOBAL_NAMESPACE
+		--
+		+renderClass()
+		+renderNamespace()
+		+render()
+	}
+	class PlantUMLProcessor << class >> {
+		#namespaceSeparator
+		--
+		#renderObjects()
+		#renderEdges()
+		#writeGraphHeader()
+		#writeGraphFooter()
+		#pushObject()
+		#pushEdge()
+	}
+}
+Bartlett.UmlWriter.Processor.GraphvizProcessor --|> Bartlett.UmlWriter.Processor.AbstractProcessor
+Bartlett.UmlWriter.Processor.GraphvizProcessor ..|> Bartlett.UmlWriter.Processor.ProcessorInterface
+Bartlett.UmlWriter.Processor.PlantUMLProcessor --|> Bartlett.UmlWriter.Processor.AbstractProcessor
+Bartlett.UmlWriter.Processor.PlantUMLProcessor ..|> Bartlett.UmlWriter.Processor.ProcessorInterface
+@enduml
+
