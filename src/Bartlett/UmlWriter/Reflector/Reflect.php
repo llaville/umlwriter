@@ -76,7 +76,12 @@ class Reflect implements ReflectorInterface
      */
     public function getClasses()
     {
-        return $this->models;
+        $collect = $this->models->filter(
+            function ($element) {
+                return $element instanceof ClassModel;
+            }
+        );
+        return $collect;
     }
 
     /**
