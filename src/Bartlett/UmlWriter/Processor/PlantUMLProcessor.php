@@ -39,9 +39,8 @@ class PlantUMLProcessor extends AbstractProcessor implements ProcessorInterface
     {
         $clusterString = '';
 
-        $undeclared = false;
-
         foreach ($this->objects as $ns => $objects) {
+            $undeclared = false;
             if (!empty($ns)) {
                 $clusterString .= $this->formatLine('namespace ' . str_replace('\\', '.', $ns) . ' %fillcolor% {');
             }
