@@ -17,5 +17,7 @@
 :gitbranch:   master
 :rawbaseurl:  https://raw.github.com/llaville/umlwriter/{gitbranch}
 :gitproject:  https://github.com/llaville/umlwriter
-:reflector-engine-1: https://github.com/llaville/php-reflect[Bartlett\Reflect]
-:reflector-engine-2: https://github.com/Andrewsville/PHP-Token-Reflection[Andrewsville\TokenReflection]
+:reflector-reflect:         https://github.com/llaville/php-reflect[Bartlett\Reflect]
+:reflector-tokenreflection: https://github.com/Andrewsville/PHP-Token-Reflection[Andrewsville\TokenReflection]
+:processor-gv:       http://graphviz.org/[Graphviz]
+:processor-puml:     http://plantuml.sourceforge.net/[PlantUML]

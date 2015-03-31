@@ -37,11 +37,9 @@ unfloat::[]
 
 This tool wil generate UML class diagrams with all class, interface and trait definitions in your PHP project.
 
-* reverse-engine interchangeable (currently support {reflector-engine-1} and {reflector-engine-2})
+* reverse-engine interchangeable (currently support {reflector-reflect} and {reflector-tokenreflection})
 
-* UML syntax processor interchangeable (currently support
-http://graphviz.org/[Graphviz] and
-http://plantuml.sourceforge.net/[PlantUML])
+* UML syntax processor interchangeable (currently support {processor-gv} and {processor-puml})
 
 * generates a class and its direct dependencies
 
@@ -59,7 +57,7 @@ http://plantuml.sourceforge.net/[PlantUML])
 
 * Only PHP 5.3.0 or better is required.
 
-* For additional dependencies, see reverse-engine projects {reflector-engine-1} or {reflector-engine-2}
+* For additional dependencies, see reverse-engine projects {reflector-reflect} or {reflector-tokenreflection}
 
 == Examples
 
