@@ -58,6 +58,7 @@ class ProcessorTest extends \PHPUnit_Framework_TestCase
             );
         }
 
+        asort($graphs);
         return $graphs;
     }
 
