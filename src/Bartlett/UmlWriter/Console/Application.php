@@ -108,6 +108,52 @@ class Application extends BaseApplication
     /**
      * {@inheritDoc}
      */
+    public function doRun(InputInterface $input, OutputInterface $output)
+    {
+        if (\Phar::running()
+            && true === $input->hasParameterOption('--manifest')
+        ) {
+            $manifest = 'phar://' . strtolower($this->getName()) . '.phar/manifest.txt';
+
+            if (file_exists($manifest)) {
+                $out = file_get_contents($manifest);
+                $exitCode = 0;
+            } else {
+                $fmt = $this->getHelperSet()->get('formatter');
+                $out = $fmt->formatBlock('No manifest defined', 'error');
+                $exitCode = 1;
+            }
+            $output->writeln($out);
+            return $exitCode;
+        }
+
+        $exitCode = parent::doRun($input, $output);
+
+        return $exitCode;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function getDefaultInputDefinition()
+    {
+        $definition = parent::getDefaultInputDefinition();
+        if (\Phar::running()) {
+            $definition->addOption(
+                new InputOption(
+                    '--manifest',
+                    null,
+                    InputOption::VALUE_NONE,
+                    'Show which versions of dependencies are bundled.'
+                )
+            );
+        }
+        return $definition;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     protected function getDefaultCommands()
     {
         $defaultCommands = parent::getDefaultCommands();
