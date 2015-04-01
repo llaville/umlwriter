@@ -22,7 +22,7 @@
         ======================================================================
     -->
     <property name="build.short-version"         value="1.0" />
-    <property name="build.version"               value="${build.short-version}.0-RC2" />
+    <property name="build.version"               value="${build.short-version}.0" />
 
     <!--
         ======================================================================
@@ -68,7 +68,7 @@
     </fileset>
 
     <fileset dir="${adoc.sourcedir}" id="adoc-manpages">
-        <exclude name="**" />
+        <include name="umlwriter.1.asciidoc" />
     </fileset>
 
     <fileset dir="${adoc.sourcedir}" id="adoc-books">

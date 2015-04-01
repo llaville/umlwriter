@@ -1,0 +1,135 @@
+= UMLWRITER(1)
+:doctype:     manpage
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+:author!:
+
+
+== NAME
+umlwriter - Create UML class diagrams from your PHP source
+
+
+== SYNOPSIS
+*umlwriter* ['options'] 'command' ['arguments']
+
+
+== DESCRIPTION
+The umlwriter(1) command parse any data source, and return UML diagram statements
+in processor format.
+
+
+== OPTIONS
+*-h, --help*::
+    Display this help message.
+
+*-q, --quiet*::
+    Do not output any message.
+
+*-v|vv|v, --verbose*::
+    Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug.
+
+*-V, --version*::
+    Display this application version.
+
+*--ansi*::
+    Force ANSI output.
+
+*--no-ansi*::
+    Disable ANSI output.
+
+*--manifest*::
+   Show which versions of dependencies are bundled (PHAR version only).
+
+
+== diagram:render COMMAND
+The umlwriter(1) 'diagram:render' command is used to generate diagram about all objects,
+present in a data source
+
+Usage:
+
+  umlwriter diagram:render [--reflector[="..."]] [--processor[="..."]] source
+
+Where:
+
+*source*
+  Identify a data source. File or directory
+
+*--reflector*
+  Reverse-engine compatible (case insensitive) (default: "reflect")
+
+*--processor*
+  Diagram processor (case insensitive)
+
+
+== diagram:render:class COMMAND
+The umlwriter(1) 'diagram:render:class' command is used to generate diagram about a single class,
+and its direct dependencies, present in a data source
+
+Usage:
+
+  umlwriter diagram:render:class [--reflector[="..."]] [--processor[="..."]] source object
+
+Where:
+
+*source*
+  Identify a data source. File or directory
+
+*object*
+  Identify the class (fully qualified name)
+
+*--reflector*
+  Reverse-engine compatible (case insensitive) (default: "reflect")
+
+*--processor*
+  Diagram processor (case insensitive)
+
+
+== diagram:render:namespace COMMAND
+The umlwriter(1) 'diagram:render:namespace' command is used to generate diagram about a single namespace,
+with all its objects, present in a data source
+
+Usage:
+
+  umlwriter diagram:render:namespace [--reflector[="..."]] [--processor[="..."]] source object
+
+Where:
+
+*source*
+  Identify a data source. File or directory
+
+*object*
+  Identify the namespace
+
+*--reflector*
+  Reverse-engine compatible (case insensitive) (default: "reflect")
+
+*--processor*
+  Diagram processor (case insensitive)
+
+
+== EXIT STATUS
+*0*::
+    Success
+
+*1*::
+    Failure (syntax or usage error; configuration error; unexpected error).
+
+
+== BUGS
+Report any issue at <https://github.com/llaville/umlwriter/issues>
+
+
+== AUTHORS
+The Command-Line Interface (CLI) version was introduced in version 1.0 and is written by Laurent Laville.
+
+
+== SEE ALSO
+Main web site: <http://php5.laurent-laville.org/umlwriter/>
+
+
+== COPYRIGHT
+Copyright \(C) 2015 Laurent Laville.
+
+
+== LICENSE
+Free use of this software is granted under the terms of the BSD 3-clause license.
