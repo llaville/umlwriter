@@ -15,9 +15,9 @@ include::attributes.asciidoc[]
 --
 [subs="none"]
 ++++++++++++++++++++++++++++++++++++++
-<span class="fa-stack">
-  <i class="fa fa-sitemap fa-stack-1x iconsfont-5x" style="bottom: -0.9em; left: 0.25em;"></i>
-  <i class="fa fa-file-o iconsfont-9x"></i>
+<span class="fa-stack hidden-xs hidden-sm">
+    <i class="fa fa-sitemap fa-stack-1x iconsfont-5x" style="bottom: -0.9em; left: 0.25em; color:#CECECE;"></i>
+    <i class="fa fa-file-o iconsfont-9x" style="color:#A80036;"></i>
 </span>
 ++++++++++++++++++++++++++++++++++++++
 --

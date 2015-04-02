@@ -2,7 +2,7 @@
 :description: Startup in 5 minutes
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:pharstable:  http://bartlett.laurent-laville.org/get/umlwriter-1.0.0-RC2.phar
+:pharstable:  http://bartlett.laurent-laville.org/get/umlwriter-1.0.0.phar
 
 
 == Download
@@ -20,8 +20,8 @@ endif::basebackend-bootstrap[]
 Make it executable, and put it into your `$PATH`.
 [source,bash]
 ----
-$ chmod +x umlwriter-1.0.0-RC2.phar
-$ mv umlwriter-1.0.0-RC2.phar /usr/local/bin/umlwriter
+$ chmod +x umlwriter-1.0.0.phar
+$ mv umlwriter-1.0.0.phar /usr/local/bin/umlwriter
 
 $ umlwriter --version
 ----
@@ -29,8 +29,8 @@ $ umlwriter --version
 You can also immediately use the PHAR after you have downloaded it.
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/umlwriter-1.0.0-RC2.phar
-$ php umlwriter-1.0.0-RC2.phar --version
+$ wget http://bartlett.laurent-laville.org/get/umlwriter-1.0.0.phar
+$ php umlwriter-1.0.0.phar --version
 ----
 
 With both methods then you have this output :
@@ -38,7 +38,7 @@ With both methods then you have this output :
 [role="output"]
 ====
 ----
-umlWriter version 1.0.0-RC2
+umlWriter version 1.0.0
 ----
 ====
 
@@ -48,7 +48,7 @@ This is the equivalent of doing a git clone checkout followed by a composer inst
 
 [source,bash]
 ----
-$ php composer.phar create-project bartlett/umlwriter /path/to/install 1.0.0-RC2
+$ php composer.phar create-project bartlett/umlwriter /path/to/install 1.0.0
 ----
 Where +/path/to/install+ is your install directory.
 
@@ -67,12 +67,12 @@ The following diagram processors (output formats) are available:
 * PlantUML syntax with default fonts and colors
 
 TIP: Detailed descriptions and examples of the diagramming languages are available on the
-http://graphviz.org/[Graphviz] and http://plantuml.sourceforge.net/[PlantUML] websites.
+{processor-gv} and {processor-puml} websites.
 
 The following reverse-engines are supported:
 
-* {reflector-engine-1} (default in CLI mode)
-* {reflector-engine-2}
+* {reflector-reflect} (default in CLI mode)
+* {reflector-tokenreflection}
 
 
 == Generating a diagram statements from a Terminal
@@ -101,7 +101,7 @@ $ umlwriter diagram:render --processor=plantuml /path/to/data_source
 
 == Generating a diagram image
 
-WARNING: You must have installed correctly graphviz or plantuml before to continue. 
+WARNING: You must have installed correctly graphviz or plantuml before to continue.
 
 * With Graphviz and `png` output format
 +

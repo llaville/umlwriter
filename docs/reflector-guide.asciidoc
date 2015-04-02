@@ -14,7 +14,7 @@ Each reflector is a specialized version of a compatible reverse-engine.
 
 Here is the class diagram of reflectors architecture (built with default PlantUML processor)
 
-[plantuml]
+[plantuml, reflector-guide__1.png]
 ----
 include::reflector.puml[]
 ----

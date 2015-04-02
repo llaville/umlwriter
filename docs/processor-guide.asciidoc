@@ -33,7 +33,7 @@ $ java -jar plantuml.jar -Tpng /path/to/puml_file -o /path/to/ouput/dir
 ----
 ==========
 
-[plantuml]
+[plantuml, processor-guide__1.png]
 ----
 include::processor.puml[]
 ----
