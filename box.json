@@ -5,6 +5,7 @@
     "extract": false,
     "compression": "GZ",
     "files": [
+        "manifest.txt",
         "LICENSE",
         "vendor/andrewsville/php-token-reflection/LICENSE.md",
         "vendor/bartlett/php-reflect/LICENSE",
