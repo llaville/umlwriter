@@ -1,6 +1,6 @@
-bartlett/umlwriter: <info>1.0.0-RC2-15-g4f31209</info>
+bartlett/umlwriter: <info>1.0.0</info>
 sebastian/version: <info>1.0.4</info>
-symfony/console: <info>v2.6.5</info>
+symfony/console: <info>v2.6.6</info>
 andrewsville/php-token-reflection: <info>1.4.0</info>
 bartlett/php-reflect: <info>3.0.x-dev@7efd1d03583b32d8970100b5b8dc2dfd15b213e8</info>
 doctrine/collections: <info>v1.2</info>
@@ -8,7 +8,7 @@ justinrainbow/json-schema: <info>1.4.1</info>
 nikic/php-parser: <info>v1.2.1</info>
 phpdocumentor/reflection-docblock: <info>2.0.4</info>
 seld/jsonlint: <info>1.3.1</info>
-symfony/dependency-injection: <info>v2.6.5</info>
-symfony/event-dispatcher: <info>v2.6.5</info>
-symfony/finder: <info>v2.6.5</info>
-symfony/stopwatch: <info>v2.6.5</info>
+symfony/dependency-injection: <info>v2.6.6</info>
+symfony/event-dispatcher: <info>v2.6.6</info>
+symfony/finder: <info>v2.6.6</info>
+symfony/stopwatch: <info>v2.6.6</info>
