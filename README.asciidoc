@@ -31,7 +31,7 @@ Install composer dependencies
 [source,bash]
 ----
 $ cd umlwriter
-$ php composer.phar require bartlett/php-reflect 3.0.0-RC1
+$ php composer.phar require bartlett/php-reflect ~3.0
 ----
 
 Or
