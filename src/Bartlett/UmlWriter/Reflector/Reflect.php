@@ -46,7 +46,7 @@ class Reflect implements ReflectorInterface
         $api = $client->api('analyser');
 
         // perform request, on data source
-        $metrics = $api->run($dataSource, array('reflection'), null, false);
+        $metrics = $api->run($dataSource, array('reflection'), null, false, false);
 
         $this->models = $metrics['Bartlett\Reflect\Analyser\ReflectionAnalyser'];
     }
