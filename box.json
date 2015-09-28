@@ -12,7 +12,7 @@
         "vendor/doctrine/collections/LICENSE",
         "vendor/nikic/php-parser/LICENSE",
         "vendor/sebastian/version/LICENSE",
-        "vendor/symfony/console/Symfony/Component/Console/LICENSE",
+        "vendor/symfony/console/LICENSE",
         "vendor/autoload.php"
     ],
     "finder": [
