@@ -1,0 +1,90 @@
+digraph G {
+        overlap = false;
+        node [fontname="Verdana", fontsize="8", shape="none", margin="0", fillcolor="#FEFECE", style="filled"];
+        edge [fontname="Verdana", fontsize="8"];
+        subgraph cluster_0 {
+                label="Bartlett\\UmlWriter\\Processor";
+                "Bartlett\\UmlWriter\\Processor\\AbstractProcessor" [label=<
+<table border="0" cellborder="1" cellspacing="0">
+<tr><td align="center">&lt;&lt; <font color="black"><i>abstract</i></font> &gt;&gt;<br/><b>AbstractProcessor</b></td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left"># reflector</td></tr>
+<tr><td align="left"># graphId</td></tr>
+<tr><td align="left"># objects</td></tr>
+<tr><td align="left"># edges</td></tr>
+<tr><td align="left">- spaces</td></tr>
+<tr><td align="left">- linebreak</td></tr>
+</table></td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left">+__construct()</td></tr>
+<tr><td align="left">+setGraphId()</td></tr>
+<tr><td align="left">+renderClass()</td></tr>
+<tr><td align="left">+renderNamespace()</td></tr>
+<tr><td align="left">+render()</td></tr>
+<tr><td align="left">#renderEdges()</td></tr>
+<tr><td align="left">#formatLine()</td></tr>
+<tr><td align="left">#writeObjectElement()</td></tr>
+<tr><td align="left">#writeObjectInheritance()</td></tr>
+<tr><td align="left">#writeObjectInterfaces()</td></tr>
+<tr><td align="left">#writeConstantElements()</td></tr>
+<tr><td align="left">#writePropertyElements()</td></tr>
+<tr><td align="left">#writeMethodElements()</td></tr>
+<tr><td align="left">#<i>pushObject</i>()</td></tr>
+<tr><td align="left">#<i>pushEdge</i>()</td></tr>
+<tr><td align="left">#formatClassStereotype()</td></tr>
+<tr><td align="left">-reset()</td></tr>
+</table></td></tr>
+</table>
+>];
+                "Bartlett\\UmlWriter\\Processor\\GraphvizProcessor" [label=<
+<table border="0" cellborder="1" cellspacing="0">
+<tr><td align="center">&lt;&lt; <font color="black"><i>class</i></font> &gt;&gt;<br/><b>GraphvizProcessor</b></td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left"># namespaceSeparator</td></tr>
+</table></td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left">#renderObjects()</td></tr>
+<tr><td align="left">#renderEdges()</td></tr>
+<tr><td align="left">#writeGraphHeader()</td></tr>
+<tr><td align="left">#writeGraphFooter()</td></tr>
+<tr><td align="left">#pushObject()</td></tr>
+<tr><td align="left">#pushEdge()</td></tr>
+<tr><td align="left">-attributes()</td></tr>
+</table></td></tr>
+</table>
+>];
+                "Bartlett\\UmlWriter\\Processor\\ProcessorInterface" [label=<
+<table border="0" cellborder="1" cellspacing="0">
+<tr><td align="center">&lt;&lt; <font color="black"><i>interface</i></font> &gt;&gt;<br/><b>ProcessorInterface</b></td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left">+ GLOBAL_NAMESPACE</td></tr>
+</table></td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left">+renderClass()</td></tr>
+<tr><td align="left">+renderNamespace()</td></tr>
+<tr><td align="left">+render()</td></tr>
+</table></td></tr>
+</table>
+>];
+                "Bartlett\\UmlWriter\\Processor\\PlantUMLProcessor" [label=<
+<table border="0" cellborder="1" cellspacing="0">
+<tr><td align="center">&lt;&lt; <font color="black"><i>class</i></font> &gt;&gt;<br/><b>PlantUMLProcessor</b></td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left"># namespaceSeparator</td></tr>
+</table></td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left">#renderObjects()</td></tr>
+<tr><td align="left">#renderEdges()</td></tr>
+<tr><td align="left">#writeGraphHeader()</td></tr>
+<tr><td align="left">#writeGraphFooter()</td></tr>
+<tr><td align="left">#pushObject()</td></tr>
+<tr><td align="left">#pushEdge()</td></tr>
+</table></td></tr>
+</table>
+>];
+        }
+        "Bartlett\\UmlWriter\\Processor\\GraphvizProcessor" -> "Bartlett\\UmlWriter\\Processor\\AbstractProcessor";
+        "Bartlett\\UmlWriter\\Processor\\GraphvizProcessor" -> "Bartlett\\UmlWriter\\Processor\\ProcessorInterface" [arrowhead="empty", style="dashed"];
+        "Bartlett\\UmlWriter\\Processor\\PlantUMLProcessor" -> "Bartlett\\UmlWriter\\Processor\\AbstractProcessor";
+        "Bartlett\\UmlWriter\\Processor\\PlantUMLProcessor" -> "Bartlett\\UmlWriter\\Processor\\ProcessorInterface" [arrowhead="empty", style="dashed"];
+}

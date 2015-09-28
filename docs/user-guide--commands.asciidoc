@@ -1,0 +1,131 @@
+ifndef::basebackend-docbook[]
+
+= User Guide
+:description: The Command-Line Interface
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+
+endif::basebackend-docbook[]
+
+== The Command-Line
+
+[role="lead"]
+The command-line interface is the easiest way to try and learn the basic UmlWriter features.
+
+NOTE: For all users.
+
+
+=== Command-Line Options
+
+When you invoke the `umlwriter` command, you should obtain the following commands and options :
+
+[role="output"]
+----
+                  ___        __    _ _
+  _   _ _ __ ___ | \ \      / / __(_) |_ ___ _ __
+ | | | | '_ ` _ \| |\ \ /\ / / '__| | __/ _ \ '__|
+ | |_| | | | | | | | \ V  V /| |  | | ||  __/ |
+  \__,_|_| |_| |_|_|  \_/\_/ |_|  |_|\__\___|_|
+
+umlWriter version 1.0.1
+
+Usage:
+  command [options] [arguments]
+
+Options:
+  -h, --help            Display this help message
+  -q, --quiet           Do not output any message
+  -V, --version         Display this application version
+      --ansi            Force ANSI output
+      --no-ansi         Disable ANSI output
+  -n, --no-interaction  Do not ask any interactive question
+      --manifest            Show which versions of dependencies are bundled.
+  -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+Available commands:
+  help                      Displays help for a command
+  list                      Lists commands
+ diagram
+  diagram:render            Generate diagram statements of all objects
+  diagram:render:class      Generate diagram statements of a single class
+  diagram:render:namespace  Generate diagram statements of a single namespace
+----
+
+[horizontal]
+diagram:render::
+Generate diagram statements of all objects.
++
+[source,bash]
+----
+$ umlwriter diagram:render --processor=graphviz src/Bartlett/UmlWriter/Processor
+----
++
+[role="output"]
+----
+include::render_all.out.asciidoc[]
+----
++
+That may render something like
++
+image::render_all.out.png[options="responsive,align"]
+
+[horizontal]
+diagram:render:class::
+Generate diagram statements of a single class.
++
+[source,bash]
+----
+$ umlwriter diagram:render:class --processor=graphviz vendor/bartlett/php-reflect/src Bartlett\Reflect
+----
++
+[role="output"]
+----
+include::render_class.out.asciidoc[]
+----
++
+That may render something like
++
+image::render_class.out.png[options="responsive,align"]
+
+[horizontal]
+diagram:render:namespace::
+Generate diagram statements of a single namespace.
++
+[source,bash]
+----
+$ umlwriter diagram:render:namespace --processor=plantuml vendor/bartlett/php-reflect/src Bartlett\Reflect\Plugin\Notifier
+----
++
+[role="output"]
+----
+include::render_namespace.out.asciidoc[]
+----
++
+That may render something like
++
+image::render_namespace.out.png[options="responsive,align"]
+
+== Summary
+
+[role="lead"]
+Let's review what we've learned about the command-line interface :
+
+* It's a Symfony http://symfony.com/doc/current/components/console/index.html[Console Component] that can be extended.
+* We can produced Graphviz or PlantUML code syntax ready for image generation.
+
+ifdef::basebackend-bootstrap[]
+== Next
+
+[role="lead"]
+For PHP developers only.
+
+************************************************
+.Read more
+
+* Want to learn more about [label label-primary]#UmlWriter# architecture and /or
+you want to extends it to match your needs,
+have a look on link:processor-guide.html[processor's guide]
+and/or on link:reflector-guide.html[reflector's guide] .
+
+************************************************
+endif::basebackend-bootstrap[]

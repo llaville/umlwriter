@@ -1,0 +1,19 @@
+@startuml
+namespace Bartlett.Reflect.Plugin.Notifier  {
+        class GrowlNotifier << class >> {
+                -growl
+                -format
+                --
+                +__construct()
+                +setMessageFormat()
+                +getMessageFormat()
+                +notify()
+        }
+        interface NotifierInterface << interface >> {
+                +setMessageFormat()
+                +getMessageFormat()
+                +notify()
+        }
+}
+Bartlett.Reflect.Plugin.Notifier.GrowlNotifier ..|> Bartlett.Reflect.Plugin.Notifier.NotifierInterface
+@enduml

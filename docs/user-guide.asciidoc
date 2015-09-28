@@ -1,0 +1,35 @@
+= User Guide
+:description: Start using UmlWriter without writing a line of code
+include::revision.asciidoc[]
+include::attributes.asciidoc[]
+
+ifdef::basebackend-docbook[]
+[partintro]
+--
+NOTE: First visit, you are highly recommended to follow chapters in following order.
+
+. Installing all necessary [label label-primary]#UmlWriter# components. See xref:_installation[]
+. Running your first parses with the Command-Line interface. See xref:_the_command_line[]
+--
+endif::basebackend-docbook[]
+
+
+ifdef::basebackend-html[]
+[role="col-md-12"]
+====
+[panel,success]
+.For all users
+--
+NOTE: First visit, you are highly recommended to follow chapters in following order.
+
+. link:user-guide&#45;&#45;installation.html[Installing] all necessary [label label-primary]#UmlWriter# components.
+. link:user-guide&#45;&#45;commands.html[Running] your first parses with the Command-Line interface.
+
+ifdef::basebackend-bootstrap[]
+link:user-guide&#45;&#45;installation.html["Installing UmlWriter",role="primary",icon="glyphicon-step-forward",options="block"]
+endif::basebackend-bootstrap[]
+ifndef::basebackend-bootstrap[]
+link:user-guide&#45;&#45;installation.html[Installing UmlWriter]
+endif::basebackend-bootstrap[]
+--
+====

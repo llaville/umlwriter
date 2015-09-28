@@ -13,7 +13,7 @@ Each processor is a specialized version of a graphical engine.
 * {processor-puml}
 
 But you are free to make your own.
-Here is the class diagram of processors architecture (built with default PlantUML processor)
+Here is the class diagram of processors architecture built with PlantUML processor
 
 [TIP]
 ==========

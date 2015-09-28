@@ -2,7 +2,7 @@
 :description: Startup in 5 minutes
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:pharstable:  http://bartlett.laurent-laville.org/get/umlwriter-1.0.0.phar
+:pharstable:  http://bartlett.laurent-laville.org/get/umlwriter-1.0.1.phar
 
 
 == Download
@@ -20,8 +20,8 @@ endif::basebackend-bootstrap[]
 Make it executable, and put it into your `$PATH`.
 [source,bash]
 ----
-$ chmod +x umlwriter-1.0.0.phar
-$ mv umlwriter-1.0.0.phar /usr/local/bin/umlwriter
+$ chmod +x umlwriter-1.0.1.phar
+$ mv umlwriter-1.0.1.phar /usr/local/bin/umlwriter
 
 $ umlwriter --version
 ----
@@ -29,8 +29,8 @@ $ umlwriter --version
 You can also immediately use the PHAR after you have downloaded it.
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/umlwriter-1.0.0.phar
-$ php umlwriter-1.0.0.phar --version
+$ wget http://bartlett.laurent-laville.org/get/umlwriter-1.0.1.phar
+$ php umlwriter-1.0.1.phar --version
 ----
 
 With both methods then you have this output :
@@ -38,19 +38,14 @@ With both methods then you have this output :
 [role="output"]
 ====
 ----
-umlWriter version 1.0.0
+umlWriter version 1.0.1
 ----
 ====
 
-Alternatively, you can also use https://getcomposer.org/[Composer]
-to create a new project from an existing [label label-primary]#UmlWriter# package.
-This is the equivalent of doing a git clone checkout followed by a composer install of the vendors.
-
-[source,bash]
-----
-$ php composer.phar create-project bartlett/umlwriter /path/to/install 1.0.0
-----
-Where +/path/to/install+ is your install directory.
+ifdef::basebackend-bootstrap[]
+See other alternatives in User Guide to
+link:user-guide&#45;&#45;installation.html["install UmlWriter"]
+endif::basebackend-bootstrap[]
 
 
 == Generating a Diagram
@@ -143,6 +138,15 @@ Choose your way depending of your skill level.
 
 ************************************************
 .Read more
+
+* Want to learn more on CLI tool,
+have a look on
+ifdef::basebackend-html[]
+link:user-guide.html[user's guide]
+endif::basebackend-html[]
+ifdef::basebackend-docbook[]
+xref:_user_guide[]
+endif::basebackend-docbook[]
 
 * Want to learn more about the Graphviz or PlantUML processor,
 have a look on

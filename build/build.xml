@@ -22,7 +22,7 @@
         ======================================================================
     -->
     <property name="build.short-version"         value="1.0" />
-    <property name="build.version"               value="${build.short-version}.0" />
+    <property name="build.version"               value="${build.short-version}.1" />
 
     <!--
         ======================================================================
@@ -63,8 +63,9 @@
         <include name="cover.asciidoc" />
         <include name="index.asciidoc" />
         <include name="getting-started.asciidoc" />
-        <include name="processor-guide**.asciidoc" />        
-        <include name="reflector-guide**.asciidoc" />        
+        <include name="user-guide**.asciidoc" />
+        <include name="processor-guide**.asciidoc" />
+        <include name="reflector-guide**.asciidoc" />
     </fileset>
 
     <fileset dir="${adoc.sourcedir}" id="adoc-manpages">
@@ -80,8 +81,9 @@
         <include name="index.html" />
         <include name="cover.html" />
         <include name="getting-started.html" />
-        <include name="processor-guide**.html" />        
-        <include name="reflector-guide**.html" />        
+        <include name="user-guide**.html" />
+        <include name="processor-guide**.html" />
+        <include name="reflector-guide**.html" />
         <include name="umlwriter-book.html" />
         <include name="umlwriter-book.epub" />
         <include name="umlwriter-book.pdf" />

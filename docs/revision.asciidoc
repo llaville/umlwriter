@@ -1,3 +1,3 @@
-:revdate:       2015-04-02
-:revnumber:     1.0.0
-:stablePubDate: April 2, 2015
+:revdate:       2015-09-28
+:revnumber:     1.0.1
+:stablePubDate: September 28, 2015

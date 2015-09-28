@@ -12,6 +12,10 @@ This work is licensed under the http://creativecommons.org/licenses/by-sa/3.0/[A
 
 include::getting-started.asciidoc[]
 
+include::user-guide.asciidoc[]
+include::user-guide--installation.asciidoc[]
+include::user-guide--commands.asciidoc[]
+
 include::processor-guide.asciidoc[]
 
 include::reflector-guide.asciidoc[]

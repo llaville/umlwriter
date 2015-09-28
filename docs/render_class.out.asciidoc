@@ -1,0 +1,56 @@
+digraph G {
+        overlap = false;
+        node [fontname="Verdana", fontsize="8", shape="none", margin="0", fillcolor="#FEFECE", style="filled"];
+        edge [fontname="Verdana", fontsize="8"];
+        subgraph cluster_0 {
+                label="Bartlett";
+                "Bartlett\\Reflect" [label=<
+<table border="0" cellborder="1" cellspacing="0">
+<tr><td align="center">&lt;&lt; <font color="black"><i>class</i></font> &gt;&gt;<br/><b>Reflect</b></td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left">- analysers</td></tr>
+<tr><td align="left">- dataSourceId</td></tr>
+</table></td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left">+__construct()</td></tr>
+<tr><td align="left">+addAnalyser()</td></tr>
+<tr><td align="left">+getAnalysers()</td></tr>
+<tr><td align="left">+setDataSourceId()</td></tr>
+<tr><td align="left">+getDataSourceId()</td></tr>
+<tr><td align="left">+parse()</td></tr>
+</table></td></tr>
+</table>
+>];
+        }
+        subgraph cluster_1 {
+                label="Bartlett\\Reflect\\Event";
+                "Bartlett\\Reflect\\Event\\AbstractDispatcher" [label=<
+<table border="0" cellborder="1" cellspacing="0">
+<tr><td align="center">&lt;&lt; <font color="black"><i>class</i></font> &gt;&gt;<br/><b>AbstractDispatcher</b></td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left"># eventDispatcher</td></tr>
+</table></td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left">+setEventDispatcher()</td></tr>
+<tr><td align="left">+getEventDispatcher()</td></tr>
+<tr><td align="left">+dispatch()</td></tr>
+<tr><td align="left">+addSubscriber()</td></tr>
+</table></td></tr>
+</table>
+>];
+                "Bartlett\\Reflect\\Event\\DispatcherInterface" [label=<
+<table border="0" cellborder="1" cellspacing="0">
+<tr><td align="center">&lt;&lt; <font color="black"><i>interface</i></font> &gt;&gt;<br/><b>DispatcherInterface</b></td></tr>
+<tr><td> </td></tr>
+<tr><td><table border="0" cellspacing="0" cellpadding="2">
+<tr><td align="left">+setEventDispatcher()</td></tr>
+<tr><td align="left">+getEventDispatcher()</td></tr>
+<tr><td align="left">+dispatch()</td></tr>
+<tr><td align="left">+addSubscriber()</td></tr>
+</table></td></tr>
+</table>
+>];
+        }
+        "Bartlett\\Reflect\\Event\\AbstractDispatcher" -> "Bartlett\\Reflect\\Event\\DispatcherInterface" [arrowhead="empty", style="dashed"];
+        "Bartlett\\Reflect" -> "Bartlett\\Reflect\\Event\\AbstractDispatcher";
+}
