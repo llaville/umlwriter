@@ -1,3 +1,7 @@
 Thumbs.db
 *.tgz
+*.zip
+*.phar
+*.log
 vendor/
+phpunit.xml
