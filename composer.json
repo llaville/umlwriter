@@ -10,12 +10,12 @@
         "issues": "https://github.com/llaville/umlwriter/issues"
     },
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=5.4.0",
         "symfony/console": "~2.5",
         "sebastian/version": "~1.0"
     },
     "require-dev": {
-        "bartlett/php-reflect": "~3.0",
+        "bartlett/php-reflect": "~4.0",
         "andrewsville/php-token-reflection": "~1.4"
     },
     "suggest": {
