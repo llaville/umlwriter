@@ -12,32 +12,23 @@ Follow development on the http://php5.laurent-laville.org/umlwriter/blog/[offici
 
 == Install
 
-Clone the git repository
+You can either :
 
-[source,bash]
-.HTTPS
-----
-$ git clone https://github.com/llaville/umlwriter.git
-----
+* download the phar version http://bartlett.laurent-laville.org/get/umlwriter-1.1.0.phar[1.1.0]
+* install via https://packagist.org/packages/bartlett/umlwriter/[packagist] the current source dev-master or the stable version 1.1.0
 
-[source,bash]
-.SSH
-----
-$ git clone git@github.com:llaville/umlwriter.git
-----
+== Documentation
 
-Install composer dependencies
+The documentation for UmlWriter 1.1 is available
+in http://php5.laurent-laville.org/umlwriter/manual/1.1/en/[English]
+to read it online or download to read it later (multiple formats).
 
-[source,bash]
-----
-$ cd umlwriter
-$ php composer.phar require bartlett/php-reflect ~3.0
-----
+AsciiDoc source code are available on `docs` folder of the repository.
 
-Or
+== Authors
 
-[source,bash]
-----
-$ cd umlwriter
-$ php composer.phar require andrewsville/php-token-reflection ~1.4
-----
+* Laurent Laville
+
+== License
+
+This handler is licensed under the BSD-3-clauses License - see the `LICENSE` file for details

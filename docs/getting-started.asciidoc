@@ -2,7 +2,7 @@
 :description: Startup in 5 minutes
 include::revision.asciidoc[]
 include::attributes.asciidoc[]
-:pharstable:  http://bartlett.laurent-laville.org/get/umlwriter-1.0.1.phar
+:pharstable:  http://bartlett.laurent-laville.org/get/umlwriter-1.1.0.phar
 
 
 == Download
@@ -20,8 +20,8 @@ endif::basebackend-bootstrap[]
 Make it executable, and put it into your `$PATH`.
 [source,bash]
 ----
-$ chmod +x umlwriter-1.0.1.phar
-$ mv umlwriter-1.0.1.phar /usr/local/bin/umlwriter
+$ chmod +x umlwriter-1.1.0.phar
+$ mv umlwriter-1.1.0.phar /usr/local/bin/umlwriter
 
 $ umlwriter --version
 ----
@@ -29,8 +29,8 @@ $ umlwriter --version
 You can also immediately use the PHAR after you have downloaded it.
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/umlwriter-1.0.1.phar
-$ php umlwriter-1.0.1.phar --version
+$ wget http://bartlett.laurent-laville.org/get/umlwriter-1.1.0.phar
+$ php umlwriter-1.1.0.phar --version
 ----
 
 With both methods then you have this output :
@@ -38,7 +38,7 @@ With both methods then you have this output :
 [role="output"]
 ====
 ----
-umlWriter version 1.0.1
+umlWriter version 1.1.0
 ----
 ====
 

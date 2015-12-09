@@ -3,12 +3,6 @@
 :brand:       UmlWriter
 :brandref:    http://php5.laurent-laville.org/umlwriter/
 :brandver:
-:toc2:
-:toc-placement: right
-:jumbotron:
-:jumbotron-fullwidth:
-:footer:
-:footer-fullwidth:
 :navinfo1:
 :icons!:
 :iconsfont:   font-awesome
