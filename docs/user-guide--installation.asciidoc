@@ -29,7 +29,7 @@ Put a file named [label label-default]#composer.json# at the root of your projec
 ----
 {
     "require": {
-        "bartlett/umlwriter": "1.1.0"
+        "bartlett/umlwriter": "^1.2"
     }
 }
 ----
@@ -51,7 +51,7 @@ This is the equivalent of doing a git clone checkout followed by a composer inst
 
 [source,bash]
 ----
-$ php composer.phar create-project bartlett/umlwriter /path/to/install 1.1.0
+$ php composer.phar create-project bartlett/umlwriter /path/to/install ^1.2
 ----
 Where +/path/to/install+ is your install directory.
 ====
@@ -64,17 +64,17 @@ bundled in a single file.
 
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/umlwriter-1.1.0.phar
-$ chmod +x umlwriter-1.1.0.phar
-$ mv umlwriter-1.1.0.phar /usr/local/bin/umlwriter
+$ wget http://bartlett.laurent-laville.org/get/umlwriter-1.2.0.phar
+$ chmod +x umlwriter-1.2.0.phar
+$ mv umlwriter-1.2.0.phar /usr/local/bin/umlwriter
 $ umlwriter
 ----
 
 You can also immediately use the PHAR after you have downloaded it.
 [source,bash]
 ----
-$ wget http://bartlett.laurent-laville.org/get/umlwriter-1.1.0.phar
-$ php umlwriter-1.1.0.phar
+$ wget http://bartlett.laurent-laville.org/get/umlwriter-1.2.0.phar
+$ php umlwriter-1.2.0.phar
 ----
 
 ifdef::basebackend-bootstrap[]
