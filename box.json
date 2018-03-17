@@ -27,7 +27,7 @@
         {
             "name": "*.php",
             "in": "vendor/bartlett/php-reflect/src"
-        },        
+        },
         {
             "name": "*.php",
             "in": "vendor/doctrine/collections/lib"
