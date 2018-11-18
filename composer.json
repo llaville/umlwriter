@@ -11,11 +11,11 @@
     },
     "require": {
         "php": "^5.4|^7.0",
-        "symfony/console": "^2.5|^3.0",
+        "symfony/console": "^2.5|^3.0|^4.0",
         "sebastian/version": "^1.0|^2.0"
     },
     "require-dev": {
-        "bartlett/php-reflect": "^4.0",
+        "bartlett/php-reflect": "4.3.x-dev",
         "andrewsville/php-token-reflection": "^1.4"
     },
     "suggest": {
