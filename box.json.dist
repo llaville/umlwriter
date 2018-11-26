@@ -1,0 +1,12 @@
+{
+    "directories": ["src", "vendor"],
+    "compression": "GZ",
+    "dump-autoload": false,
+    "force-autodiscovery": true,
+    "files": [
+        "manifest.txt",
+        "LICENSE",
+        "vendor/autoload.php"
+    ],
+    "stub": "phar-stub.php"
+}
