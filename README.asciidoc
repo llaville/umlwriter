@@ -14,7 +14,7 @@ Follow development on the http://php5.laurent-laville.org/umlwriter/blog/[offici
 
 You can either :
 
-* download the phar version http://bartlett.laurent-laville.org/get/umlwriter-1.3.0.phar[1.3.0]
+* download the phar version http://bartlett.laurent-laville.org/get/umlwriter-1.3.1.phar[1.3.1]
 that has all required (as well as some optional) dependencies of UmlWriter bundled in a single file.
 
 * install latest version with composer, as follow: `composer require bartlett/umlwriter ^1.2`
