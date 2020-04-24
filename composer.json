@@ -10,17 +10,13 @@
         "issues": "https://github.com/llaville/umlwriter/issues"
     },
     "require": {
-        "php": "^5.4|^7.0",
-        "symfony/console": "^2.5|^3.0|^4.0",
-        "sebastian/version": "^1.0|^2.0"
-    },
-    "require-dev": {
-        "bartlett/php-reflect": "^4.3",
-        "andrewsville/php-token-reflection": "^1.4"
-    },
-    "suggest": {
-        "bartlett/php-reflect": "Reverse-engine, default solution",
-        "andrewsville/php-token-reflection": "Reverse-engine, alternative solution"
+        "php": "^7.1.3",
+        "bartlett/graph-uml": "^0.3",
+        "goaop/parser-reflection": "^2.1",
+        "graphp/graph": "dev-master as 1.0.0",
+        "graphp/graphviz": "dev-master as 1.0.0",
+        "symfony/console": "^4.4|^5.0",
+        "symfony/finder": "^4.4|^5.0"
     },
     "authors": [
         {
@@ -33,14 +29,20 @@
     "bin": [
         "bin/umlwriter"
     ],
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
     "autoload": {
         "psr-4": {
-            "Bartlett\\": "src/Bartlett"
+            "Bartlett\\UmlWriter\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Bartlett\\Tests\\UmlWriter\\": "tests/"
+            "Bartlett\\UmlWriter\\Tests\\": "tests/"
         }
     }
 }

@@ -6,6 +6,16 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [2.0.0-beta.1] - 2019-04-24
+
+Two years after [GH-8](https://github.com/llaville/umlwriter/issues/8) report was written,
+PHP 7 compatibility is now up and ready with this first new major pre-release version.
+
+UmlWriter 2.0 become a simple facade to [graph-uml](https://github.com/llaville/graph-uml) project
+that is able to produce UML diagrams with GraphViz backend. More backends will come later !
+
+Unit tests and documentation should be re-write, and will be available in next pre-release (2.0.0-beta.2)
+
 ## [1.3.1] - 2019-11-24
 
 ### Added 
