@@ -11,7 +11,7 @@
     },
     "require": {
         "php": "^7.1.3",
-        "bartlett/graph-uml": "^0.3",
+        "bartlett/graph-uml": "^0.4",
         "goaop/parser-reflection": "^2.1",
         "graphp/graph": "dev-master as 1.0.0",
         "graphp/graphviz": "dev-master as 1.0.0",
