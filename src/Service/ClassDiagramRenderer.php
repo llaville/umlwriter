@@ -51,7 +51,7 @@ class ClassDiagramRenderer
             }
         }
 
-        return $generator->render($this->graph);
+        return $generator->createScript($this->graph);
     }
 
     /**
