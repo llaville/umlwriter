@@ -12,11 +12,15 @@
     "require": {
         "php": "^7.1.3",
         "bartlett/graph-uml": "^0.6",
+        "bartlett/graph-plantuml-generator": "^0.1",
         "goaop/parser-reflection": "^2.1",
         "graphp/graph": "dev-master as 1.0.0",
         "graphp/graphviz": "dev-subgraph_cluster_attributes as 1.0.0",
         "symfony/console": "^4.4|^5.0",
         "symfony/finder": "^4.4|^5.0"
+    },
+    "require-dev": {
+        "jawira/plantuml": "^1.28"
     },
     "repositories": [
         {

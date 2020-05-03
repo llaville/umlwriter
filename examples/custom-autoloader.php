@@ -38,3 +38,6 @@ $renderer = new ClassDiagramRenderer();
 $script = $renderer($finder, $generator);
 // show UML diagram statements
 echo $script;
+
+// default format is PNG
+echo $generator->createImageFile($renderer->getGraph()) . ' file generated' . PHP_EOL;

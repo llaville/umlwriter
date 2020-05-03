@@ -1,6 +1,6 @@
 <?php
 /**
- * Examples of Graphviz UML class diagrams
+ * Examples of PlantUML UML class diagrams
  *
  * PHP version 7
  *
@@ -22,12 +22,13 @@ $dataSource = dirname(__DIR__) . '/src';
 $finder = new Finder();
 $finder->in($dataSource)->name('*.php');
 
-$generatorFactory = new GeneratorFactory('graphviz');
-// creates instance of Bartlett\GraphUml\Generator\GraphVizGenerator
+$generatorFactory = new GeneratorFactory('plantuml');
+// creates instance of Bartlett\GraphPlantUml\PlantUmlGenerator
 $generator = $generatorFactory->getGenerator();
+$generator->setExecutable(dirname(__DIR__) . '/vendor/bin/plantuml');
 
 $renderer = new ClassDiagramRenderer();
-// generates UML class diagram of all objects found in dataSource (in graphviz format)
+// generates UML class diagram of all objects found in dataSource (in PlantUML format)
 $script = $renderer($finder, $generator);
 // show UML diagram statements
 echo $script;

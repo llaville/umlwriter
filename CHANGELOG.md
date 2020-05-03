@@ -6,6 +6,13 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [2.0.0-beta.2] - 2019-05-03
+
+### Added
+
+* UmlWriter 2.0 is now able to build UML Class diagrams in PlantUML format.
+* provides `plantuml.jar` to draw images locally (with help of https://github.com/jawira/plantuml project)
+
 ## [2.0.0-beta.1] - 2019-04-24
 
 Two years after [GH-8](https://github.com/llaville/umlwriter/issues/8) report was written,
