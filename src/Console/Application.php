@@ -54,7 +54,9 @@ final class Application extends SymfonyApplication
     {
         $this->container->set(InputInterface::class, $input);
         $this->container->set(OutputInterface::class, $output);
-        $this->container->set(GeneratorFactoryInterface::class, new GeneratorFactory());
+        if (!$this->container->has(GeneratorFactoryInterface::class)) {
+            $this->container->set(GeneratorFactoryInterface::class, new GeneratorFactory());
+        }
 
         return parent::doRun($input, $output);
     }
