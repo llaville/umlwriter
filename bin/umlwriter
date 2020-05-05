@@ -6,11 +6,9 @@ declare(strict_types=1);
 
 gc_disable(); // performance boost
 
-$appName = 'umlWriter';
-
 if (\Phar::running()) {
     $possibleAutoloadPaths = [
-        'phar://' . strtolower($appName) . '.phar/vendor'
+        'phar://umlwriter.phar/vendor'
     ];
 } else {
     $possibleAutoloadPaths = [
@@ -42,6 +40,7 @@ if (PHP_SAPI !== 'cli') {
 }
 
 use Bartlett\UmlWriter\Console\Application;
+use Bartlett\UmlWriter\Service\ContainerService;
 
-$application = new Application($appName, '2.0.0-dev');
+$application = new Application(new ContainerService());
 $application->run();
