@@ -27,8 +27,24 @@ $generatorFactory = new GeneratorFactory('graphviz');
 $generator = $generatorFactory->getGenerator();
 
 $renderer = new ClassDiagramRenderer();
+$options = [
+    'graph' => [
+        'rankdir' => 'LR',
+        'bgcolor' => 'transparent',
+    ],
+    'node' => [
+        'fillcolor' => 'lightgrey',
+    ],
+    'subgraph' => [
+        'cluster_2' => [
+            'graph' => [
+                'bgcolor' => 'lightblue'
+            ],
+        ],
+    ],
+];
 // generates UML class diagram of all objects found in dataSource (in graphviz format)
-$script = $renderer($finder, $generator);
+$script = $renderer($finder, $generator, $options);
 // show UML diagram statements
 echo $script;
 

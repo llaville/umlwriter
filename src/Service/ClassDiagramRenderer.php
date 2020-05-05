@@ -21,9 +21,9 @@ class ClassDiagramRenderer
     /** @var array  */
     private $metaData;
 
-    public function __invoke(Finder $finder, GeneratorInterface $generator): string
+    public function __invoke(Finder $finder, GeneratorInterface $generator, array $parameters = []): string
     {
-        $this->initGraph($generator->getName());
+        $this->initGraph($generator->getName(), $parameters);
 
         $builder = new ClassDiagramBuilder(
             $generator,
@@ -70,7 +70,7 @@ class ClassDiagramRenderer
         return $this->graph;
     }
 
-    private function initGraph(string $generator): void
+    private function initGraph(string $generator, array $parameters): void
     {
         $this->metaData = [
             'classes' => [],
@@ -80,7 +80,7 @@ class ClassDiagramRenderer
 
         $this->graph = new Graph();
 
-        $attributes = [
+        $default = [
             'graph' => [
                 'name' => 'G',
                 'overlap' => 'false',
@@ -98,9 +98,25 @@ class ClassDiagramRenderer
                 'fontsize' => 8,
             ]
         ];
+        $attributes = array_merge_recursive($default, $parameters);
+
         foreach ($attributes as $usedBy => $values) {
             foreach ($values as $name => $value) {
-                $this->graph->setAttribute($generator . '.' . $usedBy . '.' . $name, $value);
+                if (is_scalar($value)) {
+                    $this->graph->setAttribute(
+                        implode('.', [$generator, $usedBy, $name]),
+                        $value
+                    );
+                } elseif ('subgraph' === $usedBy) {
+                    foreach ($value as $part => $data) {
+                        foreach ($data as $key => $val) {
+                            $this->graph->setAttribute(
+                                implode('.', [$generator, $usedBy, $name, $part, $key]),
+                                $val
+                            );
+                        }
+                    }
+                }
             }
         }
     }
