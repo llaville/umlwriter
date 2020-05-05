@@ -14,9 +14,13 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Finder\Finder;
 
+use function Composer\Autoload\includeFile;
+
 class ClassDiagramCommand extends Command
 {
-    protected static $defaultName = 'diagram:class';
+    public const NAME = 'diagram:class';
+
+    protected static $defaultName = self::NAME;
 
     /** @var ClassDiagramRenderer  */
     private $renderer;
@@ -37,28 +41,33 @@ class ClassDiagramCommand extends Command
     {
         $this
             ->setDescription('Generate class diagram statements of a given data source')
-            ->addArgument('folder', InputArgument::REQUIRED, 'Data source (file or folder)')
+            ->addArgument('paths', InputArgument::REQUIRED | InputArgument::IS_ARRAY, 'Data source (file or directory)')
             ->addOption('generator', null, InputOption::VALUE_REQUIRED, 'Graph generator')
-            ->addOption('bootstrap', null, InputOption::VALUE_REQUIRED, 'A PHP script that is included before graph run', 'vendor/autoload.php')
+            ->addOption('bootstrap', null, InputOption::VALUE_REQUIRED, 'A PHP script that is included before graph run')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        require $input->getOption('bootstrap');
+        $bootstrap = $input->getOption('bootstrap');
+        if (!empty($bootstrap)) {
+            includeFile($bootstrap);
+        }
 
         $io = new SymfonyStyle($input, $output);
-        $folder = $input->getArgument('folder');
+        $paths = $input->getArgument('paths');
 
         $finder = new Finder();
         $finder->files();
 
-        if (is_dir($folder)) {
-            $finder->in($folder);
-            $finder->name('*.php');
-        } else {
-            $finder->in(dirname($folder));
-            $finder->name(basename($folder));
+        foreach ($paths as $path) {
+            if (is_dir($path)) {
+                $finder->in($path);
+                $finder->name('*.php');
+            } else {
+                $finder->in(dirname($path));
+                $finder->name(basename($path));
+            }
         }
 
         $graphGenerator = $input->getOption('generator');
@@ -71,7 +80,7 @@ class ClassDiagramCommand extends Command
 
         $io->title('UML Class Diagram Generation');
         $io->definitionList(
-            ['Data source' => realpath($folder)],
+            ['Path(s)' => implode(', ', $paths)],
             ['Generator' => $graphGenerator]
         );
 
