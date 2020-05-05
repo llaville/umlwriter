@@ -6,6 +6,17 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Added
+
+* introduces `ContainerService` class implement `psr/container` to handle all internal and runtime services.
+* support of EditorConfig (https://editorconfig.org/)
+* be able to personalize graph render (at least colors and orientation)
+
+### Changed
+
+* `diagram:class` command accept multiple data sources (file or directory) at same time.
+* console commands used now lazy loading (see https://symfony.com/doc/current/console/lazy_commands.html)
+
 ## [2.0.0-beta.2] - 2019-05-03
 
 ### Added
@@ -25,7 +36,7 @@ Unit tests and documentation should be re-write, and will be available in next p
 
 ## [1.3.1] - 2019-11-24
 
-### Added 
+### Added
 
 introduced this CHANGELOG file. See request [#10](https://github.com/llaville/umlwriter/issues/10) by Remi Collet
 
