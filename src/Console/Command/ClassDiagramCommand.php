@@ -6,6 +6,7 @@ namespace Bartlett\UmlWriter\Console\Command;
 use Bartlett\UmlWriter\Generator\GeneratorFactoryInterface;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 
+use Bartlett\UmlWriter\Service\ConfigurationHandler;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -14,6 +15,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Finder\Finder;
 
+use InvalidArgumentException;
 use function Composer\Autoload\includeFile;
 
 class ClassDiagramCommand extends Command
@@ -44,17 +46,29 @@ class ClassDiagramCommand extends Command
             ->addArgument('paths', InputArgument::REQUIRED | InputArgument::IS_ARRAY, 'Data source (file or directory)')
             ->addOption('generator', null, InputOption::VALUE_REQUIRED, 'Graph generator')
             ->addOption('bootstrap', null, InputOption::VALUE_REQUIRED, 'A PHP script that is included before graph run')
+            ->addOption('configuration', 'c', InputOption::VALUE_REQUIRED, 'Read configuration from YAML file')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        $io = new SymfonyStyle($input, $output);
+
+        $configFilename = $input->getOption('configuration');
+        $configHandler = new ConfigurationHandler($configFilename);
+        try {
+            $parameters = $configHandler->toFlat();
+            $configFrom = $configHandler->filename() ?? 'Default values';
+        } catch (InvalidArgumentException $exception) {
+            $io->caution($exception->getMessage());
+            $parameters = [];
+        }
+
         $bootstrap = $input->getOption('bootstrap');
         if (!empty($bootstrap)) {
             includeFile($bootstrap);
         }
 
-        $io = new SymfonyStyle($input, $output);
         $paths = $input->getArgument('paths');
 
         $finder = new Finder();
@@ -81,12 +95,25 @@ class ClassDiagramCommand extends Command
         $io->title('UML Class Diagram Generation');
         $io->definitionList(
             ['Path(s)' => implode(', ', $paths)],
-            ['Generator' => $graphGenerator]
+            ['Generator' => $graphGenerator],
+            ['Configuration' => $configFrom ?? '']
         );
 
         $script = $this->renderer->__invoke($finder, $generator);
 
         if ($output->isVerbose()) {
+            $io->section('Configuration');
+
+            $io->definitionList(
+                ['Parameters' => count($parameters ?? [])]
+            );
+            if ($output->isVeryVerbose()) {
+                $io->horizontalTable(
+                    array_keys($parameters),
+                    [array_values($parameters)]
+                );
+            }
+
             $io->section('Entities summary');
 
             $metaData = $this->renderer->getMetadata();
