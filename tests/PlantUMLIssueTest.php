@@ -9,6 +9,7 @@ use Symfony\Component\Finder\Finder;
 
 class PlantUMLIssueTest extends TestCase
 {
+    private const ISSUE_DIR = __DIR__ . DIRECTORY_SEPARATOR . 'issues';
     /**
      * Regression test for bug GH#7
      *
@@ -20,7 +21,7 @@ class PlantUMLIssueTest extends TestCase
     public function testBugGH7()
     {
         $finder = new Finder();
-        $finder->in(__DIR__ . '/issues')->name('gh-7.php');
+        $finder->in(self::ISSUE_DIR)->name('gh-7.php');
 
         $generatorFactory = new GeneratorFactory('plantuml');
         // creates instance of Bartlett\GraphPlantUml\PlantUmlGenerator
@@ -29,6 +30,6 @@ class PlantUMLIssueTest extends TestCase
         $renderer = new ClassDiagramRenderer();
         $script = $renderer($finder, $generator);
 
-        $this->assertStringEqualsFile(__DIR__ . '/issues/gh-7.puml', $script);
+        $this->assertStringEqualsFile(self::ISSUE_DIR . DIRECTORY_SEPARATOR . 'gh-7.puml', $script);
     }
 }
