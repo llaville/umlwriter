@@ -1,0 +1,11 @@
+@startuml
+
+namespace ltta.model {
+  class BackupProject << class >> {
+    –a
+    --
+    +__construct(a)
+
+  }
+}
+@enduml

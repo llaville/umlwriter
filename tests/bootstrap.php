@@ -1,6 +1,8 @@
 <?php
 
-$baseDir   = dirname(__DIR__);
-$vendorDir = $baseDir . '/vendor';
-
-require_once $vendorDir . '/autoload.php';
+$loader = require dirname(__DIR__) . '/vendor/autoload.php';
+$loader->addClassMap(
+    [
+        'ltta\\model\\BackupProject' => __DIR__ . '/issues/gh-7.php',
+    ]
+);
