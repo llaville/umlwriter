@@ -1,25 +1,33 @@
 @startuml
-	class OneClass << class >> {
-		+STRING_CONSTANT
-		+INTEGER_CONSTANT
-		+FLOAT_CONSTANT
-		+LF_CONSTANT
-		+CR_CONSTANT
-		+TAB_CONSTANT
-		..
-		+NOVALUE_STATIC
-		+STRING_STATIC
-		+INTEGER_STATIC
-		+FLOAT_STATIC
-		+LF_STATIC
-		+CR_STATIC
-		+TAB_STATIC
-		+PUBLIC_STATIC
-		#PROTECTED_STATIC
-		-PRIVATE_STATIC
-		--
-		+<u>staticPublic</u>()
-		#<u>staticProtected</u>()
-		-<u>staticPrivate</u>()
-	}
+
+namespace FixtureSix {
+  class OneClass << class >> {
+    +{static} STRING_CONSTANT : string = "string" {readOnly}
++{static} INTEGER_CONSTANT : int = 7654 {readOnly}
++{static} FLOAT_CONSTANT : float = 7654.321 {readOnly}
++{static} LF_CONSTANT : string = "
+" {readOnly}
++{static} CR_CONSTANT : string = "
+" {readOnly}
++{static} TAB_CONSTANT : string = "	" {readOnly}
+
+    + {static} NOVALUE_STATIC
+    + {static} STRING_STATIC = "string"
+    + {static} INTEGER_STATIC = 7654
+    + {static} FLOAT_STATIC = 7654.321
+    + {static} LF_STATIC = "
+"
+    + {static} CR_STATIC = "
+"
+    + {static} TAB_STATIC = "	"
+    + {static} PUBLIC_STATIC
+    # {static} PROTECTED_STATIC
+    – {static} PRIVATE_STATIC
+    --
+    +{static}staticPublic()
+    #{static}staticProtected()
+    –{static}staticPrivate()
+
+  }
+}
 @enduml

@@ -1,9 +1,14 @@
 @startuml
-	class OneClass << class >> {
-		-stringProperty
-		#intProperty
-		+booleanProperty
-		#arrayProperty
-		+floatProperty
-	}
+
+namespace FixtureEight {
+  class OneClass << class >> {
+    –stringProperty : string = "string"
+    #intProperty : int = 654
+    +booleanProperty : bool = true
+    #arrayProperty : array = […]
+    +floatProperty : float = 654.123
+    --
+
+  }
+}
 @enduml

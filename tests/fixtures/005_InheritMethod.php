@@ -1,4 +1,6 @@
 <?php
+namespace FixtureFive;
+
 class ParentClass
 {
     public function someParentMethod()

@@ -1,4 +1,9 @@
 @startuml
-	class OneClass << class >> {
-	}
+
+namespace FixtureOne {
+  class OneClass << class >> {
+    --
+
+  }
+}
 @enduml

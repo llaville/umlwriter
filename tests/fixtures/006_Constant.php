@@ -1,4 +1,6 @@
 <?php
+namespace FixtureSix;
+
 class OneClass
 {
     const STRING_CONSTANT = 'string';

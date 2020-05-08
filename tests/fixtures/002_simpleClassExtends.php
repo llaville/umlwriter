@@ -1,4 +1,6 @@
 <?php
+namespace FixtureTwo;
+
 class OneClass {
 }
 

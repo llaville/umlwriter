@@ -1,39 +1,36 @@
-digraph G1 {
-	overlap = false;
-	node [fontname="Verdana", fontsize="8", shape="none", margin="0", fillcolor="#FEFECE", style="filled"];
-	edge [fontname="Verdana", fontsize="8"];
-	subgraph cluster_2 {
-		label="";
-		"OneInterface" [label=<
-<table border="0" cellborder="1" cellspacing="0">
-<tr><td align="center">&lt;&lt; <font color="black"><i>interface</i></font> &gt;&gt;<br/><b>OneInterface</b></td></tr>
-<tr><td> </td></tr>
-<tr><td> </td></tr>
-</table>
->];
-		"TwoInterface" [label=<
-<table border="0" cellborder="1" cellspacing="0">
-<tr><td align="center">&lt;&lt; <font color="black"><i>interface</i></font> &gt;&gt;<br/><b>TwoInterface</b></td></tr>
-<tr><td> </td></tr>
-<tr><td> </td></tr>
-</table>
->];
-		"OneClass" [label=<
-<table border="0" cellborder="1" cellspacing="0">
-<tr><td align="center">&lt;&lt; <font color="black"><i>class</i></font> &gt;&gt;<br/><b>OneClass</b></td></tr>
-<tr><td> </td></tr>
-<tr><td> </td></tr>
-</table>
->];
-		"TwoClass" [label=<
-<table border="0" cellborder="1" cellspacing="0">
-<tr><td align="center">&lt;&lt; <font color="black"><i>class</i></font> &gt;&gt;<br/><b>TwoClass</b></td></tr>
-<tr><td> </td></tr>
-<tr><td> </td></tr>
-</table>
->];
-	}
-	"TwoInterface" -> "OneInterface";
-	"OneClass" -> "OneInterface" [arrowhead="empty", style="dashed"];
-	"TwoClass" -> "TwoInterface" [arrowhead="empty", style="dashed"];
+digraph {
+  graph [name="G" overlap="false"]
+  node [fontname="Verdana" fontsize=8 shape="none" margin=0 fillcolor="#FEFECE" style="filled"]
+  edge [fontname="Verdana" fontsize=8]
+  "FixtureThree\\OneInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>OneInterface</b></td></tr>
+    
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+  "FixtureThree\\TwoInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>TwoInterface</b></td></tr>
+    
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+  "FixtureThree\\OneClass" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>OneClass</b></td></tr>
+    
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+  "FixtureThree\\TwoClass" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>TwoClass</b></td></tr>
+    
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+  "FixtureThree\\TwoInterface" -> "FixtureThree\\OneInterface" [arrowhead="empty" style="dashed"]
+  "FixtureThree\\OneClass" -> "FixtureThree\\OneInterface" [arrowhead="empty" style="dashed"]
+  "FixtureThree\\TwoClass" -> "FixtureThree\\TwoInterface" [arrowhead="empty" style="dashed"]
 }

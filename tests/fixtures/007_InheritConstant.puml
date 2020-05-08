@@ -1,10 +1,19 @@
 @startuml
-	class ParentClass << class >> {
-		+PARENT_CONSTANT
-		+INHERIT_CONSTANT
-	}
-	class ExtendingClass << class >> {
-		+PARENT_CONSTANT
-	}
-ExtendingClass --|> ParentClass
+
+namespace FixtureSeven {
+  class ParentClass << class >> {
+    +{static} PARENT_CONSTANT : bool = true {readOnly}
++{static} INHERIT_CONSTANT : bool = true {readOnly}
+
+    --
+
+  }
+  class ExtendingClass << class >> {
+    +{static} PARENT_CONSTANT : bool = false {readOnly}
+
+    --
+
+  }
+}
+FixtureSeven.ExtendingClass --|> FixtureSeven.ParentClass
 @enduml

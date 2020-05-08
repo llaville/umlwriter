@@ -1,10 +1,17 @@
 @startuml
-	class ParentClass << class >> {
-		+someParentMethod()
-		+methodToOverride()
-	}
-	class ExtendingClass << class >> {
-		+methodToOverride()
-	}
-ExtendingClass --|> ParentClass
+
+namespace FixtureFive {
+  class ParentClass << class >> {
+    --
+    +someParentMethod()
+    +methodToOverride()
+
+  }
+  class ExtendingClass << class >> {
+    --
+    +methodToOverride()
+
+  }
+}
+FixtureFive.ExtendingClass --|> FixtureFive.ParentClass
 @enduml

@@ -1,13 +1,24 @@
 @startuml
-	interface OneInterface << interface >> {
-	}
-	interface TwoInterface << interface >> {
-	}
-	class OneClass << class >> {
-	}
-	class TwoClass << class >> {
-	}
-TwoInterface --|> OneInterface
-OneClass ..|> OneInterface
-TwoClass ..|> TwoInterface
+
+namespace FixtureThree {
+  interface OneInterface << interface >> {
+    --
+
+  }
+  interface TwoInterface << interface >> {
+    --
+
+  }
+  class OneClass << class >> {
+    --
+
+  }
+  class TwoClass << class >> {
+    --
+
+  }
+}
+FixtureThree.TwoInterface ..|> FixtureThree.OneInterface
+FixtureThree.OneClass ..|> FixtureThree.OneInterface
+FixtureThree.TwoClass ..|> FixtureThree.TwoInterface
 @enduml

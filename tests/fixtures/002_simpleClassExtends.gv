@@ -1,23 +1,20 @@
-digraph G1 {
-	overlap = false;
-	node [fontname="Verdana", fontsize="8", shape="none", margin="0", fillcolor="#FEFECE", style="filled"];
-	edge [fontname="Verdana", fontsize="8"];
-	subgraph cluster_1 {
-		label="";
-		"OneClass" [label=<
-<table border="0" cellborder="1" cellspacing="0">
-<tr><td align="center">&lt;&lt; <font color="black"><i>class</i></font> &gt;&gt;<br/><b>OneClass</b></td></tr>
-<tr><td> </td></tr>
-<tr><td> </td></tr>
-</table>
->];
-		"TwoClass" [label=<
-<table border="0" cellborder="1" cellspacing="0">
-<tr><td align="center">&lt;&lt; <font color="black"><i>class</i></font> &gt;&gt;<br/><b>TwoClass</b></td></tr>
-<tr><td> </td></tr>
-<tr><td> </td></tr>
-</table>
->];
-	}
-	"TwoClass" -> "OneClass";
+digraph {
+  graph [name="G" overlap="false"]
+  node [fontname="Verdana" fontsize=8 shape="none" margin=0 fillcolor="#FEFECE" style="filled"]
+  edge [fontname="Verdana" fontsize=8]
+  "FixtureTwo\\OneClass" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>OneClass</b></td></tr>
+    
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+  "FixtureTwo\\TwoClass" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>TwoClass</b></td></tr>
+    
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+</table>>]
+  "FixtureTwo\\TwoClass" -> "FixtureTwo\\OneClass" [arrowhead="empty" style="filled"]
 }

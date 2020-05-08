@@ -1,4 +1,6 @@
 <?php
+namespace FixtureSeven;
+
 class ParentClass
 {
     const PARENT_CONSTANT = true;
