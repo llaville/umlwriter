@@ -99,7 +99,7 @@ class ClassDiagramCommand extends Command
             ['Configuration' => $configFrom ?? '']
         );
 
-        $script = $this->renderer->__invoke($finder, $generator);
+        $script = $this->renderer->__invoke($finder, $generator, $parameters);
 
         if ($output->isVerbose()) {
             $io->section('Configuration');

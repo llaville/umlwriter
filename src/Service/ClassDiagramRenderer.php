@@ -80,44 +80,11 @@ class ClassDiagramRenderer
 
         $this->graph = new Graph();
 
-        $default = [
-            'graph' => [
-                'name' => 'G',
-                'overlap' => 'false',
-            ],
-            'node' => [
-                'fontname' => "Verdana",
-                'fontsize' => 8,
-                'shape' => "none",
-                'margin' => 0,
-                'fillcolor' => '#FEFECE',
-                'style' => 'filled',
-            ],
-            'edge' => [
-                'fontname' => "Verdana",
-                'fontsize' => 8,
-            ]
-        ];
-        $attributes = array_merge_recursive($default, $parameters);
-
-        foreach ($attributes as $usedBy => $values) {
-            foreach ($values as $name => $value) {
-                if (is_scalar($value)) {
-                    $this->graph->setAttribute(
-                        implode('.', [$generator, $usedBy, $name]),
-                        $value
-                    );
-                } elseif ('subgraph' === $usedBy) {
-                    foreach ($value as $part => $data) {
-                        foreach ($data as $key => $val) {
-                            $this->graph->setAttribute(
-                                implode('.', [$generator, $usedBy, $name, $part, $key]),
-                                $val
-                            );
-                        }
-                    }
-                }
-            }
+        foreach ($parameters as $param => $value) {
+            $this->graph->setAttribute(
+                str_replace('parameters', $generator, $param),
+                $value
+            );
         }
     }
 }
