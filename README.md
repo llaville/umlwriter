@@ -1,6 +1,9 @@
+[![Latest Stable Version](https://img.shields.io/packagist/v/bartlett/umlwriter.svg?style=flat-square)](https://packagist.org/packages/bartlett/umlwriter)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg?style=flat-square)](https://php.net/)
+
 # UmlWriter
 
-**CAUTION** Major rewrite 2.0 is still in beta stage. For a stable version, check [branch 1.3](https://github.com/llaville/umlwriter/tree/1.3)  
+**CAUTION** Major rewrite 2.0 is still in beta stage. For a stable version, check [branch 1.3](https://github.com/llaville/umlwriter/tree/1.3)
 
 **UmlWriter** is a library that adds the ability to generate UML class diagrams.
 
@@ -17,7 +20,7 @@ The main features provided by this library are:
 
 ## Installation
 
-The recommended way to install this library is [through composer](http://getcomposer.org). 
+The recommended way to install this library is [through composer](http://getcomposer.org).
 If you don't know yet what is composer, have a look [on introduction](http://getcomposer.org/doc/00-intro.md).
 
 ```bash
@@ -71,9 +74,18 @@ bin/umlwriter diagram:class src/ --generator graphviz
 
 Will come soon !
 
-## Authors
+# Contributors
 
-* Laurent Laville
+* Laurent Laville (Lead Developer)
+
+[![](https://sourcerer.io/fame/llaville/llaville/umlwriter/images/0)](https://sourcerer.io/fame/llaville/llaville/umlwriter/links/0)
+[![](https://sourcerer.io/fame/llaville/llaville/umlwriter/images/1)](https://sourcerer.io/fame/llaville/llaville/umlwriter/links/1)
+[![](https://sourcerer.io/fame/llaville/llaville/umlwriter/images/2)](https://sourcerer.io/fame/llaville/llaville/umlwriter/links/2)
+[![](https://sourcerer.io/fame/llaville/llaville/umlwriter/images/3)](https://sourcerer.io/fame/llaville/llaville/umlwriter/links/3)
+[![](https://sourcerer.io/fame/llaville/llaville/umlwriter/images/4)](https://sourcerer.io/fame/llaville/llaville/umlwriter/links/4)
+[![](https://sourcerer.io/fame/llaville/llaville/umlwriter/images/5)](https://sourcerer.io/fame/llaville/llaville/umlwriter/links/5)
+[![](https://sourcerer.io/fame/llaville/llaville/umlwriter/images/6)](https://sourcerer.io/fame/llaville/llaville/umlwriter/links/6)
+[![](https://sourcerer.io/fame/llaville/llaville/umlwriter/images/7)](https://sourcerer.io/fame/llaville/llaville/umlwriter/links/7)
 
 ## Credits
 
