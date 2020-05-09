@@ -5,8 +5,8 @@ namespace Bartlett\UmlWriter\Console\Command;
 
 use Bartlett\UmlWriter\Generator\GeneratorFactoryInterface;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
-
 use Bartlett\UmlWriter\Service\ConfigurationHandler;
+
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
