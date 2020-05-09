@@ -8,21 +8,18 @@ graph {
     <tr><td align="left">+ «static» STRING_CONSTANT : string = "string" {readOnly}</td></tr>
 <tr><td align="left">+ «static» INTEGER_CONSTANT : int = 7654 {readOnly}</td></tr>
 <tr><td align="left">+ «static» FLOAT_CONSTANT : float = 7654.321 {readOnly}</td></tr>
-<tr><td align="left">+ «static» LF_CONSTANT : string = "\\\\n" {readOnly}</td></tr>
-<tr><td align="left">+ «static» CR_CONSTANT : string = "\\\\r" {readOnly}</td></tr>
-<tr><td align="left">+ «static» TAB_CONSTANT : string = "\\\\t" {readOnly}</td></tr>
+<tr><td align="left">+ «static» LF_CONSTANT : string = "\\n" {readOnly}</td></tr>
+<tr><td align="left">+ «static» CR_CONSTANT : string = "\\r" {readOnly}</td></tr>
+<tr><td align="left">+ «static» TAB_CONSTANT : string = "\\t" {readOnly}</td></tr>
 
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
 <tr><td align="left">+ «static» NOVALUE_STATIC</td></tr>
 <tr><td align="left">+ «static» STRING_STATIC = "string"</td></tr>
 <tr><td align="left">+ «static» INTEGER_STATIC = 7654</td></tr>
 <tr><td align="left">+ «static» FLOAT_STATIC = 7654.321</td></tr>
-<tr><td align="left">+ «static» LF_STATIC = "\\\\n
-"</td></tr>
-<tr><td align="left">+ «static» CR_STATIC = "\\\\r
-"</td></tr>
-<tr><td align="left">+ «static» TAB_STATIC = "\\\\t
-"</td></tr>
+<tr><td align="left">+ «static» LF_STATIC = "\\n"</td></tr>
+<tr><td align="left">+ «static» CR_STATIC = "\\r"</td></tr>
+<tr><td align="left">+ «static» TAB_STATIC = "\\t"</td></tr>
 <tr><td align="left">+ «static» PUBLIC_STATIC</td></tr>
 <tr><td align="left"># «static» PROTECTED_STATIC</td></tr>
 <tr><td align="left">– «static» PRIVATE_STATIC</td></tr>

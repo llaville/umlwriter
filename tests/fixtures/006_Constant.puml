@@ -5,21 +5,17 @@ namespace FixtureSix {
     +{static} STRING_CONSTANT : string = "string" {readOnly}
 +{static} INTEGER_CONSTANT : int = 7654 {readOnly}
 +{static} FLOAT_CONSTANT : float = 7654.321 {readOnly}
-+{static} LF_CONSTANT : string = "
-" {readOnly}
-+{static} CR_CONSTANT : string = "
-" {readOnly}
-+{static} TAB_CONSTANT : string = "	" {readOnly}
++{static} LF_CONSTANT : string = "\\n" {readOnly}
++{static} CR_CONSTANT : string = "\\r" {readOnly}
++{static} TAB_CONSTANT : string = "\\t" {readOnly}
 
     + {static} NOVALUE_STATIC
     + {static} STRING_STATIC = "string"
     + {static} INTEGER_STATIC = 7654
     + {static} FLOAT_STATIC = 7654.321
-    + {static} LF_STATIC = "
-"
-    + {static} CR_STATIC = "
-"
-    + {static} TAB_STATIC = "	"
+    + {static} LF_STATIC = "\\n"
+    + {static} CR_STATIC = "\\r"
+    + {static} TAB_STATIC = "\\t"
     + {static} PUBLIC_STATIC
     # {static} PROTECTED_STATIC
     – {static} PRIVATE_STATIC
