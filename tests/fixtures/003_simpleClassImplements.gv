@@ -5,28 +5,24 @@ digraph {
   "FixtureThree\\OneInterface" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>OneInterface</b></td></tr>
-    
     <tr><td></td></tr>
     <tr><td></td></tr>
 </table>>]
   "FixtureThree\\TwoInterface" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>TwoInterface</b></td></tr>
-    
     <tr><td></td></tr>
     <tr><td></td></tr>
 </table>>]
   "FixtureThree\\OneClass" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b><br/>OneClass</b></td></tr>
-    
     <tr><td></td></tr>
     <tr><td></td></tr>
 </table>>]
   "FixtureThree\\TwoClass" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b><br/>TwoClass</b></td></tr>
-    
     <tr><td></td></tr>
     <tr><td></td></tr>
 </table>>]

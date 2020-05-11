@@ -5,7 +5,6 @@ digraph {
   "FixtureFive\\ParentClass" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b><br/>ParentClass</b></td></tr>
-    
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
 <tr><td align="left">+ someParentMethod()</td></tr>
@@ -15,7 +14,6 @@ digraph {
   "FixtureFive\\ExtendingClass" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b><br/>ExtendingClass</b></td></tr>
-    
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
 <tr><td align="left">+ methodToOverride()</td></tr>

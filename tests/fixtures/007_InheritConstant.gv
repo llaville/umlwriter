@@ -7,7 +7,6 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b><br/>ParentClass</b></td></tr>
     <tr><td align="left">+ «static» PARENT_CONSTANT : bool = true {readOnly}</td></tr>
 <tr><td align="left">+ «static» INHERIT_CONSTANT : bool = true {readOnly}</td></tr>
-
     <tr><td></td></tr>
     <tr><td></td></tr>
 </table>>]
@@ -15,7 +14,6 @@ digraph {
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b><br/>ExtendingClass</b></td></tr>
     <tr><td align="left">+ «static» PARENT_CONSTANT : bool = false {readOnly}</td></tr>
-
     <tr><td></td></tr>
     <tr><td></td></tr>
 </table>>]
