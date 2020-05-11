@@ -1,5 +1,4 @@
 @startuml
-
 namespace ltta.model {
   class BackupProject << class >> {
     –a

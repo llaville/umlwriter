@@ -1,5 +1,4 @@
 @startuml
-
 namespace FixtureThree {
   interface OneInterface << interface >> {
     --

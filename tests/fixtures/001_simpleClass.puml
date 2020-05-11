@@ -1,5 +1,4 @@
 @startuml
-
 namespace FixtureOne {
   class OneClass << class >> {
     --

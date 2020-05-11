@@ -1,5 +1,4 @@
 @startuml
-
 namespace FixtureSeven {
   class ParentClass << class >> {
     +{static} PARENT_CONSTANT : bool = true {readOnly}

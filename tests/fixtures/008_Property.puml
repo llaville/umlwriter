@@ -1,5 +1,4 @@
 @startuml
-
 namespace FixtureEight {
   class OneClass << class >> {
     –stringProperty : string = "string"

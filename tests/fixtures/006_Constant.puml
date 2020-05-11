@@ -1,5 +1,4 @@
 @startuml
-
 namespace FixtureSix {
   class OneClass << class >> {
     +{static} STRING_CONSTANT : string = "string" {readOnly}
