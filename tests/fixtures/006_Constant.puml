@@ -8,16 +8,16 @@ namespace FixtureSix {
     +{static} CR_CONSTANT : string = "\\r" {readOnly}
     +{static} TAB_CONSTANT : string = "\\t" {readOnly}
 
-    + {static} NOVALUE_STATIC
-    + {static} STRING_STATIC = "string"
-    + {static} INTEGER_STATIC = 7654
-    + {static} FLOAT_STATIC = 7654.321
-    + {static} LF_STATIC = "\\n"
-    + {static} CR_STATIC = "\\r"
-    + {static} TAB_STATIC = "\\t"
-    + {static} PUBLIC_STATIC
-    # {static} PROTECTED_STATIC
-    – {static} PRIVATE_STATIC
+    +{static} NOVALUE_STATIC
+    +{static} STRING_STATIC = "string"
+    +{static} INTEGER_STATIC = 7654
+    +{static} FLOAT_STATIC = 7654.321
+    +{static} LF_STATIC = "\\n"
+    +{static} CR_STATIC = "\\r"
+    +{static} TAB_STATIC = "\\t"
+    +{static} PUBLIC_STATIC
+    #{static} PROTECTED_STATIC
+    –{static} PRIVATE_STATIC
     --
     +{static}staticPublic()
     #{static}staticProtected()
