@@ -4,12 +4,10 @@ namespace FixtureFive {
     --
     +someParentMethod()
     +methodToOverride()
-
   }
   class ExtendingClass << class >> {
     --
     +methodToOverride()
-
   }
 }
 FixtureFive.ExtendingClass --|> FixtureFive.ParentClass

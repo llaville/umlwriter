@@ -2,7 +2,6 @@
 namespace FixtureOne {
   class OneClass << class >> {
     --
-
   }
 }
 @enduml

@@ -2,11 +2,9 @@
 namespace FixtureTwo {
   class OneClass << class >> {
     --
-
   }
   class TwoClass << class >> {
     --
-
   }
 }
 FixtureTwo.TwoClass --|> FixtureTwo.OneClass

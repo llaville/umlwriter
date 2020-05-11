@@ -22,7 +22,6 @@ namespace FixtureSix {
     +{static}staticPublic()
     #{static}staticProtected()
     –{static}staticPrivate()
-
   }
 }
 @enduml

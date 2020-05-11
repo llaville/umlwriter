@@ -5,13 +5,11 @@ namespace FixtureSeven {
 +{static} INHERIT_CONSTANT : bool = true {readOnly}
 
     --
-
   }
   class ExtendingClass << class >> {
     +{static} PARENT_CONSTANT : bool = false {readOnly}
 
     --
-
   }
 }
 FixtureSeven.ExtendingClass --|> FixtureSeven.ParentClass

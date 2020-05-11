@@ -2,19 +2,15 @@
 namespace FixtureThree {
   interface OneInterface << interface >> {
     --
-
   }
   interface TwoInterface << interface >> {
     --
-
   }
   class OneClass << class >> {
     --
-
   }
   class TwoClass << class >> {
     --
-
   }
 }
 FixtureThree.TwoInterface ..|> FixtureThree.OneInterface

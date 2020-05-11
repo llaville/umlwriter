@@ -7,7 +7,6 @@ namespace FixtureEight {
     #arrayProperty : array = […]
     +floatProperty : float = 654.123
     --
-
   }
 }
 @enduml
