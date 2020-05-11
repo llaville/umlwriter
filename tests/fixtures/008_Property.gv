@@ -6,11 +6,11 @@ graph {
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b><br/>OneClass</b></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-<tr><td align="left">– stringProperty : string = "string"</td></tr>
-<tr><td align="left"># intProperty : int = 654</td></tr>
-<tr><td align="left">+ booleanProperty : bool = true</td></tr>
-<tr><td align="left"># arrayProperty : array = […]</td></tr>
-<tr><td align="left">+ floatProperty : float = 654.123</td></tr>
+    <tr><td align="left">– stringProperty : string = "string"</td></tr>
+    <tr><td align="left"># intProperty : int = 654</td></tr>
+    <tr><td align="left">+ booleanProperty : bool = true</td></tr>
+    <tr><td align="left"># arrayProperty : array = […]</td></tr>
+    <tr><td align="left">+ floatProperty : float = 654.123</td></tr>
 </table></td></tr>
     <tr><td></td></tr>
 </table>>]

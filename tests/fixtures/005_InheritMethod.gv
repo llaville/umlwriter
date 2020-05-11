@@ -7,8 +7,8 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b><br/>ParentClass</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-<tr><td align="left">+ someParentMethod()</td></tr>
-<tr><td align="left">+ methodToOverride()</td></tr>
+    <tr><td align="left">+ someParentMethod()</td></tr>
+    <tr><td align="left">+ methodToOverride()</td></tr>
 </table></td></tr>
 </table>>]
   "FixtureFive\\ExtendingClass" [shape="none" label=<
@@ -16,7 +16,7 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b><br/>ExtendingClass</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-<tr><td align="left">+ methodToOverride()</td></tr>
+    <tr><td align="left">+ methodToOverride()</td></tr>
 </table></td></tr>
 </table>>]
   "FixtureFive\\ExtendingClass" -> "FixtureFive\\ParentClass" [arrowhead="empty" style="filled"]

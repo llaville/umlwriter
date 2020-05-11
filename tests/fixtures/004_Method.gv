@@ -7,12 +7,12 @@ graph {
     <tr><td bgcolor="#eeeeee"><b><br/>OneClass</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-<tr><td align="left">+ zeroMethod()</td></tr>
-<tr><td align="left">+ objectTypeHint(oneClass : FixtureFour\\OneClass)</td></tr>
-<tr><td align="left">+ objectTypeHintAndDocComment(oneClass : FixtureFour\\OneClass)</td></tr>
-<tr><td align="left"># scalarParameters(int : int, float : float, bool : bool)</td></tr>
-<tr><td align="left">– typeHintWinsOverDocComment(oneClass : FixtureFour\\OneClass)</td></tr>
-<tr><td align="left">+ parametersWithValues(int = , float = , string = , bool = )</td></tr>
+    <tr><td align="left">+ zeroMethod()</td></tr>
+    <tr><td align="left">+ objectTypeHint(oneClass : FixtureFour\\OneClass)</td></tr>
+    <tr><td align="left">+ objectTypeHintAndDocComment(oneClass : FixtureFour\\OneClass)</td></tr>
+    <tr><td align="left"># scalarParameters(int : int, float : float, bool : bool)</td></tr>
+    <tr><td align="left">– typeHintWinsOverDocComment(oneClass : FixtureFour\\OneClass)</td></tr>
+    <tr><td align="left">+ parametersWithValues(int = , float = , string = , bool = )</td></tr>
 </table></td></tr>
 </table>>]
 }
