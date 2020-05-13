@@ -26,44 +26,19 @@ $generatorFactory = new GeneratorFactory('plantuml');
 // creates instance of Bartlett\GraphPlantUml\PlantUmlGenerator
 $generator = $generatorFactory->getGenerator();
 $generator->setExecutable(dirname(__DIR__) . '/vendor/bin/plantuml');
+$generatorPrefix = $generator->getName() .'.';
 
 $renderer = new ClassDiagramRenderer();
 $options = [
-    'graph' => [
-        'rankdir' => 'LR',
-        'bgcolor' => 'transparent',
-    ],
-    'node' => [
-        'fillcolor' => 'lightgrey',
-    ],
+    $generatorPrefix . 'graph.rankdir' => 'LR',
+    $generatorPrefix . 'graph.bgcolor' => 'transparent',
+    $generatorPrefix . 'node.fillcolor' => 'lightgrey',
     // @link https://graphviz.gitlab.io/_pages/doc/info/colors.html
-    'subgraph' => [
-        'cluster_0' => [
-            'graph' => [
-                'bgcolor' => 'lightblue'
-            ],
-        ],
-        'cluster_1' => [
-            'graph' => [
-                'bgcolor' => 'lightblue'
-            ],
-        ],
-        'cluster_2' => [
-            'graph' => [
-                'bgcolor' => 'lightblue'
-            ],
-        ],
-        'cluster_3' => [
-            'graph' => [
-                'bgcolor' => 'limegreen'
-            ],
-        ],
-        'cluster_4' => [
-            'graph' => [
-                'bgcolor' => 'limegreen'
-            ],
-        ],
-    ],
+    $generatorPrefix . 'subgraph.cluster_0.graph.bgcolor' => 'lightblue',
+    $generatorPrefix . 'subgraph.cluster_1.graph.bgcolor' => 'lightblue',
+    $generatorPrefix . 'subgraph.cluster_2.graph.bgcolor' => 'lightblue',
+    $generatorPrefix . 'subgraph.cluster_3.graph.bgcolor' => 'limegreen',
+    $generatorPrefix . 'subgraph.cluster_4.graph.bgcolor' => 'limegreen',
 ];
 // generates UML class diagram of all objects found in dataSource (in PlantUML format)
 $script = $renderer($finder, $generator, $options);
