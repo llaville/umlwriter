@@ -28,7 +28,7 @@ class ClassDiagramRenderer
         $builder = new ClassDiagramBuilder(
             $generator,
             $this->graph,
-            ['label-format' => 'html']
+            array_merge(['label-format' => 'html'], $parameters)
         );
 
         foreach ($finder as $file) {
@@ -81,10 +81,11 @@ class ClassDiagramRenderer
         $this->graph = new Graph();
 
         foreach ($parameters as $param => $value) {
-            $this->graph->setAttribute(
-                str_replace('parameters', $generator, $param),
-                $value
-            );
+            if (strpos($param, $generator) !== 0) {
+                // filter attributes related to current $generator
+                continue;
+            }
+            $this->graph->setAttribute($param, $value);
         }
     }
 }

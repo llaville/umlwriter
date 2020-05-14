@@ -11,6 +11,13 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 * introduces `ContainerService` class implement `psr/container` to handle all internal and runtime services.
 * support of EditorConfig (https://editorconfig.org/)
 * be able to personalize graph render (at least colors and orientation)
+* add some new options to `diagram:class` command:
+  - `--without-constants` to hide all class constants
+  - `--without-properties` to hide all class properties
+  - `--without-methods` to hide all class methods
+  - `--hide-private` to hide private methods/properties
+  - `--hide-protected` to hide protected methods/properties
+* introduces support of external YAML config file that is loaded by `--configuration` option
 
 ### Changed
 

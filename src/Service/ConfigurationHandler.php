@@ -55,6 +55,7 @@ final class ConfigurationHandler
                 'fontsize' => 8,
             ],
             'colors' => [],
+            'paths' => [],
         ];
 
         $this->optionsResolver = new OptionsResolver();

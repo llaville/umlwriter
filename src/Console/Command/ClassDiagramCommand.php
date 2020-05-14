@@ -43,10 +43,15 @@ class ClassDiagramCommand extends Command
     {
         $this
             ->setDescription('Generate class diagram statements of a given data source')
-            ->addArgument('paths', InputArgument::REQUIRED | InputArgument::IS_ARRAY, 'Data source (file or directory)')
+            ->addArgument('paths', InputArgument::IS_ARRAY, 'Data source (file or directory)')
             ->addOption('generator', null, InputOption::VALUE_REQUIRED, 'Graph generator')
             ->addOption('bootstrap', null, InputOption::VALUE_REQUIRED, 'A PHP script that is included before graph run')
             ->addOption('configuration', 'c', InputOption::VALUE_REQUIRED, 'Read configuration from YAML file')
+            ->addOption('without-constants', '', InputOption::VALUE_NONE, 'Hide all class constants')
+            ->addOption('without-properties', '', InputOption::VALUE_NONE, 'Hide all class properties')
+            ->addOption('without-methods', '', InputOption::VALUE_NONE, 'Hide all class methods')
+            ->addOption('hide-private', '', InputOption::VALUE_NONE, 'Hide private methods/properties')
+            ->addOption('hide-protected', '', InputOption::VALUE_NONE, 'Hide protected methods/properties')
         ;
     }
 
@@ -54,11 +59,108 @@ class ClassDiagramCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
 
+        $parameters = $this->handleConfiguration($input, $io);
+
+        if (empty($parameters['parameters.generator'])) {
+            $io->caution('Not enough arguments (missing --generator option)');
+            return 1;
+        }
+
+        $paths = array_filter($parameters, function($key) {
+            return strpos($key, 'parameters.paths.') === 0;
+        },ARRAY_FILTER_USE_KEY);
+
+        if (empty($paths)) {
+            $io->caution('Not enough arguments (missing data source paths)');
+            return 1;
+        }
+
+        $finder = $this->handleSourceLocator($paths);
+
+        $generator = $this->generatorFactory->createInstance($parameters['parameters.generator'])->getGenerator();
+
+        $io->title('UML Class Diagram Generation');
+        $io->definitionList(
+            ['Path(s)' => implode(', ', $paths)],
+            ['Generator' => $parameters['parameters.generator']],
+            ['Configuration' => $parameters['__from'] ?? '']
+        );
+        unset($parameters['__from']);
+
+        $script = $this->renderer->__invoke($finder, $generator, $parameters);
+
+        if ($output->isVerbose()) {
+            $this->handleContext($output, $io, $parameters);
+        }
+
+        $io->section('Graph statements');
+        $io->writeln($script);
+
+        $io->success('UML classes were generated.');
+        return 0;
+    }
+
+    private function handleContext($output, $io, $parameters): void
+    {
+        $io->section('Configuration');
+
+        array_walk($parameters, function(&$value, $key) {
+            if (is_bool($value)) {
+                $value = var_export($value, true);
+            }
+        });
+        $io->horizontalTable(
+            array_keys($parameters),
+            [array_values($parameters)]
+        );
+
+        $io->section('Entities summary');
+
+        $metaData = $this->renderer->getMetadata();
+        $io->definitionList(
+            ['classes' => count($metaData['classes'])]
+        );
+        if ($output->isVeryVerbose()) {
+            $io->comment($metaData['classes']);
+        }
+        $io->definitionList(
+            ['interfaces' => count($metaData['interfaces'])]
+        );
+        if ($output->isVeryVerbose()) {
+            $io->comment($metaData['interfaces']);
+        }
+        $io->definitionList(
+            ['namespaces' => count($metaData['namespaces'])]
+        );
+        if ($output->isVeryVerbose()) {
+            $io->comment($metaData['namespaces']);
+        }
+    }
+
+    private function handleConfiguration($input, $io): array
+    {
         $configFilename = $input->getOption('configuration');
         $configHandler = new ConfigurationHandler($configFilename);
+
         try {
             $parameters = $configHandler->toFlat();
-            $configFrom = $configHandler->filename() ?? 'Default values';
+            $parameters['__from'] = $configHandler->filename() ?? 'Default values and/or command line arguments';
+
+            if ($input->getOption('without-constants')) {
+                $parameters['show-constants'] = false;
+            }
+            if ($input->getOption('without-properties')) {
+                $parameters['show-properties'] = false;
+            }
+            if ($input->getOption('without-methods')) {
+                $parameters['show-methods'] = false;
+            }
+            if ($input->getOption('hide-private')) {
+                $parameters['show-private'] = false;
+            }
+            if ($input->getOption('hide-protected')) {
+                $parameters['show-protected'] = false;
+            }
         } catch (InvalidArgumentException $exception) {
             $io->caution($exception->getMessage());
             $parameters = [];
@@ -66,11 +168,22 @@ class ClassDiagramCommand extends Command
 
         $bootstrap = $input->getOption('bootstrap');
         if (!empty($bootstrap)) {
+            $parameters['bootstrap'] = $bootstrap;
             includeFile($bootstrap);
         }
 
-        $paths = $input->getArgument('paths');
+        $parameters['parameters.generator'] = $input->getOption('generator') ?? $parameters['parameters.generator'] ?? '';
 
+        $paths = $input->getArgument('paths');
+        foreach ($paths as $index => $path) {
+            $parameters['parameters.paths.'.$index] = $path;
+        }
+
+        return $parameters;
+    }
+
+    private function handleSourceLocator(array $paths): Finder
+    {
         $finder = new Finder();
         $finder->files();
 
@@ -84,63 +197,6 @@ class ClassDiagramCommand extends Command
             }
         }
 
-        $graphGenerator = $input->getOption('generator');
-        if (!$graphGenerator) {
-            $io->caution('Not enough arguments (missing --generator option)');
-            return 1;
-        }
-
-        $generator = $this->generatorFactory->createInstance($graphGenerator)->getGenerator();
-
-        $io->title('UML Class Diagram Generation');
-        $io->definitionList(
-            ['Path(s)' => implode(', ', $paths)],
-            ['Generator' => $graphGenerator],
-            ['Configuration' => $configFrom ?? '']
-        );
-
-        $script = $this->renderer->__invoke($finder, $generator, $parameters);
-
-        if ($output->isVerbose()) {
-            $io->section('Configuration');
-
-            $io->definitionList(
-                ['Parameters' => count($parameters ?? [])]
-            );
-            if ($output->isVeryVerbose()) {
-                $io->horizontalTable(
-                    array_keys($parameters),
-                    [array_values($parameters)]
-                );
-            }
-
-            $io->section('Entities summary');
-
-            $metaData = $this->renderer->getMetadata();
-            $io->definitionList(
-                ['classes' => count($metaData['classes'])]
-            );
-            if ($output->isVeryVerbose()) {
-                $io->comment($metaData['classes']);
-            }
-            $io->definitionList(
-                ['interfaces' => count($metaData['interfaces'])]
-            );
-            if ($output->isVeryVerbose()) {
-                $io->comment($metaData['interfaces']);
-            }
-            $io->definitionList(
-                ['namespaces' => count($metaData['namespaces'])]
-            );
-            if ($output->isVeryVerbose()) {
-                $io->comment($metaData['namespaces']);
-            }
-        }
-
-        $io->section('Graph statements');
-        $io->writeln($script);
-
-        $io->success('UML classes were generated.');
-        return 0;
+        return $finder;
     }
 }
