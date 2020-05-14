@@ -32,7 +32,18 @@ $options = [
     $generatorPrefix . 'graph.rankdir' => 'LR',
     $generatorPrefix . 'graph.bgcolor' => 'transparent',
     $generatorPrefix . 'node.fillcolor' => 'lightgrey',
-    $generatorPrefix . 'subgraph.cluster_2.graph.bgcolor' => 'lightblue'
+    $generatorPrefix . 'node.style' => 'filled',
+    // @link https://plantuml.com/en/color
+    $generatorPrefix . 'cluster.Psr\\Container.graph.bgcolor' => 'LimeGreen',
+    $generatorPrefix . 'cluster.Symfony\\Component\\Console.graph.bgcolor' => 'LightSkyBlue',
+    $generatorPrefix . 'cluster.Symfony\\Component\\Console\\Command.graph.bgcolor' => 'LightSkyBlue',
+    $generatorPrefix . 'cluster.Symfony\\Component\\Config\\Loader.graph.bgcolor' => 'LightSkyBlue',
+    $generatorPrefix . 'cluster.Symfony\\Contracts\\Service.graph.bgcolor' => 'LightSkyBlue',
+    $generatorPrefix . 'cluster.Bartlett\\UmlWriter\\Service.graph.bgcolor' => 'LawnGreen',
+    $generatorPrefix . 'cluster.Bartlett\\UmlWriter\\Console.graph.bgcolor' => 'LawnGreen',
+    $generatorPrefix . 'cluster.Bartlett\\UmlWriter\\Console\\Command.graph.bgcolor' => 'LawnGreen',
+    $generatorPrefix . 'cluster.Bartlett\\UmlWriter\\Config\\Loader.graph.bgcolor' => 'LawnGreen',
+    $generatorPrefix . 'cluster.Bartlett\\UmlWriter\\Generator.graph.bgcolor' => 'LawnGreen',
 ];
 // generates UML class diagram of all objects found in dataSource (in graphviz format)
 $script = $renderer($finder, $generator, $options);

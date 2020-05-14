@@ -33,12 +33,18 @@ $options = [
     $generatorPrefix . 'graph.rankdir' => 'LR',
     $generatorPrefix . 'graph.bgcolor' => 'transparent',
     $generatorPrefix . 'node.fillcolor' => 'lightgrey',
-    // @link https://graphviz.gitlab.io/_pages/doc/info/colors.html
-    $generatorPrefix . 'subgraph.cluster_0.graph.bgcolor' => 'lightblue',
-    $generatorPrefix . 'subgraph.cluster_1.graph.bgcolor' => 'lightblue',
-    $generatorPrefix . 'subgraph.cluster_2.graph.bgcolor' => 'lightblue',
-    $generatorPrefix . 'subgraph.cluster_3.graph.bgcolor' => 'limegreen',
-    $generatorPrefix . 'subgraph.cluster_4.graph.bgcolor' => 'limegreen',
+    $generatorPrefix . 'node.style' => 'filled',
+    // @link https://plantuml.com/en/color
+    $generatorPrefix . 'cluster.Psr\\Container.graph.bgcolor' => 'LimeGreen',
+    $generatorPrefix . 'cluster.Symfony\\Component\\Console.graph.bgcolor' => 'LightSkyBlue',
+    $generatorPrefix . 'cluster.Symfony\\Component\\Console\\Command.graph.bgcolor' => 'LightSkyBlue',
+    $generatorPrefix . 'cluster.Symfony\\Component\\Config\\Loader.graph.bgcolor' => 'LightSkyBlue',
+    $generatorPrefix . 'cluster.Symfony\\Contracts\\Service.graph.bgcolor' => 'LightSkyBlue',
+    $generatorPrefix . 'cluster.Bartlett\\UmlWriter\\Service.graph.bgcolor' => 'LawnGreen',
+    $generatorPrefix . 'cluster.Bartlett\\UmlWriter\\Console.graph.bgcolor' => 'LawnGreen',
+    $generatorPrefix . 'cluster.Bartlett\\UmlWriter\\Console\\Command.graph.bgcolor' => 'LawnGreen',
+    $generatorPrefix . 'cluster.Bartlett\\UmlWriter\\Config\\Loader.graph.bgcolor' => 'LawnGreen',
+    $generatorPrefix . 'cluster.Bartlett\\UmlWriter\\Generator.graph.bgcolor' => 'LawnGreen',
 ];
 // generates UML class diagram of all objects found in dataSource (in PlantUML format)
 $script = $renderer($finder, $generator, $options);
