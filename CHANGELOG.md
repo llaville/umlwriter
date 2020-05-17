@@ -6,6 +6,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [2.0.0-beta.3] - 2019-05-14
+
 ### Added
 
 * introduces `ContainerService` class implement `psr/container` to handle all internal and runtime services.
