@@ -61,13 +61,13 @@ class ClassDiagramCommand extends Command
 
         $parameters = $this->handleConfiguration($input, $io);
 
-        if (empty($parameters['parameters.generator'])) {
+        if (empty($parameters['generator'])) {
             $io->caution('Not enough arguments (missing --generator option)');
             return 1;
         }
 
         $paths = array_filter($parameters, function($key) {
-            return strpos($key, 'parameters.paths.') === 0;
+            return strpos($key, 'paths.') === 0;
         },ARRAY_FILTER_USE_KEY);
 
         if (empty($paths)) {
@@ -77,12 +77,12 @@ class ClassDiagramCommand extends Command
 
         $finder = $this->handleSourceLocator($paths);
 
-        $generator = $this->generatorFactory->createInstance($parameters['parameters.generator'])->getGenerator();
+        $generator = $this->generatorFactory->createInstance($parameters['generator'])->getGenerator();
 
         $io->title('UML Class Diagram Generation');
         $io->definitionList(
             ['Path(s)' => implode(', ', $paths)],
-            ['Generator' => $parameters['parameters.generator']],
+            ['Generator' => $parameters['generator']],
             ['Configuration' => $parameters['__from'] ?? '']
         );
         unset($parameters['__from']);
@@ -147,19 +147,19 @@ class ClassDiagramCommand extends Command
             $parameters['__from'] = $configHandler->filename() ?? 'Default values and/or command line arguments';
 
             if ($input->getOption('without-constants')) {
-                $parameters['show-constants'] = false;
+                $parameters['show_constants'] = false;
             }
             if ($input->getOption('without-properties')) {
-                $parameters['show-properties'] = false;
+                $parameters['show_properties'] = false;
             }
             if ($input->getOption('without-methods')) {
-                $parameters['show-methods'] = false;
+                $parameters['show_methods'] = false;
             }
             if ($input->getOption('hide-private')) {
-                $parameters['show-private'] = false;
+                $parameters['show_private'] = false;
             }
             if ($input->getOption('hide-protected')) {
-                $parameters['show-protected'] = false;
+                $parameters['show_protected'] = false;
             }
         } catch (InvalidArgumentException $exception) {
             $io->caution($exception->getMessage());
@@ -172,11 +172,11 @@ class ClassDiagramCommand extends Command
             includeFile($bootstrap);
         }
 
-        $parameters['parameters.generator'] = $input->getOption('generator') ?? $parameters['parameters.generator'] ?? '';
+        $parameters['generator'] = $input->getOption('generator') ?? $parameters['generator'] ?? '';
 
         $paths = $input->getArgument('paths');
         foreach ($paths as $index => $path) {
-            $parameters['parameters.paths.'.$index] = $path;
+            $parameters['paths.'.$index] = $path;
         }
 
         return $parameters;

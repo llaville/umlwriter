@@ -23,12 +23,12 @@ class ClassDiagramRenderer
 
     public function __invoke(Finder $finder, GeneratorInterface $generator, array $parameters = []): string
     {
-        $this->initGraph($generator->getName(), $parameters);
+        $this->initGraph($parameters);
 
         $builder = new ClassDiagramBuilder(
             $generator,
             $this->graph,
-            array_merge(['label-format' => 'html'], $parameters)
+            array_merge(['label_format' => 'html'], $parameters)
         );
 
         foreach ($finder as $file) {
@@ -70,7 +70,7 @@ class ClassDiagramRenderer
         return $this->graph;
     }
 
-    private function initGraph(string $generator, array $parameters): void
+    private function initGraph(array $parameters): void
     {
         $this->metaData = [
             'classes' => [],
@@ -80,12 +80,14 @@ class ClassDiagramRenderer
 
         $this->graph = new Graph();
 
-        foreach ($parameters as $param => $value) {
-            if (strpos($param, $generator) !== 0) {
-                // filter attributes related to current $generator
-                continue;
-            }
-            $this->graph->setAttribute($param, $value);
-        }
+        $attributes = array_filter($parameters, function($key) {
+            return (strpos($key, 'graph.') === 0
+                || strpos($key, 'node.') === 0
+                || strpos($key, 'edge.') === 0
+                || strpos($key, 'cluster.') === 0
+            );
+        },ARRAY_FILTER_USE_KEY);
+
+        $this->graph->setAttributes($attributes);
     }
 }

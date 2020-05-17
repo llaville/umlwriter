@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Bartlett\UmlWriter\Service;
 
+use Bartlett\GraphUml\ClassDiagramBuilderInterface;
 use Bartlett\UmlWriter\Config\Loader\YamlFileLoader;
 
 use Symfony\Component\Config\Exception\FileLocatorFileNotFoundException;
@@ -38,9 +39,11 @@ final class ConfigurationHandler
         $this->initialized = false;
 
         $defaults = [
+            'generator' => 'graphviz',
             'graph' => [
                 'name' => 'G',
                 'overlap' => 'false',
+                'rankdir' => 'TB',
             ],
             'node' => [
                 'fontname' => 'Verdana',
@@ -54,12 +57,19 @@ final class ConfigurationHandler
                 'fontname' => 'Verdana',
                 'fontsize' => 8,
             ],
-            'colors' => [],
-            'paths' => [],
+            'cluster' => null,
+            'paths' => [
+                'src',
+            ],
+            'show_constants' => ClassDiagramBuilderInterface::OPTIONS_DEFAULTS['show_constants'],
+            'show_properties' => ClassDiagramBuilderInterface::OPTIONS_DEFAULTS['show_properties'],
+            'show_methods' => ClassDiagramBuilderInterface::OPTIONS_DEFAULTS['show_methods'],
+            'show_private' => ClassDiagramBuilderInterface::OPTIONS_DEFAULTS['show_private'],
+            'show_protected' => ClassDiagramBuilderInterface::OPTIONS_DEFAULTS['show_protected'],
         ];
 
         $this->optionsResolver = new OptionsResolver();
-        $this->optionsResolver->setDefaults(['parameters' => $defaults]);
+        $this->optionsResolver->setDefaults($defaults);
     }
 
     public function filename(): ?string
@@ -99,8 +109,8 @@ final class ConfigurationHandler
                 $this->filename = $fileLocator->locate($resource);
                 $loaderResolver = new LoaderResolver([new YamlFileLoader($fileLocator)]);
                 $loader = $loaderResolver->resolve($resource);
-                $configs = $loader->load($resource);
-                $this->configStore = $this->optionsResolver->resolve($configs);
+                $configs = $loader->load($this->filename);
+                $this->configStore = $this->optionsResolver->resolve($configs['parameters']);
             } catch (FileLocatorFileNotFoundException $exception) {
                 throw new InvalidArgumentException($exception->getMessage(), 0, $exception);
             }
