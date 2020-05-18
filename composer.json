@@ -11,8 +11,8 @@
     },
     "require": {
         "php": "^7.1.3",
-        "bartlett/graph-plantuml-generator": "^0.4",
-        "bartlett/graph-uml": "^0.8",
+        "bartlett/graph-plantuml-generator": "dev-master",
+        "bartlett/graph-uml": "1.0.0-beta.1",
         "goaop/parser-reflection": "^2.1",
         "graphp/graph": "dev-master as 1.0.0",
         "graphp/graphviz": "dev-subgraph_cluster_attributes as 1.0.0",
