@@ -26,25 +26,26 @@ $generatorFactory = new GeneratorFactory('plantuml');
 // creates instance of Bartlett\GraphPlantUml\PlantUmlGenerator
 $generator = $generatorFactory->getGenerator();
 $generator->setExecutable(dirname(__DIR__) . '/vendor/bin/plantuml');
-$generatorPrefix = $generator->getName() .'.';
 
 $renderer = new ClassDiagramRenderer();
 $options = [
-    $generatorPrefix . 'graph.rankdir' => 'LR',
-    $generatorPrefix . 'graph.bgcolor' => 'transparent',
-    $generatorPrefix . 'node.fillcolor' => 'lightgrey',
-    $generatorPrefix . 'node.style' => 'filled',
+    'show_private' => false,
+    'show_protected' => false,
+    'graph.rankdir' => 'LR',
+    'graph.bgcolor' => 'transparent',
+    'node.fillcolor' => 'lightgrey',
+    'node.style' => 'filled',
     // @link https://plantuml.com/en/color
-    $generatorPrefix . 'cluster.Psr\\Container.graph.bgcolor' => 'LimeGreen',
-    $generatorPrefix . 'cluster.Symfony\\Component\\Console.graph.bgcolor' => 'LightSkyBlue',
-    $generatorPrefix . 'cluster.Symfony\\Component\\Console\\Command.graph.bgcolor' => 'LightSkyBlue',
-    $generatorPrefix . 'cluster.Symfony\\Component\\Config\\Loader.graph.bgcolor' => 'LightSkyBlue',
-    $generatorPrefix . 'cluster.Symfony\\Contracts\\Service.graph.bgcolor' => 'LightSkyBlue',
-    $generatorPrefix . 'cluster.Bartlett\\UmlWriter\\Service.graph.bgcolor' => 'LawnGreen',
-    $generatorPrefix . 'cluster.Bartlett\\UmlWriter\\Console.graph.bgcolor' => 'LawnGreen',
-    $generatorPrefix . 'cluster.Bartlett\\UmlWriter\\Console\\Command.graph.bgcolor' => 'LawnGreen',
-    $generatorPrefix . 'cluster.Bartlett\\UmlWriter\\Config\\Loader.graph.bgcolor' => 'LawnGreen',
-    $generatorPrefix . 'cluster.Bartlett\\UmlWriter\\Generator.graph.bgcolor' => 'LawnGreen',
+    'cluster.Psr\\Container.graph.bgcolor' => 'LimeGreen',
+    'cluster.Symfony\\Component\\Console.graph.bgcolor' => 'LightSkyBlue',
+    'cluster.Symfony\\Component\\Console\\Command.graph.bgcolor' => 'LightSkyBlue',
+    'cluster.Symfony\\Component\\Config\\Loader.graph.bgcolor' => 'LightSkyBlue',
+    'cluster.Symfony\\Contracts\\Service.graph.bgcolor' => 'LightSkyBlue',
+    'cluster.Bartlett\\UmlWriter\\Service.graph.bgcolor' => 'BurlyWood',
+    'cluster.Bartlett\\UmlWriter\\Console.graph.bgcolor' => 'BurlyWood',
+    'cluster.Bartlett\\UmlWriter\\Console\\Command.graph.bgcolor' => 'BurlyWood',
+    'cluster.Bartlett\\UmlWriter\\Config\\Loader.graph.bgcolor' => 'BurlyWood',
+    'cluster.Bartlett\\UmlWriter\\Generator.graph.bgcolor' => 'BurlyWood',
 ];
 // generates UML class diagram of all objects found in dataSource (in PlantUML format)
 $script = $renderer($finder, $generator, $options);
