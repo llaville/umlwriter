@@ -146,6 +146,11 @@ class ClassDiagramCommand extends Command
 
     private function handleOutput(GeneratorInterface $generator, ?string $target, ?string $format, $io): int
     {
+        if (null === $target && null === $format) {
+            // do not generate image file
+            return 0;
+        }
+
         if ($target !== null) {
             if (is_dir($target)) {
                 $target = rtrim($target, '/') . '/umlwriter.svg';
@@ -170,7 +175,9 @@ class ClassDiagramCommand extends Command
                 $io->error(sprintf('Cannot write diagram into %s', $target));
                 return 1;
             }
+            $path = realpath($target);
         }
+        $io->note(sprintf('Image built into %s', $path));
 
         return 0;
     }
