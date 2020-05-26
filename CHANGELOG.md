@@ -8,7 +8,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ### Added
 
-* add `--output-file` option to save diagram statements in a file.
+* add `--output` option to save image in a file.
+* add `--format` option to specify what is the format of image to build.
 
 ### Changed
 

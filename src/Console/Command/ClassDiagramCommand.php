@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Bartlett\UmlWriter\Console\Command;
 
+use Bartlett\GraphUml\Generator\GeneratorInterface;
 use Bartlett\UmlWriter\Generator\GeneratorFactoryInterface;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 use Bartlett\UmlWriter\Service\ConfigurationHandler;
@@ -44,6 +45,8 @@ class ClassDiagramCommand extends Command
         $this
             ->setDescription('Generate class diagram statements of a given data source')
             ->addArgument('paths', InputArgument::IS_ARRAY, 'Data source (file or directory)')
+            ->addOption('output', 'o', InputOption::VALUE_REQUIRED, 'Path to output image file')
+            ->addOption('format', '', InputOption::VALUE_REQUIRED, 'Set output format (depending of each generator)')
             ->addOption('generator', null, InputOption::VALUE_REQUIRED, 'Graph generator')
             ->addOption('bootstrap', null, InputOption::VALUE_REQUIRED, 'A PHP script that is included before graph run')
             ->addOption('configuration', 'c', InputOption::VALUE_REQUIRED, 'Read configuration from YAML file')
@@ -52,7 +55,6 @@ class ClassDiagramCommand extends Command
             ->addOption('without-methods', '', InputOption::VALUE_NONE, 'Hide all class methods')
             ->addOption('hide-private', '', InputOption::VALUE_NONE, 'Hide private methods/properties')
             ->addOption('hide-protected', '', InputOption::VALUE_NONE, 'Hide protected methods/properties')
-            ->addOption('output-file', 'o', InputOption::VALUE_REQUIRED, 'Write diagram statements to file')
         ;
     }
 
@@ -94,19 +96,15 @@ class ClassDiagramCommand extends Command
             $this->handleContext($output, $io, $parameters);
         }
 
-        if ($filename = $input->getOption('output-file')) {
-            $bytes = @file_put_contents($filename, $script);
-            if (false === $bytes) {
-                $io->error(sprintf('Cannot write UML class diagram into %s', $filename));
-                return 1;
-            }
-        } else {
+        $exitCode = $this->handleOutput($generator, $input->getOption('output'), $input->getOption('format'), $io);
+
+        if (0 === $exitCode) {
             $io->section('Graph statements');
             $io->writeln($script);
-        }
 
-        $io->success('UML classes were generated.');
-        return 0;
+            $io->success('UML classes were generated.');
+        }
+        return $exitCode;
     }
 
     private function handleContext($output, $io, $parameters): void
@@ -144,6 +142,37 @@ class ClassDiagramCommand extends Command
         if ($output->isVeryVerbose()) {
             $io->comment($metaData['namespaces']);
         }
+    }
+
+    private function handleOutput(GeneratorInterface $generator, ?string $target, ?string $format, $io): int
+    {
+        if ($target !== null) {
+            if (is_dir($target)) {
+                $target = rtrim($target, '/') . '/umlwriter.svg';
+            }
+
+            $filename = basename($target);
+            $pos = strrpos($filename, '.');
+            if ($pos !== false && isset($filename[$pos + 1])) {
+                // extension found and not empty
+                $generator->setFormat(substr($filename, $pos + 1));;
+            }
+        }
+
+        if ($format !== null) {
+            $generator->setFormat($format);
+        }
+
+        $path = $generator->createImageFile($this->renderer->getGraph(), '');
+
+        if ($target !== null) {
+            if (!@rename($path, $target)) {
+                $io->error(sprintf('Cannot write diagram into %s', $target));
+                return 1;
+            }
+        }
+
+        return 0;
     }
 
     private function handleConfiguration($input, $io): array
