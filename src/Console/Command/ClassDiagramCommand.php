@@ -95,7 +95,7 @@ class ClassDiagramCommand extends Command
         }
 
         if ($filename = $input->getOption('output-file')) {
-            $bytes = file_put_contents($filename, $script);
+            $bytes = @file_put_contents($filename, $script);
             if (false === $bytes) {
                 $io->error(sprintf('Cannot write UML class diagram into %s', $filename));
                 return 1;
