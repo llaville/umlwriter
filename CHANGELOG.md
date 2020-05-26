@@ -6,6 +6,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Added
+
+* add `--output-file` option to save diagram statements in a file.
+
 ### Changed
 
 * change case of options names

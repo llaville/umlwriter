@@ -52,6 +52,7 @@ class ClassDiagramCommand extends Command
             ->addOption('without-methods', '', InputOption::VALUE_NONE, 'Hide all class methods')
             ->addOption('hide-private', '', InputOption::VALUE_NONE, 'Hide private methods/properties')
             ->addOption('hide-protected', '', InputOption::VALUE_NONE, 'Hide protected methods/properties')
+            ->addOption('output-file', 'o', InputOption::VALUE_REQUIRED, 'Write diagram statements to file')
         ;
     }
 
@@ -93,8 +94,16 @@ class ClassDiagramCommand extends Command
             $this->handleContext($output, $io, $parameters);
         }
 
-        $io->section('Graph statements');
-        $io->writeln($script);
+        if ($filename = $input->getOption('output-file')) {
+            $bytes = file_put_contents($filename, $script);
+            if (false === $bytes) {
+                $io->error(sprintf('Cannot write UML class diagram into %s', $filename));
+                return 1;
+            }
+        } else {
+            $io->section('Graph statements');
+            $io->writeln($script);
+        }
 
         $io->success('UML classes were generated.');
         return 0;
