@@ -10,14 +10,7 @@
  * @license  https://opensource.org/licenses/BSD-3-Clause  The 3-Clause BSD License
  */
 
-/** @var \Composer\Autoload\ClassLoader $loader */
-$loader = require_once dirname(__DIR__) . '/vendor/autoload.php';
-$loader->addClassMap(
-    [
-        'Name\\Space\\Foo' => __DIR__ . '/autoloader/reflection-properties.php',
-        'Name\\Space\\Bar' => __DIR__ . '/autoloader/reflection-properties.php',
-    ]
-);
+require_once 'autoloader/classmap.php';
 
 use Bartlett\UmlWriter\Generator\GeneratorFactory;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
