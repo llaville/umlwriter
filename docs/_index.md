@@ -37,7 +37,7 @@ Additionally, you'll have to install GraphViz (`dot` executable) and/or PlantUML
 Users of Debian/Ubuntu-based distributions may simply invoke:
 
 ```bash
-$ sudo sudo apt update
+$ sudo apt update
 $ sudo apt-get install graphviz
 $ sudo apt-get install openjdk-11-jre-headless
 ```
