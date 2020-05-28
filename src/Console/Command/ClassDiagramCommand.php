@@ -233,7 +233,7 @@ class ClassDiagramCommand extends Command
         $filter = function (SplFileInfo $file) use ($paths) {
             foreach ($paths as $path) {
                 if (is_dir($path)) {
-                    if (0 === strpos($file->getPath(), $path)) {
+                    if (0 === strpos($file->getPath(), rtrim($path, '/'))) {
                         return true;
                     }
                 } else {
