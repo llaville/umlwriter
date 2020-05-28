@@ -88,4 +88,4 @@ parameters:
 
 ### Architecture
 
-![Configuration](../images/umlwriter_config.png)
+![Configuration](./umlwriter_config.svg)
