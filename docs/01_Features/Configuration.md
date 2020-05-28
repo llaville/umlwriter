@@ -12,28 +12,22 @@ Without changes, following defaults will be applied.
 | show_private    | boolean  | true     | whether to also show private methods/properties                                                                            |
 | show_protected  | boolean  | true     | whether to also show protected methods/properties                                                                          |
 | add_parents     | boolean  | true     | whether to show add parent classes or interfaces                                                                           |
-| only_self       | boolean  | true     | whether to only show methods/properties that are actually defined in this class (and not those merely inherited from base) |
-| label_format    | string   | record   | whether to use html or record formatted labels (graphviz specific feature). Others generator may have different values     |
-| indent_string   | string   | '  '     | string to indent graph statement parts                                                                                     |
-|                 |          |          |                                                                                                                            |
+| only_self       | boolean  | true     | whether to only show methods/properties that are actually defined in this class <br/> (and not those merely inherited from base) |
+| label_format    | string   | record   | whether to use html or record formatted labels (graphviz specific feature).<br/> Others generator may have different values      |
+| indent_string   | string   | '  '     | string to indent graph statement parts (two blanks)                                                                                    |
 | paths           | array    | ['src']  | data source (file or directory) to parse                                                                                   |
-|                 |          |          |                                                                                                                            |
-| generator       | string   | graphviz | identification returns by `getName()` method of a class implementing `Bartlett\GraphUml\Generator\GeneratorInterface`      |
-|                 |          |          |                                                                                                                            |
+| generator       | string   | graphviz | identification returned by `getName()` method <br/> of a class implementing `Bartlett\GraphUml\Generator\GeneratorInterface` |
 | graph.name      | string   | G        | name of the graph                                                                                                          |
-| graph.overlap   | boolean  | false    | determines if and how node overlaps should be removed. More details at http://graphviz.org/doc/info/attrs.html#d:overlap   |
-| graph.rankdir   | string   | TB       | sets direction of graph layout (Top to Bottom). See http://graphviz.org/doc/info/attrs.html#d:rankdir                      |
-|                 |          |          |                                                                                                                            |
+| graph.overlap   | boolean  | false    | determines if and how node overlaps should be removed. <br/> More details at http://graphviz.org/doc/info/attrs.html#d:overlap |
+| graph.rankdir   | string   | TB       | sets direction of graph layout (Top to Bottom). <br/> See http://graphviz.org/doc/info/attrs.html#d:rankdir                |
 | node.fontname   | string   | Verdana  | font name to use to draw node of the graph                                                                                 |
 | node.fontsize   | integer  | 8        | font size to draw node of the graph                                                                                        |
 | node.shape      | string   | none     | set the shape of nodes                                                                                                     |
 | node.margin     | integer  | 0        | see http://graphviz.org/doc/info/attrs.html#d:margin for details                                                           |
-| node.fillcolor  | string   | #FEFECE  | color used to fill background color of nodes. See http://graphviz.org/doc/info/attrs.html#d:fillcolor                      |
+| node.fillcolor  | string   | #FEFECE  | color used to fill background color of nodes. <br /> See http://graphviz.org/doc/info/attrs.html#d:fillcolor               |
 | node.style      | string   | filled   | see http://graphviz.org/doc/info/attrs.html#d:style                                                                        |
-|                 |          |          |                                                                                                                            |
 | edge.fontname   | string   | Verdana  | font name to use to draw edge of the graph                                                                                 |
 | edge.fontsize   | integer  | 8        | font size to draw edge of the graph                                                                                        |
-|                 |          |          |                                                                                                                            |
 
 ### Console command
 
