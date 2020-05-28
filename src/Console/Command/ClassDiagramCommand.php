@@ -17,6 +17,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Finder\Finder;
 
 use InvalidArgumentException;
+use SplFileInfo;
 use function Composer\Autoload\includeFile;
 
 class ClassDiagramCommand extends Command
@@ -229,18 +230,33 @@ class ClassDiagramCommand extends Command
 
     private function handleSourceLocator(array $paths): Finder
     {
+        $filter = function (SplFileInfo $file) use ($paths) {
+            foreach ($paths as $path) {
+                if (is_dir($path)) {
+                    if (0 === strpos($file->getPath(), $path)) {
+                        return true;
+                    }
+                } else {
+                    if ($file->getPathname() === $path) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        };
+
         $finder = new Finder();
         $finder->files();
+        $finder->name('*.php');
 
         foreach ($paths as $path) {
             if (is_dir($path)) {
                 $finder->in($path);
-                $finder->name('*.php');
             } else {
                 $finder->in(dirname($path));
-                $finder->name(basename($path));
             }
         }
+        $finder->filter($filter);
 
         return $finder;
     }

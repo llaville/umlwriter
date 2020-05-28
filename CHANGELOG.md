@@ -19,6 +19,8 @@ from [Kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles)
 ### Fixed
 
 * usage of Symfony OptionsResolver Component in **ConfigurationHandler**
+* usage of Symfony Finder allows now to parse a combination of folder and file at same times.
+ See `docs/01_Features/umlwriter_config.svg` for example.
 
 ## [2.0.0-beta.3] - 2019-05-14
 
