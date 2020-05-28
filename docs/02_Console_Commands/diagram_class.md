@@ -1,5 +1,19 @@
-
+[TOC]
 UmlWriter 2.0 includes only one command `diagram:class` to print UML class diagram statements.
+
+## Features
+
+* Parse one to many data source (file or directory) at same times with `paths` argument.
+* Show (default) or hide all class constants by `--without-constants` option.
+* Show (default) or hide all class properties by `--without-properties` option.
+* Show (default) or hide all class methods by `--without-methods` option.
+* Show (default) or hide private methods and private properties by `--hide-private` options.
+* Show (default) or hide protected methods and protected properties by `--hide-protected` options.
+* Can be use your own autoloader and initialize what ever you want by `--bootstrap` option.
+* Use either `GraphViz`, `PlantUml` or your own generator by `--generator` option.
+* Can be able to configure all graph render options and more by `--configuration` option.
+
+## Synoptic
 
 ```bash
 Description:
@@ -32,19 +46,7 @@ Options:
 
 ```
 
-### Features
-
-* Parse one to many data source (file or directory) at same times with `paths` argument.
-* Show (default) or hide all class constants by `--without-constants` option.
-* Show (default) or hide all class properties by `--without-properties` option.
-* Show (default) or hide all class methods by `--without-methods` option.
-* Show (default) or hide private methods and private properties by `--hide-private` options.
-* Show (default) or hide protected methods and protected properties by `--hide-protected` options.
-* Can be use your own autoloader and initialize what ever you want by `--bootstrap` option.
-* Use either `GraphViz`, `PlantUml` or your own generator by `--generator` option.
-* Can be able to configure all graph render options and more by `--configuration` option.
-
-### Examples
+## Examples
 
 Here are a list of concrete examples you can found in **Cookbook**
 
@@ -52,6 +54,6 @@ Here are a list of concrete examples you can found in **Cookbook**
 * Show only public methods in [UmlWriter architecture](../03_Cookbook/02_UmlWriter_public_methods_only.md)
 * Use a [custom autoloader](../03_Cookbook/03_Custom_autoloader.md)
 
-### Architecture
+## Architecture
 
 ![Console](./umlwriter_console.svg)

@@ -1,8 +1,8 @@
-
+[TOC]
 UmlWriter 2.0 can be configured in two ways (YAML file or console command arguments).
 Without changes, following defaults will be applied.
 
-### Defaults
+## Defaults
 
 | Option          | Value    | Default  | Description                                                                                                                |
 |-----------------|----------|----------|----------------------------------------------------------------------------------------------------------------------------|
@@ -29,11 +29,11 @@ Without changes, following defaults will be applied.
 | edge.fontname   | string   | Verdana  | font name to use to draw edge of the graph                                                                                 |
 | edge.fontsize   | integer  | 8        | font size to draw edge of the graph                                                                                        |
 
-### Console command
+## Console command
 
 See all arguments and options details in [Console Commands](../02_Console_Commands/diagram_class.md) section.
 
-### YAML file (example)
+## YAML file (example)
 
 Attributes to configure graph (node, edge, cluster) may be find at:
 - https://graphviz.gitlab.io/_pages/doc/info/attrs.html
@@ -80,6 +80,6 @@ parameters:
 
 ```
 
-### Architecture
+## Architecture
 
 ![Configuration](./umlwriter_config.svg)
