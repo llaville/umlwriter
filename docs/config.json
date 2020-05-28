@@ -1,7 +1,7 @@
 {
     "title": "UmlWriter",
     "tagline": "Create UML diagrams from your PHP source",
-    "image": "app.png",
+    "image": "app.svg",
     "html": {
         "theme": "daux-navy",
         "auto_toc": false,
