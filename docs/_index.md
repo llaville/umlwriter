@@ -31,7 +31,7 @@ If you don't know yet what is composer, have a look [on introduction](http://get
 composer require bartlett/umlwriter
 ```
 
-![Graph Composer](./graph_composer.png)
+![Graph Composer](./graph_composer.svg)
 
 Additionally, you'll have to install GraphViz (`dot` executable) and/or PlantUML jar with Java Runtime (java executable).
 Users of Debian/Ubuntu-based distributions may simply invoke:
