@@ -7,16 +7,29 @@
 
 **UmlWriter** is a library that adds the ability to generate UML class diagrams.
 
-- **2.0.0-beta.1** only accept GraphViz backend for image/statement generation.
-
-Source code is analysed by this [parser Reflection API](https://github.com/goaop/parser-reflection)
+Source code analysed by this [parser Reflection API](https://github.com/goaop/parser-reflection)
 
 ## Features
 
-The main features provided by this library are:
-
+* Parse one to many PHP file
+* Parse one to many directory
+* Configuration is handle by a YAML file or console command arguments
 * build UML statements of a class diagram
-* draw png/svg image formats
+* draw png/svg image formats if backends installed (graphviz, plantuml server)
+* two generators provided by default: GraphViz and PlantUML
+
+Currently, the following language features are supported:
+
+* Property and method visibility
+* Static properties and methods
+* Method return types natively and from doc comment
+* Parameter types from type hinting and doc comment
+* Parameter default values
+* Class constants with value
+* Property types from doc comment
+* Property default values
+* Implemented interfaces and parent classes
+* Abstract classes
 
 ## Installation
 
@@ -27,14 +40,37 @@ If you don't know yet what is composer, have a look [on introduction](http://get
 composer require bartlett/umlwriter
 ```
 
+Additionally, you'll have to install GraphViz (`dot` executable) and/or PlantUML jar with Java Runtime (java executable).
+Users of Debian/Ubuntu-based distributions may simply invoke:
+
+```bash
+$ sudo apt update
+$ sudo apt-get install graphviz
+$ sudo apt-get install openjdk-11-jre-headless
+```
+
+## PHAR distribution
+
+You can build yourself a PHAR version of this library. Use the [Box](https://github.com/humbug/box) project.
+
+Invoke the following command
+
+```bash
+php box.phar compile --config=box.json.dist
+
+// or simply
+
+php box.phar compile
+```
+
+And find the `umlwriter.phar` file in `bin` directory.
+
 ## Quick Start
 
 Once [installed](#installation), you can use the following code to draw an UML class
 diagram for your existing source code (single php file or folder):
 
 ```php
-<?php
-
 use Bartlett\UmlWriter\Generator\GeneratorFactory;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 use Symfony\Component\Finder\Finder;
@@ -72,7 +108,9 @@ bin/umlwriter diagram:class src/ --generator graphviz
 
 ## Documentation
 
-Will come soon !
+Visit http://bartlett.laurent-laville.org/umlwriter/ for documentation of v2.x
+
+Visit http://php5.laurent-laville.org/umlwriter/ for documentation of v1.x
 
 ## Contributors
 
