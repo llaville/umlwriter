@@ -1,7 +1,9 @@
-
+[TOC]
 You must follow these steps:
 
-* **1** creates your generator class that must implements the `GeneratorInterface`.
+## **1.** creates your generator class
+
+This class must have implements the `GeneratorInterface`.
 
 ```php
 namespace Name\Space;
@@ -32,7 +34,9 @@ class MyGenerator extends AbstractGenerator implements GeneratorInterface
 }
 ```
 
-* **2** creates your generator factory class that should be able to load your new generator class.
+## **2.** creates your generator factory class
+
+This factory should be able to load your new generator class.
 
 ```php
 namespace Name\Space;
@@ -54,7 +58,9 @@ class MyGeneratorFactory extends GeneratorFactory
 }
 ```
 
-* **3** of course your classes must be loadable with your autoloader.
+## **3.** autoloader
+
+Of course your classes must be loadable with your autoloader.
 
 ```php
 /** @var \Composer\Autoload\ClassLoader $loader */
@@ -67,7 +73,9 @@ $loader->addClassMap(
 );
 ```
 
-* **4** now if you want to use the `diagram:class` command, you'll need to modify the application launcher `bin/launcher`
+## **4.** on console command
+
+Now if you want to use the `diagram:class` command, you'll need to modify the application launcher `bin/launcher`
 to inject the new generator factory in service container.
 
 ```
@@ -85,7 +93,9 @@ $application->run();
 
 You have then to invoke `bin/launcher diagram:class --generator=mygenerator` command to get results.
 
-* **5** alternative way is to use the batch PHP mode
+## **5.** on batch mode
+
+Alternative way is to use the batch PHP mode.
 
 ```php
 require_once __DIR__ . '/classmap.php';
@@ -111,6 +121,6 @@ $script = $renderer($finder, $generator);
 echo $script;
 ```
 
-### Architecture
+## Architecture
 
 ![Generator](./umlwriter_generator.svg)

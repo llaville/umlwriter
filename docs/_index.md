@@ -7,7 +7,12 @@ The main features provided by this library are:
 * Parse one to many directory
 * Configuration is handle by a YAML file or console command arguments
 * build UML statements of a class diagram
-* draw png/svg image formats
+* draw png/svg image formats if backends installed (graphviz, plantuml server)
+* two generators provided by default:
+
+| GraphViz                                     | PlantUML                                     |
+|---------------------------------------------:|---------------------------------------------:|
+| ![GraphViz logo](./images/graphviz_logo.png) | ![PlantUML logo](./images/plantuml_logo.png) |
 
 Currently, the following language features are supported:
 
