@@ -8,7 +8,7 @@ gc_disable(); // performance boost
 
 if (\Phar::running()) {
     $possibleAutoloadPaths = [
-        'phar://umlwriter.phar/vendor'
+        'phar://umlwriter.phar/vendor/autoload.php'
     ];
 } else {
     $possibleAutoloadPaths = [
