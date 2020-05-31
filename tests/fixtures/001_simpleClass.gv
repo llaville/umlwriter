@@ -1,5 +1,5 @@
 graph {
-  graph [name="G" overlap="false"]
+  graph [name="G" overlap="false" rankdir="TB"]
   node [fontname="Verdana" fontsize=8 shape="none" margin=0 fillcolor="#FEFECE" style="filled"]
   edge [fontname="Verdana" fontsize=8]
   "FixtureOne\\OneClass" [shape="none" label=<
