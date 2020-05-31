@@ -1,4 +1,6 @@
 @startuml
+
+top to bottom direction
 namespace FixtureThree {
   interface OneInterface << interface >> {
     --
