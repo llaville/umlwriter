@@ -6,6 +6,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [2.0.0-rc.1] - 2019-05-31
+
 ### Added
 
 * add `--output` option to save image in a file.
