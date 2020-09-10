@@ -6,6 +6,12 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [2.0.0-rc.2] - 2019-09-10
+
+### Changed
+
+* raise `bartlett/graph-uml` and `bartlett/graph-plantuml-generator` dependencies to version `1.0.0-rc.2`
+
 ## [2.0.0-rc.1] - 2019-05-31
 
 ### Added
