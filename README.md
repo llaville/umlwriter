@@ -1,7 +1,10 @@
-[![Latest Stable Version](https://img.shields.io/packagist/v/bartlett/umlwriter.svg?style=flat-square)](https://packagist.org/packages/bartlett/umlwriter)
-[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg?style=flat-square)](https://php.net/)
 
 # UmlWriter
+
+| Stable | Upcoming |
+|:------:|:--------:|
+| [![Latest Stable Version](https://img.shields.io/packagist/v/bartlett/umlwriter)](https://packagist.org/packages/bartlett/umlwriter) | [![Unstable Version](https://img.shields.io/packagist/vpre/bartlett/umlwriter)](https://packagist.org/packages/bartlett/umlwriter) |
+| [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/umlwriter)](https://php.net/) | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/umlwriter/2.x-dev?color=orange)](https://php.net/) |
 
 **CAUTION** Major rewrite 2.0 is still in beta stage. For a stable version, check [branch 1.3](https://github.com/llaville/umlwriter/tree/1.3)
 
