@@ -6,6 +6,17 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [2.0.0-rc.3] - 2021-11-20
+
+### Changed
+
+- Allow installation with PHP 8
+- Remove `graphp/graphviz` fork usage since `bartlett/graph-uml` 1.0.0-rc.3
+- Patch `graphp/graphviz` package with <https://github.com/cweagans/composer-patches> rather than using forks with branches
+
+If you need a good introduction about vendor patches,
+read this excellent article https://tomasvotruba.com/blog/2020/07/02/how-to-patch-package-in-vendor-yet-allow-its-updates/
+
 ## [2.0.0-rc.2] - 2019-09-10
 
 ### Changed

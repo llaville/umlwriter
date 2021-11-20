@@ -11,7 +11,7 @@
         "vendor/graphp/graph/LICENSE",
         "vendor/graphp/graphviz/LICENSE",
         "vendor/jawira/plantuml/LICENSE.md",
-        "vendor/jawira/plantuml-encoding/LICENSE",
+        "vendor/jawira/plantuml-encoding/LICENSE.md",
         "vendor/nikic/php-parser/LICENSE",
         "vendor/psr/container/LICENSE",
         "vendor/symfony/config/LICENSE",

@@ -4,18 +4,19 @@
     "keywords": ["UML", "Graphviz", "PlantUML"],
     "type": "library",
     "license": "BSD-3-Clause",
-    "homepage": "http://php5.laurent-laville.org/umlwriter/",
+    "homepage": "https://github.com/llaville/umlwriter",
     "support": {
         "source": "https://github.com/llaville/umlwriter",
         "issues": "https://github.com/llaville/umlwriter/issues"
     },
     "require": {
-        "php": "^7.1.3",
-        "bartlett/graph-plantuml-generator": "1.0.0-rc.2",
-        "bartlett/graph-uml": "1.0.0-rc.2",
+        "php": "^7.1.3||^8.0",
+        "bartlett/graph-plantuml-generator": "1.0.0-rc.3",
+        "bartlett/graph-uml": "1.0.0-rc.3",
+        "cweagans/composer-patches": "^1.7",
         "goaop/parser-reflection": "^2.1",
         "graphp/graph": "dev-master as 1.0.0",
-        "graphp/graphviz": "dev-subgraph_cluster_attributes as 1.0.0",
+        "graphp/graphviz": "dev-master as 1.0.0",
         "psr/container": "^1.0",
         "symfony/config": "^4.4|^5.0",
         "symfony/console": "^4.4|^5.0",
@@ -26,12 +27,6 @@
     "require-dev": {
         "jawira/plantuml": "^1.28"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/llaville/graphviz"
-        }
-    ],
     "authors": [
         {
             "name": "Laurent Laville",
@@ -44,9 +39,7 @@
         "bin/umlwriter"
     ],
     "config": {
-        "preferred-install": {
-            "*": "dist"
-        },
+        "preferred-install": "source",
         "sort-packages": true
     },
     "autoload": {
@@ -58,5 +51,8 @@
         "psr-4": {
             "Bartlett\\UmlWriter\\Tests\\": "tests/"
         }
+    },
+    "extra": {
+        "enable-patching": true
     }
 }
