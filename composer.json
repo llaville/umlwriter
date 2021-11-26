@@ -3,7 +3,7 @@
     "description": "Create UML class diagrams from your PHP source.",
     "keywords": ["UML", "Graphviz", "PlantUML"],
     "type": "library",
-    "license": "BSD-3-Clause",
+    "license": "MIT",
     "homepage": "https://github.com/llaville/umlwriter",
     "support": {
         "source": "https://github.com/llaville/umlwriter",

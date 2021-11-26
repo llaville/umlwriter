@@ -6,6 +6,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Changed
+
+- switch LICENSE from BSD 3-Clause "New" or "Revised" License to MIT
+
 ## [2.0.0-rc.3] - 2021-11-20
 
 ### Changed
