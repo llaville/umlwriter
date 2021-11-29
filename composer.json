@@ -10,14 +10,14 @@
         "issues": "https://github.com/llaville/umlwriter/issues"
     },
     "require": {
-        "php": "^7.1.3||^8.0",
+        "php": "^7.1.3",
         "bartlett/graph-plantuml-generator": "1.0.0-rc.3",
         "bartlett/graph-uml": "1.0.0-rc.3",
         "cweagans/composer-patches": "^1.7",
-        "goaop/parser-reflection": "^2.1",
         "graphp/graph": "dev-master as 1.0.0",
         "graphp/graphviz": "dev-master as 1.0.0",
         "psr/container": "^1.0",
+        "roave/better-reflection": "^4.12",
         "symfony/config": "^4.4|^5.0",
         "symfony/console": "^4.4|^5.0",
         "symfony/finder": "^4.4|^5.0",

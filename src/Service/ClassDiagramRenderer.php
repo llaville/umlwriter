@@ -6,10 +6,11 @@ namespace Bartlett\UmlWriter\Service;
 use Bartlett\GraphUml\Generator\GeneratorInterface;
 use Bartlett\GraphUml\ClassDiagramBuilder;
 
-use Go\ParserReflection\ReflectionFile;
-use Go\ParserReflection\ReflectionFileNamespace;
-
 use Graphp\Graph\Graph;
+
+use Roave\BetterReflection\BetterReflection;
+use Roave\BetterReflection\Reflector\ClassReflector;
+use Roave\BetterReflection\SourceLocator\Type\SingleFileSourceLocator;
 
 use Symfony\Component\Finder\Finder;
 
@@ -31,23 +32,22 @@ class ClassDiagramRenderer
             array_merge(['label_format' => 'html'], $parameters)
         );
 
+        $astLocator = (new BetterReflection())->astLocator();
+
         foreach ($finder as $file) {
             $filename = $file->getRealPath();
-            $reflectionFile = new ReflectionFile($filename);
+            $reflector = new ClassReflector(new SingleFileSourceLocator($filename, $astLocator));
 
-            // in case there are many namespaces in the same file (no PSR-4 compliant)
-            foreach ($reflectionFile->getFileNamespaces() as $namespaceName => $namespace) {
-                $reflectionFileNamespace = new ReflectionFileNamespace($filename, $namespaceName);
-                $this->metaData['namespaces'][] = $namespaceName;
-
-                foreach ($reflectionFileNamespace->getClasses() as $class) {
-                    if ($class->isInterface()) {
-                        $this->metaData['interfaces'][] = $class->getName();
-                    } else {
-                        $this->metaData['classes'][] = $class->getName();
-                    }
-                    $builder->createVertexClass($class);
+            foreach ($reflector->getAllClasses() as $class) {
+                if ($class->isAnonymous()) {
+                    continue;
                 }
+                if ($class->isInterface()) {
+                    $this->metaData['interfaces'][] = $class->getName();
+                } else {
+                    $this->metaData['classes'][] = $class->getName();
+                }
+                $builder->createVertexClass($class->getName());
             }
         }
 

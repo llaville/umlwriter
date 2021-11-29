@@ -9,6 +9,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 ### Changed
 
 - switch LICENSE from BSD 3-Clause "New" or "Revised" License to MIT
+- migrate from `goaop/parser-reflection` v2 to `roave/better-reflection` v4 (PHP 8 not yet compatible)
 
 ## [2.0.0-rc.3] - 2021-11-20
 
