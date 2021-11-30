@@ -4,20 +4,17 @@
 | Stable | Upcoming |
 |:------:|:--------:|
 | [![Latest Stable Version](https://img.shields.io/packagist/v/bartlett/umlwriter)](https://packagist.org/packages/bartlett/umlwriter) | [![Unstable Version](https://img.shields.io/packagist/vpre/bartlett/umlwriter)](https://packagist.org/packages/bartlett/umlwriter) |
-| [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/umlwriter)](https://php.net/) | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/umlwriter/2.x-dev?color=orange)](https://php.net/) |
-
-**CAUTION** Major rewrite 2.0 is still in beta stage. For a stable version, check [branch 1.3](https://github.com/llaville/umlwriter/tree/1.3)
+| [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/umlwriter/1.3.1)](https://php.net/) | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/umlwriter/2.x-dev?color=orange)](https://php.net/) |
+| BSD 3 Clauses | ![License](https://img.shields.io/packagist/l/bartlett/umlwriter) |
 
 **UmlWriter** is a library that adds the ability to generate UML class diagrams.
-
-Source code analysed by this [parser Reflection API](https://github.com/goaop/parser-reflection)
 
 ## Documentation
 
 All the documentation is available on [website](https://llaville.github.io/umlwriter),
 generated from the [docs](https://github.com/llaville/umlwriter/tree/master/docs) folder.
 
-Visit <http://php5.laurent-laville.org/umlwriter/> for documentation of v1.x
+Visit <http://php5.laurent-laville.org/umlwriter/> for documentation of v1.3.x
 
 ## PHAR distribution
 
