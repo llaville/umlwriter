@@ -1,4 +1,4 @@
-[TOC]
+<!-- markdownlint-disable MD013 -->
 UmlWriter 2.0 can be configured in two ways (YAML file or console command arguments).
 Without changes, following defaults will be applied.
 
@@ -36,11 +36,11 @@ See all arguments and options details in [Console Commands](../02_Console_Comman
 ## YAML file (example)
 
 Attributes to configure graph (node, edge, cluster) may be find at:
-- https://graphviz.gitlab.io/_pages/doc/info/attrs.html
+- <https://graphviz.gitlab.io/_pages/doc/info/attrs.html>
 
 And to configure colors for graphviz and plantuml generators:
-- https://graphviz.gitlab.io/_pages/doc/info/colors.html
-- https://plantuml.com/en/color
+- <https://graphviz.gitlab.io/_pages/doc/info/colors.html>
+- <https://plantuml.com/en/color>
 
 ```yaml
 parameters:

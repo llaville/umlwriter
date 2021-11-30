@@ -1,5 +1,7 @@
+<!-- markdownlint-disable MD013 -->
+# About
 
-### Features
+## Features
 
 The main features provided by this library are:
 
@@ -26,26 +28,3 @@ Currently, the following language features are supported:
 * Property default values
 * Implemented interfaces and parent classes
 * Abstract classes
-
-### Install
-
-The recommended way to install this library is [through composer](http://getcomposer.org).
-If you don't know yet what is composer, have a look [on introduction](http://getcomposer.org/doc/00-intro.md).
-
-```bash
-composer require bartlett/umlwriter
-```
-
-![Graph Composer](./graph_composer.svg)
-
-Additionally, you'll have to install GraphViz (`dot` executable) and/or PlantUML jar with Java Runtime (java executable).
-Users of Debian/Ubuntu-based distributions may simply invoke:
-
-```bash
-$ sudo apt update
-$ sudo apt-get install graphviz
-$ sudo apt-get install openjdk-11-jre-headless
-```
-
-while remaining users should install from [GraphViz Download](http://www.graphviz.org/download/) page
-and from [PlantUML Download](https://plantuml.com/fr/download) page.

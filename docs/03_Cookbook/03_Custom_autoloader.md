@@ -1,4 +1,4 @@
-[TOC]
+<!-- markdownlint-disable MD013 -->
 In this example we need a custom autoloader to load non-standard classes.
 
 ```php

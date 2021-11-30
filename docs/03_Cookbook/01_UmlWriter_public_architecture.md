@@ -1,4 +1,4 @@
-[TOC]
+<!-- markdownlint-disable MD013 -->
 Generate UmlWriter graph architecture with only public elements and default render options.
 
 ## Console Command

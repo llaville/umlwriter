@@ -1,4 +1,4 @@
-[TOC]
+<!-- markdownlint-disable MD013 -->
 UmlWriter 2.0 contains two different services.
 
 * **ContainerService** implements a [PSR-11](https://www.php-fig.org/psr/psr-11/) compatible service container

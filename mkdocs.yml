@@ -1,0 +1,43 @@
+---
+site_name: UMLWriter
+site_url: https://llaville.github.io/umlwriter
+repo_url: https://github.com/llaville/umlwriter # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#repository
+site_author: Laurent Laville
+edit_uri: "" # hide edit button -- https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#edit-button
+theme:
+    name: material
+    palette: # Color palette toggle -- https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette-toggle
+        # editorconfig-checker-disable
+        - scheme: default
+          primary: red
+          toggle:
+              icon: material/lightbulb-outline
+              name: Switch to dark mode
+        - scheme: slate
+          toggle:
+              icon: material/lightbulb
+              name: Switch to light mode
+        # editorconfig-checker-enable
+    features:
+        - navigation.instant # Instant loading -- https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#instant-loading
+        - navigation.tabs # Navigation tabs -- https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-tabs
+        - navigation.indexes # Section index pages -- https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#section-index-pages
+        - navigation.top # Back-To-Top button -- https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#back-to-top-button
+markdown_extensions:
+    - pymdownx.highlight # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#highlight
+    - pymdownx.superfences # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#superfences
+nav:
+    - "Home": index.md
+    - "Getting-Started": getting-started.md
+    - "Features":
+          - "Configuration": 01_Features/Configuration.md
+          - "Services": 01_Features/Services.md
+    - "Commands":
+          - "Class diagrams": 02_Console_Commands/diagram_class.md
+    - "Cookbook":
+          - "Application diagram": 03_Cookbook/01_UmlWriter_public_architecture.md
+          - "Application diagram with public methods only": 03_Cookbook/02_UmlWriter_public_methods_only.md
+          - "Use a custom class autoloader": 03_Cookbook/03_Custom_autoloader.md
+    - "Contributors":
+          - "Generators": 90_For_Developers/1_Generators.md
+          - "Creating a new generator": 90_For_Developers/2_Creating_a_Generator.md

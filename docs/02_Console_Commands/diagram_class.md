@@ -1,4 +1,4 @@
-[TOC]
+<!-- markdownlint-disable MD013 -->
 UmlWriter 2.0 includes only one command `diagram:class` to print UML class diagram statements.
 
 ## Features

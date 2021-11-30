@@ -1,4 +1,4 @@
-[TOC]
+<!-- markdownlint-disable MD013 -->
 GraPHP UML used at least two components :
 
 - the mathematical graph/network [GraPHP](https://github.com/graphp/graph) library to draw UML diagrams.

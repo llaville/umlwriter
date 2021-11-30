@@ -1,4 +1,4 @@
-[TOC]
+<!-- markdownlint-disable MD013 -->
 You must follow these steps:
 
 ## **1.** creates your generator class
