@@ -29,6 +29,7 @@ final class Application extends SymfonyApplication
 
     /**
      * @link http://patorjk.com/software/taag/#p=display&f=Standard&t=umlWriter
+     * @var string
      */
     protected static $logo = "                  ___        __    _ _
   _   _ _ __ ___ | \ \      / / __(_) |_ ___ _ __
@@ -59,10 +60,10 @@ final class Application extends SymfonyApplication
 
     public function doRun(InputInterface $input, OutputInterface $output)
     {
-        $this->container->set(InputInterface::class, $input);
-        $this->container->set(OutputInterface::class, $output);
+        $this->container->set(InputInterface::class, $input);                                   // @phpstan-ignore-line
+        $this->container->set(OutputInterface::class, $output);                                 // @phpstan-ignore-line
         if (!$this->container->has(GeneratorFactoryInterface::class)) {
-            $this->container->set(GeneratorFactoryInterface::class, new GeneratorFactory());
+            $this->container->set(GeneratorFactoryInterface::class, new GeneratorFactory());    // @phpstan-ignore-line
         }
 
         return parent::doRun($input, $output);

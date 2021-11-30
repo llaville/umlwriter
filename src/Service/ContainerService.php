@@ -28,12 +28,18 @@ use function sprintf;
  */
 class ContainerService implements ContainerInterface
 {
+    /**
+     * @var array<string, mixed>
+     */
     private $internalServices = [
         ClassDiagramCommand::class => null,
         ClassDiagramRenderer::class => null,
     ];
 
-    // Services allowed at runtime
+    /**
+     * Services allowed at runtime
+     * @var array<string, mixed>
+     */
     private $runtimeServices = [
         InputInterface::class => null,
         OutputInterface::class => null,
@@ -53,6 +59,10 @@ class ContainerService implements ContainerInterface
         };
     }
 
+    /**
+     * @param string $id
+     * @param mixed $service
+     */
     public function set(string $id, $service): void
     {
         if (!array_key_exists($id, $this->runtimeServices)) {
@@ -65,7 +75,7 @@ class ContainerService implements ContainerInterface
         $this->runtimeServices[$id] = $service;
     }
 
-    public function get($id)
+    public function get(string $id)
     {
         if (isset($this->runtimeServices[$id])) {
             return $this->runtimeServices[$id];
@@ -81,7 +91,7 @@ class ContainerService implements ContainerInterface
         };
     }
 
-    public function has($id)
+    public function has(string $id)
     {
         return isset($this->internalServices[$id]) || isset($this->runtimeServices[$id]);
     }

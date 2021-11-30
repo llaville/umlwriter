@@ -18,6 +18,8 @@ use Roave\BetterReflection\SourceLocator\Type\SingleFileSourceLocator;
 
 use Symfony\Component\Finder\Finder;
 
+use ReflectionException;
+
 /**
  * @author Laurent Laville
  */
@@ -26,9 +28,16 @@ class ClassDiagramRenderer
     /** @var Graph */
     private $graph;
 
-    /** @var array  */
+    /** @var array<string, mixed>  */
     private $metaData;
 
+    /**
+     * @param Finder $finder
+     * @param GeneratorInterface $generator
+     * @param array<string, mixed> $parameters
+     * @return string
+     * @throws ReflectionException
+     */
     public function __invoke(Finder $finder, GeneratorInterface $generator, array $parameters = []): string
     {
         $this->initGraph($parameters);
@@ -64,7 +73,7 @@ class ClassDiagramRenderer
     /**
      * Returns list of entities found in data source.
      *
-     * @return array
+     * @return array<string, mixed>
      */
     public function getMetadata(): array
     {
@@ -77,6 +86,9 @@ class ClassDiagramRenderer
         return $this->graph;
     }
 
+    /**
+     * @param array<string, mixed> $parameters
+     */
     private function initGraph(array $parameters): void
     {
         $this->metaData = [

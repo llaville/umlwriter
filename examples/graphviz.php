@@ -53,4 +53,4 @@ echo $script;
 
 // default format is PNG, change it to SVG
 $generator->setFormat('svg');
-echo $generator->createImageFile($renderer->getGraph()) . ' file generated' . PHP_EOL;
+echo $generator->createImageFile($renderer->getGraph()) . ' file generated' . PHP_EOL;  // @phpstan-ignore-line

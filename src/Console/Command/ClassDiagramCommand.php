@@ -48,7 +48,7 @@ class ClassDiagramCommand extends Command
         $this->generatorFactory = $generatorFactory;
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setDescription('Generate class diagram statements of a given data source')
@@ -115,7 +115,12 @@ class ClassDiagramCommand extends Command
         return $exitCode;
     }
 
-    private function handleContext($output, $io, $parameters): void
+    /**
+     * @param OutputInterface $output
+     * @param SymfonyStyle $io
+     * @param array<string, mixed> $parameters
+     */
+    private function handleContext(OutputInterface $output, SymfonyStyle $io, array $parameters): void
     {
         $io->section('Configuration');
 
@@ -152,7 +157,7 @@ class ClassDiagramCommand extends Command
         }
     }
 
-    private function handleOutput(GeneratorInterface $generator, ?string $target, ?string $format, $io): int
+    private function handleOutput(GeneratorInterface $generator, ?string $target, ?string $format, SymfonyStyle $io): int
     {
         if (null === $target && null === $format) {
             // do not generate image file
@@ -190,7 +195,12 @@ class ClassDiagramCommand extends Command
         return 0;
     }
 
-    private function handleConfiguration($input, $io): array
+    /**
+     * @param InputInterface $input
+     * @param SymfonyStyle $io
+     * @return array<string, mixed>
+     */
+    private function handleConfiguration(InputInterface $input, SymfonyStyle $io): array
     {
         $configFilename = $input->getOption('configuration');
         $configHandler = new ConfigurationHandler($configFilename);
@@ -235,6 +245,10 @@ class ClassDiagramCommand extends Command
         return $parameters;
     }
 
+    /**
+     * @param string[] $paths
+     * @return Finder
+     */
     private function handleSourceLocator(array $paths): Finder
     {
         $filter = function (SplFileInfo $file) use ($paths) {

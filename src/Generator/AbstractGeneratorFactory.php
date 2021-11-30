@@ -14,9 +14,12 @@ use Bartlett\GraphUml\Generator\GeneratorInterface;
  */
 abstract class AbstractGeneratorFactory implements GeneratorFactoryInterface
 {
+    /**
+     * @var string
+     */
     protected $generator;
 
-    public function __construct(string $generator = '')
+    final public function __construct(string $generator = '')
     {
         $this->generator = strtolower($generator);
     }

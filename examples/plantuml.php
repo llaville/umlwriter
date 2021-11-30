@@ -53,4 +53,4 @@ $script = $renderer($finder, $generator, $options);
 echo $script;
 
 // default format is PNG
-echo $generator->createImageFile($renderer->getGraph()) . ' file generated' . PHP_EOL;
+echo $generator->createImageFile($renderer->getGraph()) . ' file generated' . PHP_EOL;  // @phpstan-ignore-line

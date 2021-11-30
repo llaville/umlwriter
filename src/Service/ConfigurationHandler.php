@@ -30,7 +30,7 @@ final class ConfigurationHandler
     /** @var string|null  */
     private $filename;
 
-    /** @var array  */
+    /** @var array<string, mixed>  */
     private $configStore;
 
     /** @var bool */
@@ -83,6 +83,9 @@ final class ConfigurationHandler
         return $this->filename;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function toArray(): array
     {
         if (!$this->initialized) {
@@ -91,6 +94,9 @@ final class ConfigurationHandler
         return $this->configStore;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function toFlat(): array
     {
         if (!$this->initialized) {
@@ -99,6 +105,11 @@ final class ConfigurationHandler
         return $this->flatten($this->configStore);
     }
 
+    /**
+     * @param string $key
+     * @param mixed $default
+     * @return mixed|null
+     */
     public function getValueByKey(string $key, $default = null)
     {
         $data = $this->toFlat();
@@ -127,7 +138,7 @@ final class ConfigurationHandler
     }
 
     /**
-     * Flattens an nested array of configurations.
+     * Flattens a nested array of configurations.
      *
      * The scheme used is:
      *   'key' => ['key2' => ['key3' => 'value']]
@@ -135,8 +146,8 @@ final class ConfigurationHandler
      *   'key.key2.key3' => 'value'
      *
      * @see https://github.com/symfony/translation/blob/master/Loader/ArrayLoader.php
-     * @param array $configs
-     * @return array
+     * @param array<string, mixed> $configs
+     * @return array<string, mixed>
      */
     private function flatten(array $configs): array
     {
