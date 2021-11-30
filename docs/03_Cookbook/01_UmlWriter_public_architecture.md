@@ -1,4 +1,6 @@
 <!-- markdownlint-disable MD013 -->
+# Architecture Diagram
+
 Generate UmlWriter graph architecture with only public elements and default render options.
 
 ## Console Command
@@ -18,6 +20,7 @@ Will output this [graph statements](./01_UmlWriter_public_architecture.gv) and i
 Produces same results as previous console command.
 
 ```php
+<?php
 use Bartlett\UmlWriter\Generator\GeneratorFactory;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 use Symfony\Component\Finder\Finder;

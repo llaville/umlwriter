@@ -1,4 +1,6 @@
 <!-- markdownlint-disable MD013 -->
+# Creating a new Generator
+
 You must follow these steps:
 
 ## **1.** creates your generator class
@@ -6,6 +8,7 @@ You must follow these steps:
 This class must have implements the `GeneratorInterface`.
 
 ```php
+<?php
 namespace Name\Space;
 
 use Bartlett\GraphUml\Formatter\FormatterInterface;
@@ -39,6 +42,7 @@ class MyGenerator extends AbstractGenerator implements GeneratorInterface
 This factory should be able to load your new generator class.
 
 ```php
+<?php
 namespace Name\Space;
 
 use Bartlett\GraphUml\Generator\GeneratorInterface;
@@ -63,6 +67,7 @@ class MyGeneratorFactory extends GeneratorFactory
 Of course your classes must be loadable with your autoloader.
 
 ```php
+<?php
 /** @var \Composer\Autoload\ClassLoader $loader */
 $loader = require dirname(__DIR__, 2) . '/vendor/autoload.php';
 $loader->addClassMap(
@@ -98,6 +103,7 @@ You have then to invoke `bin/launcher diagram:class --generator=mygenerator` com
 Alternative way is to use the batch PHP mode.
 
 ```php
+<?php
 require_once __DIR__ . '/classmap.php';
 
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;

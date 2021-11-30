@@ -1,7 +1,10 @@
 <!-- markdownlint-disable MD013 -->
+# Custom Class Autoloader
+
 In this example we need a custom autoloader to load non-standard classes.
 
 ```php
+<?php
 // autoloader/classmap.php
 
 /** @var \Composer\Autoload\ClassLoader $loader */
@@ -17,6 +20,7 @@ $loader->addClassMap(
 Our data source is only one file: `reflection-properties.php` with such contents
 
 ```php
+<?php
 namespace Name\Space;
 
 class Bar
@@ -51,6 +55,7 @@ Will output this [graph statements](./03_Custom_autoloader.gv) and image look li
 Produces same results as previous console command.
 
 ```php
+<?php
 require_once 'autoloader/classmap.php';
 
 use Bartlett\UmlWriter\Generator\GeneratorFactory;
