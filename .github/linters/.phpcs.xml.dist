@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ruleset
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="phpcs.xsd"
+    name="MyStandard">
+    <description>My custom coding standard.</description>
+
+    <file>../../src</file>
+    <file>../../examples</file>
+
+    <rule ref="PSR12">
+        <exclude name="PSR12.Files.FileHeader" />
+        <exclude name="PSR12.Files.OpenTag" />
+    </rule>
+</ruleset>
