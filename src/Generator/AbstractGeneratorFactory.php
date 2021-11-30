@@ -24,9 +24,9 @@ abstract class AbstractGeneratorFactory implements GeneratorFactoryInterface
         $this->generator = strtolower($generator);
     }
 
-    public function createInstance(string $generator): GeneratorFactoryInterface
+    public function createInstance(string $provider): GeneratorFactoryInterface
     {
-        return new static($generator);
+        return new static($provider);
     }
 
     abstract public function getGenerator(): GeneratorInterface;
