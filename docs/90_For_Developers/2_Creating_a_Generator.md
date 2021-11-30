@@ -83,7 +83,8 @@ $loader->addClassMap(
 Now if you want to use the `diagram:class` command, you'll need to modify the application launcher `bin/launcher`
 to inject the new generator factory in service container.
 
-```
+```php
+<?php
 use Bartlett\UmlWriter\Console\Application;
 use Bartlett\UmlWriter\Service\ContainerService;
 use Bartlett\UmlWriter\Generator\GeneratorFactoryInterface;

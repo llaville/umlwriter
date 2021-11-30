@@ -1,4 +1,6 @@
 <!-- markdownlint-disable MD013 -->
+# Generators
+
 GraPHP UML used at least two components :
 
 - the mathematical graph/network [GraPHP](https://github.com/graphp/graph) library to draw UML diagrams.
@@ -45,25 +47,25 @@ interface GeneratorInterface
 }
 ```
 
-* `setOptions()` declares all options used to personalize generator's formatters.
+- `setOptions()` declares all options used to personalize generator's formatters.
 
-* `getFormatter()` is in charge to retrieve instance of a formatter that will produce vertex labels.
+- `getFormatter()` is in charge to retrieve instance of a formatter that will produce vertex labels.
 
-* `getName()` identifies the generator with a unique name.
+- `getName()` identifies the generator with a unique name.
 
-* `getPrefix()` prefixes all public attributes (graph, node, edge, cluster) only if necessary.
+- `getPrefix()` prefixes all public attributes (graph, node, edge, cluster) only if necessary.
 
-* `getLabelClass()` is in charge to make the label of the vertex corresponding to a class or interface element.
+- `getLabelClass()` is in charge to make the label of the vertex corresponding to a class or interface element.
 
-* `getLabelExtension()` is in charge to make the label of the vertex corresponding to an extension element.
+- `getLabelExtension()` is in charge to make the label of the vertex corresponding to an extension element.
 
-* `setExecutable()` changes the executable to use.
+- `setExecutable()` changes the executable to use.
 
-* `setFormat()` defines the format of image to draw.
+- `setFormat()` defines the format of image to draw.
 
-* `createScript()` is in charge to build graph statements depends on generator used.
+- `createScript()` is in charge to build graph statements depends on generator used.
 
-* `createImageFile()` is in charge to draw image graph in format asked (see `setFormat()`).
+- `createImageFile()` is in charge to draw image graph in format asked (see `setFormat()`).
 
 ## Common functions
 

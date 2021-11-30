@@ -73,7 +73,7 @@ from [Kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles)
 ### Added
 
 - UmlWriter 2.0 is now able to build UML Class diagrams in PlantUML format.
-- provides `plantuml.jar` to draw images locally (with help of <https://github.com/jawira/plantuml project>)
+- provides `plantuml.jar` to draw images locally (with help of <https://github.com/jawira/plantuml> project)
 
 ## [2.0.0-beta.1] - 2019-04-24
 

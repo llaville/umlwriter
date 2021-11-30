@@ -49,7 +49,8 @@ var_dump($renderer->getMetadata());
 ```
 
 That could produce such results (with UmlWriter src directory)
-```
+
+```text
 array(3) {
   ["classes"]=>
   array(8) {
