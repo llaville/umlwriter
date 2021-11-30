@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD013 MD024 -->
 # Change Log
 
 All notable changes to this project will be documented in this file.
@@ -21,58 +22,58 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 - Patch `graphp/graphviz` package with <https://github.com/cweagans/composer-patches> rather than using forks with branches
 
 If you need a good introduction about vendor patches,
-read this excellent article https://tomasvotruba.com/blog/2020/07/02/how-to-patch-package-in-vendor-yet-allow-its-updates/
+read this excellent article <https://tomasvotruba.com/blog/2020/07/02/how-to-patch-package-in-vendor-yet-allow-its-updates/>
 
 ## [2.0.0-rc.2] - 2019-09-10
 
 ### Changed
 
-* raise `bartlett/graph-uml` and `bartlett/graph-plantuml-generator` dependencies to version `1.0.0-rc.2`
+- raise `bartlett/graph-uml` and `bartlett/graph-plantuml-generator` dependencies to version `1.0.0-rc.2`
 
 ## [2.0.0-rc.1] - 2019-05-31
 
 ### Added
 
-* add `--output` option to save image in a file.
-* add `--format` option to specify what is the format of image to build.
+- add `--output` option to save image in a file.
+- add `--format` option to specify what is the format of image to build.
 
 ### Changed
 
-* change case of options names
+- change case of options names
 from [Kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles) to [Snake case](https://en.wikipedia.org/wiki/Snake_case)
 
 ### Fixed
 
-* usage of Symfony OptionsResolver Component in **ConfigurationHandler**
-* usage of Symfony Finder allows now to parse a combination of folder and file at same times.
+- usage of Symfony OptionsResolver Component in **ConfigurationHandler**
+- usage of Symfony Finder allows now to parse a combination of folder and file at same times.
  See `docs/01_Features/umlwriter_config.svg` for example.
 
 ## [2.0.0-beta.3] - 2019-05-14
 
 ### Added
 
-* introduces `ContainerService` class implement `psr/container` to handle all internal and runtime services.
-* support of EditorConfig (https://editorconfig.org/)
-* be able to personalize graph render (at least colors and orientation)
-* add some new options to `diagram:class` command:
+- introduces `ContainerService` class implement `psr/container` to handle all internal and runtime services.
+- support of EditorConfig (<https://editorconfig.org/>)
+- be able to personalize graph render (at least colors and orientation)
+- add some new options to `diagram:class` command:
   - `--without-constants` to hide all class constants
   - `--without-properties` to hide all class properties
   - `--without-methods` to hide all class methods
   - `--hide-private` to hide private methods/properties
   - `--hide-protected` to hide protected methods/properties
-* introduces support of external YAML config file that is loaded by `--configuration` option
+- introduces support of external YAML config file that is loaded by `--configuration` option
 
 ### Changed
 
-* `diagram:class` command accept multiple data sources (file or directory) at same time.
-* console commands used now lazy loading (see https://symfony.com/doc/current/console/lazy_commands.html)
+- `diagram:class` command accept multiple data sources (file or directory) at same time.
+- console commands used now lazy loading (see <https://symfony.com/doc/current/console/lazy_commands.html>)
 
 ## [2.0.0-beta.2] - 2019-05-03
 
 ### Added
 
-* UmlWriter 2.0 is now able to build UML Class diagrams in PlantUML format.
-* provides `plantuml.jar` to draw images locally (with help of https://github.com/jawira/plantuml project)
+- UmlWriter 2.0 is now able to build UML Class diagrams in PlantUML format.
+- provides `plantuml.jar` to draw images locally (with help of <https://github.com/jawira/plantuml project>)
 
 ## [2.0.0-beta.1] - 2019-04-24
 
