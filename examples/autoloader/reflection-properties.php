@@ -7,6 +7,7 @@ class Bar
     protected $inheritedProperty = 'inheritedDefault';
 }
 
+// phpcs:disable
 class Foo extends Bar
 {
     public $property = 'propertyDefault';
@@ -15,3 +16,4 @@ class Foo extends Bar
     public $defaultlessProperty;
     protected static $defaultName;
 }
+// phpcs:enable

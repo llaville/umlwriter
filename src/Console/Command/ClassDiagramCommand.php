@@ -77,9 +77,9 @@ class ClassDiagramCommand extends Command
             return 1;
         }
 
-        $paths = array_filter($parameters, function($key) {
+        $paths = array_filter($parameters, function ($key) {
             return strpos($key, 'paths.') === 0;
-        },ARRAY_FILTER_USE_KEY);
+        }, ARRAY_FILTER_USE_KEY);
 
         if (empty($paths)) {
             $io->caution('Not enough arguments (missing data source paths)');
@@ -119,7 +119,7 @@ class ClassDiagramCommand extends Command
     {
         $io->section('Configuration');
 
-        array_walk($parameters, function(&$value, $key) {
+        array_walk($parameters, function (&$value, $key) {
             if (is_bool($value)) {
                 $value = var_export($value, true);
             }
@@ -168,7 +168,7 @@ class ClassDiagramCommand extends Command
             $pos = strrpos($filename, '.');
             if ($pos !== false && isset($filename[$pos + 1])) {
                 // extension found and not empty
-                $generator->setFormat(substr($filename, $pos + 1));;
+                $generator->setFormat(substr($filename, $pos + 1));
             }
         }
 
@@ -229,7 +229,7 @@ class ClassDiagramCommand extends Command
 
         $paths = $input->getArgument('paths');
         foreach ($paths as $index => $path) {
-            $parameters['paths.'.$index] = $path;
+            $parameters['paths.' . $index] = $path;
         }
 
         return $parameters;

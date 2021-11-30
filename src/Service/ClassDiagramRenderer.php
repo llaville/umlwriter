@@ -87,13 +87,13 @@ class ClassDiagramRenderer
 
         $this->graph = new Graph();
 
-        $attributes = array_filter($parameters, function($key) {
+        $attributes = array_filter($parameters, function ($key) {
             return (strpos($key, 'graph.') === 0
                 || strpos($key, 'node.') === 0
                 || strpos($key, 'edge.') === 0
                 || strpos($key, 'cluster.') === 0
             );
-        },ARRAY_FILTER_USE_KEY);
+        }, ARRAY_FILTER_USE_KEY);
 
         $this->graph->setAttributes($attributes);
     }

@@ -144,7 +144,7 @@ final class ConfigurationHandler
         foreach ($configs as $key => $value) {
             if (is_array($value)) {
                 foreach ($this->flatten($value) as $k => $v) {
-                    $result[$key.'.'.$k] = $v;
+                    $result[$key . '.' . $k] = $v;
                 }
             } else {
                 $result[$key] = $value;

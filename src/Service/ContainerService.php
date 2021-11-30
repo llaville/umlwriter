@@ -42,10 +42,10 @@ class ContainerService implements ContainerInterface
 
     public function __construct()
     {
-        $this->internalServices[ClassDiagramRenderer::class] = function() {
+        $this->internalServices[ClassDiagramRenderer::class] = function () {
             return new ClassDiagramRenderer();
         };
-        $this->internalServices[ClassDiagramCommand::class] = function() {
+        $this->internalServices[ClassDiagramCommand::class] = function () {
             return new ClassDiagramCommand(
                 $this->get(ClassDiagramRenderer::class),
                 $this->get(GeneratorFactoryInterface::class)
@@ -56,9 +56,10 @@ class ContainerService implements ContainerInterface
     public function set(string $id, $service): void
     {
         if (!array_key_exists($id, $this->runtimeServices)) {
-            throw new class(
+            throw new class (
                 sprintf('The "%s" runtime service is not expected.', $id)
-            ) extends RuntimeException implements ContainerExceptionInterface {};
+            ) extends RuntimeException implements ContainerExceptionInterface {
+            };
         }
 
         $this->runtimeServices[$id] = $service;
@@ -74,9 +75,10 @@ class ContainerService implements ContainerInterface
             return call_user_func($this->internalServices[$id]);
         }
 
-        throw new class(
+        throw new class (
             sprintf('The "%s" service is not registered in the service container.', $id)
-        ) extends RuntimeException implements NotFoundExceptionInterface {};
+        ) extends RuntimeException implements NotFoundExceptionInterface {
+        };
     }
 
     public function has($id)
