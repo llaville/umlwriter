@@ -1,6 +1,10 @@
-<?php
-declare(strict_types=1);
-
+<?php declare(strict_types=1);
+/**
+ * This file is part of the UmlWriter package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace Bartlett\UmlWriter\Service;
 
 use Bartlett\UmlWriter\Console\Command\ClassDiagramCommand;
@@ -19,6 +23,9 @@ use function array_key_exists;
 use function call_user_func;
 use function sprintf;
 
+/**
+ * @author Laurent Laville
+ */
 class ContainerService implements ContainerInterface
 {
     private $internalServices = [

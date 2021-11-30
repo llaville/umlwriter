@@ -1,6 +1,10 @@
-<?php
-declare(strict_types=1);
-
+<?php declare(strict_types=1);
+/**
+ * This file is part of the UmlWriter package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace Bartlett\UmlWriter\Console;
 
 use Bartlett\UmlWriter\Console\Command\ClassDiagramCommand;
@@ -15,6 +19,9 @@ use Symfony\Component\Console\CommandLoader\ContainerCommandLoader;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * @author Laurent Laville
+ */
 final class Application extends SymfonyApplication
 {
     public const NAME = 'umlWriter';
