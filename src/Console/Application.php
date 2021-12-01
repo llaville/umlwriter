@@ -25,7 +25,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 final class Application extends SymfonyApplication
 {
     public const NAME = 'umlWriter';
-    public const VERSION = '2.0.0-dev';
+    public const VERSION = '2.0.0';
 
     /**
      * @link http://patorjk.com/software/taag/#p=display&f=Standard&t=umlWriter

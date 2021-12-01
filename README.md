@@ -5,7 +5,7 @@
 |:------:|:--------:|
 | [![Latest Stable Version](https://img.shields.io/packagist/v/bartlett/umlwriter)](https://packagist.org/packages/bartlett/umlwriter) | [![Unstable Version](https://img.shields.io/packagist/vpre/bartlett/umlwriter)](https://packagist.org/packages/bartlett/umlwriter) |
 | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/umlwriter/1.3.1)](https://php.net/) | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/umlwriter/2.x-dev?color=orange)](https://php.net/) |
-| BSD 3 Clauses | ![License](https://img.shields.io/packagist/l/bartlett/umlwriter) |
+| BSD 3 Clauses | [![License](https://img.shields.io/packagist/l/bartlett/umlwriter)](https://github.com/llaville/umlwriter/blob/master/LICENSE) |
 
 **UmlWriter** is a library that adds the ability to generate UML class diagrams.
 
@@ -49,7 +49,3 @@ bin/umlwriter diagram:class src/ --generator graphviz
 ## Credits
 
 [bartlett/graph-uml](https://github.com/llaville/graph-uml) is a refactored version (with more features) of [clue/graph-uml](https://github.com/clue/graph-uml) project, licensed under MIT.
-
-## License
-
-This library is licensed under the MIT License - see the `LICENSE` file for details
