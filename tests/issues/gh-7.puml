@@ -3,7 +3,7 @@ namespace ltta.model {
   class BackupProject << class >> {
     –a
     --
-    +__construct(a)
+    +__construct(a : string)
   }
 }
 @enduml
