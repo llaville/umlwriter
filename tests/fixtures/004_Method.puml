@@ -9,7 +9,7 @@ namespace FixtureFour {
     +objectTypeHintAndDocComment(oneClass : FixtureFour.OneClass)
     #scalarParameters(int : int, float : float, bool : bool)
     –typeHintWinsOverDocComment(oneClass : FixtureFour.OneClass)
-    +parametersWithValues(int = , float = , string = , bool = )
+    +parametersWithValues(int = 1, float = 12.1, string = 'foo', bool = true)
   }
 }
 @enduml

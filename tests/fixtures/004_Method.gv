@@ -12,7 +12,7 @@ graph {
     <tr><td align="left">+ objectTypeHintAndDocComment(oneClass : FixtureFour\\OneClass)</td></tr>
     <tr><td align="left"># scalarParameters(int : int, float : float, bool : bool)</td></tr>
     <tr><td align="left">– typeHintWinsOverDocComment(oneClass : FixtureFour\\OneClass)</td></tr>
-    <tr><td align="left">+ parametersWithValues(int = , float = , string = , bool = )</td></tr>
+    <tr><td align="left">+ parametersWithValues(int = 1, float = 12.1, string = 'foo', bool = true)</td></tr>
 </table></td></tr>
 </table>>]
 }
