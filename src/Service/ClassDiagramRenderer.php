@@ -13,7 +13,7 @@ use Bartlett\GraphUml\ClassDiagramBuilder;
 use Graphp\Graph\Graph;
 
 use Roave\BetterReflection\BetterReflection;
-use Roave\BetterReflection\Reflector\ClassReflector;
+use Roave\BetterReflection\Reflector\DefaultReflector;
 use Roave\BetterReflection\SourceLocator\Type\SingleFileSourceLocator;
 
 use Symfony\Component\Finder\Finder;
@@ -52,9 +52,9 @@ class ClassDiagramRenderer
 
         foreach ($finder as $file) {
             $filename = $file->getRealPath();
-            $reflector = new ClassReflector(new SingleFileSourceLocator($filename, $astLocator));
+            $reflector = new DefaultReflector(new SingleFileSourceLocator($filename, $astLocator));
 
-            foreach ($reflector->getAllClasses() as $class) {
+            foreach ($reflector->reflectAllClasses() as $class) {
                 if ($class->isAnonymous()) {
                     continue;
                 }
