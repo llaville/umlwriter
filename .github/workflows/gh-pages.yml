@@ -5,9 +5,14 @@ on:
     push:
         branches:
             - master
+            - 3.x
         paths:
             - docs/**
     pull_request:
+
+concurrency:
+    group: ${{ github.ref }}-${{ github.workflow }}
+    cancel-in-progress: true
 
 jobs:
     deploy:
