@@ -11,8 +11,8 @@
     },
     "require": {
         "php": "^7.1.3",
-        "bartlett/graph-plantuml-generator": "^1.0",
-        "bartlett/graph-uml": "^1.0",
+        "bartlett/graph-plantuml-generator": "^1.1",
+        "bartlett/graph-uml": "^1.1",
         "cweagans/composer-patches": "^1.7",
         "graphp/graph": "dev-master as 1.0.0",
         "graphp/graphviz": "dev-master as 1.0.0",
