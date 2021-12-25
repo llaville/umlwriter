@@ -14,6 +14,7 @@ UmlWrite includes as alternative the [GraPHP PlantUML Generator](https://github.
 Each generator used to build graph statements should implement following interface.
 
 ```php
+<?php
 namespace Bartlett\GraphUml\Generator;
 
 use Bartlett\GraphUml\Formatter\FormatterInterface;

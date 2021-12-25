@@ -63,6 +63,7 @@ class ClassDiagramCommand extends Command
             ->addOption('without-methods', '', InputOption::VALUE_NONE, 'Hide all class methods')
             ->addOption('hide-private', '', InputOption::VALUE_NONE, 'Hide private methods/properties')
             ->addOption('hide-protected', '', InputOption::VALUE_NONE, 'Hide protected methods/properties')
+            ->addOption('no-statement', '', InputOption::VALUE_NONE, 'Do not show diagram statements')
         ;
     }
 
@@ -107,9 +108,10 @@ class ClassDiagramCommand extends Command
         $exitCode = $this->handleOutput($generator, $input->getOption('output'), $input->getOption('format'), $io);
 
         if (0 === $exitCode) {
-            $io->section('Graph statements');
-            $io->writeln($script);
-
+            if (!$input->getOption('no-statement')) {
+                $io->section('Graph statements');
+                $io->writeln($script);
+            }
             $io->success('UML classes were generated.');
         }
         return $exitCode;
