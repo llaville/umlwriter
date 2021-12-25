@@ -64,6 +64,7 @@ jobs:
                     php examples/public-architecture/graphviz.php docs/03_Cookbook
                     php examples/public-methods/graphviz.php docs/03_Cookbook
                     php examples/custom-autoloader.php docs/03_Cookbook
+                    php examples/generator/graphviz.php docs/90_For_Developers
 
             -   # Create commits
                 name: Commit generated PNG files
