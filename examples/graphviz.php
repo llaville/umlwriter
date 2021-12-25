@@ -53,4 +53,13 @@ echo $script;
 
 // default format is PNG, change it to SVG
 $generator->setFormat('svg');
-echo $generator->createImageFile($renderer->getGraph()) . ' file generated' . PHP_EOL;  // @phpstan-ignore-line
+
+if (isset($argv[1])) {
+    // target folder provided
+    $cmdFormat = '%E -T%F %t -o ' . rtrim($argv[1], DIRECTORY_SEPARATOR) . '/app.graphviz.%F';
+} else {
+    $cmdFormat = '';
+}
+$graph = $renderer->getGraph();
+$target = $generator->createImageFile($graph, $cmdFormat);
+echo (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;

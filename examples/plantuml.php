@@ -52,5 +52,20 @@ $script = $renderer($finder, $generator, $options);
 // show UML diagram statements
 echo $script;
 
-// default format is PNG
-echo $generator->createImageFile($renderer->getGraph()) . ' file generated' . PHP_EOL;  // @phpstan-ignore-line
+// default format is PNG, change it to SVG
+$generator->setFormat('svg');
+
+$graph = $renderer->getGraph();
+$target = $generator->createImageFile($graph);
+if (isset($argv[1])) {
+    // target folder provided
+    $from = $target;
+    $target = rtrim($argv[1], DIRECTORY_SEPARATOR) . '/app.plantuml.' . substr(strrchr($target, '.'), 1);
+    if (!rename($from, $target)) {
+        $target = null;
+    }
+} else {
+    $cmdFormat = '';
+}
+echo (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;
+

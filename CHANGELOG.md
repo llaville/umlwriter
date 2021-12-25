@@ -7,6 +7,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Changed
+
+- update all examples to generate image in target folder, if provided as first argument
+
 ## [2.0.0] - 2021-12-02
 
 ### Changed
