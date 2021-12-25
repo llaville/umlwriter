@@ -58,6 +58,7 @@ jobs:
                 name: Update Diagrams
                 run: |
                     php examples/graphviz.php docs
+                    php examples/custom-autoloader.php docs/03_Cookbook
 
             -   # Create commits
                 name: Commit generated PNG files

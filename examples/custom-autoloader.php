@@ -32,7 +32,9 @@ $script = $renderer($finder, $generator);
 // show UML diagram statements
 echo $script;
 
-// default format is PNG
+// default format is PNG, change it to SVG
+$generator->setFormat('svg');
+
 if (isset($argv[1])) {
     // target folder provided
     $cmdFormat = '%E -T%F %t -o ' . rtrim($argv[1], DIRECTORY_SEPARATOR) . '/custom_autoloader.graphviz.%F';
