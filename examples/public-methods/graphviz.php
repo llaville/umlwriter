@@ -1,26 +1,8 @@
-<!-- markdownlint-disable MD013 -->
-# Architecture Diagram (public visibility)
+<?php declare(strict_types=1);
 
-Generate UmlWriter graph architecture with only public methods and default render options.
+require_once dirname(__DIR__, 2) . '/vendor/autoload.php';
 
-## Console Command
-
-When you're in project folder, invoke `diagram:class` command with following arguments:
-
-```bash
-bin/umlwriter diagram:class src/ --hide-private --hide-protected --without-constants --without-properties --format=svg
-```
-
-Will output this [graph statements](./02_UmlWriter_public_methods_only.gv) and image look like
-
-![Example](./public_methods_only.graphviz.svg)
-
-## Batch PHP
-
-Produces same results as previous console command.
-
-```php
-<?php
+use Bartlett\GraphUml\Generator\GraphVizGenerator;
 use Bartlett\UmlWriter\Generator\GeneratorFactory;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 
@@ -33,7 +15,9 @@ $finder = new Finder();
 $finder->in($dataSource)->name('*.php');
 
 $generatorFactory = new GeneratorFactory('graphviz');
+
 // creates instance of Bartlett\GraphUml\Generator\GraphVizGenerator
+/** @var GraphVizGenerator $generator */
 $generator = $generatorFactory->getGenerator();
 
 $renderer = new ClassDiagramRenderer();
@@ -53,5 +37,12 @@ echo $script;
 // default format is PNG, change it to SVG
 $generator->setFormat('svg');
 
-echo $generator->createImageFile($renderer->getGraph()) . ' file generated' . PHP_EOL;
-```
+if (isset($argv[1])) {
+    // target folder provided
+    $cmdFormat = '%E -T%F %t -o ' . rtrim($argv[1], DIRECTORY_SEPARATOR) . '/public_methods_only.graphviz.%F';
+} else {
+    $cmdFormat = '';
+}
+$graph = $renderer->getGraph();
+$target = $generator->createImageFile($graph, $cmdFormat);
+echo (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;
