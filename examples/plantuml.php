@@ -12,6 +12,7 @@
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
+use Bartlett\GraphPlantUml\PlantUmlGenerator;
 use Bartlett\UmlWriter\Generator\GeneratorFactory;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 use Symfony\Component\Finder\Finder;
@@ -24,6 +25,7 @@ $finder->in($dataSource)->name('*.php');
 
 $generatorFactory = new GeneratorFactory('plantuml');
 // creates instance of Bartlett\GraphPlantUml\PlantUmlGenerator
+/** @var PlantUmlGenerator $generator */
 $generator = $generatorFactory->getGenerator();
 $generator->setExecutable(dirname(__DIR__) . '/vendor/bin/plantuml');
 
@@ -64,8 +66,5 @@ if (isset($argv[1])) {
     if (!rename($from, $target)) {
         $target = null;
     }
-} else {
-    $cmdFormat = '';
 }
 echo (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;
-
