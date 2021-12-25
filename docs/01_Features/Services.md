@@ -25,6 +25,7 @@ We distinguish two kind of services:
 * Is able to retrieve all namespaces, classes, interfaces found during parse data source with `getMetadata()` method.
 
 ```php
+<?php
 // Example
 
 use Bartlett\UmlWriter\Generator\GeneratorFactory;
@@ -94,4 +95,4 @@ array(3) {
 
 ## Architecture
 
-![Service](./umlwriter_service.svg)
+![Service](./services.graphviz.svg)
