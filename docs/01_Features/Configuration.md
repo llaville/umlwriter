@@ -86,4 +86,4 @@ parameters:
 
 ## Architecture
 
-![Configuration](./umlwriter_config.svg)
+![Configuration](./configuration.graphviz.svg)
