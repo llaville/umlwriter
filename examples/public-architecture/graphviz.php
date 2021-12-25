@@ -2,8 +2,10 @@
 
 require_once dirname(__DIR__, 2) . '/vendor/autoload.php';
 
+use Bartlett\GraphUml\Generator\GraphVizGenerator;
 use Bartlett\UmlWriter\Generator\GeneratorFactory;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
+
 use Symfony\Component\Finder\Finder;
 
 // path to directory where to find PHP source code
@@ -13,7 +15,9 @@ $finder = new Finder();
 $finder->in($dataSource)->name('*.php');
 
 $generatorFactory = new GeneratorFactory('graphviz');
+
 // creates instance of Bartlett\GraphUml\Generator\GraphVizGenerator
+/** @var GraphVizGenerator $generator */
 $generator = $generatorFactory->getGenerator();
 
 $renderer = new ClassDiagramRenderer();
