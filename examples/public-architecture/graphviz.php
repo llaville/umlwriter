@@ -1,32 +1,13 @@
-<!-- markdownlint-disable MD013 -->
-# Architecture Diagram
+<?php declare(strict_types=1);
 
-Generate UmlWriter graph architecture with only public elements and default render options.
+require_once dirname(__DIR__, 2) . '/vendor/autoload.php';
 
-## Console Command
-
-When you're in project folder, invoke `diagram:class` command with following arguments:
-
-```bash
-bin/umlwriter diagram:class src/ --hide-private --hide-protected --format=svg
-```
-
-Will output this [graph statements](./01_UmlWriter_public_architecture.gv) and image look like
-
-![Example](./public_architecture.graphviz.svg)
-
-## Batch PHP
-
-Produces same results as previous console command.
-
-```php
-<?php
 use Bartlett\UmlWriter\Generator\GeneratorFactory;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 use Symfony\Component\Finder\Finder;
 
 // path to directory where to find PHP source code
-$dataSource = dirname(__DIR__) . '/src';
+$dataSource = dirname(__DIR__, 2) . '/src';
 
 $finder = new Finder();
 $finder->in($dataSource)->name('*.php');
@@ -49,5 +30,13 @@ echo $script;
 
 // default format is PNG, change it to SVG
 $generator->setFormat('svg');
-echo $generator->createImageFile($renderer->getGraph()) . ' file generated' . PHP_EOL;
-```
+
+if (isset($argv[1])) {
+    // target folder provided
+    $cmdFormat = '%E -T%F %t -o ' . rtrim($argv[1], DIRECTORY_SEPARATOR) . '/public_architecture.graphviz.%F';
+} else {
+    $cmdFormat = '';
+}
+$graph = $renderer->getGraph();
+$target = $generator->createImageFile($graph, $cmdFormat);
+echo (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;
