@@ -9,16 +9,62 @@ on:
             - docs/**
     pull_request:
 
+concurrency:
+    group: ${{ github.ref }}-${{ github.workflow }}
+    cancel-in-progress: true
+
 jobs:
     deploy:
         name: Deploy to GH Pages
-        runs-on: ubuntu-latest
+
+        runs-on: ${{ matrix.os }}
+
+        strategy:
+            fail-fast: false
+            matrix:
+                os:
+                    - ubuntu-latest
+                php:
+                    - 7.4
+
         steps:
             -   # Git Checkout
                 name: Checkout Code
                 uses: actions/checkout@v2
                 with:
                     persist-credentials: false
+
+            -   # Setup Libraries
+                name: Setup Libraries
+                run: |
+                    sudo apt-get update
+                    sudo apt-fast install graphviz -y
+
+            -   # Setup PHP runtime
+                name: Setup PHP runtime
+                uses: "shivammathur/setup-php@v2"
+                with:
+                    php-version: ${{ matrix.php }}
+
+            -   # Install Composer dependencies
+                name: Install Composer dependencies
+                uses: "ramsey/composer-install@v2"
+                with:
+                    dependency-versions: "highest"
+                    composer-options: "--prefer-dist --no-scripts"
+
+            -   # Update diagrams used in documentation
+                name: Update Diagrams
+                run: |
+                    php examples/graphviz.php docs
+
+            -   # Create commits
+                name: Commit generated PNG files
+                run: |
+                    git config user.name 'github-actions'
+                    git config user.email 'github-actions@users.noreply.github.com'
+                    git add docs/
+                    git commit -m "Add generated png files during workflow"
 
             -   # Setup Python version
                 name: Set up Python runtime
