@@ -83,11 +83,12 @@ jobs:
 
             -   # Deploy Documentation
                 name: Deploy Docs
-                if: ${{ github.ref == 'refs/heads/master' }}
+                if: ${{ github.ref == 'refs/heads/2.x' }}
                 uses: peaceiris/actions-gh-pages@v3
                 with:
                     github_token: ${{ secrets.GITHUB_TOKEN }}
                     publish_dir: ./site
+                    destination_dir: 2.x
                     full_commit_message: "Deployed ${{ github.sha }} with MkDocs"
                     force_orphan: true
                     user_name: 'github-actions'
