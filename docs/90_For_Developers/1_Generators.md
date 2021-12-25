@@ -70,4 +70,4 @@ interface GeneratorInterface
 ## Common functions
 
 An [AbstractGenerator](https://github.com/llaville/graph-uml/blob/master/src/Generator/AbstractGenerator.php) class
-allow to implements basic image creation behaviors common to all generators.
+allow to implement basic image creation behaviors common to all generators.
