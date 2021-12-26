@@ -1,0 +1,268 @@
+digraph {
+  graph [name="G" overlap="false" rankdir="TB"]
+  node [fontname="Verdana" fontsize=8 shape="none" margin=0 fillcolor="#FEFECE" style="filled"]
+  edge [fontname="Verdana" fontsize=8]
+  subgraph cluster_0 {
+    label = "Bartlett\\UmlWriter\\Generator"
+    "Bartlett\\UmlWriter\\Generator\\GeneratorFactoryInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>GeneratorFactoryInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» createInstance(provider) : Bartlett\\UmlWriter\\Generator\\GeneratorFactoryInterface</td></tr>
+    <tr><td align="left">+ «abstract» getGenerator() : Bartlett\\GraphUml\\Generator\\GeneratorInterface</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\UmlWriter\\Generator\\AbstractGeneratorFactory" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>AbstractGeneratorFactory</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(generator = )</td></tr>
+    <tr><td align="left">+ createInstance(generator) : Bartlett\\UmlWriter\\Generator\\GeneratorFactoryInterface</td></tr>
+    <tr><td align="left">+ «abstract» getGenerator() : Bartlett\\GraphUml\\Generator\\GeneratorInterface</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\UmlWriter\\Generator\\GeneratorFactory" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>GeneratorFactory</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getGenerator() : Bartlett\\GraphUml\\Generator\\GeneratorInterface</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_1 {
+    label = "Bartlett\\UmlWriter\\Service"
+    "Bartlett\\UmlWriter\\Service\\ConfigurationHandler" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ConfigurationHandler</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(filename)</td></tr>
+    <tr><td align="left">+ filename() : ?string</td></tr>
+    <tr><td align="left">+ toArray() : array</td></tr>
+    <tr><td align="left">+ toFlat() : array</td></tr>
+    <tr><td align="left">+ getValueByKey(key, default = )</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\UmlWriter\\Service\\ClassDiagramRenderer" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ClassDiagramRenderer</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __invoke(finder : Symfony\\Component\\Finder\\Finder, generator : Bartlett\\GraphUml\\Generator\\GeneratorInterface, parameters = ) : string</td></tr>
+    <tr><td align="left">+ getMetadata() : array</td></tr>
+    <tr><td align="left">+ getGraph() : Graphp\\Graph\\Graph</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\UmlWriter\\Service\\ContainerService" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ContainerService</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct()</td></tr>
+    <tr><td align="left">+ set(id, service) : void</td></tr>
+    <tr><td align="left">+ get(id)</td></tr>
+    <tr><td align="left">+ has(id)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_2 {
+    label = "Psr\\Container"
+    "Psr\\Container\\ContainerInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>ContainerInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» get(id)</td></tr>
+    <tr><td align="left">+ «abstract» has(id)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_3 {
+    label = "Bartlett\\UmlWriter\\Console"
+    "Bartlett\\UmlWriter\\Console\\Application" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>Application</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» NAME : string = "umlWriter" {readOnly}</td></tr>
+    <tr><td align="left">+ «static» VERSION : string = "2\.0\.0\-dev" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(container : Psr\\Container\\ContainerInterface, version = VERSION)</td></tr>
+    <tr><td align="left">+ getHelp()</td></tr>
+    <tr><td align="left">+ doRun(input : Symfony\\Component\\Console\\Input\\InputInterface, output : Symfony\\Component\\Console\\Output\\OutputInterface)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_4 {
+    label = "Symfony\\Component\\Console"
+    "Symfony\\Component\\Console\\Application" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>Application</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(name = , version = )</td></tr>
+    <tr><td align="left">+ setDispatcher(dispatcher : \«invalidClass\»)</td></tr>
+    <tr><td align="left">+ setCommandLoader(commandLoader : Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface)</td></tr>
+    <tr><td align="left">+ run(input : Symfony\\Component\\Console\\Input\\InputInterface = , output : Symfony\\Component\\Console\\Output\\OutputInterface = )</td></tr>
+    <tr><td align="left">+ doRun(input : Symfony\\Component\\Console\\Input\\InputInterface, output : Symfony\\Component\\Console\\Output\\OutputInterface)</td></tr>
+    <tr><td align="left">+ reset()</td></tr>
+    <tr><td align="left">+ setHelperSet(helperSet : Symfony\\Component\\Console\\Helper\\HelperSet)</td></tr>
+    <tr><td align="left">+ getHelperSet()</td></tr>
+    <tr><td align="left">+ setDefinition(definition : Symfony\\Component\\Console\\Input\\InputDefinition)</td></tr>
+    <tr><td align="left">+ getDefinition()</td></tr>
+    <tr><td align="left">+ getHelp()</td></tr>
+    <tr><td align="left">+ areExceptionsCaught()</td></tr>
+    <tr><td align="left">+ setCatchExceptions(boolean)</td></tr>
+    <tr><td align="left">+ isAutoExitEnabled()</td></tr>
+    <tr><td align="left">+ setAutoExit(boolean)</td></tr>
+    <tr><td align="left">+ getName()</td></tr>
+    <tr><td align="left">+ setName(name)</td></tr>
+    <tr><td align="left">+ getVersion()</td></tr>
+    <tr><td align="left">+ setVersion(version)</td></tr>
+    <tr><td align="left">+ getLongVersion()</td></tr>
+    <tr><td align="left">+ register(name)</td></tr>
+    <tr><td align="left">+ addCommands(commands : mixed)</td></tr>
+    <tr><td align="left">+ add(command : Symfony\\Component\\Console\\Command\\Command)</td></tr>
+    <tr><td align="left">+ get(name)</td></tr>
+    <tr><td align="left">+ has(name)</td></tr>
+    <tr><td align="left">+ getNamespaces()</td></tr>
+    <tr><td align="left">+ findNamespace(namespace)</td></tr>
+    <tr><td align="left">+ find(name)</td></tr>
+    <tr><td align="left">+ all(namespace = )</td></tr>
+    <tr><td align="left">+ «static» getAbbreviations(names)</td></tr>
+    <tr><td align="left">+ renderThrowable(e : Throwable, output : Symfony\\Component\\Console\\Output\\OutputInterface) : void</td></tr>
+    <tr><td align="left">+ extractNamespace(name, limit = )</td></tr>
+    <tr><td align="left">+ setDefaultCommand(commandName, isSingleCommand = )</td></tr>
+    <tr><td align="left">+ isSingleCommand() : bool</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_5 {
+    label = "Symfony\\Contracts\\Service"
+    "Symfony\\Contracts\\Service\\ResetInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>ResetInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» reset()</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_6 {
+    label = "Bartlett\\UmlWriter\\Console\\Command"
+    "Bartlett\\UmlWriter\\Console\\Command\\ClassDiagramCommand" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ClassDiagramCommand</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» NAME : string = "diagram\:class" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(renderer : Bartlett\\UmlWriter\\Service\\ClassDiagramRenderer, generatorFactory : Bartlett\\UmlWriter\\Generator\\GeneratorFactoryInterface)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_7 {
+    label = "Symfony\\Component\\Console\\Command"
+    "Symfony\\Component\\Console\\Command\\Command" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>Command</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» getDefaultName()</td></tr>
+    <tr><td align="left">+ __construct(name : mixed = )</td></tr>
+    <tr><td align="left">+ ignoreValidationErrors()</td></tr>
+    <tr><td align="left">+ setApplication(application : Symfony\\Component\\Console\\Application = )</td></tr>
+    <tr><td align="left">+ setHelperSet(helperSet : Symfony\\Component\\Console\\Helper\\HelperSet)</td></tr>
+    <tr><td align="left">+ getHelperSet()</td></tr>
+    <tr><td align="left">+ getApplication()</td></tr>
+    <tr><td align="left">+ isEnabled()</td></tr>
+    <tr><td align="left">+ run(input : Symfony\\Component\\Console\\Input\\InputInterface, output : Symfony\\Component\\Console\\Output\\OutputInterface)</td></tr>
+    <tr><td align="left">+ setCode(code : callable)</td></tr>
+    <tr><td align="left">+ mergeApplicationDefinition(mergeArgs : bool = )</td></tr>
+    <tr><td align="left">+ setDefinition(definition : mixed)</td></tr>
+    <tr><td align="left">+ getDefinition()</td></tr>
+    <tr><td align="left">+ getNativeDefinition()</td></tr>
+    <tr><td align="left">+ addArgument(name, mode = , description = , default = )</td></tr>
+    <tr><td align="left">+ addOption(name, shortcut = , mode = , description = , default = )</td></tr>
+    <tr><td align="left">+ setName(name)</td></tr>
+    <tr><td align="left">+ setProcessTitle(title)</td></tr>
+    <tr><td align="left">+ getName()</td></tr>
+    <tr><td align="left">+ setHidden(hidden : bool)</td></tr>
+    <tr><td align="left">+ isHidden()</td></tr>
+    <tr><td align="left">+ setDescription(description)</td></tr>
+    <tr><td align="left">+ getDescription()</td></tr>
+    <tr><td align="left">+ setHelp(help)</td></tr>
+    <tr><td align="left">+ getHelp()</td></tr>
+    <tr><td align="left">+ getProcessedHelp()</td></tr>
+    <tr><td align="left">+ setAliases(aliases : mixed)</td></tr>
+    <tr><td align="left">+ getAliases()</td></tr>
+    <tr><td align="left">+ getSynopsis(short : bool = )</td></tr>
+    <tr><td align="left">+ addUsage(usage)</td></tr>
+    <tr><td align="left">+ getUsages()</td></tr>
+    <tr><td align="left">+ getHelper(name)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_8 {
+    label = "Bartlett\\UmlWriter\\Config\\Loader"
+    "Bartlett\\UmlWriter\\Config\\Loader\\YamlFileLoader" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>YamlFileLoader</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ load(resource, type = )</td></tr>
+    <tr><td align="left">+ supports(resource, type = )</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_9 {
+    label = "Symfony\\Component\\Config\\Loader"
+    "Symfony\\Component\\Config\\Loader\\FileLoader" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>FileLoader</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(locator : Symfony\\Component\\Config\\FileLocatorInterface)</td></tr>
+    <tr><td align="left">+ setCurrentDir(dir)</td></tr>
+    <tr><td align="left">+ getLocator()</td></tr>
+    <tr><td align="left">+ import(resource : mixed, type : mixed = , ignoreErrors : bool = , sourceResource : mixed = , exclude : mixed = )</td></tr>
+</table></td></tr>
+</table>>]
+    "Symfony\\Component\\Config\\Loader\\Loader" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>Loader</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getResolver()</td></tr>
+    <tr><td align="left">+ setResolver(resolver : Symfony\\Component\\Config\\Loader\\LoaderResolverInterface)</td></tr>
+    <tr><td align="left">+ import(resource : mixed, type : mixed = )</td></tr>
+    <tr><td align="left">+ resolve(resource : mixed, type : mixed = )</td></tr>
+</table></td></tr>
+</table>>]
+    "Symfony\\Component\\Config\\Loader\\LoaderInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>LoaderInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» load(resource, type = )</td></tr>
+    <tr><td align="left">+ «abstract» supports(resource, type = )</td></tr>
+    <tr><td align="left">+ «abstract» getResolver()</td></tr>
+    <tr><td align="left">+ «abstract» setResolver(resolver : Symfony\\Component\\Config\\Loader\\LoaderResolverInterface)</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  "Bartlett\\UmlWriter\\Generator\\AbstractGeneratorFactory" -> "Bartlett\\UmlWriter\\Generator\\GeneratorFactoryInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\UmlWriter\\Generator\\GeneratorFactory" -> "Bartlett\\UmlWriter\\Generator\\AbstractGeneratorFactory" [arrowhead="empty" style="filled"]
+  "Bartlett\\UmlWriter\\Service\\ContainerService" -> "Psr\\Container\\ContainerInterface" [arrowhead="empty" style="dashed"]
+  "Symfony\\Component\\Console\\Application" -> "Symfony\\Contracts\\Service\\ResetInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\UmlWriter\\Console\\Application" -> "Symfony\\Component\\Console\\Application" [arrowhead="empty" style="filled"]
+  "Bartlett\\UmlWriter\\Console\\Command\\ClassDiagramCommand" -> "Symfony\\Component\\Console\\Command\\Command" [arrowhead="empty" style="filled"]
+  "Symfony\\Component\\Config\\Loader\\Loader" -> "Symfony\\Component\\Config\\Loader\\LoaderInterface" [arrowhead="empty" style="dashed"]
+  "Symfony\\Component\\Config\\Loader\\FileLoader" -> "Symfony\\Component\\Config\\Loader\\Loader" [arrowhead="empty" style="filled"]
+  "Bartlett\\UmlWriter\\Config\\Loader\\YamlFileLoader" -> "Symfony\\Component\\Config\\Loader\\FileLoader" [arrowhead="empty" style="filled"]
+}
