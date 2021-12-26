@@ -25,11 +25,9 @@ use ReflectionException;
  */
 class ClassDiagramRenderer
 {
-    /** @var Graph */
-    private $graph;
-
+    private Graph $graph;
     /** @var array<string, mixed>  */
-    private $metaData;
+    private array $metaData;
 
     /**
      * @param Finder $finder

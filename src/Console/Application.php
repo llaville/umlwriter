@@ -29,9 +29,8 @@ final class Application extends SymfonyApplication
 
     /**
      * @link http://patorjk.com/software/taag/#p=display&f=Standard&t=umlWriter
-     * @var string
      */
-    protected static $logo = "                  ___        __    _ _
+    protected static string $logo = "                  ___        __    _ _
   _   _ _ __ ___ | \ \      / / __(_) |_ ___ _ __
  | | | | '_ ` _ \| |\ \ /\ / / '__| | __/ _ \ '__|
  | |_| | | | | | | | \ V  V /| |  | | ||  __/ |
@@ -39,8 +38,7 @@ final class Application extends SymfonyApplication
 
 ";
 
-    /** @var ContainerInterface  */
-    private $container;
+    private ContainerInterface $container;
 
     public function __construct(ContainerInterface $container, string $version = self::VERSION)
     {
@@ -53,12 +51,12 @@ final class Application extends SymfonyApplication
     /**
      * {@inheritDoc}
      */
-    public function getHelp()
+    public function getHelp(): string
     {
         return '<comment>' . static::$logo . '</comment>' . parent::getHelp();
     }
 
-    public function doRun(InputInterface $input, OutputInterface $output)
+    public function doRun(InputInterface $input, OutputInterface $output): int
     {
         $this->container->set(InputInterface::class, $input);                                   // @phpstan-ignore-line
         $this->container->set(OutputInterface::class, $output);                                 // @phpstan-ignore-line

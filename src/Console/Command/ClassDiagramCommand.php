@@ -27,17 +27,14 @@ use function Composer\Autoload\includeFile;
 /**
  * @author Laurent Laville
  */
-class ClassDiagramCommand extends Command
+final class ClassDiagramCommand extends Command
 {
     public const NAME = 'diagram:class';
 
     protected static $defaultName = self::NAME;
 
-    /** @var ClassDiagramRenderer  */
-    private $renderer;
-
-    /** @var GeneratorFactoryInterface  */
-    private $generatorFactory;
+    private ClassDiagramRenderer $renderer;
+    private GeneratorFactoryInterface $generatorFactory;
 
     public function __construct(
         ClassDiagramRenderer $renderer,

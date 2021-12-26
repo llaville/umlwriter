@@ -7,6 +7,15 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Changed
+
+- Support **Typed properties** features, now minimum PHP requirement is 8.0
+
+  Read more about this feature at :
+
+    - <https://stitcher.io/blog/typed-properties-in-php-74>
+    - <https://php.watch/versions/7.4/typed-properties>
+
 ## [2.1.0] - 2021-12-25
 
 ### Added

@@ -20,9 +20,9 @@ use function sprintf;
 /**
  * @author Laurent Laville
  */
-class YamlFileLoader extends FileLoader
+final class YamlFileLoader extends FileLoader
 {
-    public function load($resource, string $type = null)
+    public function load($resource, string $type = null): mixed
     {
         try {
             $configs = Yaml::parseFile($resource, Yaml::PARSE_CONSTANT);
@@ -41,7 +41,7 @@ class YamlFileLoader extends FileLoader
         return $configs ?? [];
     }
 
-    public function supports($resource, string $type = null)
+    public function supports($resource, string $type = null): bool
     {
         return is_string($resource)
             && in_array(pathinfo($resource, PATHINFO_EXTENSION), ['yml', 'yaml']);
