@@ -9,6 +9,8 @@ namespace Bartlett\UmlWriter\Generator;
 
 use Bartlett\GraphUml\Generator\GeneratorInterface;
 
+use function strtolower;
+
 /**
  * @author Laurent Laville
  */

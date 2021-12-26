@@ -19,6 +19,7 @@ use Roave\BetterReflection\SourceLocator\Type\SingleFileSourceLocator;
 use Symfony\Component\Finder\Finder;
 
 use ReflectionException;
+use function array_merge;
 
 /**
  * @author Laurent Laville
@@ -30,10 +31,7 @@ class ClassDiagramRenderer
     private array $metaData;
 
     /**
-     * @param Finder $finder
-     * @param GeneratorInterface $generator
      * @param array<string, mixed> $parameters
-     * @return string
      * @throws ReflectionException
      */
     public function __invoke(Finder $finder, GeneratorInterface $generator, array $parameters = []): string

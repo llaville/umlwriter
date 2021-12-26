@@ -14,6 +14,7 @@ use Bartlett\GraphUml\Generator\GraphVizGenerator;
 use Graphp\GraphViz\GraphViz;
 
 use RuntimeException;
+use function sprintf;
 
 /**
  * @author Laurent Laville

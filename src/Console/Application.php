@@ -68,8 +68,6 @@ final class Application extends SymfonyApplication
     }
 
     /**
-     * @param ContainerInterface $container
-     * @return CommandLoaderInterface
      * @see https://symfony.com/doc/current/console/lazy_commands.html#containercommandloader
      */
     private function createCommandLoader(ContainerInterface $container): CommandLoaderInterface
