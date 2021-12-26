@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD013 MD033 -->
 # Configuration
 
-UmlWriter 3.0 can be configured in two ways (YAML file or console command arguments).
+UmlWriter v3 can be configured in two ways (YAML file or console command arguments).
 Without changes, following defaults will be applied.
 
 ## Defaults
