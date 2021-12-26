@@ -3,8 +3,8 @@
 
 | Stable |
 |:------:|
-| [![Latest Stable Version](https://img.shields.io/packagist/v/bartlett/umlwriter)](https://packagist.org/packages/bartlett/umlwriter)
-| [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/umlwriter/2.x-dev?color=orange)](https://php.net/) |
+| [![Latest Stable Version](https://img.shields.io/badge/packagist-v2.1.0-blue)](https://packagist.org/packages/bartlett/umlwriter)
+| [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/umlwriter/2.x-dev)](https://php.net/supported-versions.php) |
 | [![License](https://img.shields.io/packagist/l/bartlett/umlwriter)](https://github.com/llaville/umlwriter/blob/master/LICENSE) |
 | [![GitHub Discussions](https://img.shields.io/github/discussions/llaville/umlwriter)](https://github.com/llaville/umlwriter/discussions) |
 | [![Mega-Linter](https://github.com/llaville/umlwriter/actions/workflows/mega-linter.yml/badge.svg)](https://github.com/llaville/umlwriter/actions/workflows/mega-linter.yml) |
@@ -15,9 +15,9 @@
 ## Documentation
 
 All the documentation is available on [website](https://llaville.github.io/umlwriter/2.x),
-generated from the [docs](https://github.com/llaville/umlwriter/tree/master/docs) folder.
+generated from the [docs](https://github.com/llaville/umlwriter/tree/2.x/docs) folder.
 
-Visit <http://php5.laurent-laville.org/umlwriter/> for documentation of v1.3.x
+For users that still used the unmaintained version 1.3, please visit <http://php5.laurent-laville.org/umlwriter/> for documentation
 
 ## PHAR distribution
 
