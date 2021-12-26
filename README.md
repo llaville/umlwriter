@@ -10,13 +10,13 @@
 | [![Mega-Linter](https://github.com/llaville/umlwriter/actions/workflows/mega-linter.yml/badge.svg)](https://github.com/llaville/umlwriter/actions/workflows/mega-linter.yml) | [![Mega-Linter](https://github.com/llaville/umlwriter/actions/workflows/mega-linter.yml/badge.svg)](https://github.com/llaville/umlwriter/actions/workflows/mega-linter.yml) |
 | [![GitHub-Pages](https://github.com/llaville/umlwriter/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/llaville/umlwriter/actions/workflows/gh-pages.yml) | [![GitHub-Pages](https://github.com/llaville/umlwriter/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/llaville/umlwriter/actions/workflows/gh-pages.yml) |
 
-**UmlWriter** is a library that adds the ability to generate UML class diagrams.1
+**UmlWriter** is a library that adds the ability to generate UML class diagrams.
 
 ## Documentation
 
 | GH Pages v2 | GH Pages v3 |
 |:-----------:|:-----------:|
-| [![Documentation](https://img.shields.io/badge/documentation-v2.x-green)](https://github.com/llaville/umlwriter/tree/2.x/docs) | [![Documentation](https://img.shields.io/badge/documentation-v3.x-green)](https://github.com/llaville/umlwriter/tree/2.x/docs) |
+| [![Documentation](https://img.shields.io/badge/documentation-v2.x-green)](https://github.com/llaville/umlwriter/tree/2.x/docs) | [![Documentation](https://img.shields.io/badge/documentation-v3.x-green)](https://github.com/llaville/umlwriter/tree/3.x/docs) |
 
 All the documentation is available on website generated from the docs folder.
 
