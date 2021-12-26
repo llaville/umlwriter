@@ -14,6 +14,7 @@ UmlWrite includes as alternative the [GraPHP PlantUML Generator](https://github.
 Each generator used to build graph statements should implement following interface.
 
 ```php
+<?php
 namespace Bartlett\GraphUml\Generator;
 
 use Bartlett\GraphUml\Formatter\FormatterInterface;
@@ -70,4 +71,4 @@ interface GeneratorInterface
 ## Common functions
 
 An [AbstractGenerator](https://github.com/llaville/graph-uml/blob/master/src/Generator/AbstractGenerator.php) class
-allow to implements basic image creation behaviors common to all generators.
+allow to implement basic image creation behaviors common to all generators.

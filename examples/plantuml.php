@@ -12,6 +12,7 @@
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
+use Bartlett\GraphPlantUml\PlantUmlGenerator;
 use Bartlett\UmlWriter\Generator\GeneratorFactory;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 use Symfony\Component\Finder\Finder;
@@ -24,6 +25,7 @@ $finder->in($dataSource)->name('*.php');
 
 $generatorFactory = new GeneratorFactory('plantuml');
 // creates instance of Bartlett\GraphPlantUml\PlantUmlGenerator
+/** @var PlantUmlGenerator $generator */
 $generator = $generatorFactory->getGenerator();
 $generator->setExecutable(dirname(__DIR__) . '/vendor/bin/plantuml');
 
@@ -52,5 +54,17 @@ $script = $renderer($finder, $generator, $options);
 // show UML diagram statements
 echo $script;
 
-// default format is PNG
-echo $generator->createImageFile($renderer->getGraph()) . ' file generated' . PHP_EOL;  // @phpstan-ignore-line
+// default format is PNG, change it to SVG
+$generator->setFormat('svg');
+
+$graph = $renderer->getGraph();
+$target = $generator->createImageFile($graph);
+if (isset($argv[1])) {
+    // target folder provided
+    $from = $target;
+    $target = rtrim($argv[1], DIRECTORY_SEPARATOR) . '/app.plantuml.' . substr(strrchr($target, '.'), 1);
+    if (!rename($from, $target)) {
+        $target = null;
+    }
+}
+echo (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;

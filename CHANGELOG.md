@@ -7,6 +7,19 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [2.1.0] - 2021-12-25
+
+### Added
+
+- `no-statement` option to `diagram:class` command to hide diagram statements (displayed by default)
+- more examples, used to generate dynamically diagrams for documentation
+
+### Changed
+
+- update all examples to generate image in target folder, if provided as first argument
+- CI generated svg images dynamically to be sure to have the latest version
+- raise `bartlett/graph-uml` and `bartlett/graph-plantuml-generator` minimum version
+
 ## [2.0.0] - 2021-12-02
 
 ### Changed

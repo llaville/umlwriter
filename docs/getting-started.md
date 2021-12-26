@@ -13,7 +13,7 @@
 ![GraPHP Composer](./graph-composer.svg)
 
 Generated with [fork](https://github.com/markuspoerschke/graph-composer/tree/add-options-to-exclude) of [clue/graph-composer](https://github.com/clue/graph-composer).
-Read more on [PR request](https://github.com/clue/graph-composer/pull/45).
+Learn more about this fork on [PR request](https://github.com/clue/graph-composer/pull/45).
 
 ## Installation
 
@@ -32,7 +32,7 @@ The UmlWriter can be directly used from [GitHub](https://github.com/llaville/uml
 by cloning the repository into a directory of your choice.
 
 ```shell
-git clone https://github.com/llaville/umlwriter.git
+git clone -b 3.x https://github.com/llaville/umlwriter.git
 ```
 
 Additionally, you'll have to install GraphViz (`dot` executable) and/or PlantUML jar with Java Runtime (java executable).

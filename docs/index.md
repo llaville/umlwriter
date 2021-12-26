@@ -1,6 +1,8 @@
 <!-- markdownlint-disable MD013 -->
 # About
 
+![GraPHP UML Application](./app.graphviz.svg)
+
 ## Features
 
 The main features provided by this library are:

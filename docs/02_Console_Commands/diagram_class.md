@@ -50,7 +50,7 @@ Options:
 
 ## Examples
 
-Here are a list of concrete examples you can found in **Cookbook**
+Here are a list of concrete examples you can find in **Cookbook**
 
 * Show only public elements in [UmlWriter architecture](../03_Cookbook/01_UmlWriter_public_architecture.md)
 * Show only public methods in [UmlWriter architecture](../03_Cookbook/02_UmlWriter_public_methods_only.md)
@@ -58,4 +58,4 @@ Here are a list of concrete examples you can found in **Cookbook**
 
 ## Architecture
 
-![Console](./umlwriter_console.svg)
+![Console](./console_commands.graphviz.svg)

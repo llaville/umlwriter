@@ -14,7 +14,7 @@
 
 ## Documentation
 
-All the documentation is available on [website](https://llaville.github.io/umlwriter),
+All the documentation is available on [website](https://llaville.github.io/umlwriter/2.x),
 generated from the [docs](https://github.com/llaville/umlwriter/tree/master/docs) folder.
 
 Visit <http://php5.laurent-laville.org/umlwriter/> for documentation of v1.3.x
