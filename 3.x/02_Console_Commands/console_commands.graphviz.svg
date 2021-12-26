@@ -11,7 +11,7 @@
 <polygon fill="white" stroke="transparent" points="-4,4 -4,-1144 2484,-1144 2484,4 -4,4"/>
 <g id="clust1" class="cluster">
 <title>cluster_0</title>
-<polygon fill="none" stroke="black" points="132,-938 132,-1132 1112,-1132 1112,-938 132,-938"/>
+<polygon fill="none" stroke="black" points="116,-938 116,-1132 1128,-1132 1128,-938 116,-938"/>
 <text text-anchor="middle" x="622" y="-1116.8" font-family="Times,serif" font-size="14.00">Bartlett\UmlWriter\Console</text>
 </g>
 <g id="clust2" class="cluster">
@@ -37,18 +37,18 @@
 <!-- Bartlett\\UmlWriter\\Console\\Application -->
 <g id="node1" class="node">
 <title>Bartlett\\UmlWriter\\Console\\Application</title>
-<polygon fill="#fefece" stroke="transparent" points="1103.5,-1101 140.5,-1101 140.5,-946 1103.5,-946 1103.5,-1101"/>
-<polygon fill="#eeeeee" stroke="transparent" points="149,-1062.5 149,-1096.5 1096,-1096.5 1096,-1062.5 149,-1062.5"/>
-<polygon fill="none" stroke="black" points="149,-1062.5 149,-1096.5 1096,-1096.5 1096,-1062.5 149,-1062.5"/>
-<text text-anchor="start" x="577.5" y="-1069.3" font-family="Times,serif" font-weight="bold" font-size="14.00">Application</text>
-<polygon fill="none" stroke="black" points="149,-1018.5 149,-1062.5 1096,-1062.5 1096,-1018.5 149,-1018.5"/>
-<text text-anchor="start" x="154" y="-1046.3" font-family="Times,serif" font-size="14.00">+ «static» NAME : string = &quot;umlWriter&quot; {readOnly}</text>
-<text text-anchor="start" x="154" y="-1027.3" font-family="Times,serif" font-size="14.00">+ «static» VERSION : string = &quot;3\.0\.0&quot; {readOnly}</text>
-<polygon fill="none" stroke="black" points="149,-1012.5 149,-1018.5 1096,-1018.5 1096,-1012.5 149,-1012.5"/>
-<polygon fill="none" stroke="black" points="149,-949.5 149,-1012.5 1096,-1012.5 1096,-949.5 149,-949.5"/>
-<text text-anchor="start" x="154" y="-996.3" font-family="Times,serif" font-size="14.00">+ __construct(container : Psr\Container\ContainerInterface, version : string = VERSION)</text>
-<text text-anchor="start" x="154" y="-977.3" font-family="Times,serif" font-size="14.00">+ getHelp()</text>
-<text text-anchor="start" x="154" y="-958.3" font-family="Times,serif" font-size="14.00">+ doRun(input : Symfony\Component\Console\Input\InputInterface, output : Symfony\Component\Console\Output\OutputInterface)</text>
+<polygon fill="#fefece" stroke="transparent" points="1120,-1101 124,-1101 124,-946 1120,-946 1120,-1101"/>
+<polygon fill="#eeeeee" stroke="transparent" points="132,-1062.5 132,-1096.5 1112,-1096.5 1112,-1062.5 132,-1062.5"/>
+<polygon fill="none" stroke="black" points="132,-1062.5 132,-1096.5 1112,-1096.5 1112,-1062.5 132,-1062.5"/>
+<text text-anchor="start" x="577" y="-1069.3" font-family="Times,serif" font-weight="bold" font-size="14.00">Application</text>
+<polygon fill="none" stroke="black" points="132,-1018.5 132,-1062.5 1112,-1062.5 1112,-1018.5 132,-1018.5"/>
+<text text-anchor="start" x="137" y="-1046.3" font-family="Times,serif" font-size="14.00">+ «static» NAME : string = &quot;umlWriter&quot; {readOnly}</text>
+<text text-anchor="start" x="137" y="-1027.3" font-family="Times,serif" font-size="14.00">+ «static» VERSION : string = &quot;3\.0\.0&quot; {readOnly}</text>
+<polygon fill="none" stroke="black" points="132,-1012.5 132,-1018.5 1112,-1018.5 1112,-1012.5 132,-1012.5"/>
+<polygon fill="none" stroke="black" points="132,-949.5 132,-1012.5 1112,-1012.5 1112,-949.5 132,-949.5"/>
+<text text-anchor="start" x="137" y="-996.3" font-family="Times,serif" font-size="14.00">+ __construct(container : Psr\Container\ContainerInterface, version : string = VERSION)</text>
+<text text-anchor="start" x="137" y="-977.3" font-family="Times,serif" font-size="14.00">+ getHelp() : string</text>
+<text text-anchor="start" x="137" y="-958.3" font-family="Times,serif" font-size="14.00">+ doRun(input : Symfony\Component\Console\Input\InputInterface, output : Symfony\Component\Console\Output\OutputInterface) : int</text>
 </g>
 <!-- Symfony\\Component\\Console\\Application -->
 <g id="node2" class="node">

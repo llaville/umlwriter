@@ -30,8 +30,8 @@
 <polygon fill="none" stroke="black" points="1140,-159 1140,-241 1430,-241 1430,-159 1140,-159"/>
 <text text-anchor="start" x="1145" y="-224.8" font-family="Times,serif" font-size="14.00">+ __construct()</text>
 <text text-anchor="start" x="1145" y="-205.8" font-family="Times,serif" font-size="14.00">+ set(id : string, service : mixed) : void</text>
-<text text-anchor="start" x="1145" y="-186.8" font-family="Times,serif" font-size="14.00">+ get(id : string)</text>
-<text text-anchor="start" x="1145" y="-167.8" font-family="Times,serif" font-size="14.00">+ has(id : string)</text>
+<text text-anchor="start" x="1145" y="-186.8" font-family="Times,serif" font-size="14.00">+ get(id : string) : ?mixed</text>
+<text text-anchor="start" x="1145" y="-167.8" font-family="Times,serif" font-size="14.00">+ has(id : string) : bool</text>
 </g>
 <!-- Psr\\Container\\ContainerInterface -->
 <g id="node3" class="node">

@@ -15,7 +15,7 @@
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_1</title>
-<polygon fill="BurlyWood" stroke="black" points="384.5,-194 384.5,-325 778.5,-325 778.5,-194 384.5,-194"/>
+<polygon fill="BurlyWood" stroke="black" points="363,-194 363,-325 800,-325 800,-194 363,-194"/>
 <text text-anchor="middle" x="581.5" y="-309.8" font-family="Times,serif" font-size="14.00">Bartlett\UmlWriter\Config\Loader</text>
 </g>
 <g id="clust3" class="cluster">
@@ -35,7 +35,7 @@
 </g>
 <g id="clust6" class="cluster">
 <title>cluster_5</title>
-<polygon fill="BurlyWood" stroke="black" points="92,-1087 92,-1282 1071,-1282 1071,-1087 92,-1087"/>
+<polygon fill="BurlyWood" stroke="black" points="75.5,-1087 75.5,-1282 1087.5,-1282 1087.5,-1087 75.5,-1087"/>
 <text text-anchor="middle" x="581.5" y="-1266.8" font-family="Times,serif" font-size="14.00">Bartlett\UmlWriter\Console</text>
 </g>
 <g id="clust7" class="cluster">
@@ -111,14 +111,14 @@
 <!-- Bartlett\\UmlWriter\\Config\\Loader\\YamlFileLoader -->
 <g id="node4" class="node">
 <title>Bartlett\\UmlWriter\\Config\\Loader\\YamlFileLoader</title>
-<polygon fill="lightgrey" stroke="transparent" points="770.5,-294 392.5,-294 392.5,-202 770.5,-202 770.5,-294"/>
-<polygon fill="#eeeeee" stroke="transparent" points="400.5,-256 400.5,-290 762.5,-290 762.5,-256 400.5,-256"/>
-<polygon fill="none" stroke="black" points="400.5,-256 400.5,-290 762.5,-290 762.5,-256 400.5,-256"/>
-<text text-anchor="start" x="520.5" y="-262.8" font-family="Times,serif" font-weight="bold" font-size="14.00">YamlFileLoader</text>
-<polygon fill="none" stroke="black" points="400.5,-250 400.5,-256 762.5,-256 762.5,-250 400.5,-250"/>
-<polygon fill="none" stroke="black" points="400.5,-206 400.5,-250 762.5,-250 762.5,-206 400.5,-206"/>
-<text text-anchor="start" x="405.5" y="-233.8" font-family="Times,serif" font-size="14.00">+ load(resource, type : string = «unknown»)</text>
-<text text-anchor="start" x="405.5" y="-214.8" font-family="Times,serif" font-size="14.00">+ supports(resource, type : string = «unknown»)</text>
+<polygon fill="lightgrey" stroke="transparent" points="792,-294 371,-294 371,-202 792,-202 792,-294"/>
+<polygon fill="#eeeeee" stroke="transparent" points="379.5,-256 379.5,-290 784.5,-290 784.5,-256 379.5,-256"/>
+<polygon fill="none" stroke="black" points="379.5,-256 379.5,-290 784.5,-290 784.5,-256 379.5,-256"/>
+<text text-anchor="start" x="521" y="-262.8" font-family="Times,serif" font-weight="bold" font-size="14.00">YamlFileLoader</text>
+<polygon fill="none" stroke="black" points="379.5,-250 379.5,-256 784.5,-256 784.5,-250 379.5,-250"/>
+<polygon fill="none" stroke="black" points="379.5,-206 379.5,-250 784.5,-250 784.5,-206 379.5,-206"/>
+<text text-anchor="start" x="384.5" y="-233.8" font-family="Times,serif" font-size="14.00">+ load(resource, type : string = «unknown») : ?mixed</text>
+<text text-anchor="start" x="384.5" y="-214.8" font-family="Times,serif" font-size="14.00">+ supports(resource, type : string = «unknown») : bool</text>
 </g>
 <!-- Symfony\\Component\\Config\\Loader\\FileLoader -->
 <g id="node5" class="node">
@@ -138,8 +138,8 @@
 <!-- Bartlett\\UmlWriter\\Config\\Loader\\YamlFileLoader&#45;&gt;Symfony\\Component\\Config\\Loader\\FileLoader -->
 <g id="edge5" class="edge">
 <title>Bartlett\\UmlWriter\\Config\\Loader\\YamlFileLoader&#45;&gt;Symfony\\Component\\Config\\Loader\\FileLoader</title>
-<path fill="none" stroke="black" d="M770.78,-248C891.78,-248 1055.98,-248 1217.11,-248"/>
-<polygon fill="none" stroke="black" points="1217.22,-251.5 1227.22,-248 1217.22,-244.5 1217.22,-251.5"/>
+<path fill="none" stroke="black" d="M792.05,-248C910.7,-248 1065.42,-248 1217.38,-248"/>
+<polygon fill="none" stroke="black" points="1217.38,-251.5 1227.38,-248 1217.38,-244.5 1217.38,-251.5"/>
 </g>
 <!-- Symfony\\Component\\Config\\Loader\\Loader -->
 <g id="node6" class="node">
@@ -195,8 +195,8 @@
 <polygon fill="none" stroke="black" points="436.5,-641 436.5,-723 726.5,-723 726.5,-641 436.5,-641"/>
 <text text-anchor="start" x="441.5" y="-706.8" font-family="Times,serif" font-size="14.00">+ __construct()</text>
 <text text-anchor="start" x="441.5" y="-687.8" font-family="Times,serif" font-size="14.00">+ set(id : string, service : mixed) : void</text>
-<text text-anchor="start" x="441.5" y="-668.8" font-family="Times,serif" font-size="14.00">+ get(id : string)</text>
-<text text-anchor="start" x="441.5" y="-649.8" font-family="Times,serif" font-size="14.00">+ has(id : string)</text>
+<text text-anchor="start" x="441.5" y="-668.8" font-family="Times,serif" font-size="14.00">+ get(id : string) : ?mixed</text>
+<text text-anchor="start" x="441.5" y="-649.8" font-family="Times,serif" font-size="14.00">+ has(id : string) : bool</text>
 </g>
 <!-- Psr\\Container\\ContainerInterface -->
 <g id="node11" class="node">
@@ -220,17 +220,17 @@
 <!-- Bartlett\\UmlWriter\\Service\\ConfigurationHandler -->
 <g id="node9" class="node">
 <title>Bartlett\\UmlWriter\\Service\\ConfigurationHandler</title>
-<polygon fill="lightgrey" stroke="transparent" points="811.5,-618.5 351.5,-618.5 351.5,-469.5 811.5,-469.5 811.5,-618.5"/>
-<polygon fill="#eeeeee" stroke="transparent" points="359.5,-580 359.5,-614 803.5,-614 803.5,-580 359.5,-580"/>
-<polygon fill="none" stroke="black" points="359.5,-580 359.5,-614 803.5,-614 803.5,-580 359.5,-580"/>
-<text text-anchor="start" x="494" y="-586.8" font-family="Times,serif" font-weight="bold" font-size="14.00">ConfigurationHandler</text>
-<polygon fill="none" stroke="black" points="359.5,-574 359.5,-580 803.5,-580 803.5,-574 359.5,-574"/>
-<polygon fill="none" stroke="black" points="359.5,-473 359.5,-574 803.5,-574 803.5,-473 359.5,-473"/>
-<text text-anchor="start" x="364.5" y="-557.8" font-family="Times,serif" font-size="14.00">+ __construct(filename : string)</text>
-<text text-anchor="start" x="364.5" y="-538.8" font-family="Times,serif" font-size="14.00">+ filename() : ?string</text>
-<text text-anchor="start" x="364.5" y="-519.8" font-family="Times,serif" font-size="14.00">+ toArray() : array</text>
-<text text-anchor="start" x="364.5" y="-500.8" font-family="Times,serif" font-size="14.00">+ toFlat() : array</text>
-<text text-anchor="start" x="364.5" y="-481.8" font-family="Times,serif" font-size="14.00">+ getValueByKey(key : string, default : mixed = «unknown»)</text>
+<polygon fill="lightgrey" stroke="transparent" points="844,-618.5 319,-618.5 319,-469.5 844,-469.5 844,-618.5"/>
+<polygon fill="#eeeeee" stroke="transparent" points="327.5,-580 327.5,-614 836.5,-614 836.5,-580 327.5,-580"/>
+<polygon fill="none" stroke="black" points="327.5,-580 327.5,-614 836.5,-614 836.5,-580 327.5,-580"/>
+<text text-anchor="start" x="494.5" y="-586.8" font-family="Times,serif" font-weight="bold" font-size="14.00">ConfigurationHandler</text>
+<polygon fill="none" stroke="black" points="327.5,-574 327.5,-580 836.5,-580 836.5,-574 327.5,-574"/>
+<polygon fill="none" stroke="black" points="327.5,-473 327.5,-574 836.5,-574 836.5,-473 327.5,-473"/>
+<text text-anchor="start" x="332.5" y="-557.8" font-family="Times,serif" font-size="14.00">+ __construct(filename : string)</text>
+<text text-anchor="start" x="332.5" y="-538.8" font-family="Times,serif" font-size="14.00">+ filename() : ?string</text>
+<text text-anchor="start" x="332.5" y="-519.8" font-family="Times,serif" font-size="14.00">+ toArray() : array</text>
+<text text-anchor="start" x="332.5" y="-500.8" font-family="Times,serif" font-size="14.00">+ toFlat() : array</text>
+<text text-anchor="start" x="332.5" y="-481.8" font-family="Times,serif" font-size="14.00">+ getValueByKey(key : string, default : mixed = «unknown») : ?mixed</text>
 </g>
 <!-- Bartlett\\UmlWriter\\Service\\ClassDiagramRenderer -->
 <g id="node10" class="node">
@@ -248,18 +248,18 @@
 <!-- Bartlett\\UmlWriter\\Console\\Application -->
 <g id="node12" class="node">
 <title>Bartlett\\UmlWriter\\Console\\Application</title>
-<polygon fill="lightgrey" stroke="transparent" points="1063,-1250.5 100,-1250.5 100,-1095.5 1063,-1095.5 1063,-1250.5"/>
-<polygon fill="#eeeeee" stroke="transparent" points="108.5,-1212 108.5,-1246 1055.5,-1246 1055.5,-1212 108.5,-1212"/>
-<polygon fill="none" stroke="black" points="108.5,-1212 108.5,-1246 1055.5,-1246 1055.5,-1212 108.5,-1212"/>
-<text text-anchor="start" x="537" y="-1218.8" font-family="Times,serif" font-weight="bold" font-size="14.00">Application</text>
-<polygon fill="none" stroke="black" points="108.5,-1168 108.5,-1212 1055.5,-1212 1055.5,-1168 108.5,-1168"/>
-<text text-anchor="start" x="113.5" y="-1195.8" font-family="Times,serif" font-size="14.00">+ «static» NAME : string = &quot;umlWriter&quot; {readOnly}</text>
-<text text-anchor="start" x="113.5" y="-1176.8" font-family="Times,serif" font-size="14.00">+ «static» VERSION : string = &quot;3\.0\.0&quot; {readOnly}</text>
-<polygon fill="none" stroke="black" points="108.5,-1162 108.5,-1168 1055.5,-1168 1055.5,-1162 108.5,-1162"/>
-<polygon fill="none" stroke="black" points="108.5,-1099 108.5,-1162 1055.5,-1162 1055.5,-1099 108.5,-1099"/>
-<text text-anchor="start" x="113.5" y="-1145.8" font-family="Times,serif" font-size="14.00">+ __construct(container : Psr\Container\ContainerInterface, version : string = VERSION)</text>
-<text text-anchor="start" x="113.5" y="-1126.8" font-family="Times,serif" font-size="14.00">+ getHelp()</text>
-<text text-anchor="start" x="113.5" y="-1107.8" font-family="Times,serif" font-size="14.00">+ doRun(input : Symfony\Component\Console\Input\InputInterface, output : Symfony\Component\Console\Output\OutputInterface)</text>
+<polygon fill="lightgrey" stroke="transparent" points="1079.5,-1250.5 83.5,-1250.5 83.5,-1095.5 1079.5,-1095.5 1079.5,-1250.5"/>
+<polygon fill="#eeeeee" stroke="transparent" points="91.5,-1212 91.5,-1246 1071.5,-1246 1071.5,-1212 91.5,-1212"/>
+<polygon fill="none" stroke="black" points="91.5,-1212 91.5,-1246 1071.5,-1246 1071.5,-1212 91.5,-1212"/>
+<text text-anchor="start" x="536.5" y="-1218.8" font-family="Times,serif" font-weight="bold" font-size="14.00">Application</text>
+<polygon fill="none" stroke="black" points="91.5,-1168 91.5,-1212 1071.5,-1212 1071.5,-1168 91.5,-1168"/>
+<text text-anchor="start" x="96.5" y="-1195.8" font-family="Times,serif" font-size="14.00">+ «static» NAME : string = &quot;umlWriter&quot; {readOnly}</text>
+<text text-anchor="start" x="96.5" y="-1176.8" font-family="Times,serif" font-size="14.00">+ «static» VERSION : string = &quot;3\.0\.0&quot; {readOnly}</text>
+<polygon fill="none" stroke="black" points="91.5,-1162 91.5,-1168 1071.5,-1168 1071.5,-1162 91.5,-1162"/>
+<polygon fill="none" stroke="black" points="91.5,-1099 91.5,-1162 1071.5,-1162 1071.5,-1099 91.5,-1099"/>
+<text text-anchor="start" x="96.5" y="-1145.8" font-family="Times,serif" font-size="14.00">+ __construct(container : Psr\Container\ContainerInterface, version : string = VERSION)</text>
+<text text-anchor="start" x="96.5" y="-1126.8" font-family="Times,serif" font-size="14.00">+ getHelp() : string</text>
+<text text-anchor="start" x="96.5" y="-1107.8" font-family="Times,serif" font-size="14.00">+ doRun(input : Symfony\Component\Console\Input\InputInterface, output : Symfony\Component\Console\Output\OutputInterface) : int</text>
 </g>
 <!-- Symfony\\Component\\Console\\Application -->
 <g id="node13" class="node">
@@ -311,8 +311,8 @@
 <!-- Bartlett\\UmlWriter\\Console\\Application&#45;&gt;Symfony\\Component\\Console\\Application -->
 <g id="edge8" class="edge">
 <title>Bartlett\\UmlWriter\\Console\\Application&#45;&gt;Symfony\\Component\\Console\\Application</title>
-<path fill="none" stroke="black" d="M1063.08,-1173C1099.13,-1173 1135.78,-1173 1172.5,-1173"/>
-<polygon fill="none" stroke="black" points="1172.86,-1176.5 1182.86,-1173 1172.86,-1169.5 1172.86,-1176.5"/>
+<path fill="none" stroke="black" d="M1079.58,-1173C1110.29,-1173 1141.38,-1173 1172.51,-1173"/>
+<polygon fill="none" stroke="black" points="1172.62,-1176.5 1182.62,-1173 1172.62,-1169.5 1172.62,-1176.5"/>
 </g>
 <!-- Symfony\\Contracts\\Service\\ResetInterface -->
 <g id="node14" class="node">
