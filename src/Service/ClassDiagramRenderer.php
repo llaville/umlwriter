@@ -24,7 +24,7 @@ use function array_merge;
 /**
  * @author Laurent Laville
  */
-class ClassDiagramRenderer
+final class ClassDiagramRenderer
 {
     private Graph $graph;
     /** @var array<string, mixed>  */
