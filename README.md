@@ -18,7 +18,10 @@
 |:-----------:|:-----------:|
 | [![Documentation](https://img.shields.io/badge/documentation-v2.x-green)](https://github.com/llaville/umlwriter/tree/2.x/docs) | [![Documentation](https://img.shields.io/badge/documentation-v3.x-green)](https://github.com/llaville/umlwriter/tree/3.x/docs) |
 
-All the documentation is available on website generated from the docs folder.
+All the documentation is available on following websites generated from the docs folder.
+
+- <http://llaville.github.io/umlwriter/2.x/>
+- <http://llaville.github.io/umlwriter/3.x/>
 
 For users that still used the unmaintained version 1.3, please visit <http://php5.laurent-laville.org/umlwriter/> for documentation
 
