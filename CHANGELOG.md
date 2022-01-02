@@ -7,6 +7,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Fixed
+
+- Composer 2.2 plugins compatibility
+
 ## [3.0.0] - 2021-12-26
 
 This major version is only PHP 8 compatible.

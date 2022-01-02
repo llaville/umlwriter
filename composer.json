@@ -39,7 +39,10 @@
     ],
     "config": {
         "preferred-install": "source",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "cweagans/composer-patches": true
+        }
     },
     "autoload": {
         "psr-4": {
