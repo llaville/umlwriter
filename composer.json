@@ -25,6 +25,7 @@
         "symfony/yaml": "^4.4|^5.0"
     },
     "require-dev": {
+        "composer/composer": "^2.0",
         "jawira/plantuml": "^1.28"
     },
     "authors": [
