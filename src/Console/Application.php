@@ -16,8 +16,14 @@ use Psr\Container\ContainerInterface;
 use Symfony\Component\Console\Application as SymfonyApplication;
 use Symfony\Component\Console\CommandLoader\CommandLoaderInterface;
 use Symfony\Component\Console\CommandLoader\ContainerCommandLoader;
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\OutputInterface;
+
+use Phar;
 
 /**
  * @author Laurent Laville
@@ -56,6 +62,9 @@ final class Application extends SymfonyApplication
         return '<comment>' . static::$logo . '</comment>' . parent::getHelp();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function doRun(InputInterface $input, OutputInterface $output): int
     {
         $this->container->set(InputInterface::class, $input);                                   // @phpstan-ignore-line
@@ -65,6 +74,56 @@ final class Application extends SymfonyApplication
         }
 
         return parent::doRun($input, $output);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function run(InputInterface $input = null, OutputInterface $output = null)
+    {
+        if (null === $input) {
+            if ($this->container->has(InputInterface::class)) {
+                $input = $this->container->get(InputInterface::class);
+            } else {
+                $input = new ArgvInput();
+            }
+        }
+
+        if (null === $output) {
+            if ($this->container->has(OutputInterface::class)) {
+                $output = $this->container->get(OutputInterface::class);
+            } else {
+                $output = new ConsoleOutput();
+            }
+        }
+
+        if ($input->hasParameterOption('--manifest')) {
+            $phar = new Phar($_SERVER['argv'][0]);
+            $manifest = $phar->getMetadata();
+            $output->writeln($manifest);
+            return 0;
+        }
+
+        return parent::run($input, $output);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function getDefaultInputDefinition(): InputDefinition
+    {
+        $definition = parent::getDefaultInputDefinition();
+        if (Phar::running()) {
+            $definition->addOption(
+                new InputOption(
+                    'manifest',
+                    null,
+                    InputOption::VALUE_NONE,
+                    'Show which versions of dependencies are bundled'
+                )
+            );
+        }
+        return $definition;
     }
 
     /**

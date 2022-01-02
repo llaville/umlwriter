@@ -7,6 +7,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Added
+
+- `manifest` option to show PHAR metadata contents (dependencies embedded)
+
 ### Fixed
 
 - Composer 2.2 plugins compatibility
