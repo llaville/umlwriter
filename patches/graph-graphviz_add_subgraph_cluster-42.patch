@@ -1,11 +1,13 @@
 diff --git a/src/GraphViz.php b/src/GraphViz.php
-index 9d6d8a0..aa1c85f 100644
+index 9d6d8a0..5d8a530 100644
 --- a/src/GraphViz.php
 +++ b/src/GraphViz.php
-@@ -281,12 +281,28 @@ class GraphViz
+@@ -280,13 +280,29 @@ class GraphViz
+         }
 
          // only cluster vertices into groups if there are at least 2 different groups
-         if (count($groups) > 1) {
+-        if (count($groups) > 1) {
++        if (count($groups) > 0) {
 +            // add subgraph cluster attributes
 +            $clusters = array(
 +                'graph' => 'graphviz.cluster.%s.graph.',
