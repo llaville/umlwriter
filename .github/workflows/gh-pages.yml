@@ -59,12 +59,12 @@ jobs:
                 name: Update Diagrams
                 run: |
                     php resources/graph-uml/build.php application docs
+                    php resources/graph-uml/build.php custom-autoloader docs/03_Cookbook
                     php examples/configuration/graphviz.php docs/01_Features
                     php examples/services/graphviz.php docs/01_Features
                     php examples/cli-architecture/graphviz.php docs/02_Console_Commands
                     php examples/public-architecture/graphviz.php docs/03_Cookbook
                     php examples/public-methods/graphviz.php docs/03_Cookbook
-                    php examples/custom-autoloader.php docs/03_Cookbook
                     php examples/generator/graphviz.php docs/90_For_Developers
 
             -   # Setup Python version
