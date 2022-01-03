@@ -11,6 +11,11 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 - `manifest` option to show PHAR metadata contents (dependencies embedded)
 
+### Changed
+
+- `.github/workflows/gh-pages.yml` workflow to generate dynamically UML graphs
+- simplify examples now `resources/graph-uml/build.php` script exists
+
 ### Fixed
 
 - Composer 2.2 plugins compatibility

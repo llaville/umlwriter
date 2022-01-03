@@ -46,9 +46,9 @@ When you're in project folder, invoke `diagram:class` command with following arg
 bin/umlwriter diagram:class diagram:class examples/autoloader/reflection-properties.php --bootstrap examples/autoloader/classmap.php
 ```
 
-Will output this [graph statements](./03_Custom_autoloader.gv) and image look like
+Will output this [graph statements](./custom-autoloader.html.gv) and image look like
 
-![Example](./custom_autoloader.graphviz.svg)
+![Graph UML Example](./custom-autoloader.graphviz.svg)
 
 ## Batch PHP
 

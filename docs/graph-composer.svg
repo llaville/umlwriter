@@ -32,27 +32,27 @@
 <g id="node3" class="node">
 <title>bartlett/graph&#45;plantuml&#45;generator</title>
 <path fill="#eeeeee" stroke="#000000" d="M551.1008,-393C551.1008,-393 342.1008,-393 342.1008,-393 336.1008,-393 330.1008,-387 330.1008,-381 330.1008,-381 330.1008,-369 330.1008,-369 330.1008,-363 336.1008,-357 342.1008,-357 342.1008,-357 551.1008,-357 551.1008,-357 557.1008,-357 563.1008,-363 563.1008,-369 563.1008,-369 563.1008,-381 563.1008,-381 563.1008,-387 557.1008,-393 551.1008,-393"/>
-<text text-anchor="middle" x="446.6008" y="-371.3" font-family="Times,serif" font-size="14.00" fill="#314b5f">bartlett/graph&#45;plantuml&#45;generator: 1.1.0</text>
+<text text-anchor="middle" x="446.6008" y="-371.3" font-family="Times,serif" font-size="14.00" fill="#314b5f">bartlett/graph&#45;plantuml&#45;generator: 1.2.0</text>
 </g>
 <!-- bartlett/umlwriter&#45;&gt;bartlett/graph&#45;plantuml&#45;generator -->
 <g id="edge16" class="edge">
 <title>bartlett/umlwriter&#45;&gt;bartlett/graph&#45;plantuml&#45;generator</title>
 <path fill="none" stroke="#1a2833" d="M1510.2526,-456.937C1291.2471,-453.5511 651.5546,-442.0469 559.6008,-422 535.8374,-416.8193 510.7324,-406.8746 490.2367,-397.4621"/>
 <polygon fill="#1a2833" stroke="#1a2833" points="491.7041,-394.2845 481.1655,-393.1939 488.7238,-400.6184 491.7041,-394.2845"/>
-<text text-anchor="middle" x="568.6008" y="-414" font-family="Times,serif" font-size="10.00" fill="#767676">^1.1</text>
+<text text-anchor="middle" x="568.6008" y="-414" font-family="Times,serif" font-size="10.00" fill="#767676">^1.2</text>
 </g>
 <!-- bartlett/graph&#45;uml -->
 <g id="node4" class="node">
 <title>bartlett/graph&#45;uml</title>
 <path fill="#eeeeee" stroke="#000000" d="M333.1008,-310C333.1008,-310 206.1008,-310 206.1008,-310 200.1008,-310 194.1008,-304 194.1008,-298 194.1008,-298 194.1008,-286 194.1008,-286 194.1008,-280 200.1008,-274 206.1008,-274 206.1008,-274 333.1008,-274 333.1008,-274 339.1008,-274 345.1008,-280 345.1008,-286 345.1008,-286 345.1008,-298 345.1008,-298 345.1008,-304 339.1008,-310 333.1008,-310"/>
-<text text-anchor="middle" x="269.6008" y="-288.3" font-family="Times,serif" font-size="14.00" fill="#314b5f">bartlett/graph&#45;uml: 1.1.0</text>
+<text text-anchor="middle" x="269.6008" y="-288.3" font-family="Times,serif" font-size="14.00" fill="#314b5f">bartlett/graph&#45;uml: 1.2.1</text>
 </g>
 <!-- bartlett/umlwriter&#45;&gt;bartlett/graph&#45;uml -->
 <g id="edge17" class="edge">
 <title>bartlett/umlwriter&#45;&gt;bartlett/graph&#45;uml</title>
 <path fill="none" stroke="#1a2833" d="M1510.2053,-456.4564C1302.5304,-451.9388 713.3596,-438.046 520.6008,-422 423.1953,-413.8916 377.7582,-455.4895 302.6008,-393 281.1977,-375.2045 273.5607,-343.2983 270.8976,-320.098"/>
 <polygon fill="#1a2833" stroke="#1a2833" points="274.3827,-319.7753 269.9924,-310.1329 267.4115,-320.4086 274.3827,-319.7753"/>
-<text text-anchor="middle" x="311.6008" y="-372.5" font-family="Times,serif" font-size="10.00" fill="#767676">^1.1</text>
+<text text-anchor="middle" x="311.6008" y="-372.5" font-family="Times,serif" font-size="10.00" fill="#767676">^1.2</text>
 </g>
 <!-- cweagans/composer&#45;patches -->
 <g id="node5" class="node">
@@ -123,7 +123,7 @@
 <g id="node18" class="node">
 <title>symfony/config</title>
 <path fill="#eeeeee" stroke="#000000" d="M1755.1008,-310C1755.1008,-310 1634.1008,-310 1634.1008,-310 1628.1008,-310 1622.1008,-304 1622.1008,-298 1622.1008,-298 1622.1008,-286 1622.1008,-286 1622.1008,-280 1628.1008,-274 1634.1008,-274 1634.1008,-274 1755.1008,-274 1755.1008,-274 1761.1008,-274 1767.1008,-280 1767.1008,-286 1767.1008,-286 1767.1008,-298 1767.1008,-298 1767.1008,-304 1761.1008,-310 1755.1008,-310"/>
-<text text-anchor="middle" x="1694.6008" y="-288.3" font-family="Times,serif" font-size="14.00" fill="#314b5f">symfony/config: v5.4.0</text>
+<text text-anchor="middle" x="1694.6008" y="-288.3" font-family="Times,serif" font-size="14.00" fill="#314b5f">symfony/config: v5.4.2</text>
 </g>
 <!-- bartlett/umlwriter&#45;&gt;symfony/config -->
 <g id="edge46" class="edge">
@@ -136,7 +136,7 @@
 <g id="node25" class="node">
 <title>symfony/console</title>
 <path fill="#eeeeee" stroke="#000000" d="M2360.6008,-310C2360.6008,-310 2232.6008,-310 2232.6008,-310 2226.6008,-310 2220.6008,-304 2220.6008,-298 2220.6008,-298 2220.6008,-286 2220.6008,-286 2220.6008,-280 2226.6008,-274 2232.6008,-274 2232.6008,-274 2360.6008,-274 2360.6008,-274 2366.6008,-274 2372.6008,-280 2372.6008,-286 2372.6008,-286 2372.6008,-298 2372.6008,-298 2372.6008,-304 2366.6008,-310 2360.6008,-310"/>
-<text text-anchor="middle" x="2296.6008" y="-288.3" font-family="Times,serif" font-size="14.00" fill="#314b5f">symfony/console: v5.4.1</text>
+<text text-anchor="middle" x="2296.6008" y="-288.3" font-family="Times,serif" font-size="14.00" fill="#314b5f">symfony/console: v5.4.2</text>
 </g>
 <!-- bartlett/umlwriter&#45;&gt;symfony/console -->
 <g id="edge64" class="edge">
@@ -149,7 +149,7 @@
 <g id="node31" class="node">
 <title>symfony/finder</title>
 <path fill="#eeeeee" stroke="#000000" d="M2572.1008,-310C2572.1008,-310 2453.1008,-310 2453.1008,-310 2447.1008,-310 2441.1008,-304 2441.1008,-298 2441.1008,-298 2441.1008,-286 2441.1008,-286 2441.1008,-280 2447.1008,-274 2453.1008,-274 2453.1008,-274 2572.1008,-274 2572.1008,-274 2578.1008,-274 2584.1008,-280 2584.1008,-286 2584.1008,-286 2584.1008,-298 2584.1008,-298 2584.1008,-304 2578.1008,-310 2572.1008,-310"/>
-<text text-anchor="middle" x="2512.6008" y="-288.3" font-family="Times,serif" font-size="14.00" fill="#314b5f">symfony/finder: v5.4.0</text>
+<text text-anchor="middle" x="2512.6008" y="-288.3" font-family="Times,serif" font-size="14.00" fill="#314b5f">symfony/finder: v5.4.2</text>
 </g>
 <!-- bartlett/umlwriter&#45;&gt;symfony/finder -->
 <g id="edge68" class="edge">
@@ -175,7 +175,7 @@
 <g id="node33" class="node">
 <title>symfony/yaml</title>
 <path fill="#eeeeee" stroke="#000000" d="M3174.6008,-310C3174.6008,-310 3060.6008,-310 3060.6008,-310 3054.6008,-310 3048.6008,-304 3048.6008,-298 3048.6008,-298 3048.6008,-286 3048.6008,-286 3048.6008,-280 3054.6008,-274 3060.6008,-274 3060.6008,-274 3174.6008,-274 3174.6008,-274 3180.6008,-274 3186.6008,-280 3186.6008,-286 3186.6008,-286 3186.6008,-298 3186.6008,-298 3186.6008,-304 3180.6008,-310 3174.6008,-310"/>
-<text text-anchor="middle" x="3117.6008" y="-288.3" font-family="Times,serif" font-size="14.00" fill="#314b5f">symfony/yaml: v5.4.0</text>
+<text text-anchor="middle" x="3117.6008" y="-288.3" font-family="Times,serif" font-size="14.00" fill="#314b5f">symfony/yaml: v5.4.2</text>
 </g>
 <!-- bartlett/umlwriter&#45;&gt;symfony/yaml -->
 <g id="edge77" class="edge">
@@ -585,7 +585,7 @@
 <g id="node28" class="node">
 <title>symfony/string</title>
 <path fill="#eeeeee" stroke="#000000" d="M2309.1008,-227C2309.1008,-227 2192.1008,-227 2192.1008,-227 2186.1008,-227 2180.1008,-221 2180.1008,-215 2180.1008,-215 2180.1008,-203 2180.1008,-203 2180.1008,-197 2186.1008,-191 2192.1008,-191 2192.1008,-191 2309.1008,-191 2309.1008,-191 2315.1008,-191 2321.1008,-197 2321.1008,-203 2321.1008,-203 2321.1008,-215 2321.1008,-215 2321.1008,-221 2315.1008,-227 2309.1008,-227"/>
-<text text-anchor="middle" x="2250.6008" y="-205.3" font-family="Times,serif" font-size="14.00" fill="#314b5f">symfony/string: v6.0.1</text>
+<text text-anchor="middle" x="2250.6008" y="-205.3" font-family="Times,serif" font-size="14.00" fill="#314b5f">symfony/string: v6.0.2</text>
 </g>
 <!-- symfony/console&#45;&gt;symfony/string -->
 <g id="edge63" class="edge">
