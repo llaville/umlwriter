@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD013 -->
 # About
 
-![GraPHP UML Application](./app.graphviz.svg)
+![Graph UML Application](./application.graphviz.svg)
 
 ## Features
 

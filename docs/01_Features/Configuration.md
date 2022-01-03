@@ -86,4 +86,4 @@ parameters:
 
 ## Architecture
 
-![Configuration](./configuration.graphviz.svg)
+![Graph UML Configuration](./configuration.graphviz.svg)

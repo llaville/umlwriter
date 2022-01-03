@@ -59,4 +59,4 @@ Here are a list of concrete examples you can find in **Cookbook**
 
 ## Architecture
 
-![Console](./console_commands.graphviz.svg)
+![Graph UML Console](./console-commands.graphviz.svg)
