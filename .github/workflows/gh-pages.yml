@@ -62,10 +62,10 @@ jobs:
                     php resources/graph-uml/build.php configuration docs/01_Features
                     php resources/graph-uml/build.php console-commands docs/02_Console_Commands
                     php resources/graph-uml/build.php custom-autoloader docs/03_Cookbook
+                    php resources/graph-uml/build.php public-methods-only docs/03_Cookbook
                     php resources/graph-uml/build.php generator docs/90_For_Developers
                     php examples/services/graphviz.php docs/01_Features
                     php examples/public-architecture/graphviz.php docs/03_Cookbook
-                    php examples/public-methods/graphviz.php docs/03_Cookbook
 
             -   # Setup Python version
                 name: Set up Python runtime

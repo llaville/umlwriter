@@ -13,7 +13,7 @@ bin/umlwriter diagram:class src/ --hide-private --hide-protected --without-const
 
 Will output this [graph statements](./02_UmlWriter_public_methods_only.gv) and image look like
 
-![Example](./public_methods_only.graphviz.svg)
+![Graph UML Example](./public-methods-only.graphviz.svg)
 
 ## Batch PHP
 
