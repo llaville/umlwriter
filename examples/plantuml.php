@@ -15,6 +15,7 @@ require_once dirname(__DIR__) . '/vendor/autoload.php';
 use Bartlett\GraphPlantUml\PlantUmlGenerator;
 use Bartlett\UmlWriter\Generator\GeneratorFactory;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
+
 use Symfony\Component\Finder\Finder;
 
 // path to directory where to find PHP source code
@@ -24,7 +25,6 @@ $finder = new Finder();
 $finder->in($dataSource)->name('*.php');
 
 $generatorFactory = new GeneratorFactory('plantuml');
-// creates instance of Bartlett\GraphPlantUml\PlantUmlGenerator
 /** @var PlantUmlGenerator $generator */
 $generator = $generatorFactory->getGenerator();
 $generator->setExecutable(dirname(__DIR__) . '/vendor/bin/plantuml');
@@ -38,7 +38,7 @@ $options = [
     'node.fillcolor' => 'lightgrey',
     'node.style' => 'filled',
     // @link https://plantuml.com/en/color
-    'cluster.Psr\\Container.graph.bgcolor' => 'LimeGreen',
+    'cluster.Psr\\Container.graph.bgcolor' => 'LightSkyBlue',
     'cluster.Symfony\\Component\\Console.graph.bgcolor' => 'LightSkyBlue',
     'cluster.Symfony\\Component\\Console\\Command.graph.bgcolor' => 'LightSkyBlue',
     'cluster.Symfony\\Component\\Config\\Loader.graph.bgcolor' => 'LightSkyBlue',
@@ -59,12 +59,4 @@ $generator->setFormat('svg');
 
 $graph = $renderer->getGraph();
 $target = $generator->createImageFile($graph);
-if (isset($argv[1])) {
-    // target folder provided
-    $from = $target;
-    $target = rtrim($argv[1], DIRECTORY_SEPARATOR) . '/app.plantuml.' . substr(strrchr($target, '.'), 1);
-    if (!rename($from, $target)) {
-        $target = null;
-    }
-}
 echo (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;
