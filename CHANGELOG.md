@@ -7,6 +7,8 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [3.1.0] - 2022-01-03
+
 ### Added
 
 - `manifest` option to show PHAR metadata contents (dependencies embedded)
