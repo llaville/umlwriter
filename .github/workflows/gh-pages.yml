@@ -58,7 +58,7 @@ jobs:
             -   # Update diagrams used in documentation
                 name: Update Diagrams
                 run: |
-                    php examples/graphviz.php docs
+                    php resources/graph-uml/build.php application docs
                     php examples/configuration/graphviz.php docs/01_Features
                     php examples/services/graphviz.php docs/01_Features
                     php examples/cli-architecture/graphviz.php docs/02_Console_Commands
