@@ -47,7 +47,7 @@ $graph->setAttribute($generator->getPrefix() . 'graph.rankdir', $options['graph.
 $graph->setAttribute($generator->getPrefix() . 'graph.bgcolor', $options['graph.bgcolor'] ?? 'transparent');
 $graph->setAttribute($generator->getPrefix() . 'clusters.graph.bgcolor', $options['clusters.graph.bgcolor'] ?? 'white');
 // https://graphviz.gitlab.io/docs/attrs/fillcolor/
-$graph->setAttribute($generator->getPrefix() . 'node.fillcolor', $options['node.fillcolor'] ?? '#FECECE');
+$graph->setAttribute($generator->getPrefix() . 'node.fillcolor', $options['node.fillcolor'] ?? '#FEFECE');
 // https://graphviz.gitlab.io/docs/attrs/style/
 $graph->setAttribute($generator->getPrefix() . 'node.style', $options['node.style'] ?? 'filled');
 
