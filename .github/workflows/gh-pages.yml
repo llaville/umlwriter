@@ -67,14 +67,6 @@ jobs:
                     php examples/custom-autoloader.php docs/03_Cookbook
                     php examples/generator/graphviz.php docs/90_For_Developers
 
-            -   # Create commits
-                name: Commit generated PNG files
-                run: |
-                    git config user.name 'github-actions'
-                    git config user.email 'github-actions@users.noreply.github.com'
-                    git add docs/
-                    git commit -m "Add generated png files during workflow"
-
             -   # Setup Python version
                 name: Set up Python runtime
                 uses: actions/setup-python@v2
