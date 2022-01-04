@@ -3,6 +3,7 @@
 
 | Stable v2 | Stable v3 |
 |:---------:|:---------:|
+|           | [![Branch Master](https://img.shields.io/badge/branch-master-orange)](https://github.com/llaville/umlwriter) |
 | [![Latest Stable Version](https://img.shields.io/badge/packagist-v2.1.1-blue)](https://packagist.org/packages/bartlett/umlwriter) | [![Latest Stable Version](https://img.shields.io/packagist/v/bartlett/umlwriter)](https://packagist.org/packages/bartlett/umlwriter)
 | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/umlwriter/2.x-dev)](https://php.net/supported-versions.php) | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/umlwriter/3.x-dev)](https://php.net/supported-versions.php) |
 | [![License](https://img.shields.io/packagist/l/bartlett/umlwriter)](https://github.com/llaville/umlwriter/blob/master/LICENSE) | [![License](https://img.shields.io/packagist/l/bartlett/umlwriter)](https://github.com/llaville/umlwriter/blob/master/LICENSE) |
