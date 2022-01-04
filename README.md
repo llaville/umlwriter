@@ -1,14 +1,6 @@
 <!-- markdownlint-disable MD013 -->
 # UmlWriter
 
-| Stable |
-|:------:|
-| [![Latest Stable Version](https://img.shields.io/packagist/v/bartlett/umlwriter)](https://packagist.org/packages/bartlett/umlwriter)
-| [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/umlwriter/3.x-dev)](https://php.net/supported-versions.php) |
-| [![License](https://img.shields.io/packagist/l/bartlett/umlwriter)](https://github.com/llaville/umlwriter/blob/master/LICENSE) |
-| [![GitHub Discussions](https://img.shields.io/github/discussions/llaville/umlwriter)](https://github.com/llaville/umlwriter/discussions) |
-| [![Mega-Linter](https://github.com/llaville/umlwriter/actions/workflows/mega-linter.yml/badge.svg)](https://github.com/llaville/umlwriter/actions/workflows/mega-linter.yml) |
-| [![GitHub-Pages](https://github.com/llaville/umlwriter/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/llaville/umlwriter/actions/workflows/gh-pages.yml) |
 
 **UmlWriter** is a library that adds the ability to generate UML class diagrams.
 

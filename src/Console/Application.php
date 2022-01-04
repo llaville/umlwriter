@@ -31,7 +31,7 @@ use Phar;
 final class Application extends SymfonyApplication
 {
     public const NAME = 'umlWriter';
-    public const VERSION = '3.1.0';
+    public const VERSION = '3.1.1';
 
     /**
      * @link http://patorjk.com/software/taag/#p=display&f=Standard&t=umlWriter

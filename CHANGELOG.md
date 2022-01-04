@@ -7,6 +7,17 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [3.1.1] - 2022-01-04
+
+### Changed
+
+- raise `bartlett/graph-uml` constraint to be compatible with `graphp/*` packages and patch provided
+
+### Fixed
+
+- `graphp/graph` constraint to specific commit compatible with patch provided (see `patches` directory)
+- `graphp/graphviz` constraint to specific commit compatible with patch provided (see `patches` directory)
+
 ## [2.1.1] - 2022-01-04
 
 ### Changed

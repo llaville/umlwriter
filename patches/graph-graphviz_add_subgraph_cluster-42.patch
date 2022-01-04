@@ -1,8 +1,8 @@
 diff --git a/src/GraphViz.php b/src/GraphViz.php
-index 9d6d8a0..5d8a530 100644
+index fcddeb0..f97fcdb 100644
 --- a/src/GraphViz.php
 +++ b/src/GraphViz.php
-@@ -280,13 +280,29 @@ class GraphViz
+@@ -273,13 +273,29 @@ class GraphViz
          }
 
          // only cluster vertices into groups if there are at least 2 different groups
@@ -35,12 +35,3 @@ index 9d6d8a0..5d8a530 100644
                  foreach ($vertices as $vertex) {
                      $vid = $vids[\spl_object_hash($vertex)];
                      $layout = $this->getLayoutVertex($vertex, $vid);
-@@ -320,7 +336,7 @@ class GraphViz
-
-         // add all edges as directed edges
-         foreach ($graph->getEdges() as $currentEdge) {
--            $both = $currentEdge->getVertices()->getVector();
-+            $both = $currentEdge->getVertices();
-             $currentStartVertex = $both[0];
-             $currentTargetVertex = $both[1];
-
