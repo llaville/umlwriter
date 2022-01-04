@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD013 -->
 # Class Diagrams
 
-UmlWriter 2.0 includes only one command `diagram:class` to print UML class diagram statements.
+UmlWriter v3 includes only one command `diagram:class` to print UML class diagram statements.
 
 ## Features
 
@@ -38,6 +38,7 @@ Options:
       --without-methods              Hide all class methods
       --hide-private                 Hide private methods/properties
       --hide-protected               Hide protected methods/properties
+      --no-statement                 Do not show diagram statements
   -h, --help                         Display this help message
   -q, --quiet                        Do not output any message
   -V, --version                      Display this application version
@@ -58,4 +59,4 @@ Here are a list of concrete examples you can find in **Cookbook**
 
 ## Architecture
 
-![Console](./console_commands.graphviz.svg)
+![Graph UML Console](./console-commands.graphviz.svg)

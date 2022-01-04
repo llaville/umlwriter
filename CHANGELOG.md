@@ -7,6 +7,56 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+## [3.1.1] - 2022-01-04
+
+### Changed
+
+- raise `bartlett/graph-uml` constraint to be compatible with `graphp/*` packages and patch provided
+
+### Fixed
+
+- `graphp/graph` constraint to specific commit compatible with patch provided (see `patches` directory)
+- `graphp/graphviz` constraint to specific commit compatible with patch provided (see `patches` directory)
+
+## [2.1.1] - 2022-01-04
+
+### Changed
+
+- raise `bartlett/graph-uml` constraint to be compatible with `graphp/*` packages and patch provided
+
+### Fixed
+
+- `graphp/graph` constraint to specific commit compatible with patch provided (see `patches` directory)
+- `graphp/graphviz` constraint to specific commit compatible with patch provided (see `patches` directory)
+
+## [3.1.0] - 2022-01-03
+
+### Added
+
+- `manifest` option to show PHAR metadata contents (dependencies embedded)
+
+### Changed
+
+- `.github/workflows/gh-pages.yml` workflow to generate dynamically UML graphs
+- simplify examples now `resources/graph-uml/build.php` script exists
+
+### Fixed
+
+- Composer 2.2 plugins compatibility
+
+## [3.0.0] - 2021-12-26
+
+This major version is only PHP 8 compatible.
+
+### Changed
+
+- Support **Typed properties** features, now minimum PHP requirement is 8.0
+
+  Read more about this feature at :
+
+  - <https://stitcher.io/blog/typed-properties-in-php-74>
+  - <https://php.watch/versions/7.4/typed-properties>
+
 ## [2.1.0] - 2021-12-25
 
 ### Added

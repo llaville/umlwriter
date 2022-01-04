@@ -13,9 +13,9 @@ use Bartlett\UmlWriter\Config\Loader\YamlFileLoader;
 use Symfony\Component\Config\Exception\FileLocatorFileNotFoundException;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Config\Loader\LoaderResolver;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use InvalidArgumentException;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 use function array_key_exists;
 use function basename;
 use function dirname;
@@ -27,17 +27,11 @@ use function realpath;
  */
 final class ConfigurationHandler
 {
-    /** @var string|null  */
-    private $filename;
-
+    private ?string $filename;
     /** @var array<string, mixed>  */
-    private $configStore;
-
-    /** @var bool */
-    private $initialized;
-
-    /** @var OptionsResolver  */
-    private $optionsResolver;
+    private array $configStore;
+    private bool $initialized;
+    private OptionsResolver $optionsResolver;
 
     public function __construct(?string $filename)
     {
@@ -105,12 +99,7 @@ final class ConfigurationHandler
         return $this->flatten($this->configStore);
     }
 
-    /**
-     * @param string $key
-     * @param mixed $default
-     * @return mixed|null
-     */
-    public function getValueByKey(string $key, $default = null)
+    public function getValueByKey(string $key, mixed $default = null): mixed
     {
         $data = $this->toFlat();
         return array_key_exists($key, $data) ? $data[$key] : $default;

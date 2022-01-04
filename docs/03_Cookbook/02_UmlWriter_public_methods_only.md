@@ -11,9 +11,9 @@ When you're in project folder, invoke `diagram:class` command with following arg
 bin/umlwriter diagram:class src/ --hide-private --hide-protected --without-constants --without-properties --format=svg
 ```
 
-Will output this [graph statements](./02_UmlWriter_public_methods_only.gv) and image look like
+Will output this [graph statements](./public-methods-only.html.gv) and image look like
 
-![Example](./public_methods_only.graphviz.svg)
+![Graph UML Example](./public-methods-only.graphviz.svg)
 
 ## Batch PHP
 

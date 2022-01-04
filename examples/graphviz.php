@@ -12,8 +12,10 @@
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
+use Bartlett\GraphUml\Generator\GraphVizGenerator;
 use Bartlett\UmlWriter\Generator\GeneratorFactory;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
+
 use Symfony\Component\Finder\Finder;
 
 // path to directory where to find PHP source code
@@ -23,7 +25,7 @@ $finder = new Finder();
 $finder->in($dataSource)->name('*.php');
 
 $generatorFactory = new GeneratorFactory('graphviz');
-// creates instance of Bartlett\GraphUml\Generator\GraphVizGenerator
+/** @var GraphVizGenerator $generator */
 $generator = $generatorFactory->getGenerator();
 
 $renderer = new ClassDiagramRenderer();
@@ -35,7 +37,7 @@ $options = [
     'node.fillcolor' => 'lightgrey',
     'node.style' => 'filled',
     // @link https://plantuml.com/en/color
-    'cluster.Psr\\Container.graph.bgcolor' => 'LimeGreen',
+    'cluster.Psr\\Container.graph.bgcolor' => 'LightSkyBlue',
     'cluster.Symfony\\Component\\Console.graph.bgcolor' => 'LightSkyBlue',
     'cluster.Symfony\\Component\\Console\\Command.graph.bgcolor' => 'LightSkyBlue',
     'cluster.Symfony\\Component\\Config\\Loader.graph.bgcolor' => 'LightSkyBlue',
@@ -53,13 +55,6 @@ echo $script;
 
 // default format is PNG, change it to SVG
 $generator->setFormat('svg');
-
-if (isset($argv[1])) {
-    // target folder provided
-    $cmdFormat = '%E -T%F %t -o ' . rtrim($argv[1], DIRECTORY_SEPARATOR) . '/app.graphviz.%F';
-} else {
-    $cmdFormat = '';
-}
 $graph = $renderer->getGraph();
-$target = $generator->createImageFile($graph, $cmdFormat);
+$target = $generator->createImageFile($graph);
 echo (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;

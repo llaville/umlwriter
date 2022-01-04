@@ -13,29 +13,25 @@ use Bartlett\GraphUml\ClassDiagramBuilder;
 use Graphp\Graph\Graph;
 
 use Roave\BetterReflection\BetterReflection;
-use Roave\BetterReflection\Reflector\ClassReflector;
+use Roave\BetterReflection\Reflector\DefaultReflector;
 use Roave\BetterReflection\SourceLocator\Type\SingleFileSourceLocator;
 
 use Symfony\Component\Finder\Finder;
 
 use ReflectionException;
+use function array_merge;
 
 /**
  * @author Laurent Laville
  */
-class ClassDiagramRenderer
+final class ClassDiagramRenderer
 {
-    /** @var Graph */
-    private $graph;
-
+    private Graph $graph;
     /** @var array<string, mixed>  */
-    private $metaData;
+    private array $metaData;
 
     /**
-     * @param Finder $finder
-     * @param GeneratorInterface $generator
      * @param array<string, mixed> $parameters
-     * @return string
      * @throws ReflectionException
      */
     public function __invoke(Finder $finder, GeneratorInterface $generator, array $parameters = []): string
@@ -52,9 +48,9 @@ class ClassDiagramRenderer
 
         foreach ($finder as $file) {
             $filename = $file->getRealPath();
-            $reflector = new ClassReflector(new SingleFileSourceLocator($filename, $astLocator));
+            $reflector = new DefaultReflector(new SingleFileSourceLocator($filename, $astLocator));
 
-            foreach ($reflector->getAllClasses() as $class) {
+            foreach ($reflector->reflectAllClasses() as $class) {
                 if ($class->isAnonymous()) {
                     continue;
                 }

@@ -21,23 +21,38 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Finder\Finder;
 
 use InvalidArgumentException;
+use ReflectionException;
 use SplFileInfo;
 use function Composer\Autoload\includeFile;
+use function array_filter;
+use function array_keys;
+use function array_values;
+use function array_walk;
+use function basename;
+use function count;
+use function implode;
+use function is_bool;
+use function is_dir;
+use function realpath;
+use function rename;
+use function rtrim;
+use function sprintf;
+use function str_starts_with;
+use function strrpos;
+use function var_export;
+use const ARRAY_FILTER_USE_KEY;
 
 /**
  * @author Laurent Laville
  */
-class ClassDiagramCommand extends Command
+final class ClassDiagramCommand extends Command
 {
     public const NAME = 'diagram:class';
 
     protected static $defaultName = self::NAME;
 
-    /** @var ClassDiagramRenderer  */
-    private $renderer;
-
-    /** @var GeneratorFactoryInterface  */
-    private $generatorFactory;
+    private ClassDiagramRenderer $renderer;
+    private GeneratorFactoryInterface $generatorFactory;
 
     public function __construct(
         ClassDiagramRenderer $renderer,
@@ -67,6 +82,9 @@ class ClassDiagramCommand extends Command
         ;
     }
 
+    /**
+     * @throws ReflectionException
+     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
@@ -79,7 +97,7 @@ class ClassDiagramCommand extends Command
         }
 
         $paths = array_filter($parameters, function ($key) {
-            return strpos($key, 'paths.') === 0;
+            return str_starts_with($key, 'paths.');
         }, ARRAY_FILTER_USE_KEY);
 
         if (empty($paths)) {
@@ -118,8 +136,6 @@ class ClassDiagramCommand extends Command
     }
 
     /**
-     * @param OutputInterface $output
-     * @param SymfonyStyle $io
      * @param array<string, mixed> $parameters
      */
     private function handleContext(OutputInterface $output, SymfonyStyle $io, array $parameters): void
@@ -198,8 +214,6 @@ class ClassDiagramCommand extends Command
     }
 
     /**
-     * @param InputInterface $input
-     * @param SymfonyStyle $io
      * @return array<string, mixed>
      */
     private function handleConfiguration(InputInterface $input, SymfonyStyle $io): array
@@ -249,14 +263,13 @@ class ClassDiagramCommand extends Command
 
     /**
      * @param string[] $paths
-     * @return Finder
      */
     private function handleSourceLocator(array $paths): Finder
     {
         $filter = function (SplFileInfo $file) use ($paths) {
             foreach ($paths as $path) {
                 if (is_dir($path)) {
-                    if (0 === strpos($file->getPath(), rtrim($path, '/'))) {
+                    if (str_starts_with($file->getPath(), rtrim($path, '/'))) {
                         return true;
                     }
                 } else {

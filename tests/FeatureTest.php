@@ -1,5 +1,4 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Bartlett\UmlWriter\Tests;
 
@@ -7,13 +6,17 @@ use Bartlett\UmlWriter\Generator\GeneratorFactory;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 use Bartlett\GraphUml\Generator\GeneratorInterface;
 use Bartlett\UmlWriter\Service\ConfigurationHandler;
+
 use Symfony\Component\Finder\Finder;
+
+use Generator;
+use ReflectionException;
 
 class FeatureTest extends TestCase
 {
     private const FIXTURE_DIR = __DIR__ . DIRECTORY_SEPARATOR . 'fixtures';
 
-    private function provider(string $name)
+    private function provider(string $name): Generator
     {
         $generatorFactory = new GeneratorFactory($name);
         // creates either instance of:
@@ -35,7 +38,7 @@ class FeatureTest extends TestCase
     /**
      * Data Provider to test generation of graph statements with Graphviz generator
      */
-    public function graphvizProvider()
+    public function graphvizProvider(): Generator
     {
         return $this->provider('graphviz');
     }
@@ -43,7 +46,7 @@ class FeatureTest extends TestCase
     /**
      * Data Provider to test generation of graph statements with PlantUML generator
      */
-    public function plantumlProvider()
+    public function plantumlProvider(): Generator
     {
         return $this->provider('plantuml');
     }
@@ -51,11 +54,8 @@ class FeatureTest extends TestCase
     /**
      * Tests graph statements generation with the Graphviz generator
      *
-     * @param string $fixture
-     * @param Finder $finder
-     * @param GeneratorInterface $generator
-     * @return void
      * @dataProvider graphvizProvider
+     * @throws ReflectionException
      */
     public function testGraphvizGenerator(string $fixture, Finder $finder, GeneratorInterface $generator): void
     {
@@ -74,11 +74,8 @@ class FeatureTest extends TestCase
     /**
      * Tests graph statements generation with the PlantUML generator
      *
-     * @param string $fixture
-     * @param Finder $finder
-     * @param GeneratorInterface $generator
-     * @return void
      * @dataProvider plantumlProvider
+     * @throws ReflectionException
      */
     public function testPlantumlGenerator(string $fixture, Finder $finder, GeneratorInterface $generator): void
     {

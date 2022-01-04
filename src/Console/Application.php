@@ -16,8 +16,14 @@ use Psr\Container\ContainerInterface;
 use Symfony\Component\Console\Application as SymfonyApplication;
 use Symfony\Component\Console\CommandLoader\CommandLoaderInterface;
 use Symfony\Component\Console\CommandLoader\ContainerCommandLoader;
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\OutputInterface;
+
+use Phar;
 
 /**
  * @author Laurent Laville
@@ -25,13 +31,12 @@ use Symfony\Component\Console\Output\OutputInterface;
 final class Application extends SymfonyApplication
 {
     public const NAME = 'umlWriter';
-    public const VERSION = '2.1.0';
+    public const VERSION = '3.1.1';
 
     /**
      * @link http://patorjk.com/software/taag/#p=display&f=Standard&t=umlWriter
-     * @var string
      */
-    protected static $logo = "                  ___        __    _ _
+    protected static string $logo = "                  ___        __    _ _
   _   _ _ __ ___ | \ \      / / __(_) |_ ___ _ __
  | | | | '_ ` _ \| |\ \ /\ / / '__| | __/ _ \ '__|
  | |_| | | | | | | | \ V  V /| |  | | ||  __/ |
@@ -39,8 +44,7 @@ final class Application extends SymfonyApplication
 
 ";
 
-    /** @var ContainerInterface  */
-    private $container;
+    private ContainerInterface $container;
 
     public function __construct(ContainerInterface $container, string $version = self::VERSION)
     {
@@ -53,12 +57,15 @@ final class Application extends SymfonyApplication
     /**
      * {@inheritDoc}
      */
-    public function getHelp()
+    public function getHelp(): string
     {
         return '<comment>' . static::$logo . '</comment>' . parent::getHelp();
     }
 
-    public function doRun(InputInterface $input, OutputInterface $output)
+    /**
+     * {@inheritDoc}
+     */
+    public function doRun(InputInterface $input, OutputInterface $output): int
     {
         $this->container->set(InputInterface::class, $input);                                   // @phpstan-ignore-line
         $this->container->set(OutputInterface::class, $output);                                 // @phpstan-ignore-line
@@ -70,8 +77,56 @@ final class Application extends SymfonyApplication
     }
 
     /**
-     * @param ContainerInterface $container
-     * @return CommandLoaderInterface
+     * {@inheritDoc}
+     */
+    public function run(InputInterface $input = null, OutputInterface $output = null)
+    {
+        if (null === $input) {
+            if ($this->container->has(InputInterface::class)) {
+                $input = $this->container->get(InputInterface::class);
+            } else {
+                $input = new ArgvInput();
+            }
+        }
+
+        if (null === $output) {
+            if ($this->container->has(OutputInterface::class)) {
+                $output = $this->container->get(OutputInterface::class);
+            } else {
+                $output = new ConsoleOutput();
+            }
+        }
+
+        if ($input->hasParameterOption('--manifest')) {
+            $phar = new Phar($_SERVER['argv'][0]);
+            $manifest = $phar->getMetadata();
+            $output->writeln($manifest);
+            return 0;
+        }
+
+        return parent::run($input, $output);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function getDefaultInputDefinition(): InputDefinition
+    {
+        $definition = parent::getDefaultInputDefinition();
+        if (Phar::running()) {
+            $definition->addOption(
+                new InputOption(
+                    'manifest',
+                    null,
+                    InputOption::VALUE_NONE,
+                    'Show which versions of dependencies are bundled'
+                )
+            );
+        }
+        return $definition;
+    }
+
+    /**
      * @see https://symfony.com/doc/current/console/lazy_commands.html#containercommandloader
      */
     private function createCommandLoader(ContainerInterface $container): CommandLoaderInterface

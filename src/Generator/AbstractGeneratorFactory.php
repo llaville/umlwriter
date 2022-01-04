@@ -9,15 +9,14 @@ namespace Bartlett\UmlWriter\Generator;
 
 use Bartlett\GraphUml\Generator\GeneratorInterface;
 
+use function strtolower;
+
 /**
  * @author Laurent Laville
  */
 abstract class AbstractGeneratorFactory implements GeneratorFactoryInterface
 {
-    /**
-     * @var string
-     */
-    protected $generator;
+    protected string $generator;
 
     final public function __construct(string $generator = '')
     {

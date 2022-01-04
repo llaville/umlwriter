@@ -5,7 +5,6 @@ on:
     push:
         branches:
             - master
-            - 2.x
             - 3.x
         paths:
             - docs/**
@@ -28,7 +27,7 @@ jobs:
                 os:
                     - ubuntu-latest
                 php:
-                    - 7.4
+                    - 8.0
 
         steps:
             -   # Git Checkout
@@ -59,22 +58,14 @@ jobs:
             -   # Update diagrams used in documentation
                 name: Update Diagrams
                 run: |
-                    php examples/graphviz.php docs
-                    php examples/configuration/graphviz.php docs/01_Features
-                    php examples/services/graphviz.php docs/01_Features
-                    php examples/cli-architecture/graphviz.php docs/02_Console_Commands
-                    php examples/public-architecture/graphviz.php docs/03_Cookbook
-                    php examples/public-methods/graphviz.php docs/03_Cookbook
-                    php examples/custom-autoloader.php docs/03_Cookbook
-                    php examples/generator/graphviz.php docs/90_For_Developers
-
-            -   # Create commits
-                name: Commit generated PNG files
-                run: |
-                    git config user.name 'github-actions'
-                    git config user.email 'github-actions@users.noreply.github.com'
-                    git add docs/
-                    git commit -m "Add generated png files during workflow"
+                    php resources/graph-uml/build.php application docs
+                    php resources/graph-uml/build.php configuration docs/01_Features
+                    php resources/graph-uml/build.php services docs/01_Features
+                    php resources/graph-uml/build.php console-commands docs/02_Console_Commands
+                    php resources/graph-uml/build.php custom-autoloader docs/03_Cookbook
+                    php resources/graph-uml/build.php public-methods-only docs/03_Cookbook
+                    php resources/graph-uml/build.php public-architecture docs/03_Cookbook
+                    php resources/graph-uml/build.php generator docs/90_For_Developers
 
             -   # Setup Python version
                 name: Set up Python runtime
@@ -92,13 +83,13 @@ jobs:
 
             -   # Deploy Documentation
                 name: Deploy Docs
-                if: ${{ github.ref != 'refs/heads/master' }}
+                if: ${{ github.ref == 'refs/heads/3.x' }}
                 uses: peaceiris/actions-gh-pages@v3
                 with:
                     github_token: ${{ secrets.GITHUB_TOKEN }}
                     publish_dir: ./site
-                    destination_dir: ${{ github.ref_name }}
+                    destination_dir: 3.x
                     full_commit_message: "Deployed ${{ github.sha }} with MkDocs"
-                    force_orphan: true
+                    force_orphan: false
                     user_name: 'github-actions'
                     user_email: 'github-actions@users.noreply.github.com'

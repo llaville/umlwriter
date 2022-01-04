@@ -16,7 +16,6 @@ $finder->in($dataSource)->name('*.php')->notName('ConfigurationHandler.php');
 
 $generatorFactory = new GeneratorFactory('graphviz');
 
-// creates instance of Bartlett\GraphUml\Generator\GraphVizGenerator
 /** @var GraphVizGenerator $generator */
 $generator = $generatorFactory->getGenerator();
 
@@ -35,12 +34,6 @@ echo $script;
 // default format is PNG, change it to SVG
 $generator->setFormat('svg');
 
-if (isset($argv[1])) {
-    // target folder provided
-    $cmdFormat = '%E -T%F %t -o ' . rtrim($argv[1], DIRECTORY_SEPARATOR) . '/services.graphviz.%F';
-} else {
-    $cmdFormat = '';
-}
 $graph = $renderer->getGraph();
-$target = $generator->createImageFile($graph, $cmdFormat);
+$target = $generator->createImageFile($graph);
 echo (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;

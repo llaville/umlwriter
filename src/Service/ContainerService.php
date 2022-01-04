@@ -18,7 +18,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 use RuntimeException;
-
 use function array_key_exists;
 use function call_user_func;
 use function sprintf;
@@ -31,7 +30,7 @@ class ContainerService implements ContainerInterface
     /**
      * @var array<string, mixed>
      */
-    private $internalServices = [
+    private array $internalServices = [
         ClassDiagramCommand::class => null,
         ClassDiagramRenderer::class => null,
     ];
@@ -40,7 +39,7 @@ class ContainerService implements ContainerInterface
      * Services allowed at runtime
      * @var array<string, mixed>
      */
-    private $runtimeServices = [
+    private array $runtimeServices = [
         InputInterface::class => null,
         OutputInterface::class => null,
         GeneratorFactoryInterface::class => null,
@@ -59,11 +58,7 @@ class ContainerService implements ContainerInterface
         };
     }
 
-    /**
-     * @param string $id
-     * @param mixed $service
-     */
-    public function set(string $id, $service): void
+    public function set(string $id, mixed $service): void
     {
         if (!array_key_exists($id, $this->runtimeServices)) {
             throw new class (
@@ -75,7 +70,7 @@ class ContainerService implements ContainerInterface
         $this->runtimeServices[$id] = $service;
     }
 
-    public function get(string $id)
+    public function get(string $id): mixed
     {
         if (isset($this->runtimeServices[$id])) {
             return $this->runtimeServices[$id];
@@ -91,7 +86,7 @@ class ContainerService implements ContainerInterface
         };
     }
 
-    public function has(string $id)
+    public function has(string $id): bool
     {
         return isset($this->internalServices[$id]) || isset($this->runtimeServices[$id]);
     }
