@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD013 -->
 # About
 
-![Graph UML Application](./application.graphviz.svg)
+![Graph UML Application](./assets/images/application.graphviz.svg)
 
 ## Features
 
