@@ -6,33 +6,40 @@ declare(strict_types=1);
 
 gc_disable(); // performance boost
 
-if (\Phar::running()) {
+$autoloader = 'vendor/autoload.php';
+
+if (Phar::running()) {
+    $phar = new Phar($_SERVER['argv'][0]);
     $possibleAutoloadPaths = [
-        'phar://umlwriter.phar/vendor/autoload.php'
+        'phar://' . $phar->getAlias(),
     ];
+
 } else {
     $possibleAutoloadPaths = [
         // local dev repository
-        __DIR__ . '/../vendor/autoload.php',
+        dirname(__DIR__,),
         // dependency
-        __DIR__ . '/../../../../vendor/autoload.php',
+        dirname(__DIR__, 4),
     ];
 }
 
 $isAutoloadFound = false;
 foreach ($possibleAutoloadPaths as $possibleAutoloadPath) {
-    if (file_exists($possibleAutoloadPath)) {
-        require_once $possibleAutoloadPath;
+    if (file_exists($possibleAutoloadPath . DIRECTORY_SEPARATOR . $autoloader)) {
+        require_once $possibleAutoloadPath . DIRECTORY_SEPARATOR . $autoloader;
         $isAutoloadFound = true;
         break;
     }
 }
 
 if ($isAutoloadFound === false) {
-    throw new RuntimeException(sprintf(
-        'Unable to find "vendor/autoload.php" in "%s" paths.',
-        implode('", "', $possibleAutoloadPaths)
-    ));
+    throw new RuntimeException(
+        sprintf(
+            'Unable to find "%s" in "%s" paths.',
+            $autoloader,
+            implode('", "', $possibleAutoloadPaths)
+        )
+    );
 }
 
 if (PHP_SAPI !== 'cli') {
