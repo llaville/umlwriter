@@ -12,17 +12,20 @@ For users that still used the unmaintained version 1.3, please visit <http://php
 
 ## PHAR distribution
 
-You can build yourself a PHAR version of this library. Use the [Box](https://github.com/box-project/box) project.
+You can build yourself a PHAR version of this library. Use the [Box Manifest](https://github.com/llaville/box-manifest/) project.
 
 Invoke the following command
 
 ```bash
-php box.phar compile --config=box.json.dist
+php box-manifest.phar compile --config=box.json.dist
 
 // or simply
 
-php box.phar compile
+php box-manifest.phar compile
 ```
+
+**CAUTION**: It's recommended to use the phar version of `bartlett/box-manifest` project instead of required it as a dependency in composer.
+That will avoid including into manifest all components of BoxManifest.
 
 And find the `umlwriter.phar` file in `bin` directory.
 
