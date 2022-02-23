@@ -7,6 +7,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Added
+
+- support for Symfony 6.x components
+
 ### Changed
 
 - PHAR manifest (simple text format) is built with `bartlett/box-manifest` package
