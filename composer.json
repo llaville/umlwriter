@@ -39,6 +39,9 @@
         "bin/umlwriter"
     ],
     "config": {
+        "platform": {
+            "php": "8.0.12"
+        },
         "preferred-install": "source",
         "sort-packages": true,
         "allow-plugins": {
