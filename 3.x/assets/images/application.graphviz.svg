@@ -178,7 +178,7 @@
 <text text-anchor="start" x="544" y="-789.8" font-family="Times,serif" font-weight="bold" font-size="14.00">Application</text>
 <polygon fill="none" stroke="black" points="24,-739 24,-783 1154,-783 1154,-739 24,-739"/>
 <text text-anchor="start" x="29" y="-766.8" font-family="Times,serif" font-size="14.00">+ «static» NAME : string = &quot;umlWriter&quot; {readOnly}</text>
-<text text-anchor="start" x="29" y="-747.8" font-family="Times,serif" font-size="14.00">+ «static» VERSION : string = &quot;3\.1\.0&quot; {readOnly}</text>
+<text text-anchor="start" x="29" y="-747.8" font-family="Times,serif" font-size="14.00">+ «static» VERSION : string = &quot;3\.1\.1&quot; {readOnly}</text>
 <polygon fill="none" stroke="black" points="24,-733 24,-739 1154,-739 1154,-733 24,-733"/>
 <polygon fill="none" stroke="black" points="24,-651 24,-733 1154,-733 1154,-651 24,-651"/>
 <text text-anchor="start" x="29" y="-716.8" font-family="Times,serif" font-size="14.00">+ __construct(container : Psr\Container\ContainerInterface, version : string = VERSION)</text>
