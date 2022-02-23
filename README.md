@@ -1,7 +1,6 @@
 <!-- markdownlint-disable MD013 -->
 # UmlWriter
 
-
 **UmlWriter** is a library that adds the ability to generate UML class diagrams.
 
 ## Documentation
