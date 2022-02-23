@@ -2,7 +2,9 @@ digraph {
   graph [name="G" overlap="false" rankdir="TB"]
   node [fontname="Verdana" fontsize=8 shape="none" margin=0 fillcolor="#FEFECE" style="filled"]
   edge [fontname="Verdana" fontsize=8]
-  "FixtureFive\\ParentClass" [shape="none" label=<
+  subgraph cluster_0 {
+    label = "FixtureFive"
+    "FixtureFive\\ParentClass" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b><br/>ParentClass</b></td></tr>
     <tr><td></td></tr>
@@ -11,7 +13,7 @@ digraph {
     <tr><td align="left">+ methodToOverride()</td></tr>
 </table></td></tr>
 </table>>]
-  "FixtureFive\\ExtendingClass" [shape="none" label=<
+    "FixtureFive\\ExtendingClass" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b><br/>ExtendingClass</b></td></tr>
     <tr><td></td></tr>
@@ -19,5 +21,6 @@ digraph {
     <tr><td align="left">+ methodToOverride()</td></tr>
 </table></td></tr>
 </table>>]
+  }
   "FixtureFive\\ExtendingClass" -> "FixtureFive\\ParentClass" [arrowhead="empty" style="filled"]
 }
