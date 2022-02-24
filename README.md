@@ -24,10 +24,25 @@ php box-manifest.phar compile --config=box.json.dist
 php box-manifest.phar compile
 ```
 
-**CAUTION**: It's recommended to use the phar version of `bartlett/box-manifest` project instead of required it as a dependency in composer.
-That will avoid including into manifest all components of BoxManifest.
-
 And find the `umlwriter.phar` file in `bin` directory.
+
+**CAUTION**: It's NOT recommended requiring it as a dependency in `composer.json` of your project,
+to avoid including into manifest all components of BoxManifest.
+
+Use instead, either :
+
+- the phar version of `bartlett/box-manifest`
+- the docker image of `bartlett/box-manifest`. Available at <https://github.com/llaville/box-manifest/pkgs/container/box-manifest>
+
+Invoke the following command
+
+```bash
+docker run --rm -it -v $(pwd):/usr/src ghcr.io/llaville/box-manifest:latest compile --config=box.json.dist
+
+// or simply
+
+docker run --rm -it -v $(pwd):/usr/src ghcr.io/llaville/box-manifest:latest compile
+```
 
 ## Usage
 
