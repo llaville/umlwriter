@@ -37,11 +37,11 @@ Use instead, either :
 Invoke the following command
 
 ```bash
-docker run --rm -it -v $(pwd):/usr/src ghcr.io/llaville/box-manifest:latest compile --config=box.json.dist
+docker run --rm -it -u "$(id -u):$(id -g)" -v $(pwd):/usr/src ghcr.io/llaville/box-manifest:latest compile --config=box.json.dist
 
 // or simply
 
-docker run --rm -it -v $(pwd):/usr/src ghcr.io/llaville/box-manifest:latest compile
+docker run --rm -it -u "$(id -u):$(id -g)" -v $(pwd):/usr/src ghcr.io/llaville/box-manifest:latest compile
 ```
 
 ## Usage
