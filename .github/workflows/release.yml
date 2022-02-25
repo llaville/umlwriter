@@ -25,7 +25,6 @@ jobs:
 
             -   # Build the current release changelog
                 name: Build Release Notes
-                shell: bash
                 run: |
                     resources/release/build.php
 
