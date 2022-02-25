@@ -23,9 +23,6 @@ jobs:
                         os: ubuntu-latest
                         php: 8.0
 
-        container:
-            image: ghcr.io/llaville/box-manifest:latest
-
         steps:
             -   # Git Checkout
                 name: Checkout
