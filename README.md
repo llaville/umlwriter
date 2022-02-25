@@ -56,7 +56,7 @@ bin/umlwriter diagram:class src/ --generator graphviz
 
 ## Contributors
 
-* Laurent Laville (Lead Developer)
+- Laurent Laville (Lead Developer)
 
 ## Credits
 
