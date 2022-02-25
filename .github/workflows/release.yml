@@ -32,7 +32,7 @@ jobs:
                 with:  # https://github.com/softprops/action-gh-release#-customizing
                     prerelease: true
                     draft: true
-                    body_path: ${{ github.workspace }}${{ env.RELEASE_NOTES }}
+                    body_path: ${{ github.workspace }}/${{ env.RELEASE_NOTES }}
                     # https://github.com/softprops/action-gh-release#%EF%B8%8F-uploading-release-assets
                     files:
                         ${{ env.BOX_OUTPUT }}
