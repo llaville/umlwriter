@@ -13,7 +13,15 @@ env:
 
 jobs:
     build:
-        runs-on: ubuntu-latest
+        runs-on: ${{ matrix.os }}
+
+        strategy:
+            fail-fast: false
+            matrix:
+                include:
+                    -
+                        os: ubuntu-latest
+                        php: 8.0
 
         container:
             image: ghcr.io/llaville/box-manifest:latest
@@ -27,7 +35,7 @@ jobs:
                 name: Setup PHP runtime
                 uses: shivammathur/setup-php@v2
                 with:
-                    php-version: "8.0"
+                    php-version: ${{ matrix.php }}
 
             -   # Install Composer dependencies
                 name: Install Composer dependencies
