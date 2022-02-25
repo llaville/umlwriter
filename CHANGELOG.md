@@ -7,6 +7,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+<!-- MARKDOWN-RELEASE:START -->
 ### Added
 
 - support for Symfony 6.x components
@@ -19,6 +20,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 ### Removed
 
 - `Bartlett\UmlWriter\Console\Application::VERSION` constant.
+<!-- MARKDOWN-RELEASE:END -->
 
 ## [3.1.1] - 2022-01-04
 
