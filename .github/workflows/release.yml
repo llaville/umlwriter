@@ -15,17 +15,26 @@ jobs:
     build:
         runs-on: ubuntu-latest
 
+        container:
+            image: ghcr.io/llaville/box-manifest:latest
+
         steps:
             -   # Git Checkout
                 name: Checkout
                 uses: actions/checkout@v2
 
-            -   # Build the current release with artifacts (changelog and php archive)
-                name: Build
+            -   # Build the current release changelog
+                name: Build Release Notes
                 shell: bash
                 run: |
-                    php resources/release/build.php
-                    docker run --rm -it -u "$(id -u):$(id -g)" -v $(pwd):/usr/src ghcr.io/llaville/box-manifest:latest compile
+                    resources/release/build.php
+
+            -   # Build the current release with artifacts (php archive)
+                name: Build Release Artifacts
+                uses: docker://ghcr.io/llaville/box-manifest:latest
+                with:
+                    entrypoint: /usr/local/src/box-manifest/bin/box
+                    args: compile
 
             -   # Draft a new Release
                 name: Release
