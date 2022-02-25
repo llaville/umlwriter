@@ -15,7 +15,7 @@ then
 fi
 if [ $STATUS_CODE == 0 ]
 then
-    docker run --rm -it -u "$(id -u):$(id -g)" -v $(pwd):/usr/src ghcr.io/llaville/box-manifest:latest compile
+    docker run --rm -it -u "$(id -u):$(id -g)" -v $SCRIPT_DIR/..:/usr/src ghcr.io/llaville/box-manifest:latest compile
 fi
 
 exit $STATUS_CODE
