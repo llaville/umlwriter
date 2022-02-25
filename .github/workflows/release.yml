@@ -23,7 +23,9 @@ jobs:
             -   # Build the current release with artifacts (changelog and php archive)
                 name: Build
                 shell: bash
-                run:  resources/make-release.sh
+                run: |
+                    php resources/release/build.php
+                    docker run --rm -it -u "$(id -u):$(id -g)" -v $(pwd):/usr/src ghcr.io/llaville/box-manifest:latest compile
 
             -   # Draft a new Release
                 name: Release
