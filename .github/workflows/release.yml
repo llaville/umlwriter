@@ -23,6 +23,18 @@ jobs:
                 name: Checkout
                 uses: actions/checkout@v2
 
+            -   # Setup PHP runtime
+                name: Setup PHP runtime
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: 8.0
+
+            -   # Install Composer dependencies
+                name: Install Composer dependencies
+                uses: ramsey/composer-install@v2
+                with:
+                    composer-options: "--prefer-dist"
+
             -   # Build the current release changelog
                 name: Build Release Notes
                 run: |
