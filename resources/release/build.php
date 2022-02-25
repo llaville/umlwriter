@@ -1,4 +1,5 @@
-<?php declare(strict_types=1);
+#!/usr/bin/env php
+<?php
 /**
  * This file is part of the UmlWriter package.
  *
