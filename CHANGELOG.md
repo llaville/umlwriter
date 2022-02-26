@@ -11,6 +11,7 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 ### Added
 
 - support for Symfony 6.x components
+- `release` workflow to automate creating a new GitHub release with PHAR artifact (that contains a manifest)
 
 ### Changed
 
