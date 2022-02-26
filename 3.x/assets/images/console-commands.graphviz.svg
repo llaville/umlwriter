@@ -10,7 +10,7 @@
 <title>%3</title>
 <g id="clust1" class="cluster">
 <title>cluster_0</title>
-<polygon fill="transparent" stroke="black" points="41,-938 41,-1151 1203,-1151 1203,-938 41,-938"/>
+<polygon fill="transparent" stroke="black" points="24,-938 24,-1151 1220,-1151 1220,-938 24,-938"/>
 <text text-anchor="middle" x="622" y="-1135.8" font-family="Times,serif" font-size="14.00">Bartlett\UmlWriter\Console</text>
 </g>
 <g id="clust2" class="cluster">
@@ -36,19 +36,19 @@
 <!-- Bartlett\\UmlWriter\\Console\\Application -->
 <g id="node1" class="node">
 <title>Bartlett\\UmlWriter\\Console\\Application</title>
-<polygon fill="#fefece" stroke="transparent" points="1195,-1120 49,-1120 49,-946 1195,-946 1195,-1120"/>
-<polygon fill="#eeeeee" stroke="transparent" points="57,-1082 57,-1116 1187,-1116 1187,-1082 57,-1082"/>
-<polygon fill="none" stroke="black" points="57,-1082 57,-1116 1187,-1116 1187,-1082 57,-1082"/>
-<text text-anchor="start" x="577" y="-1088.8" font-family="Times,serif" font-weight="bold" font-size="14.00">Application</text>
-<polygon fill="none" stroke="black" points="57,-1038 57,-1082 1187,-1082 1187,-1038 57,-1038"/>
-<text text-anchor="start" x="62" y="-1065.8" font-family="Times,serif" font-size="14.00">+ «static» NAME : string = &quot;umlWriter&quot; {readOnly}</text>
-<text text-anchor="start" x="62" y="-1046.8" font-family="Times,serif" font-size="14.00">+ «static» VERSION : string = &quot;3\.1\.1&quot; {readOnly}</text>
-<polygon fill="none" stroke="black" points="57,-1032 57,-1038 1187,-1038 1187,-1032 57,-1032"/>
-<polygon fill="none" stroke="black" points="57,-950 57,-1032 1187,-1032 1187,-950 57,-950"/>
-<text text-anchor="start" x="62" y="-1015.8" font-family="Times,serif" font-size="14.00">+ __construct(container : Psr\Container\ContainerInterface, version : string = VERSION)</text>
-<text text-anchor="start" x="62" y="-996.8" font-family="Times,serif" font-size="14.00">+ getHelp() : string</text>
-<text text-anchor="start" x="62" y="-977.8" font-family="Times,serif" font-size="14.00">+ doRun(input : Symfony\Component\Console\Input\InputInterface, output : Symfony\Component\Console\Output\OutputInterface) : int</text>
-<text text-anchor="start" x="62" y="-958.8" font-family="Times,serif" font-size="14.00">+ run(input : Symfony\Component\Console\Input\InputInterface = «unknown», output : Symfony\Component\Console\Output\OutputInterface = «unknown»)</text>
+<polygon fill="#fefece" stroke="transparent" points="1211.5,-1120 32.5,-1120 32.5,-946 1211.5,-946 1211.5,-1120"/>
+<polygon fill="#eeeeee" stroke="transparent" points="41,-1082 41,-1116 1204,-1116 1204,-1082 41,-1082"/>
+<polygon fill="none" stroke="black" points="41,-1082 41,-1116 1204,-1116 1204,-1082 41,-1082"/>
+<text text-anchor="start" x="577.5" y="-1088.8" font-family="Times,serif" font-weight="bold" font-size="14.00">Application</text>
+<polygon fill="none" stroke="black" points="41,-1057 41,-1082 1204,-1082 1204,-1057 41,-1057"/>
+<text text-anchor="start" x="46" y="-1065.8" font-family="Times,serif" font-size="14.00">+ «static» NAME : string = &quot;umlWriter&quot; {readOnly}</text>
+<polygon fill="none" stroke="black" points="41,-1051 41,-1057 1204,-1057 1204,-1051 41,-1051"/>
+<polygon fill="none" stroke="black" points="41,-950 41,-1051 1204,-1051 1204,-950 41,-950"/>
+<text text-anchor="start" x="46" y="-1034.8" font-family="Times,serif" font-size="14.00">+ __construct(container : Psr\Container\ContainerInterface)</text>
+<text text-anchor="start" x="46" y="-1015.8" font-family="Times,serif" font-size="14.00">+ getHelp() : string</text>
+<text text-anchor="start" x="46" y="-996.8" font-family="Times,serif" font-size="14.00">+ getLongVersion() : string</text>
+<text text-anchor="start" x="46" y="-977.8" font-family="Times,serif" font-size="14.00">+ doRun(input : Symfony\Component\Console\Input\InputInterface, output : Symfony\Component\Console\Output\OutputInterface) : int</text>
+<text text-anchor="start" x="46" y="-958.8" font-family="Times,serif" font-size="14.00">+ run(input : Symfony\Component\Console\Input\InputInterface = «unknown», output : Symfony\Component\Console\Output\OutputInterface = «unknown») : int</text>
 </g>
 <!-- Symfony\\Component\\Console\\Application -->
 <g id="node2" class="node">
@@ -64,37 +64,37 @@
 <text text-anchor="start" x="30" y="-797.3" font-family="Times,serif" font-size="14.00">+ setCommandLoader(commandLoader : Symfony\Component\Console\CommandLoader\CommandLoaderInterface)</text>
 <text text-anchor="start" x="30" y="-778.3" font-family="Times,serif" font-size="14.00">+ getSignalRegistry() : Symfony\Component\Console\SignalRegistry\SignalRegistry</text>
 <text text-anchor="start" x="30" y="-759.3" font-family="Times,serif" font-size="14.00">+ setSignalsToDispatchEvent(signalsToDispatchEvent : int = «unknown»)</text>
-<text text-anchor="start" x="30" y="-740.3" font-family="Times,serif" font-size="14.00">+ run(input : Symfony\Component\Console\Input\InputInterface = «unknown», output : Symfony\Component\Console\Output\OutputInterface = «unknown»)</text>
+<text text-anchor="start" x="30" y="-740.3" font-family="Times,serif" font-size="14.00">+ run(input : Symfony\Component\Console\Input\InputInterface = «unknown», output : Symfony\Component\Console\Output\OutputInterface = «unknown») : int</text>
 <text text-anchor="start" x="30" y="-721.3" font-family="Times,serif" font-size="14.00">+ doRun(input : Symfony\Component\Console\Input\InputInterface, output : Symfony\Component\Console\Output\OutputInterface)</text>
 <text text-anchor="start" x="30" y="-702.3" font-family="Times,serif" font-size="14.00">+ reset()</text>
 <text text-anchor="start" x="30" y="-683.3" font-family="Times,serif" font-size="14.00">+ setHelperSet(helperSet : Symfony\Component\Console\Helper\HelperSet)</text>
-<text text-anchor="start" x="30" y="-664.3" font-family="Times,serif" font-size="14.00">+ getHelperSet()</text>
+<text text-anchor="start" x="30" y="-664.3" font-family="Times,serif" font-size="14.00">+ getHelperSet() : Symfony\Component\Console\Helper\HelperSet</text>
 <text text-anchor="start" x="30" y="-645.3" font-family="Times,serif" font-size="14.00">+ setDefinition(definition : Symfony\Component\Console\Input\InputDefinition)</text>
-<text text-anchor="start" x="30" y="-626.3" font-family="Times,serif" font-size="14.00">+ getDefinition()</text>
+<text text-anchor="start" x="30" y="-626.3" font-family="Times,serif" font-size="14.00">+ getDefinition() : Symfony\Component\Console\Input\InputDefinition</text>
 <text text-anchor="start" x="30" y="-607.3" font-family="Times,serif" font-size="14.00">+ complete(input : Symfony\Component\Console\Completion\CompletionInput, suggestions : Symfony\Component\Console\Completion\CompletionSuggestions) : void</text>
-<text text-anchor="start" x="30" y="-588.3" font-family="Times,serif" font-size="14.00">+ getHelp()</text>
-<text text-anchor="start" x="30" y="-569.3" font-family="Times,serif" font-size="14.00">+ areExceptionsCaught()</text>
+<text text-anchor="start" x="30" y="-588.3" font-family="Times,serif" font-size="14.00">+ getHelp() : string</text>
+<text text-anchor="start" x="30" y="-569.3" font-family="Times,serif" font-size="14.00">+ areExceptionsCaught() : bool</text>
 <text text-anchor="start" x="30" y="-550.3" font-family="Times,serif" font-size="14.00">+ setCatchExceptions(boolean : bool)</text>
-<text text-anchor="start" x="30" y="-531.3" font-family="Times,serif" font-size="14.00">+ isAutoExitEnabled()</text>
+<text text-anchor="start" x="30" y="-531.3" font-family="Times,serif" font-size="14.00">+ isAutoExitEnabled() : bool</text>
 <text text-anchor="start" x="30" y="-512.3" font-family="Times,serif" font-size="14.00">+ setAutoExit(boolean : bool)</text>
-<text text-anchor="start" x="30" y="-493.3" font-family="Times,serif" font-size="14.00">+ getName()</text>
+<text text-anchor="start" x="30" y="-493.3" font-family="Times,serif" font-size="14.00">+ getName() : string</text>
 <text text-anchor="start" x="30" y="-474.3" font-family="Times,serif" font-size="14.00">+ setName(name : string)</text>
-<text text-anchor="start" x="30" y="-455.3" font-family="Times,serif" font-size="14.00">+ getVersion()</text>
+<text text-anchor="start" x="30" y="-455.3" font-family="Times,serif" font-size="14.00">+ getVersion() : string</text>
 <text text-anchor="start" x="30" y="-436.3" font-family="Times,serif" font-size="14.00">+ setVersion(version : string)</text>
 <text text-anchor="start" x="30" y="-417.3" font-family="Times,serif" font-size="14.00">+ getLongVersion()</text>
-<text text-anchor="start" x="30" y="-398.3" font-family="Times,serif" font-size="14.00">+ register(name : string)</text>
+<text text-anchor="start" x="30" y="-398.3" font-family="Times,serif" font-size="14.00">+ register(name : string) : Symfony\Component\Console\Command\Command</text>
 <text text-anchor="start" x="30" y="-379.3" font-family="Times,serif" font-size="14.00">+ addCommands(commands : array)</text>
 <text text-anchor="start" x="30" y="-360.3" font-family="Times,serif" font-size="14.00">+ add(command : Symfony\Component\Console\Command\Command)</text>
 <text text-anchor="start" x="30" y="-341.3" font-family="Times,serif" font-size="14.00">+ get(name : string)</text>
-<text text-anchor="start" x="30" y="-322.3" font-family="Times,serif" font-size="14.00">+ has(name : string)</text>
-<text text-anchor="start" x="30" y="-303.3" font-family="Times,serif" font-size="14.00">+ getNamespaces()</text>
-<text text-anchor="start" x="30" y="-284.3" font-family="Times,serif" font-size="14.00">+ findNamespace(namespace : string)</text>
+<text text-anchor="start" x="30" y="-322.3" font-family="Times,serif" font-size="14.00">+ has(name : string) : bool</text>
+<text text-anchor="start" x="30" y="-303.3" font-family="Times,serif" font-size="14.00">+ getNamespaces() : array</text>
+<text text-anchor="start" x="30" y="-284.3" font-family="Times,serif" font-size="14.00">+ findNamespace(namespace : string) : string</text>
 <text text-anchor="start" x="30" y="-265.3" font-family="Times,serif" font-size="14.00">+ find(name : string)</text>
 <text text-anchor="start" x="30" y="-246.3" font-family="Times,serif" font-size="14.00">+ all(namespace : string = «unknown»)</text>
-<text text-anchor="start" x="30" y="-227.3" font-family="Times,serif" font-size="14.00">+ «static» getAbbreviations(names : array)</text>
+<text text-anchor="start" x="30" y="-227.3" font-family="Times,serif" font-size="14.00">+ «static» getAbbreviations(names : array) : array</text>
 <text text-anchor="start" x="30" y="-208.3" font-family="Times,serif" font-size="14.00">+ renderThrowable(e : Throwable, output : Symfony\Component\Console\Output\OutputInterface) : void</text>
-<text text-anchor="start" x="30" y="-189.3" font-family="Times,serif" font-size="14.00">+ extractNamespace(name : string, limit : int = «unknown»)</text>
-<text text-anchor="start" x="30" y="-170.3" font-family="Times,serif" font-size="14.00">+ setDefaultCommand(commandName : string, isSingleCommand : bool = false)</text>
+<text text-anchor="start" x="30" y="-189.3" font-family="Times,serif" font-size="14.00">+ extractNamespace(name : string, limit : int = «unknown») : string</text>
+<text text-anchor="start" x="30" y="-170.3" font-family="Times,serif" font-size="14.00">+ setDefaultCommand(commandName : string, isSingleCommand : bool = false) : static</text>
 <text text-anchor="start" x="30" y="-151.3" font-family="Times,serif" font-size="14.00">+ isSingleCommand() : bool</text>
 </g>
 <!-- Bartlett\\UmlWriter\\Console\\Application&#45;&gt;Symfony\\Component\\Console\\Application -->
@@ -147,40 +147,40 @@
 <text text-anchor="start" x="1266" y="-806.3" font-family="Times,serif" font-size="14.00">+ «static» INVALID : int = 2 {readOnly}</text>
 <polygon fill="none" stroke="black" points="1261,-791.5 1261,-797.5 2456,-797.5 2456,-791.5 1261,-791.5"/>
 <polygon fill="none" stroke="black" points="1261,-139.5 1261,-791.5 2456,-791.5 2456,-139.5 1261,-139.5"/>
-<text text-anchor="start" x="1266" y="-775.3" font-family="Times,serif" font-size="14.00">+ «static» getDefaultName()</text>
+<text text-anchor="start" x="1266" y="-775.3" font-family="Times,serif" font-size="14.00">+ «static» getDefaultName() : ?string</text>
 <text text-anchor="start" x="1266" y="-756.3" font-family="Times,serif" font-size="14.00">+ «static» getDefaultDescription() : ?string</text>
 <text text-anchor="start" x="1266" y="-737.3" font-family="Times,serif" font-size="14.00">+ __construct(name : string = «unknown»)</text>
 <text text-anchor="start" x="1266" y="-718.3" font-family="Times,serif" font-size="14.00">+ ignoreValidationErrors()</text>
 <text text-anchor="start" x="1266" y="-699.3" font-family="Times,serif" font-size="14.00">+ setApplication(application : Symfony\Component\Console\Application = «unknown»)</text>
 <text text-anchor="start" x="1266" y="-680.3" font-family="Times,serif" font-size="14.00">+ setHelperSet(helperSet : Symfony\Component\Console\Helper\HelperSet)</text>
-<text text-anchor="start" x="1266" y="-661.3" font-family="Times,serif" font-size="14.00">+ getHelperSet()</text>
-<text text-anchor="start" x="1266" y="-642.3" font-family="Times,serif" font-size="14.00">+ getApplication()</text>
+<text text-anchor="start" x="1266" y="-661.3" font-family="Times,serif" font-size="14.00">+ getHelperSet() : ?Symfony\Component\Console\Helper\HelperSet</text>
+<text text-anchor="start" x="1266" y="-642.3" font-family="Times,serif" font-size="14.00">+ getApplication() : ?Symfony\Component\Console\Application</text>
 <text text-anchor="start" x="1266" y="-623.3" font-family="Times,serif" font-size="14.00">+ isEnabled()</text>
-<text text-anchor="start" x="1266" y="-604.3" font-family="Times,serif" font-size="14.00">+ run(input : Symfony\Component\Console\Input\InputInterface, output : Symfony\Component\Console\Output\OutputInterface)</text>
+<text text-anchor="start" x="1266" y="-604.3" font-family="Times,serif" font-size="14.00">+ run(input : Symfony\Component\Console\Input\InputInterface, output : Symfony\Component\Console\Output\OutputInterface) : int</text>
 <text text-anchor="start" x="1266" y="-585.3" font-family="Times,serif" font-size="14.00">+ complete(input : Symfony\Component\Console\Completion\CompletionInput, suggestions : Symfony\Component\Console\Completion\CompletionSuggestions) : void</text>
-<text text-anchor="start" x="1266" y="-566.3" font-family="Times,serif" font-size="14.00">+ setCode(code : callable)</text>
+<text text-anchor="start" x="1266" y="-566.3" font-family="Times,serif" font-size="14.00">+ setCode(code : callable) : static</text>
 <text text-anchor="start" x="1266" y="-547.3" font-family="Times,serif" font-size="14.00">+ mergeApplicationDefinition(mergeArgs : bool = true)</text>
-<text text-anchor="start" x="1266" y="-528.3" font-family="Times,serif" font-size="14.00">+ setDefinition(definition : mixed)</text>
-<text text-anchor="start" x="1266" y="-509.3" font-family="Times,serif" font-size="14.00">+ getDefinition()</text>
-<text text-anchor="start" x="1266" y="-490.3" font-family="Times,serif" font-size="14.00">+ getNativeDefinition()</text>
-<text text-anchor="start" x="1266" y="-471.3" font-family="Times,serif" font-size="14.00">+ addArgument(name : string, mode : int = «unknown», description : string = &#39;&#39;, default = «unknown»)</text>
-<text text-anchor="start" x="1266" y="-452.3" font-family="Times,serif" font-size="14.00">+ addOption(name : string, shortcut = «unknown», mode : int = «unknown», description : string = &#39;&#39;, default = «unknown»)</text>
-<text text-anchor="start" x="1266" y="-433.3" font-family="Times,serif" font-size="14.00">+ setName(name : string)</text>
-<text text-anchor="start" x="1266" y="-414.3" font-family="Times,serif" font-size="14.00">+ setProcessTitle(title : string)</text>
-<text text-anchor="start" x="1266" y="-395.3" font-family="Times,serif" font-size="14.00">+ getName()</text>
-<text text-anchor="start" x="1266" y="-376.3" font-family="Times,serif" font-size="14.00">+ setHidden(hidden : bool)</text>
-<text text-anchor="start" x="1266" y="-357.3" font-family="Times,serif" font-size="14.00">+ isHidden()</text>
-<text text-anchor="start" x="1266" y="-338.3" font-family="Times,serif" font-size="14.00">+ setDescription(description : string)</text>
-<text text-anchor="start" x="1266" y="-319.3" font-family="Times,serif" font-size="14.00">+ getDescription()</text>
-<text text-anchor="start" x="1266" y="-300.3" font-family="Times,serif" font-size="14.00">+ setHelp(help : string)</text>
-<text text-anchor="start" x="1266" y="-281.3" font-family="Times,serif" font-size="14.00">+ getHelp()</text>
-<text text-anchor="start" x="1266" y="-262.3" font-family="Times,serif" font-size="14.00">+ getProcessedHelp()</text>
-<text text-anchor="start" x="1266" y="-243.3" font-family="Times,serif" font-size="14.00">+ setAliases(aliases : iterable)</text>
-<text text-anchor="start" x="1266" y="-224.3" font-family="Times,serif" font-size="14.00">+ getAliases()</text>
-<text text-anchor="start" x="1266" y="-205.3" font-family="Times,serif" font-size="14.00">+ getSynopsis(short : bool = false)</text>
-<text text-anchor="start" x="1266" y="-186.3" font-family="Times,serif" font-size="14.00">+ addUsage(usage : string)</text>
-<text text-anchor="start" x="1266" y="-167.3" font-family="Times,serif" font-size="14.00">+ getUsages()</text>
-<text text-anchor="start" x="1266" y="-148.3" font-family="Times,serif" font-size="14.00">+ getHelper(name : string)</text>
+<text text-anchor="start" x="1266" y="-528.3" font-family="Times,serif" font-size="14.00">+ setDefinition(definition) : static</text>
+<text text-anchor="start" x="1266" y="-509.3" font-family="Times,serif" font-size="14.00">+ getDefinition() : Symfony\Component\Console\Input\InputDefinition</text>
+<text text-anchor="start" x="1266" y="-490.3" font-family="Times,serif" font-size="14.00">+ getNativeDefinition() : Symfony\Component\Console\Input\InputDefinition</text>
+<text text-anchor="start" x="1266" y="-471.3" font-family="Times,serif" font-size="14.00">+ addArgument(name : string, mode : int = «unknown», description : string = &#39;&#39;, default : mixed = «unknown») : static</text>
+<text text-anchor="start" x="1266" y="-452.3" font-family="Times,serif" font-size="14.00">+ addOption(name : string, shortcut = «unknown», mode : int = «unknown», description : string = &#39;&#39;, default : mixed = «unknown») : static</text>
+<text text-anchor="start" x="1266" y="-433.3" font-family="Times,serif" font-size="14.00">+ setName(name : string) : static</text>
+<text text-anchor="start" x="1266" y="-414.3" font-family="Times,serif" font-size="14.00">+ setProcessTitle(title : string) : static</text>
+<text text-anchor="start" x="1266" y="-395.3" font-family="Times,serif" font-size="14.00">+ getName() : ?string</text>
+<text text-anchor="start" x="1266" y="-376.3" font-family="Times,serif" font-size="14.00">+ setHidden(hidden : bool = true) : static</text>
+<text text-anchor="start" x="1266" y="-357.3" font-family="Times,serif" font-size="14.00">+ isHidden() : bool</text>
+<text text-anchor="start" x="1266" y="-338.3" font-family="Times,serif" font-size="14.00">+ setDescription(description : string) : static</text>
+<text text-anchor="start" x="1266" y="-319.3" font-family="Times,serif" font-size="14.00">+ getDescription() : string</text>
+<text text-anchor="start" x="1266" y="-300.3" font-family="Times,serif" font-size="14.00">+ setHelp(help : string) : static</text>
+<text text-anchor="start" x="1266" y="-281.3" font-family="Times,serif" font-size="14.00">+ getHelp() : string</text>
+<text text-anchor="start" x="1266" y="-262.3" font-family="Times,serif" font-size="14.00">+ getProcessedHelp() : string</text>
+<text text-anchor="start" x="1266" y="-243.3" font-family="Times,serif" font-size="14.00">+ setAliases(aliases : iterable) : static</text>
+<text text-anchor="start" x="1266" y="-224.3" font-family="Times,serif" font-size="14.00">+ getAliases() : array</text>
+<text text-anchor="start" x="1266" y="-205.3" font-family="Times,serif" font-size="14.00">+ getSynopsis(short : bool = false) : string</text>
+<text text-anchor="start" x="1266" y="-186.3" font-family="Times,serif" font-size="14.00">+ addUsage(usage : string) : static</text>
+<text text-anchor="start" x="1266" y="-167.3" font-family="Times,serif" font-size="14.00">+ getUsages() : array</text>
+<text text-anchor="start" x="1266" y="-148.3" font-family="Times,serif" font-size="14.00">+ getHelper(name : string) : ?mixed</text>
 </g>
 <!-- Bartlett\\UmlWriter\\Console\\Command\\ClassDiagramCommand&#45;&gt;Symfony\\Component\\Console\\Command\\Command -->
 <g id="edge3" class="edge">

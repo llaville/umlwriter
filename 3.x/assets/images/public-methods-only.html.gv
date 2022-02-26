@@ -86,10 +86,11 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b><br/>Application</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ __construct(container : Psr\\Container\\ContainerInterface, version : string = VERSION)</td></tr>
+    <tr><td align="left">+ __construct(container : Psr\\Container\\ContainerInterface)</td></tr>
     <tr><td align="left">+ getHelp() : string</td></tr>
+    <tr><td align="left">+ getLongVersion() : string</td></tr>
     <tr><td align="left">+ doRun(input : Symfony\\Component\\Console\\Input\\InputInterface, output : Symfony\\Component\\Console\\Output\\OutputInterface) : int</td></tr>
-    <tr><td align="left">+ run(input : Symfony\\Component\\Console\\Input\\InputInterface = «unknown», output : Symfony\\Component\\Console\\Output\\OutputInterface = «unknown»)</td></tr>
+    <tr><td align="left">+ run(input : Symfony\\Component\\Console\\Input\\InputInterface = «unknown», output : Symfony\\Component\\Console\\Output\\OutputInterface = «unknown») : int</td></tr>
 </table></td></tr>
 </table>>]
   }
@@ -105,37 +106,37 @@ digraph {
     <tr><td align="left">+ setCommandLoader(commandLoader : Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface)</td></tr>
     <tr><td align="left">+ getSignalRegistry() : Symfony\\Component\\Console\\SignalRegistry\\SignalRegistry</td></tr>
     <tr><td align="left">+ setSignalsToDispatchEvent(signalsToDispatchEvent : int = «unknown»)</td></tr>
-    <tr><td align="left">+ run(input : Symfony\\Component\\Console\\Input\\InputInterface = «unknown», output : Symfony\\Component\\Console\\Output\\OutputInterface = «unknown»)</td></tr>
+    <tr><td align="left">+ run(input : Symfony\\Component\\Console\\Input\\InputInterface = «unknown», output : Symfony\\Component\\Console\\Output\\OutputInterface = «unknown») : int</td></tr>
     <tr><td align="left">+ doRun(input : Symfony\\Component\\Console\\Input\\InputInterface, output : Symfony\\Component\\Console\\Output\\OutputInterface)</td></tr>
     <tr><td align="left">+ reset()</td></tr>
     <tr><td align="left">+ setHelperSet(helperSet : Symfony\\Component\\Console\\Helper\\HelperSet)</td></tr>
-    <tr><td align="left">+ getHelperSet()</td></tr>
+    <tr><td align="left">+ getHelperSet() : Symfony\\Component\\Console\\Helper\\HelperSet</td></tr>
     <tr><td align="left">+ setDefinition(definition : Symfony\\Component\\Console\\Input\\InputDefinition)</td></tr>
-    <tr><td align="left">+ getDefinition()</td></tr>
+    <tr><td align="left">+ getDefinition() : Symfony\\Component\\Console\\Input\\InputDefinition</td></tr>
     <tr><td align="left">+ complete(input : Symfony\\Component\\Console\\Completion\\CompletionInput, suggestions : Symfony\\Component\\Console\\Completion\\CompletionSuggestions) : void</td></tr>
-    <tr><td align="left">+ getHelp()</td></tr>
-    <tr><td align="left">+ areExceptionsCaught()</td></tr>
+    <tr><td align="left">+ getHelp() : string</td></tr>
+    <tr><td align="left">+ areExceptionsCaught() : bool</td></tr>
     <tr><td align="left">+ setCatchExceptions(boolean : bool)</td></tr>
-    <tr><td align="left">+ isAutoExitEnabled()</td></tr>
+    <tr><td align="left">+ isAutoExitEnabled() : bool</td></tr>
     <tr><td align="left">+ setAutoExit(boolean : bool)</td></tr>
-    <tr><td align="left">+ getName()</td></tr>
+    <tr><td align="left">+ getName() : string</td></tr>
     <tr><td align="left">+ setName(name : string)</td></tr>
-    <tr><td align="left">+ getVersion()</td></tr>
+    <tr><td align="left">+ getVersion() : string</td></tr>
     <tr><td align="left">+ setVersion(version : string)</td></tr>
     <tr><td align="left">+ getLongVersion()</td></tr>
-    <tr><td align="left">+ register(name : string)</td></tr>
+    <tr><td align="left">+ register(name : string) : Symfony\\Component\\Console\\Command\\Command</td></tr>
     <tr><td align="left">+ addCommands(commands : array)</td></tr>
     <tr><td align="left">+ add(command : Symfony\\Component\\Console\\Command\\Command)</td></tr>
     <tr><td align="left">+ get(name : string)</td></tr>
-    <tr><td align="left">+ has(name : string)</td></tr>
-    <tr><td align="left">+ getNamespaces()</td></tr>
-    <tr><td align="left">+ findNamespace(namespace : string)</td></tr>
+    <tr><td align="left">+ has(name : string) : bool</td></tr>
+    <tr><td align="left">+ getNamespaces() : array</td></tr>
+    <tr><td align="left">+ findNamespace(namespace : string) : string</td></tr>
     <tr><td align="left">+ find(name : string)</td></tr>
     <tr><td align="left">+ all(namespace : string = «unknown»)</td></tr>
-    <tr><td align="left">+ «static» getAbbreviations(names : array)</td></tr>
+    <tr><td align="left">+ «static» getAbbreviations(names : array) : array</td></tr>
     <tr><td align="left">+ renderThrowable(e : Throwable, output : Symfony\\Component\\Console\\Output\\OutputInterface) : void</td></tr>
-    <tr><td align="left">+ extractNamespace(name : string, limit : int = «unknown»)</td></tr>
-    <tr><td align="left">+ setDefaultCommand(commandName : string, isSingleCommand : bool = false)</td></tr>
+    <tr><td align="left">+ extractNamespace(name : string, limit : int = «unknown») : string</td></tr>
+    <tr><td align="left">+ setDefaultCommand(commandName : string, isSingleCommand : bool = false) : static</td></tr>
     <tr><td align="left">+ isSingleCommand() : bool</td></tr>
 </table></td></tr>
 </table>>]
@@ -169,40 +170,40 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b><br/>Command</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ «static» getDefaultName()</td></tr>
+    <tr><td align="left">+ «static» getDefaultName() : ?string</td></tr>
     <tr><td align="left">+ «static» getDefaultDescription() : ?string</td></tr>
     <tr><td align="left">+ __construct(name : string = «unknown»)</td></tr>
     <tr><td align="left">+ ignoreValidationErrors()</td></tr>
     <tr><td align="left">+ setApplication(application : Symfony\\Component\\Console\\Application = «unknown»)</td></tr>
     <tr><td align="left">+ setHelperSet(helperSet : Symfony\\Component\\Console\\Helper\\HelperSet)</td></tr>
-    <tr><td align="left">+ getHelperSet()</td></tr>
-    <tr><td align="left">+ getApplication()</td></tr>
+    <tr><td align="left">+ getHelperSet() : ?Symfony\\Component\\Console\\Helper\\HelperSet</td></tr>
+    <tr><td align="left">+ getApplication() : ?Symfony\\Component\\Console\\Application</td></tr>
     <tr><td align="left">+ isEnabled()</td></tr>
-    <tr><td align="left">+ run(input : Symfony\\Component\\Console\\Input\\InputInterface, output : Symfony\\Component\\Console\\Output\\OutputInterface)</td></tr>
+    <tr><td align="left">+ run(input : Symfony\\Component\\Console\\Input\\InputInterface, output : Symfony\\Component\\Console\\Output\\OutputInterface) : int</td></tr>
     <tr><td align="left">+ complete(input : Symfony\\Component\\Console\\Completion\\CompletionInput, suggestions : Symfony\\Component\\Console\\Completion\\CompletionSuggestions) : void</td></tr>
-    <tr><td align="left">+ setCode(code : callable)</td></tr>
+    <tr><td align="left">+ setCode(code : callable) : static</td></tr>
     <tr><td align="left">+ mergeApplicationDefinition(mergeArgs : bool = true)</td></tr>
-    <tr><td align="left">+ setDefinition(definition : mixed)</td></tr>
-    <tr><td align="left">+ getDefinition()</td></tr>
-    <tr><td align="left">+ getNativeDefinition()</td></tr>
-    <tr><td align="left">+ addArgument(name : string, mode : int = «unknown», description : string = '', default = «unknown»)</td></tr>
-    <tr><td align="left">+ addOption(name : string, shortcut = «unknown», mode : int = «unknown», description : string = '', default = «unknown»)</td></tr>
-    <tr><td align="left">+ setName(name : string)</td></tr>
-    <tr><td align="left">+ setProcessTitle(title : string)</td></tr>
-    <tr><td align="left">+ getName()</td></tr>
-    <tr><td align="left">+ setHidden(hidden : bool)</td></tr>
-    <tr><td align="left">+ isHidden()</td></tr>
-    <tr><td align="left">+ setDescription(description : string)</td></tr>
-    <tr><td align="left">+ getDescription()</td></tr>
-    <tr><td align="left">+ setHelp(help : string)</td></tr>
-    <tr><td align="left">+ getHelp()</td></tr>
-    <tr><td align="left">+ getProcessedHelp()</td></tr>
-    <tr><td align="left">+ setAliases(aliases : iterable)</td></tr>
-    <tr><td align="left">+ getAliases()</td></tr>
-    <tr><td align="left">+ getSynopsis(short : bool = false)</td></tr>
-    <tr><td align="left">+ addUsage(usage : string)</td></tr>
-    <tr><td align="left">+ getUsages()</td></tr>
-    <tr><td align="left">+ getHelper(name : string)</td></tr>
+    <tr><td align="left">+ setDefinition(definition) : static</td></tr>
+    <tr><td align="left">+ getDefinition() : Symfony\\Component\\Console\\Input\\InputDefinition</td></tr>
+    <tr><td align="left">+ getNativeDefinition() : Symfony\\Component\\Console\\Input\\InputDefinition</td></tr>
+    <tr><td align="left">+ addArgument(name : string, mode : int = «unknown», description : string = '', default : mixed = «unknown») : static</td></tr>
+    <tr><td align="left">+ addOption(name : string, shortcut = «unknown», mode : int = «unknown», description : string = '', default : mixed = «unknown») : static</td></tr>
+    <tr><td align="left">+ setName(name : string) : static</td></tr>
+    <tr><td align="left">+ setProcessTitle(title : string) : static</td></tr>
+    <tr><td align="left">+ getName() : ?string</td></tr>
+    <tr><td align="left">+ setHidden(hidden : bool = true) : static</td></tr>
+    <tr><td align="left">+ isHidden() : bool</td></tr>
+    <tr><td align="left">+ setDescription(description : string) : static</td></tr>
+    <tr><td align="left">+ getDescription() : string</td></tr>
+    <tr><td align="left">+ setHelp(help : string) : static</td></tr>
+    <tr><td align="left">+ getHelp() : string</td></tr>
+    <tr><td align="left">+ getProcessedHelp() : string</td></tr>
+    <tr><td align="left">+ setAliases(aliases : iterable) : static</td></tr>
+    <tr><td align="left">+ getAliases() : array</td></tr>
+    <tr><td align="left">+ getSynopsis(short : bool = false) : string</td></tr>
+    <tr><td align="left">+ addUsage(usage : string) : static</td></tr>
+    <tr><td align="left">+ getUsages() : array</td></tr>
+    <tr><td align="left">+ getHelper(name : string) : ?mixed</td></tr>
 </table></td></tr>
 </table>>]
   }
@@ -213,7 +214,7 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b><br/>YamlFileLoader</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ load(resource, type : string = «unknown») : ?mixed</td></tr>
+    <tr><td align="left">+ load(resource : mixed, type : string = «unknown») : ?mixed</td></tr>
     <tr><td align="left">+ supports(resource, type : string = «unknown») : bool</td></tr>
 </table></td></tr>
 </table>>]
@@ -227,7 +228,7 @@ digraph {
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ __construct(locator : Symfony\\Component\\Config\\FileLocatorInterface, env : string = «unknown»)</td></tr>
     <tr><td align="left">+ setCurrentDir(dir : string)</td></tr>
-    <tr><td align="left">+ getLocator()</td></tr>
+    <tr><td align="left">+ getLocator() : Symfony\\Component\\Config\\FileLocatorInterface</td></tr>
     <tr><td align="left">+ import(resource : mixed, type : string = «unknown», ignoreErrors : bool = false, sourceResource : string = «unknown», exclude : mixed = «unknown»)</td></tr>
 </table></td></tr>
 </table>>]
@@ -237,10 +238,10 @@ digraph {
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ __construct(env : string = «unknown»)</td></tr>
-    <tr><td align="left">+ getResolver()</td></tr>
+    <tr><td align="left">+ getResolver() : Symfony\\Component\\Config\\Loader\\LoaderResolverInterface</td></tr>
     <tr><td align="left">+ setResolver(resolver : Symfony\\Component\\Config\\Loader\\LoaderResolverInterface)</td></tr>
     <tr><td align="left">+ import(resource : mixed, type : string = «unknown»)</td></tr>
-    <tr><td align="left">+ resolve(resource : mixed, type : string = «unknown»)</td></tr>
+    <tr><td align="left">+ resolve(resource : mixed, type : string = «unknown») : Symfony\\Component\\Config\\Loader\\LoaderInterface</td></tr>
 </table></td></tr>
 </table>>]
     "Symfony\\Component\\Config\\Loader\\LoaderInterface" [shape="none" label=<
@@ -248,8 +249,8 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>LoaderInterface</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ «abstract» load(resource, type : string = «unknown»)</td></tr>
-    <tr><td align="left">+ «abstract» supports(resource, type : string = «unknown»)</td></tr>
+    <tr><td align="left">+ «abstract» load(resource : mixed, type : string = «unknown»)</td></tr>
+    <tr><td align="left">+ «abstract» supports(resource : mixed, type : string = «unknown»)</td></tr>
     <tr><td align="left">+ «abstract» getResolver()</td></tr>
     <tr><td align="left">+ «abstract» setResolver(resolver : Symfony\\Component\\Config\\Loader\\LoaderResolverInterface)</td></tr>
 </table></td></tr>

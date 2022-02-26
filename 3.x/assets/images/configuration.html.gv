@@ -8,7 +8,7 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b><br/>YamlFileLoader</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ load(resource, type : string = «unknown») : ?mixed</td></tr>
+    <tr><td align="left">+ load(resource : mixed, type : string = «unknown») : ?mixed</td></tr>
     <tr><td align="left">+ supports(resource, type : string = «unknown») : bool</td></tr>
 </table></td></tr>
 </table>>]
@@ -22,7 +22,7 @@ digraph {
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ __construct(locator : Symfony\\Component\\Config\\FileLocatorInterface, env : string = «unknown»)</td></tr>
     <tr><td align="left">+ setCurrentDir(dir : string)</td></tr>
-    <tr><td align="left">+ getLocator()</td></tr>
+    <tr><td align="left">+ getLocator() : Symfony\\Component\\Config\\FileLocatorInterface</td></tr>
     <tr><td align="left">+ import(resource : mixed, type : string = «unknown», ignoreErrors : bool = false, sourceResource : string = «unknown», exclude : mixed = «unknown»)</td></tr>
 </table></td></tr>
 </table>>]
@@ -32,10 +32,10 @@ digraph {
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
     <tr><td align="left">+ __construct(env : string = «unknown»)</td></tr>
-    <tr><td align="left">+ getResolver()</td></tr>
+    <tr><td align="left">+ getResolver() : Symfony\\Component\\Config\\Loader\\LoaderResolverInterface</td></tr>
     <tr><td align="left">+ setResolver(resolver : Symfony\\Component\\Config\\Loader\\LoaderResolverInterface)</td></tr>
     <tr><td align="left">+ import(resource : mixed, type : string = «unknown»)</td></tr>
-    <tr><td align="left">+ resolve(resource : mixed, type : string = «unknown»)</td></tr>
+    <tr><td align="left">+ resolve(resource : mixed, type : string = «unknown») : Symfony\\Component\\Config\\Loader\\LoaderInterface</td></tr>
 </table></td></tr>
 </table>>]
     "Symfony\\Component\\Config\\Loader\\LoaderInterface" [shape="none" label=<
@@ -43,8 +43,8 @@ digraph {
     <tr><td bgcolor="#eeeeee"><b>«interface»<br/>LoaderInterface</b></td></tr>
     <tr><td></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
-    <tr><td align="left">+ «abstract» load(resource, type : string = «unknown»)</td></tr>
-    <tr><td align="left">+ «abstract» supports(resource, type : string = «unknown»)</td></tr>
+    <tr><td align="left">+ «abstract» load(resource : mixed, type : string = «unknown»)</td></tr>
+    <tr><td align="left">+ «abstract» supports(resource : mixed, type : string = «unknown»)</td></tr>
     <tr><td align="left">+ «abstract» getResolver()</td></tr>
     <tr><td align="left">+ «abstract» setResolver(resolver : Symfony\\Component\\Config\\Loader\\LoaderResolverInterface)</td></tr>
 </table></td></tr>
