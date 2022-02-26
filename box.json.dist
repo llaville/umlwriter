@@ -2,5 +2,5 @@
     "alias": "umlwriter.phar",
     "directories": ["bin", "src", "vendor"],
     "compression": "GZ",
-    "metadata": "box-metadata.php"
+    "metadata": "Bartlett\\BoxManifest\\Composer\\ManifestFactory::toText"
 }

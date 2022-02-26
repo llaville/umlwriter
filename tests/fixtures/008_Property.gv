@@ -2,7 +2,9 @@ graph {
   graph [name="G" overlap="false" rankdir="TB"]
   node [fontname="Verdana" fontsize=8 shape="none" margin=0 fillcolor="#FEFECE" style="filled"]
   edge [fontname="Verdana" fontsize=8]
-  "FixtureEight\\OneClass" [shape="none" label=<
+  subgraph cluster_0 {
+    label = "FixtureEight"
+    "FixtureEight\\OneClass" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b><br/>OneClass</b></td></tr>
     <tr><td><table border="0" cellspacing="0" cellpadding="2">
@@ -14,4 +16,5 @@ graph {
 </table></td></tr>
     <tr><td></td></tr>
 </table>>]
+  }
 }

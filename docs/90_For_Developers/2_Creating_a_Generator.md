@@ -130,4 +130,4 @@ echo $script;
 
 ## Architecture
 
-![Graph UML Generator](./generator.graphviz.svg)
+![Graph UML Generator](../assets/images/generator.graphviz.svg)

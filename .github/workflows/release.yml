@@ -7,59 +7,12 @@ on:
             - "[0-9]+.[0-9]+.[0-9]+"
     workflow_dispatch:
 
-env:
-    BOX_OUTPUT: bin/umlwriter.phar
-    RELEASE_NOTES: releaseNotes.md
-
 jobs:
     build:
-        runs-on: ${{ matrix.os }}
-
-        strategy:
-            fail-fast: false
-            matrix:
-                include:
-                    -
-                        os: ubuntu-latest
-                        php: 8.0
-
-        steps:
-            -   # Git Checkout
-                name: Checkout
-                uses: actions/checkout@v2
-
-            -   # Setup PHP runtime
-                name: Setup PHP runtime
-                uses: shivammathur/setup-php@v2
-                with:
-                    php-version: ${{ matrix.php }}
-
-            -   # Install Composer dependencies
-                name: Install Composer dependencies
-                uses: ramsey/composer-install@v2
-                with:
-                    composer-options: "--prefer-dist"
-
-            -   # Build the current release changelog
-                name: Build Release Notes
-                run: |
-                    resources/release/build.php
-
-            -   # Build the current release with artifacts (php archive)
-                name: Build Release Artifacts
-                uses: docker://ghcr.io/llaville/box-manifest:latest
-                with:
-                    entrypoint: /usr/local/src/box-manifest/bin/box
-                    args: compile
-
-            -   # Draft a new Release
-                name: Release
-                uses: softprops/action-gh-release@v1
-                #if: startsWith(github.ref, 'refs/tags/')
-                with:  # https://github.com/softprops/action-gh-release#-customizing
-                    prerelease: true
-                    draft: true
-                    body_path: ${{ github.workspace }}/${{ env.RELEASE_NOTES }}
-                    # https://github.com/softprops/action-gh-release#%EF%B8%8F-uploading-release-assets
-                    files:
-                        ${{ env.BOX_OUTPUT }}
+        uses: llaville/.github/.github/workflows/release.yml@master
+        with:
+            repository: ${{ github.repository }}
+            php-version: "8.0"
+            box-output: bin/umlwriter.phar
+            release-draft: true
+            release-prerelease: true

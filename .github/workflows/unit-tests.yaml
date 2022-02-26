@@ -1,0 +1,61 @@
+---
+name: Unit Tests
+
+on:
+    push:
+        paths-ignore:
+            - 'docs/**'
+    pull_request:
+        branches:
+            - master
+        paths-ignore:
+            - 'docs/**'
+
+jobs:
+    lint_files:
+        uses: llaville/.github/.github/workflows/mega-linter.yml@master
+        with:
+            repository: ${{ github.repository }}
+            php-version: "8.0"
+
+    unit_tests:
+        needs: lint_files
+
+        runs-on: ${{ matrix.os }}
+
+        strategy:
+            fail-fast: false
+            matrix:
+                include:
+                    -
+                        os: ubuntu-latest
+                        php: 8.0
+                        tools: phpunit
+                    -
+                        os: ubuntu-latest
+                        php: 8.1
+                        tools: phpunit
+
+        name: UML Class Writer
+
+        steps:
+            -   # Git Checkout
+                name: Checkout
+                uses: actions/checkout@v2
+
+            -   # Setup PHP runtime
+                name: Setup PHP runtime
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: ${{ matrix.php }}
+                    tools: ${{ matrix.tools }}
+
+            -   # Install Composer dependencies
+                name: Install Composer dependencies
+                uses: ramsey/composer-install@v2
+                with:
+                    composer-options: "--prefer-dist"
+
+            -   # Run unit tests
+                name: Unit tests
+                run: phpunit

@@ -2,17 +2,20 @@ digraph {
   graph [name="G" overlap="false" rankdir="TB"]
   node [fontname="Verdana" fontsize=8 shape="none" margin=0 fillcolor="#FEFECE" style="filled"]
   edge [fontname="Verdana" fontsize=8]
-  "FixtureTwo\\OneClass" [shape="none" label=<
+  subgraph cluster_0 {
+    label = "FixtureTwo"
+    "FixtureTwo\\OneClass" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b><br/>OneClass</b></td></tr>
     <tr><td></td></tr>
     <tr><td></td></tr>
 </table>>]
-  "FixtureTwo\\TwoClass" [shape="none" label=<
+    "FixtureTwo\\TwoClass" [shape="none" label=<
 <table cellspacing="0" border="0" cellborder="1">
     <tr><td bgcolor="#eeeeee"><b><br/>TwoClass</b></td></tr>
     <tr><td></td></tr>
     <tr><td></td></tr>
 </table>>]
+  }
   "FixtureTwo\\TwoClass" -> "FixtureTwo\\OneClass" [arrowhead="empty" style="filled"]
 }

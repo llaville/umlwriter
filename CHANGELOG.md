@@ -7,6 +7,22 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+<!-- MARKDOWN-RELEASE:START -->
+### Added
+
+- support for Symfony 6.x components
+- `release` workflow to automate creating a new GitHub release with PHAR artifact (that contains a manifest)
+
+### Changed
+
+- PHAR manifest (simple text format) is built with `bartlett/box-manifest` package
+- Application version used now the [Composer runtime API 2.0](https://getcomposer.org/doc/07-runtime.md) to get packages installed
+
+### Removed
+
+- `Bartlett\UmlWriter\Console\Application::VERSION` constant.
+<!-- MARKDOWN-RELEASE:END -->
+
 ## [3.1.1] - 2022-01-04
 
 ### Changed

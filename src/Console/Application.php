@@ -11,6 +11,8 @@ use Bartlett\UmlWriter\Console\Command\ClassDiagramCommand;
 use Bartlett\UmlWriter\Generator\GeneratorFactory;
 use Bartlett\UmlWriter\Generator\GeneratorFactoryInterface;
 
+use Composer\InstalledVersions;
+
 use Psr\Container\ContainerInterface;
 
 use Symfony\Component\Console\Application as SymfonyApplication;
@@ -31,7 +33,6 @@ use Phar;
 final class Application extends SymfonyApplication
 {
     public const NAME = 'umlWriter';
-    public const VERSION = '3.1.1';
 
     /**
      * @link http://patorjk.com/software/taag/#p=display&f=Standard&t=umlWriter
@@ -46,9 +47,12 @@ final class Application extends SymfonyApplication
 
     private ContainerInterface $container;
 
-    public function __construct(ContainerInterface $container, string $version = self::VERSION)
+    public function __construct(ContainerInterface $container)
     {
-        parent::__construct(self::NAME, $version);
+        parent::__construct(
+            self::NAME,
+            $this->getInstalledVersion(false)
+        );
 
         $this->container = $container;
         $this->setCommandLoader($this->createCommandLoader($container));
@@ -59,7 +63,20 @@ final class Application extends SymfonyApplication
      */
     public function getHelp(): string
     {
-        return '<comment>' . static::$logo . '</comment>' . parent::getHelp();
+        return sprintf(
+            '<comment>%s</comment><info>%s</info> version <comment>%s</comment>',
+            self::$logo,
+            $this->getName(),
+            $this->getVersion()
+        );
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getLongVersion(): string
+    {
+        return $this->getInstalledVersion();
     }
 
     /**
@@ -79,7 +96,7 @@ final class Application extends SymfonyApplication
     /**
      * {@inheritDoc}
      */
-    public function run(InputInterface $input = null, OutputInterface $output = null)
+    public function run(InputInterface $input = null, OutputInterface $output = null): int
     {
         if (null === $input) {
             if ($this->container->has(InputInterface::class)) {
@@ -137,5 +154,17 @@ final class Application extends SymfonyApplication
                 ClassDiagramCommand::NAME => ClassDiagramCommand::class,
             ]
         );
+    }
+
+    private function getInstalledVersion(bool $withRef = true): string
+    {
+        $packageName = 'bartlett/umlwriter';
+
+        $version = InstalledVersions::getPrettyVersion($packageName);
+        if (!$withRef) {
+            return $version;
+        }
+        $commitHash = InstalledVersions::getReference($packageName);
+        return sprintf('%s@%s', $version, substr($commitHash, 0, 7));
     }
 }

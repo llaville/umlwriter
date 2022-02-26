@@ -29,19 +29,37 @@ For users that still used the unmaintained version 1.3, please visit <http://php
 
 ## PHAR distribution
 
-You can build yourself a PHAR version of this library. Use the [Box](https://github.com/box-project/box) project.
+You can build yourself a PHAR version of this library. Use the [Box Manifest](https://github.com/llaville/box-manifest/) project.
 
 Invoke the following command
 
 ```bash
-php box.phar compile --config=box.json.dist
+php box-manifest.phar compile --config=box.json.dist
 
 // or simply
 
-php box.phar compile
+php box-manifest.phar compile
 ```
 
 And find the `umlwriter.phar` file in `bin` directory.
+
+**CAUTION**: It's NOT recommended requiring it as a dependency in `composer.json` of your project,
+to avoid including into manifest all components of BoxManifest.
+
+Use instead, either :
+
+- the phar version of `bartlett/box-manifest`
+- the docker image of `bartlett/box-manifest`. Available at <https://github.com/llaville/box-manifest/pkgs/container/box-manifest>
+
+Invoke the following command
+
+```bash
+docker run --rm -it -u "$(id -u):$(id -g)" -w /usr/src -v $(pwd):/usr/src ghcr.io/llaville/box-manifest:latest compile --config=box.json.dist
+
+// or simply
+
+docker run --rm -it -u "$(id -u):$(id -g)" -w /usr/src -v $(pwd):/usr/src ghcr.io/llaville/box-manifest:latest compile
+```
 
 ## Usage
 
@@ -55,7 +73,7 @@ bin/umlwriter diagram:class src/ --generator graphviz
 
 ## Contributors
 
-* Laurent Laville (Lead Developer)
+- Laurent Laville (Lead Developer)
 
 ## Credits
 

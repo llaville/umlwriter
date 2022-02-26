@@ -95,4 +95,4 @@ array(3) {
 
 ## Architecture
 
-![Service](./services.graphviz.svg)
+![Service](../assets/images/services.graphviz.svg)
