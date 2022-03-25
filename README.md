@@ -1,6 +1,8 @@
 <!-- markdownlint-disable MD013 -->
 # UmlWriter
 
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine)
+
 | Stable v2 | Stable v3 |
 |:---------:|:---------:|
 |           | [![Branch Master](https://img.shields.io/badge/branch-master-orange)](https://github.com/llaville/umlwriter) |
