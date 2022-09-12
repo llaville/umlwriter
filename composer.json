@@ -16,7 +16,7 @@
         "composer-runtime-api": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "graphp/graph": "dev-master#04461a7 as 1.0.0",
-        "graphp/graphviz": "dev-master#5872f6b as 1.0.0",
+        "graphp/graphviz": "dev-master#42a2098 as 1.0.0",
         "psr/container": "^1.0",
         "roave/better-reflection": "^5.0",
         "symfony/config": "^4.4 || ^5.0 || ^6.0",
