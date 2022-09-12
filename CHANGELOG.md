@@ -7,9 +7,17 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
-## [3.2.0] - 2022-02-26
+## [3.2.1] - 2022-09-12
 
 <!-- MARKDOWN-RELEASE:START -->
+### Changed
+
+- synchronize with latest commit of `graphp/graphviz` project
+- use `bartlett/graph-uml` recent version 1.3.0
+<!-- MARKDOWN-RELEASE:END -->
+
+## [3.2.0] - 2022-02-26
+
 ### Added
 
 - support for Symfony 6.x components
@@ -23,7 +31,6 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 ### Removed
 
 - `Bartlett\UmlWriter\Console\Application::VERSION` constant.
-<!-- MARKDOWN-RELEASE:END -->
 
 ## [3.1.1] - 2022-01-04
 
