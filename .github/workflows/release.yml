@@ -1,0 +1,17 @@
+---
+name: Release
+
+on:
+    push:
+        tags:
+            - "[0-9]+.[0-9]+.[0-9]+"
+    workflow_dispatch:
+
+jobs:
+    build:
+        uses: llaville/.github/.github/workflows/release.yml@master
+        with:
+            repository: ${{ github.repository }}
+            box-output: bin/umlwriter.phar
+            release-draft: true
+            release-prerelease: true
