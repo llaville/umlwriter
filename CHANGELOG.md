@@ -7,6 +7,10 @@ using the [Keep a CHANGELOG](http://keepachangelog.com) principles.
 
 ## [Unreleased]
 
+### Fixed
+
+- Fixtures for Unit Tests, corresponding to patch `graph-graphviz_add_subgraph_cluster-42.patch` applied on `graphp/graphviz` package
+
 ## [2.1.1] - 2022-01-04
 
 ### Changed
