@@ -4,7 +4,7 @@
   "IgnoreDefaults": false,
   "SpacesAftertabs": false,
   "NoColor": false,
-  "Exclude": ["\\.idea", "\\.editorconfig", "\\.github", "vendor", "LICENSE", "mkdocs\\.yml", "**/*\\.gv", "**/*\\.puml"],
+  "Exclude": ["\\.idea", "\\.editorconfig", "\\.github", "vendor", "LICENSE", "mkdocs\\.yml", "**/*\\.gv", "**/*\\.puml", "\\.changes"],
   "AllowedContentTypes": [],
   "PassedFiles": [],
   "Disable": {

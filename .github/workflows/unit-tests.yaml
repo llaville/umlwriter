@@ -2,14 +2,12 @@
 name: Unit Tests
 
 on:
-    push:
-        paths-ignore:
-            - 'docs/**'
     pull_request:
         branches:
             - master
         paths-ignore:
             - 'docs/**'
+    workflow_call:
 
 jobs:
     lint_files:
@@ -41,7 +39,7 @@ jobs:
         steps:
             -   # Git Checkout
                 name: Checkout
-                uses: actions/checkout@v2
+                uses: actions/checkout@v3
 
             -   # Setup PHP runtime
                 name: Setup PHP runtime
