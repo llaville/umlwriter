@@ -13,6 +13,7 @@ DISABLE_LINTERS:
     - MARKDOWN_MARKDOWN_TABLE_FORMATTER
     - MARKDOWN_MARKDOWN_LINK_CHECK
     - PHP_BUILTIN
+    - PHP_PSALM
     - YAML_V8R
 EDITORCONFIG_EDITORCONFIG_CHECKER_CLI_LINT_MODE: project
 JSON_PRETTIER_FILTER_REGEX_EXCLUDE: "(composer.json)"
@@ -22,7 +23,6 @@ PHP_PHPSTAN_CLI_LINT_MODE: project  # to avoid https://github.com/nvuillam/mega-
 PHP_PHPCS_CLI_LINT_MODE: project
 PHP_PHPCS_CONFIG_FILE: ".phpcs.xml.dist"
 PHP_PHPCS_ARGUMENTS: "-n"
-PHP_PSALM_CLI_LINT_MODE: project
 PHP_PHPLINT_CLI_LINT_MODE: project
 YAML_PRETTIER_FILTER_REGEX_EXCLUDE: "(\\.github|mkdocs\\.yml|\\.mega-linter\\.yml|\\.changie\\.yaml)"  # As it cannot be added in .gitignore for ML actionlint linter
 YAML_YAMLLINT_FILTER_REGEX_EXCLUDE: "(\\.github|mkdocs\\.yml)"  # As it cannot be added in .gitignore for ML actionlint linter
@@ -33,9 +33,9 @@ CONSOLE_REPORTER: true
 LOG_FILE: mega-linter-v6.log
 LOG_LEVEL: INFO
 PRINT_ALL_FILES: false
-PHP_PHPSTAN_PRE_COMMANDS:
+PHP_PHPLINT_PRE_COMMANDS:
     - command: "update-alternatives --set php /usr/bin/php8"
       cwd: root
-PHP_PSALM_PRE_COMMANDS:
+PHP_PHPSTAN_PRE_COMMANDS:
     - command: "update-alternatives --set php /usr/bin/php8"
       cwd: root
