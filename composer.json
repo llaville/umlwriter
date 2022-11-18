@@ -18,7 +18,7 @@
         "graphp/graph": "1.x-dev#0adb04d as 1.0.0",
         "graphp/graphviz": "1.x-dev#24b1994 as 1.0.0",
         "psr/container": "^1.0",
-        "roave/better-reflection": "^5.0",
+        "roave/better-reflection": "^5.0 || ^6.0",
         "symfony/config": "^4.4 || ^5.0 || ^6.0",
         "symfony/console": "^4.4 || ^5.0 || ^6.0",
         "symfony/finder": "^4.4 || ^5.0 || ^6.0",
