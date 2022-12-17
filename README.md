@@ -26,8 +26,6 @@ All the documentation is available on following websites generated from the docs
 - <http://llaville.github.io/umlwriter/2.x/>
 - <http://llaville.github.io/umlwriter/3.x/>
 
-For users that still used the unmaintained version 1.3, please visit <http://php5.laurent-laville.org/umlwriter/> for documentation
-
 ## PHAR distribution
 
 You can build yourself a PHAR version of this library. Use the [Box Manifest](https://github.com/llaville/box-manifest/) project.
