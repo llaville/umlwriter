@@ -19,11 +19,11 @@
         "graphp/graphviz": "1.x-dev#24b1994 as 1.0.0",
         "psr/container": "^1.0",
         "roave/better-reflection": "^5.0 || ^6.0",
-        "symfony/config": "^4.4 || ^5.0 || ^6.0",
-        "symfony/console": "^4.4 || ^5.0 || ^6.0",
-        "symfony/finder": "^4.4 || ^5.0 || ^6.0",
-        "symfony/options-resolver": "^4.4 || ^5.0 || ^6.0",
-        "symfony/yaml": "^4.4 || ^5.0 || ^6.0"
+        "symfony/config": "^5.4 || ^6.0",
+        "symfony/console": "^5.4 || ^6.0",
+        "symfony/finder": "^5.4 || ^6.0",
+        "symfony/options-resolver": "^5.4 || ^6.0",
+        "symfony/yaml": "^5.4 || ^6.0"
     },
     "require-dev": {
         "jawira/plantuml": "^1.28"
@@ -39,9 +39,6 @@
         "bin/umlwriter"
     ],
     "config": {
-        "platform": {
-            "php": "8.0.12"
-        },
         "sort-packages": true,
         "allow-plugins": {
             "cweagans/composer-patches": true
