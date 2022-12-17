@@ -2,5 +2,5 @@
     "alias": "umlwriter.phar",
     "directories": ["bin", "src", "vendor"],
     "compression": "GZ",
-    "metadata": "Bartlett\\BoxManifest\\Composer\\ManifestFactory::toText"
+    "metadata": "Bartlett\\BoxManifest\\Composer\\ManifestFactory::toHighlight"
 }
