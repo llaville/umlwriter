@@ -32,9 +32,3 @@ UPDATED_SOURCES_REPORTER: false
 CONSOLE_REPORTER: true
 LOG_LEVEL: INFO
 PRINT_ALL_FILES: false
-PHP_PHPLINT_PRE_COMMANDS:
-    - command: "update-alternatives --set php /usr/bin/php8"
-      cwd: root
-PHP_PHPSTAN_PRE_COMMANDS:
-    - command: "update-alternatives --set php /usr/bin/php8"
-      cwd: root
