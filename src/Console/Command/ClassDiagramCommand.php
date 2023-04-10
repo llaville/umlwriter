@@ -23,13 +23,13 @@ use Symfony\Component\Finder\Finder;
 use InvalidArgumentException;
 use ReflectionException;
 use SplFileInfo;
-use function Composer\Autoload\includeFile;
 use function array_filter;
 use function array_keys;
 use function array_values;
 use function array_walk;
 use function basename;
 use function count;
+use function file_exists;
 use function implode;
 use function is_bool;
 use function is_dir;
@@ -248,7 +248,9 @@ final class ClassDiagramCommand extends Command
         $bootstrap = $input->getOption('bootstrap');
         if (!empty($bootstrap)) {
             $parameters['bootstrap'] = $bootstrap;
-            includeFile($bootstrap);
+            if (file_exists($bootstrap)) {
+                include $bootstrap;
+            }
         }
 
         $parameters['generator'] = $input->getOption('generator') ?? $parameters['generator'] ?? '';

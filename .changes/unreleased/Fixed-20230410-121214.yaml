@@ -1,0 +1,4 @@
+kind: Fixed
+body: as per [Lock down include wrappers to avoid abuse from third parties](https://github.com/composer/composer/pull/11015),
+  we replaced `Composer\Autoload\includeFile`
+time: 2023-04-10T12:12:14.404596424Z
