@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.0/phpunit.xsd"
     backupGlobals="false"
+    backupStaticAttributes="false"
     bootstrap="tests/bootstrap.php"
     colors="true"
     stopOnError="false"
@@ -10,14 +9,13 @@
     stopOnIncomplete="false"
     stopOnRisky="false"
     stopOnSkipped="false"
-    cacheDirectory=".phpunit.cache"
-    backupStaticProperties="false"
+    verbose="true"
 >
-    <coverage>
-        <include>
+    <filter>
+        <whitelist>
             <directory suffix=".php">src/</directory>
-        </include>
-    </coverage>
+        </whitelist>
+    </filter>
     <testsuites>
         <testsuite name="UmlWriter Test Suite">
             <directory suffix="Test.php">tests/</directory>
