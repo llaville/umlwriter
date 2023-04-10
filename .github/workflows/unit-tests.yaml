@@ -28,7 +28,7 @@ jobs:
                     -
                         os: ubuntu-latest
                         php: 8.0
-                        tools: phpunit
+                        tools: phpunit:9.6
                     -
                         os: ubuntu-latest
                         php: 8.1
@@ -55,5 +55,10 @@ jobs:
                     composer-options: "--prefer-dist"
 
             -   # Run unit tests
-                name: Unit tests
-                run: phpunit
+                name: Unit tests with PHPUnit 9
+                if: ${{ matrix.php == '8.0' }}
+                run: phpunit --configuration ./phpunit-9.xml --testdox --do-not-cache-result
+            -
+                name: Unit tests with PHPUnit 10
+                if: ${{ matrix.php != '8.0' }}
+                run: phpunit --testdox --do-not-cache-result

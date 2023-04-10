@@ -16,7 +16,7 @@ class FeatureTest extends TestCase
 {
     private const FIXTURE_DIR = __DIR__ . DIRECTORY_SEPARATOR . 'fixtures';
 
-    private function provider(string $name): Generator
+    private static function provider(string $name): Generator
     {
         $generatorFactory = new GeneratorFactory($name);
         // creates either instance of:
@@ -38,17 +38,17 @@ class FeatureTest extends TestCase
     /**
      * Data Provider to test generation of graph statements with Graphviz generator
      */
-    public function graphvizProvider(): Generator
+    public static function graphvizProvider(): Generator
     {
-        return $this->provider('graphviz');
+        return self::provider('graphviz');
     }
 
     /**
      * Data Provider to test generation of graph statements with PlantUML generator
      */
-    public function plantumlProvider(): Generator
+    public static function plantumlProvider(): Generator
     {
-        return $this->provider('plantuml');
+        return self::provider('plantuml');
     }
 
     /**
