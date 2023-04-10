@@ -1,0 +1,5 @@
+{
+    "alias": "umlwriter.phar",
+    "directories": ["bin", "src", "vendor"],
+    "compression": "GZ"
+}

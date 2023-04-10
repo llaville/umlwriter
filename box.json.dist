@@ -1,6 +1,16 @@
 {
     "alias": "umlwriter.phar",
+    "stub": "stub.php",
     "directories": ["bin", "src", "vendor"],
     "compression": "GZ",
-    "metadata": "Bartlett\\BoxManifest\\Composer\\ManifestFactory::toHighlight"
+    "files-bin": [
+        "console.txt",
+        "manifest.txt",
+        "sbom.json"
+    ],
+    "map": [
+        { "console.txt": ".box.manifests/console.txt" },
+        { "manifest.txt": ".box.manifests/manifest.txt" },
+        { "sbom.json": ".box.manifests/sbom.json" }
+    ]
 }

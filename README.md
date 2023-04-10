@@ -26,40 +26,6 @@ All the documentation is available on following websites generated from the docs
 - <http://llaville.github.io/umlwriter/2.x/>
 - <http://llaville.github.io/umlwriter/3.x/>
 
-## PHAR distribution
-
-You can build yourself a PHAR version of this library. Use the [Box Manifest](https://github.com/llaville/box-manifest/) project.
-
-Invoke the following command
-
-```bash
-php box-manifest.phar compile --config=box.json.dist
-
-// or simply
-
-php box-manifest.phar compile
-```
-
-And find the `umlwriter.phar` file in `bin` directory.
-
-**CAUTION**: It's NOT recommended requiring it as a dependency in `composer.json` of your project,
-to avoid including into manifest all components of BoxManifest.
-
-Use instead, either :
-
-- the phar version of `bartlett/box-manifest`
-- the docker image of `bartlett/box-manifest`. Available at <https://github.com/llaville/box-manifest/pkgs/container/box-manifest>
-
-Invoke the following command
-
-```bash
-docker run --rm -it -u "$(id -u):$(id -g)" -w /usr/src -v $(pwd):/usr/src ghcr.io/llaville/box-manifest:latest compile --config=box.json.dist
-
-// or simply
-
-docker run --rm -it -u "$(id -u):$(id -g)" -w /usr/src -v $(pwd):/usr/src ghcr.io/llaville/box-manifest:latest compile
-```
-
 ## Usage
 
 This library includes a console CLI version with only one command: `diagram:class`
