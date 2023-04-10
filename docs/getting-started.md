@@ -10,11 +10,6 @@
 * [bartlett/graph-plantuml-generator](https://github.com/llaville/graph-plantuml-generator) A PlantUML generator for graph-uml.
 * [roave/better-reflection](https://github.com/Roave/BetterReflection) the Reflection API
 
-![GraPHP Composer](./graph-composer.svg)
-
-Generated with [fork](https://github.com/markuspoerschke/graph-composer/tree/add-options-to-exclude) of [clue/graph-composer](https://github.com/clue/graph-composer).
-Learn more about this fork on [PR request](https://github.com/clue/graph-composer/pull/45).
-
 ## Installation
 
 ### With Composer
