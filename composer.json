@@ -42,6 +42,10 @@
         "sort-packages": true,
         "allow-plugins": {
             "cweagans/composer-patches": true
+        },
+        "preferred-install": {
+            "graphp/graphviz": "source",
+            "*": "dist"
         }
     },
     "autoload": {
