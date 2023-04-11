@@ -1,4 +1,0 @@
-kind: Added
-body: Provides docker image that only support Graphviz generator (no PlantUML yet
-  supported)
-time: 2023-04-11T08:09:25.705331979Z
