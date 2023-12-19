@@ -12,6 +12,7 @@ use Bartlett\UmlWriter\Generator\GeneratorFactoryInterface;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 use Bartlett\UmlWriter\Service\ConfigurationHandler;
 
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -45,12 +46,9 @@ use const ARRAY_FILTER_USE_KEY;
 /**
  * @author Laurent Laville
  */
+#[AsCommand(name: 'diagram:class')]
 final class ClassDiagramCommand extends Command
 {
-    public const NAME = 'diagram:class';
-
-    protected static $defaultName = self::NAME;
-
     private ClassDiagramRenderer $renderer;
     private GeneratorFactoryInterface $generatorFactory;
 
