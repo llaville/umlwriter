@@ -19,7 +19,10 @@ use Roave\BetterReflection\SourceLocator\Type\SingleFileSourceLocator;
 use Symfony\Component\Finder\Finder;
 
 use ReflectionException;
+use function array_filter;
 use function array_merge;
+use function array_unique;
+use function strpos;
 
 /**
  * @author Laurent Laville

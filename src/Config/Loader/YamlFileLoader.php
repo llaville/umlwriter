@@ -23,7 +23,7 @@ use const PATHINFO_EXTENSION;
  */
 final class YamlFileLoader extends FileLoader
 {
-    public function load(mixed $resource, string $type = null): mixed
+    public function load(mixed $resource, string $type = null): array
     {
         try {
             $configs = Yaml::parseFile($resource, Yaml::PARSE_CONSTANT);

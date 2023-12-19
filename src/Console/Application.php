@@ -19,13 +19,9 @@ use Symfony\Component\Console\Application as SymfonyApplication;
 use Symfony\Component\Console\CommandLoader\CommandLoaderInterface;
 use Symfony\Component\Console\CommandLoader\ContainerCommandLoader;
 use Symfony\Component\Console\Input\ArgvInput;
-use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\OutputInterface;
-
-use Phar;
 
 /**
  * @author Laurent Laville
@@ -114,33 +110,7 @@ final class Application extends SymfonyApplication
             }
         }
 
-        if ($input->hasParameterOption('--manifest')) {
-            $phar = new Phar($_SERVER['argv'][0]);
-            $manifest = $phar->getMetadata();
-            $output->writeln($manifest);
-            return 0;
-        }
-
         return parent::run($input, $output);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected function getDefaultInputDefinition(): InputDefinition
-    {
-        $definition = parent::getDefaultInputDefinition();
-        if (Phar::running()) {
-            $definition->addOption(
-                new InputOption(
-                    'manifest',
-                    null,
-                    InputOption::VALUE_NONE,
-                    'Show which versions of dependencies are bundled'
-                )
-            );
-        }
-        return $definition;
     }
 
     /**
@@ -151,7 +121,7 @@ final class Application extends SymfonyApplication
         return new ContainerCommandLoader(
             $container,
             [
-                ClassDiagramCommand::NAME => ClassDiagramCommand::class,
+                ClassDiagramCommand::getDefaultName() => ClassDiagramCommand::class,
             ]
         );
     }
