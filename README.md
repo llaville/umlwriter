@@ -1,12 +1,20 @@
 <!-- markdownlint-disable MD013 -->
 # UmlWriter
 
-| Stable v2 | Stable v3 |
-|:---------:|:---------:|
-|           | [![Branch Master](https://img.shields.io/badge/branch-master-orange)](https://github.com/llaville/umlwriter) |
-| [![Latest Stable Version](https://img.shields.io/badge/packagist-v2.1.1-blue)](https://packagist.org/packages/bartlett/umlwriter) | [![Latest Stable Version](https://img.shields.io/packagist/v/bartlett/umlwriter)](https://packagist.org/packages/bartlett/umlwriter)
-| [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/umlwriter/2.x-dev)](https://php.net/supported-versions.php) | [![Minimum PHP Version)](https://img.shields.io/packagist/php-v/bartlett/umlwriter/3.x-dev)](https://php.net/supported-versions.php) |
-| [![License](https://img.shields.io/packagist/l/bartlett/umlwriter)](https://github.com/llaville/umlwriter/blob/master/LICENSE) | [![License](https://img.shields.io/packagist/l/bartlett/umlwriter)](https://github.com/llaville/umlwriter/blob/master/LICENSE) |
+| Releases       |                     Branch                     |                               PHP                               |                          Packagist                           |                      License                      |                            Documentation                            |
+|:---------------|:----------------------------------------------:|:---------------------------------------------------------------:|:------------------------------------------------------------:|:-------------------------------------------------:|:-------------------------------------------------------------------:|
+| Stable v3.4.x  | [![Branch 3.4][Branch_34x-img]][Branch_34x] | [![Minimum PHP Version)][PHPVersion_34x-img]][PHPVersion_34x] | [![Stable Version 3.4][Packagist_34x-img]][Packagist_34x] | [![License 3.4][License_34x-img]][License_34x] | [![Documentation 3.4][Documentation_34x-img]][Documentation_34x] |
+
+[Branch_34x-img]: https://img.shields.io/badge/branch-3.4-orange
+[Branch_34x]: https://github.com/llaville/umlwriter/tree/3.4
+[PHPVersion_34x-img]: https://img.shields.io/packagist/php-v/bartlett/umlwriter/3.4.0
+[PHPVersion_34x]: https://www.php.net/supported-versions.php
+[Packagist_34x-img]: https://img.shields.io/badge/packagist-v3.4.0-blue
+[Packagist_34x]: https://packagist.org/packages/bartlett/umlwriter
+[License_34x-img]: https://img.shields.io/packagist/l/bartlett/umlwriter
+[License_34x]: https://github.com/llaville/umlwriter/blob/3.4/LICENSE
+[Documentation_34x-img]: https://img.shields.io/badge/documentation-v3.4-green
+[Documentation_34x]: https://github.com/llaville/umlwriter/tree/3.4/docs
 
 [![GitHub Discussions](https://img.shields.io/github/discussions/llaville/umlwriter)](https://github.com/llaville/umlwriter/discussions)
 [![Unit Tests](https://github.com/llaville/umlwriter/actions/workflows/unit-tests.yaml/badge.svg)](https://github.com/llaville/umlwriter/actions/workflows/unit-tests.yaml)
@@ -17,14 +25,11 @@
 
 ## Documentation
 
-| GH Pages v2 | GH Pages v3 |
-|:-----------:|:-----------:|
-| [![Documentation](https://img.shields.io/badge/documentation-v2.x-green)](https://github.com/llaville/umlwriter/tree/2.x/docs) | [![Documentation](https://img.shields.io/badge/documentation-v3.x-green)](https://github.com/llaville/umlwriter/tree/3.x/docs) |
 
-All the documentation is available on following websites generated from the docs folder.
+All the documentation is available on [website](https://llaville.github.io/umlwriter/3.4),
+generated from the [docs](https://github.com/llaville/umlwriter/tree/3.4/docs) folder.
 
-- <http://llaville.github.io/umlwriter/2.x/>
-- <http://llaville.github.io/umlwriter/3.x/>
+* [Getting Started](docs/getting-started.md).
 
 ## Usage
 
