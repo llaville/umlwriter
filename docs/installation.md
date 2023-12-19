@@ -9,10 +9,11 @@
 
 ## Requirements
 
-| Version | Status                 | Requirements                             |
-|:--------|:-----------------------|:-----------------------------------------|
-| **3.x** | **Active development** | **PHP >= 8.0**                           |
-| 2.x     | End Of Life            | PHP >= 7.1                               |
+| Version | Status                 | Requirements   |
+|:--------|:-----------------------|:---------------|
+| **4.0** | **Active development** | **PHP >= 8.1** |
+| 3.4     | Active support         | PHP >= 8.0     |
+| 2.x     | End Of Life            | PHP >= 7.1     |
 
 ## PHAR
 
@@ -24,7 +25,7 @@ The preferred method of installation is to use the UmlWriter PHAR which can be d
 You can install `umlwriter` with [Docker][docker]
 
 ```shell
-docker pull ghcr.io/llaville/umlwriter:v3
+docker pull ghcr.io/llaville/umlwriter:v4
 or
 docker pull ghcr.io/llaville/umlwriter:latest
 ```
@@ -48,7 +49,7 @@ phive update llaville/umlwriter --force-accept-unsigned
 You can install `umlwriter` with [Composer][composer]
 
 ```shell
-composer global require bartlett/umlwriter ^3
+composer global require bartlett/umlwriter ^4
 ```
 
 If you cannot install it because of a dependency conflict, or you prefer to install it for your project, we recommend

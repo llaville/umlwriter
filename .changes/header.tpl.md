@@ -1,5 +1,5 @@
 <!-- markdownlint-disable MD013 MD024 -->
-# Changes in 3.x
+# Changes in 4.x
 
 All notable changes of the UmlWriter 3 release series will be documented in this file.
 

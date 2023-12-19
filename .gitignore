@@ -2,17 +2,19 @@
 # CUSTOM
 ######################################
 
+site/
+docs/assets/images/
+
 ###### Composer dependencies ######
 vendor/
 
 ###### PHPLint ######
-.phplint-cache
+.phplint.cache/
 
 ###### PHPUnit ######
-.phpunit.result.cache
+.phpunit.cache/
 
 ###### Mega-Linter ######
-report/
 megalinter-reports/
 
 ######################################
