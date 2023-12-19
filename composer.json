@@ -19,11 +19,11 @@
         "graphp/graphviz": "1.x-dev#686f747 as 1.0.0",
         "psr/container": "^2.0",
         "roave/better-reflection": "^6.0",
-        "symfony/config": "^5.4 || ^6.0",
-        "symfony/console": "^5.4 || ^6.0",
-        "symfony/finder": "^5.4 || ^6.0",
-        "symfony/options-resolver": "^5.4 || ^6.0",
-        "symfony/yaml": "^5.4 || ^6.0"
+        "symfony/config": "^6.4",
+        "symfony/console": "^6.4",
+        "symfony/finder": "^6.4",
+        "symfony/options-resolver": "^6.4",
+        "symfony/yaml": "^6.4"
     },
     "require-dev": {
         "jawira/plantuml": "^1.28"
