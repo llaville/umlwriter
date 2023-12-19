@@ -5,6 +5,7 @@ on:
     pull_request:
         branches:
             - master
+            - "4.0"
         paths-ignore:
             - 'docs/**'
     workflow_call:
@@ -14,7 +15,7 @@ jobs:
         uses: llaville/.github/.github/workflows/mega-linter.yml@master
         with:
             repository: ${{ github.repository }}
-            php-version: "8.0"
+            php-version: "8.1"
 
     unit_tests:
         needs: lint_files
@@ -24,41 +25,36 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                include:
-                    -
-                        os: ubuntu-latest
-                        php: 8.0
-                        tools: phpunit:9.6
-                    -
-                        os: ubuntu-latest
-                        php: 8.1
-                        tools: phpunit
+                os:
+                    - ubuntu-22.04
+                php:
+                    - 8.1
+                    - 8.2
+                    - 8.3
+                tools:
+                    - phpunit:10.5
 
         name: UML Class Writer
 
         steps:
-            -   # Git Checkout
+            -   # https://github.com/actions/checkout
                 name: Checkout
-                uses: actions/checkout@v3
+                uses: actions/checkout@v4
 
-            -   # Setup PHP runtime
+            -   # https://github.com/shivammathur/setup-php
                 name: Setup PHP runtime
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: ${{ matrix.php }}
+                    coverage: "none"
                     tools: ${{ matrix.tools }}
 
-            -   # Install Composer dependencies
+            -   # https://github.com/ramsey/composer-install
                 name: Install Composer dependencies
                 uses: ramsey/composer-install@v2
                 with:
                     composer-options: "--prefer-dist"
 
-            -   # Run unit tests
-                name: Unit tests with PHPUnit 9
-                if: ${{ matrix.php == '8.0' }}
-                run: phpunit --configuration ./phpunit-9.xml --testdox --do-not-cache-result
-            -
+            -   # https://github.com/sebastianbergmann/phpunit/tree/10.5
                 name: Unit tests with PHPUnit 10
-                if: ${{ matrix.php != '8.0' }}
-                run: phpunit --testdox --do-not-cache-result
+                run: phpunit --testdox --do-not-cache-result --no-progress
