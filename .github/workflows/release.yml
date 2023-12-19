@@ -25,26 +25,35 @@ jobs:
                 os:
                     - ubuntu-22.04
                 php:
-                    - 8.1
+                    - 8.2
+                tools:
+                    - box:4.6  # available since https://github.com/shivammathur/setup-php/releases/tag/2.27.0
 
         steps:
-            -   # Git Checkout
+            -   # https://github.com/actions/checkout
                 name: Checkout
-                uses: actions/checkout@v3
+                uses: actions/checkout@v4
 
-            -   # Setup PHP runtime
+            -   # https://github.com/shivammathur/setup-php
                 name: Setup PHP runtime
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: ${{ matrix.php }}
+                    coverage: "none"
+                    tools: ${{ matrix.tools }}
 
-            -   # Install Composer dependencies
+            -   # https://getcomposer.org/doc/06-config.md#platform
+                name: Setup Composer Platform
+                run: |
+                    composer config platform.php 8.1
+
+            -   # https://github.com/ramsey/composer-install
                 name: Install Composer dependencies
                 uses: ramsey/composer-install@v2
                 with:
                     composer-options: "--prefer-dist"
 
-            -   # Build the current release with artifacts (php archive)
+            -   # https://github.com/llaville/box-manifest
                 name: Build Release Artifacts
                 run: |
                     curl -Ls https://github.com/llaville/box-manifest/releases/latest/download/box-manifest.phar -o /usr/local/bin/box-manifest
@@ -53,7 +62,7 @@ jobs:
                     box-manifest manifest:build --ansi -vv -c box.json --output-file=manifest.txt --format ansi
                     box-manifest manifest:build --ansi -vv -c box.json --output-file=console.txt --format console
                     box-manifest manifest:stub  --ansi -vv -c box.json --output-file=stub.php --resource console.txt --resource manifest.txt --resource sbom.json
-                    box-manifest box:compile    --ansi -vv -c box.json.dist
+                    box compile --ansi -vv -c box.json.dist
 
             -   # Create a new Release (from a tag)
                 name: Create Release from current tag
