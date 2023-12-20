@@ -31,7 +31,8 @@ class PlantUMLIssueTest extends TestCase
         $generator = $generatorFactory->getGenerator();
 
         $renderer = new ClassDiagramRenderer();
-        $script = $renderer($finder, $generator);
+        $graph = $renderer($finder, $generator);
+        $script = $generator->createScript($graph);
 
         $this->assertStringEqualsFile(self::ISSUE_DIR . DIRECTORY_SEPARATOR . 'gh-7.puml', $script);
     }

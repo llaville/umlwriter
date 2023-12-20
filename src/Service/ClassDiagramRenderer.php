@@ -10,18 +10,22 @@ namespace Bartlett\UmlWriter\Service;
 use Bartlett\GraphUml\Generator\GeneratorInterface;
 use Bartlett\GraphUml\ClassDiagramBuilder;
 
+use Generator;
 use Graphp\Graph\Graph;
 
 use Roave\BetterReflection\BetterReflection;
 use Roave\BetterReflection\Reflector\DefaultReflector;
+use Roave\BetterReflection\SourceLocator\Type\AutoloadSourceLocator;
 use Roave\BetterReflection\SourceLocator\Type\SingleFileSourceLocator;
 
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\Finder\SplFileInfo;
 
 use ReflectionException;
 use function array_filter;
 use function array_merge;
 use function array_unique;
+use function is_string;
 use function strpos;
 
 /**
@@ -37,7 +41,7 @@ final class ClassDiagramRenderer
      * @param array<string, mixed> $parameters
      * @throws ReflectionException
      */
-    public function __invoke(Finder $finder, GeneratorInterface $generator, array $parameters = []): string
+    public function __invoke(Finder|Generator $datasource, GeneratorInterface $generator, array $parameters = []): Graph
     {
         $this->initGraph($parameters);
 
@@ -49,11 +53,18 @@ final class ClassDiagramRenderer
 
         $astLocator = (new BetterReflection())->astLocator();
 
-        foreach ($finder as $file) {
-            $filename = $file->getRealPath();
-            $reflector = new DefaultReflector(new SingleFileSourceLocator($filename, $astLocator));
+        foreach ($datasource as $source) {
+            $classes = [];
+            if ($source instanceof SplFileInfo) {
+                $filename = $source->getRealPath();
+                $reflector = new DefaultReflector(new SingleFileSourceLocator($filename, $astLocator));
+                $classes = $reflector->reflectAllClasses();
+            } elseif (is_string($source)) {
+                $reflector = new DefaultReflector(new AutoloadSourceLocator($astLocator));
+                $classes = [$reflector->reflectClass($source)];
+            }
 
-            foreach ($reflector->reflectAllClasses() as $class) {
+            foreach ($classes as $class) {
                 if ($class->isAnonymous()) {
                     continue;
                 }
@@ -66,7 +77,7 @@ final class ClassDiagramRenderer
             }
         }
 
-        return $generator->createScript($this->graph);
+        return $this->graph;
     }
 
     /**
@@ -78,11 +89,6 @@ final class ClassDiagramRenderer
     {
         $this->metaData['namespaces'] = array_unique($this->metaData['namespaces']);
         return $this->metaData;
-    }
-
-    public function getGraph(): Graph
-    {
-        return $this->graph;
     }
 
     /**

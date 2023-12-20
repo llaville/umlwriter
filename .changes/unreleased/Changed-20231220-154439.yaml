@@ -1,0 +1,5 @@
+kind: Changed
+body: '"ClassDiagramRenderer::__invoke" method accept now either a "Finder" instance
+  or a "Generator" as first argument to identify the datasource, and return a Graph
+  object instead of the statement results'
+time: 2023-12-20T15:44:39.467993526Z

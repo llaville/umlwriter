@@ -62,7 +62,8 @@ class FeatureTest extends TestCase
         $configHandler = new ConfigurationHandler(null);
         $parameters = $configHandler->toFlat();
         $renderer = new ClassDiagramRenderer();
-        $script = $renderer($finder, $generator, $parameters);
+        $graph = $renderer($finder, $generator, $parameters);
+        $script = $generator->createScript($graph);
 
         $this->assertStringEqualsFile(
             self::FIXTURE_DIR . DIRECTORY_SEPARATOR . basename($fixture, '.php') . '.gv',
@@ -82,7 +83,8 @@ class FeatureTest extends TestCase
         $configHandler = new ConfigurationHandler(null);
         $parameters = $configHandler->toFlat();
         $renderer = new ClassDiagramRenderer();
-        $script = $renderer($finder, $generator, $parameters);
+        $graph = $renderer($finder, $generator, $parameters);
+        $script = $generator->createScript($graph);
 
         $this->assertStringEqualsFile(
             self::FIXTURE_DIR . DIRECTORY_SEPARATOR . basename($fixture, '.php') . '.puml',
