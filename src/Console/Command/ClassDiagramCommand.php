@@ -12,6 +12,7 @@ use Bartlett\UmlWriter\Generator\GeneratorFactoryInterface;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 use Bartlett\UmlWriter\Service\ConfigurationHandler;
 
+use Graphp\Graph\Graph;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -115,13 +116,14 @@ final class ClassDiagramCommand extends Command
         );
         unset($parameters['__from']);
 
-        $script = $this->renderer->__invoke($finder, $generator, $parameters);
+        $graph = $this->renderer->__invoke($finder, $generator, $parameters);
+        $script = $generator->createScript($graph);
 
         if ($output->isVerbose()) {
             $this->handleContext($output, $io, $parameters);
         }
 
-        $exitCode = $this->handleOutput($generator, $input->getOption('output'), $input->getOption('format'), $io);
+        $exitCode = $this->handleOutput($graph, $generator, $input->getOption('output'), $input->getOption('format'), $io);
 
         if (0 === $exitCode) {
             if (!$input->getOption('no-statement')) {
@@ -173,7 +175,7 @@ final class ClassDiagramCommand extends Command
         }
     }
 
-    private function handleOutput(GeneratorInterface $generator, ?string $target, ?string $format, SymfonyStyle $io): int
+    private function handleOutput(Graph $graph, GeneratorInterface $generator, ?string $target, ?string $format, SymfonyStyle $io): int
     {
         if (null === $target && null === $format) {
             // do not generate image file
@@ -197,7 +199,7 @@ final class ClassDiagramCommand extends Command
             $generator->setFormat($format);
         }
 
-        $path = $generator->createImageFile($this->renderer->getGraph(), '');
+        $path = $generator->createImageFile($graph, '');
 
         if ($target !== null) {
             if (!@rename($path, $target)) {
