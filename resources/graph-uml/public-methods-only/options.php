@@ -14,12 +14,6 @@ return [
     'show_protected' => false,
     'show_constants' => false,
     'show_properties' => false,
-    // @link https://graphviz.gitlab.io/docs/attrs/rankdir/
-    'graph.rankdir' => 'TB',
-    // @link https://graphviz.gitlab.io/docs/attrs/fillcolor/
-    'node.fillcolor' => '#FEFECE',
-    // @link https://graphviz.gitlab.io/docs/attrs/style/
-    'node.style' => 'filled',
     // @link https://plantuml.com/en/color
     'clusters.graph.bgcolor' => 'white',
 ];

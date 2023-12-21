@@ -12,8 +12,7 @@
 return [
     'show_private' => false,
     'show_protected' => false,
-    'node.fillcolor' => '#FEFECE',
-    'node.style' => 'filled',
+    // @link https://plantuml.com/en/color
     'cluster.Bartlett\\UmlWriter\\Console.graph.bgcolor' => 'BurlyWood',
     'cluster.Bartlett\\UmlWriter\\Console\\Command.graph.bgcolor' => 'BurlyWood',
 ];

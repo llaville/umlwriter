@@ -10,6 +10,6 @@
  */
 
 return [
-    'graph.rankdir' => 'TB',
+    // @link https://graphviz.gitlab.io/docs/attrs/fillcolor/
     'node.fillcolor' => 'white',
 ];

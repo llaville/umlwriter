@@ -14,6 +14,4 @@ return [
     'show_protected' => false,
     'show_constants' => false,
     'show_properties' => false,
-    'node.fillcolor' => '#FEFECE',
-    'node.style' => 'filled',
 ];

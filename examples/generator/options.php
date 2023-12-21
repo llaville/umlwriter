@@ -12,7 +12,6 @@
 return [
     'show_private' => false,
     'show_protected' => false,
-    'node.fillcolor' => '#FEFECE',
-    'node.style' => 'filled',
+    // @link https://plantuml.com/en/color
     'cluster.Name\\Space.graph.bgcolor' => 'LightSkyBlue',
 ];

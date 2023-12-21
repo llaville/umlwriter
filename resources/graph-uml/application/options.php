@@ -12,15 +12,8 @@
 return [
     'show_private' => false,
     'show_protected' => false,
-    // For large graph, orientation is recommended
     // @link https://graphviz.gitlab.io/docs/attrs/rankdir/
     'graph.rankdir' => 'LR',
-    // @link https://graphviz.gitlab.io/docs/attrs/bgcolor/
-    'graph.bgcolor' => 'transparent',
-    // @link https://graphviz.gitlab.io/docs/attrs/fillcolor/
-    'node.fillcolor' => '#FEFECE',
-    // @link https://graphviz.gitlab.io/docs/attrs/style/
-    'node.style' => 'filled',
     // @link https://plantuml.com/en/color
     'clusters.graph.bgcolor' => 'white',
     'cluster.Symfony\\Component\\Console.graph.bgcolor' => 'LightSkyBlue',

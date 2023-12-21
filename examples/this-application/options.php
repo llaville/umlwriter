@@ -12,10 +12,10 @@
 return [
     'show_private' => false,
     'show_protected' => false,
+    // @link https://graphviz.gitlab.io/docs/attrs/rankdir/
     'graph.rankdir' => 'LR',
-    'graph.bgcolor' => 'transparent',
+    // @link https://graphviz.gitlab.io/docs/attrs/fillcolor/
     'node.fillcolor' => 'lightgrey',
-    'node.style' => 'filled',
     // @link https://plantuml.com/en/color
     'cluster.Psr\\Container.graph.bgcolor' => 'LightSkyBlue',
     'cluster.Symfony\\Component\\Console.graph.bgcolor' => 'LightSkyBlue',

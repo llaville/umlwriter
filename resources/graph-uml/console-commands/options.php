@@ -12,14 +12,6 @@
 return [
     'show_private' => false,
     'show_protected' => false,
-    // @link https://graphviz.gitlab.io/docs/attrs/rankdir/
-    'graph.rankdir' => 'TB',
-    // @link https://graphviz.gitlab.io/docs/attrs/bgcolor/
-    'graph.bgcolor' => 'transparent',
-    // @link https://graphviz.gitlab.io/docs/attrs/fillcolor/
-    'node.fillcolor' => '#FEFECE',
-    // @link https://graphviz.gitlab.io/docs/attrs/style/
-    'node.style' => 'filled',
     // @link https://plantuml.com/en/color
     'cluster.Bartlett\\UmlWriter\\Console.graph.bgcolor' => 'BurlyWood',
     'cluster.Bartlett\\UmlWriter\\Console\\Command.graph.bgcolor' => 'BurlyWood',

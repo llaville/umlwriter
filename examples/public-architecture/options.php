@@ -12,8 +12,6 @@
 return [
     'show_private' => false,
     'show_protected' => false,
-    'node.fillcolor' => '#FEFECE',
-    'node.style' => 'filled',
     // @link https://plantuml.com/en/color
     'cluster.Bartlett\\GraphUml\\Formatter.graph.bgcolor' => 'LightSkyBlue',
     'cluster.Bartlett\\GraphUml.graph.bgcolor' => 'BurlyWood',
