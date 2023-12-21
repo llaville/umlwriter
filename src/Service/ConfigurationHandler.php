@@ -44,6 +44,7 @@ final class ConfigurationHandler
                 'name' => 'G',
                 'overlap' => 'false',
                 'rankdir' => 'TB',
+                'bgcolor' => 'transparent',
             ],
             'node' => [
                 'fontname' => 'Verdana',
@@ -116,13 +117,14 @@ final class ConfigurationHandler
                 $loaderResolver = new LoaderResolver([new YamlFileLoader($fileLocator)]);
                 $loader = $loaderResolver->resolve($resource);
                 $configs = $loader->load($this->filename);
-                $this->configStore = $this->optionsResolver->resolve($configs['parameters']);
+                $options = $configs['parameters'];
             } catch (FileLocatorFileNotFoundException $exception) {
                 throw new InvalidArgumentException($exception->getMessage(), 0, $exception);
             }
         } else {
-            $this->configStore = $this->optionsResolver->resolve();
+            $options = [];
         }
+        $this->configStore = $this->optionsResolver->resolve($options);
         $this->initialized = true;
     }
 
