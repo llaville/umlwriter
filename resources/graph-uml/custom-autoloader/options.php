@@ -9,9 +9,7 @@
  * @author Laurent Laville
  */
 
-$options = [
-    'label_format' => 'html',
-    'show_private' => false,
-    'show_protected' => false,
+return [
     'graph.rankdir' => 'TB',
+    'node.fillcolor' => 'white',
 ];

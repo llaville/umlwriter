@@ -9,15 +9,16 @@
  * @author Laurent Laville
  */
 
-require_once dirname(__DIR__, 3) . '/examples/generator/classmap.php';
+use Bartlett\UmlWriter\Config\Loader\YamlFileLoader;
+use Bartlett\UmlWriter\Service\ConfigurationHandler;
 
-function dataSource(): Generator
+return function (): Generator
 {
     $classes = [
-        \Name\Space\MyGeneratorFactory::class,
-        \Name\Space\MyGenerator::class,
+        YamlFileLoader::class,
+        ConfigurationHandler::class,
     ];
     foreach ($classes as $class) {
         yield $class;
     }
-}
+};

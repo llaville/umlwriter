@@ -9,9 +9,15 @@
  * @author Laurent Laville
  */
 
-$options = [
-    'label_format' => 'html',
-    'show_private' => false,
-    'show_protected' => false,
-    'graph.rankdir' => 'TB',
-];
+$bootstrap = require dirname(__DIR__, 3) . '/examples/autoloader/bootstrap.php';
+$bootstrap();
+
+return function (): Generator
+{
+    $classes = [
+        \Name\Space\Foo::class,
+    ];
+    foreach ($classes as $class) {
+        yield $class;
+    }
+};

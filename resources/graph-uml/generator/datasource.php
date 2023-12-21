@@ -9,16 +9,16 @@
  * @author Laurent Laville
  */
 
-use Bartlett\UmlWriter\Config\Loader\YamlFileLoader;
-use Bartlett\UmlWriter\Service\ConfigurationHandler;
+$bootstrap = require dirname(__DIR__, 3) . '/examples/generator/bootstrap.php';
+$bootstrap();
 
-function dataSource(): Generator
+return function (): Generator
 {
     $classes = [
-        YamlFileLoader::class,
-        ConfigurationHandler::class,
+        \Name\Space\MyGeneratorFactory::class,
+        \Name\Space\MyGenerator::class,
     ];
     foreach ($classes as $class) {
         yield $class;
     }
-}
+};

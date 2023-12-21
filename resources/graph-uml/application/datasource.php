@@ -17,7 +17,14 @@ use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 use Bartlett\UmlWriter\Service\ConfigurationHandler;
 use Bartlett\UmlWriter\Service\ContainerService;
 
-function dataSource(): Generator
+use Psr\Container\ContainerInterface;
+
+use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Contracts\Service\ResetInterface;
+use Symfony\Component\Console\Application as SymfonyApplication;
+
+return function (): Generator
 {
     $classes = [
         GeneratorFactory::class,
@@ -27,8 +34,14 @@ function dataSource(): Generator
         Application::class,
         ClassDiagramCommand::class,
         YamlFileLoader::class,
+
+        ResetInterface::class,
+        LoaderInterface::class,
+        Command::class,
+        SymfonyApplication::class,
+        ContainerInterface::class,
     ];
     foreach ($classes as $class) {
         yield $class;
     }
-}
+};

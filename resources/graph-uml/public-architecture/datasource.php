@@ -9,20 +9,26 @@
  * @author Laurent Laville
  */
 
+use Bartlett\UmlWriter\Config\Loader\YamlFileLoader;
 use Bartlett\UmlWriter\Console\Application;
 use Bartlett\UmlWriter\Console\Command\ClassDiagramCommand;
+use Bartlett\UmlWriter\Generator\GeneratorFactory;
+use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
+use Bartlett\UmlWriter\Service\ConfigurationHandler;
+use Bartlett\UmlWriter\Service\ContainerService;
 
-use Symfony\Component\Console\Application as SymfonyApplication;
-
-function dataSource(): Generator
+return function (): Generator
 {
     $classes = [
+        GeneratorFactory::class,
+        ConfigurationHandler::class,
+        ClassDiagramRenderer::class,
+        ContainerService::class,
         Application::class,
         ClassDiagramCommand::class,
-
-        SymfonyApplication::class,
+        YamlFileLoader::class,
     ];
     foreach ($classes as $class) {
         yield $class;
     }
-}
+};

@@ -9,14 +9,20 @@
  * @author Laurent Laville
  */
 
-require_once dirname(__DIR__, 3) . '/examples/autoloader/classmap.php';
+use Bartlett\UmlWriter\Console\Application;
+use Bartlett\UmlWriter\Console\Command\ClassDiagramCommand;
 
-function dataSource(): Generator
+use Symfony\Component\Console\Application as SymfonyApplication;
+
+return function (): Generator
 {
     $classes = [
-        \Name\Space\Foo::class,
+        Application::class,
+        ClassDiagramCommand::class,
+
+        SymfonyApplication::class,
     ];
     foreach ($classes as $class) {
         yield $class;
     }
-}
+};

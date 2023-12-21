@@ -12,7 +12,7 @@
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 use Bartlett\UmlWriter\Service\ContainerService;
 
-function dataSource(): Generator
+return function (): Generator
 {
     $classes = [
         ClassDiagramRenderer::class,
@@ -21,4 +21,4 @@ function dataSource(): Generator
     foreach ($classes as $class) {
         yield $class;
     }
-}
+};
