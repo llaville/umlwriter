@@ -1,4 +1,7 @@
 @startuml
+
+skinparam backgroundColor transparent
+top to bottom direction
 namespace ltta.model {
   class BackupProject << class >> {
     –a

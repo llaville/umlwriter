@@ -1,5 +1,6 @@
 @startuml
 
+skinparam backgroundColor transparent
 top to bottom direction
 namespace FixtureOne {
   class OneClass << class >> {

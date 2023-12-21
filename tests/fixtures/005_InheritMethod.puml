@@ -1,5 +1,6 @@
 @startuml
 
+skinparam backgroundColor transparent
 top to bottom direction
 namespace FixtureFive {
   class ParentClass << class >> {
