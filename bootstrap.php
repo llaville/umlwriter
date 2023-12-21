@@ -1,5 +1,12 @@
 <?php declare(strict_types=1);
-// @link https://www.tomasvotruba.cz/blog/2018/08/02/5-gotchas-of-the-bin-file-in-php-cli-applications/
+/**
+ * This file is part of the UmlWriter package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @link https://www.tomasvotruba.cz/blog/2018/08/02/5-gotchas-of-the-bin-file-in-php-cli-applications/
+ */
 
 gc_disable(); // performance boost
 
