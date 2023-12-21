@@ -1,0 +1,36 @@
+parameters:
+    generator: graphviz
+
+    graph:
+        name: G
+        overlap: 'false'
+        rankdir: LR
+        bgcolor: transparent
+
+    node:
+        fillcolor: 'white'
+
+    edge: ~
+
+    cluster:
+        Bartlett\UmlWriter\Console:
+            graph:
+                bgcolor: BurlyWood
+            node:
+                fillcolor: '#FEFECE'
+                style: filled
+        Symfony\Component\Console:
+            graph:
+                bgcolor: LightSteelBlue
+            node:
+                fillcolor: '#FEFECE'
+                style: filled
+
+    paths:
+        - src/
+
+    show_constants: true
+    show_properties: true
+    show_methods: true
+    show_private: false
+    show_protected: false
