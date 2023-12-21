@@ -27,15 +27,17 @@ $resources = [
     $baseDir . 'options.php',       // all options to customize the Graph
 ];
 
+$isAutoloadFound = false;
+
 foreach ($resources as $resource) {
     if (file_exists($resource)) {
         $variable = basename($resource, '.php');
         $$variable = require $resource;
     }
-}
-
-if (isset($bootstrap)) {
-    $bootstrap();
+    if (isset($bootstrap) && !$isAutoloadFound) {
+        $isAutoloadFound = true;
+        $bootstrap();
+    }
 }
 
 $generatorName = basename(__FILE__, '.php');
