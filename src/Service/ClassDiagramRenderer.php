@@ -43,13 +43,17 @@ final class ClassDiagramRenderer
      */
     public function __invoke(Finder|Generator $datasource, GeneratorInterface $generator, array $parameters = []): Graph
     {
-        $this->initGraph($parameters);
+        $this->metaData = [
+            'classes' => [],
+            'interfaces' => [],
+            'namespaces' => [],
+        ];
 
-        $builder = new ClassDiagramBuilder(
-            $generator,
-            $this->graph,
-            array_merge(['label_format' => 'html'], $parameters)
-        );
+        $defaults = (new ConfigurationHandler())->toFlat();
+        $options = array_merge($defaults, $parameters);
+        $this->initGraph($options);
+
+        $builder = new ClassDiagramBuilder($generator, $this->graph, $options);
 
         $astLocator = (new BetterReflection())->astLocator();
 
@@ -96,12 +100,6 @@ final class ClassDiagramRenderer
      */
     private function initGraph(array $parameters): void
     {
-        $this->metaData = [
-            'classes' => [],
-            'interfaces' => [],
-            'namespaces' => [],
-        ];
-
         $this->graph = new Graph();
 
         $attributes = array_filter($parameters, function ($key) {

@@ -33,12 +33,18 @@ final class ConfigurationHandler
     private bool $initialized;
     private OptionsResolver $optionsResolver;
 
-    public function __construct(?string $filename)
+    public function __construct(?string $filename = null)
     {
         $this->filename = $filename;
         $this->initialized = false;
 
-        $defaults = [
+        $this->optionsResolver = new OptionsResolver();
+        $this->optionsResolver->setDefaults(self::getDefaults());
+    }
+
+    public static function getDefaults(): array
+    {
+        return [
             'generator' => 'graphviz',
             'graph' => [
                 'name' => 'G',
@@ -59,18 +65,14 @@ final class ConfigurationHandler
                 'fontsize' => 8,
             ],
             'cluster' => null,
-            'paths' => [
-                'src',
-            ],
+            'paths' => [],
+            'label_format' => 'html',
             'show_constants' => ClassDiagramBuilderInterface::OPTIONS_DEFAULTS['show_constants'],
             'show_properties' => ClassDiagramBuilderInterface::OPTIONS_DEFAULTS['show_properties'],
             'show_methods' => ClassDiagramBuilderInterface::OPTIONS_DEFAULTS['show_methods'],
             'show_private' => ClassDiagramBuilderInterface::OPTIONS_DEFAULTS['show_private'],
             'show_protected' => ClassDiagramBuilderInterface::OPTIONS_DEFAULTS['show_protected'],
         ];
-
-        $this->optionsResolver = new OptionsResolver();
-        $this->optionsResolver->setDefaults($defaults);
     }
 
     public function filename(): ?string
