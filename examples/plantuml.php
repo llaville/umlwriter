@@ -48,7 +48,7 @@ $generator = $generatorFactory->getGenerator();
 $generator->setExecutable(dirname(__DIR__) . '/vendor/bin/plantuml');
 
 $renderer = new ClassDiagramRenderer();
-// generates UML class diagram of all objects found in dataSource (in graphviz format)
+// generates UML class diagram of all objects found in dataSource (in PlantUML format)
 $graph = $renderer($datasource(), $generator, $options);
 // show UML diagram statements
 if ($printGraphStatement) {
