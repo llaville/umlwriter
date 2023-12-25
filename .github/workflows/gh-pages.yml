@@ -19,4 +19,4 @@ jobs:
             destination-dir: "4.0"
             hook-script: "resources/gh-pages-hook.sh"
             force-orphan: false
-            graph-uml: true
+            graph-uml: false

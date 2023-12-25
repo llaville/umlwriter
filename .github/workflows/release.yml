@@ -64,7 +64,7 @@ jobs:
                     box-manifest manifest:stub  --ansi -vv -c box.json --output-file=stub.php --resource console.txt --resource manifest.txt --resource sbom.json
                     box compile --ansi -vv -c box.json.dist
 
-            -   # Create a new Release (from a tag)
+            -   # https://github.com/softprops/action-gh-release
                 name: Create Release from current tag
                 if: github.ref_type == 'tag'
                 uses: softprops/action-gh-release@v1
