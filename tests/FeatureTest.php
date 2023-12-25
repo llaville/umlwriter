@@ -18,11 +18,11 @@ class FeatureTest extends TestCase
 
     private static function provider(string $name): Generator
     {
-        $generatorFactory = new GeneratorFactory($name);
+        $generatorFactory = new GeneratorFactory();
         // creates either instance of:
         // - Bartlett\GraphUml\GraphVizGenerator
         // - Bartlett\GraphPlantUml\PlantUmlGenerator
-        $generator = $generatorFactory->getGenerator();
+        $generator = $generatorFactory->createInstance($name);
 
         $fixtures = new Finder();
         $fixtures->in(self::FIXTURE_DIR)->name('*.php')->sortByName();

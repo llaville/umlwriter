@@ -8,6 +8,7 @@
 namespace Bartlett\UmlWriter\Service;
 
 use Bartlett\UmlWriter\Console\Command\ClassDiagramCommand;
+use Bartlett\UmlWriter\Generator\GeneratorFactory;
 use Bartlett\UmlWriter\Generator\GeneratorFactoryInterface;
 
 use Psr\Container\ContainerExceptionInterface;
@@ -33,6 +34,7 @@ class ContainerService implements ContainerInterface
     private array $internalServices = [
         ClassDiagramCommand::class => null,
         ClassDiagramRenderer::class => null,
+        GeneratorFactoryInterface::class => null,
     ];
 
     /**
@@ -42,13 +44,15 @@ class ContainerService implements ContainerInterface
     private array $runtimeServices = [
         InputInterface::class => null,
         OutputInterface::class => null,
-        GeneratorFactoryInterface::class => null,
     ];
 
     public function __construct()
     {
         $this->internalServices[ClassDiagramRenderer::class] = function () {
             return new ClassDiagramRenderer();
+        };
+        $this->internalServices[GeneratorFactoryInterface::class] = function () {
+            return new GeneratorFactory();
         };
         $this->internalServices[ClassDiagramCommand::class] = function () {
             return new ClassDiagramCommand(

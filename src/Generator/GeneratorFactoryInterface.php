@@ -14,7 +14,5 @@ use Bartlett\GraphUml\Generator\GeneratorInterface;
  */
 interface GeneratorFactoryInterface
 {
-    public function createInstance(string $provider): GeneratorFactoryInterface;
-
-    public function getGenerator(): GeneratorInterface;
+    public function createInstance(string $provider, string $format, string $executable): GeneratorInterface;
 }

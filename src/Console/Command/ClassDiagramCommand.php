@@ -13,6 +13,7 @@ use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 use Bartlett\UmlWriter\Service\ConfigurationHandler;
 
 use Graphp\Graph\Graph;
+
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -25,11 +26,11 @@ use Symfony\Component\Finder\Finder;
 use InvalidArgumentException;
 use ReflectionException;
 use SplFileInfo;
+use Throwable;
 use function array_filter;
 use function array_keys;
 use function array_values;
 use function array_walk;
-use function basename;
 use function count;
 use function file_exists;
 use function implode;
@@ -40,7 +41,6 @@ use function rename;
 use function rtrim;
 use function sprintf;
 use function str_starts_with;
-use function strrpos;
 use function var_export;
 use const ARRAY_FILTER_USE_KEY;
 
@@ -50,16 +50,12 @@ use const ARRAY_FILTER_USE_KEY;
 #[AsCommand(name: 'diagram:class')]
 final class ClassDiagramCommand extends Command
 {
-    private ClassDiagramRenderer $renderer;
-    private GeneratorFactoryInterface $generatorFactory;
-
     public function __construct(
-        ClassDiagramRenderer $renderer,
-        GeneratorFactoryInterface $generatorFactory
+        private readonly ClassDiagramRenderer $renderer,
+        private readonly GeneratorFactoryInterface $generatorFactory,
+        string $name = null
     ) {
-        parent::__construct();
-        $this->renderer = $renderer;
-        $this->generatorFactory = $generatorFactory;
+        parent::__construct($name);
     }
 
     protected function configure(): void
@@ -70,6 +66,7 @@ final class ClassDiagramCommand extends Command
             ->addOption('output', 'o', InputOption::VALUE_REQUIRED, 'Path to output image file')
             ->addOption('format', '', InputOption::VALUE_REQUIRED, 'Set output format (depending of each generator)')
             ->addOption('generator', null, InputOption::VALUE_REQUIRED, 'Graph generator')
+            ->addOption('executable', null, InputOption::VALUE_REQUIRED, 'Generator external binary resource')
             ->addOption('bootstrap', null, InputOption::VALUE_REQUIRED, 'A PHP script that is included before graph run')
             ->addOption('configuration', 'c', InputOption::VALUE_REQUIRED, 'Read configuration from YAML file')
             ->addOption('without-constants', '', InputOption::VALUE_NONE, 'Hide all class constants')
@@ -90,11 +87,6 @@ final class ClassDiagramCommand extends Command
 
         $parameters = $this->handleConfiguration($input, $io);
 
-        if (empty($parameters['generator'])) {
-            $io->caution('Not enough arguments (missing --generator option)');
-            return 1;
-        }
-
         $paths = array_filter($parameters, function ($key) {
             return str_starts_with($key, 'paths.');
         }, ARRAY_FILTER_USE_KEY);
@@ -104,9 +96,18 @@ final class ClassDiagramCommand extends Command
             return 1;
         }
 
-        $finder = $this->handleSourceLocator($paths);
+        try {
+            $generator = $this->generatorFactory->createInstance(
+                $parameters['generator'],
+                $parameters['format'],
+                $parameters['executable']
+            );
+        } catch (Throwable $e) {
+            $io->error($e->getMessage());
+            return 1;
+        }
 
-        $generator = $this->generatorFactory->createInstance($parameters['generator'])->getGenerator();
+        $finder = $this->handleSourceLocator($paths);
 
         $io->title('UML Class Diagram Generation');
         $io->definitionList(
@@ -123,7 +124,7 @@ final class ClassDiagramCommand extends Command
             $this->handleContext($output, $io, $parameters);
         }
 
-        $exitCode = $this->handleOutput($graph, $generator, $input->getOption('output'), $input->getOption('format'), $io);
+        $exitCode = $this->handleOutput($graph, $generator, $input->getOption('output'), $parameters['format'], $io);
 
         if (0 === $exitCode) {
             if (!$input->getOption('no-statement')) {
@@ -182,26 +183,12 @@ final class ClassDiagramCommand extends Command
             return 0;
         }
 
-        if ($target !== null) {
-            if (is_dir($target)) {
-                $target = rtrim($target, '/') . '/umlwriter.svg';
-            }
-
-            $filename = basename($target);
-            $pos = strrpos($filename, '.');
-            if ($pos !== false && isset($filename[$pos + 1])) {
-                // extension found and not empty
-                $generator->setFormat(substr($filename, $pos + 1));
-            }
-        }
-
-        if ($format !== null) {
-            $generator->setFormat($format);
-        }
-
         $path = $generator->createImageFile($graph, '');
 
         if ($target !== null) {
+            if (is_dir($target)) {
+                $target = rtrim($target, '/') . '/umlwriter.' . $format;
+            }
             if (!@rename($path, $target)) {
                 $io->error(sprintf('Cannot write diagram into %s', $target));
                 return 1;
@@ -223,7 +210,7 @@ final class ClassDiagramCommand extends Command
 
         try {
             $parameters = $configHandler->toFlat();
-            $parameters['__from'] = $configHandler->filename() ?? 'Default values and/or command line arguments';
+            $parameters['__from'] = $configFilename ?? 'Default values and/or command line arguments';
 
             if ($input->getOption('without-constants')) {
                 $parameters['show_constants'] = false;
@@ -253,7 +240,9 @@ final class ClassDiagramCommand extends Command
             }
         }
 
-        $parameters['generator'] = $input->getOption('generator') ?? $parameters['generator'] ?? '';
+        $parameters['generator'] = $input->getOption('generator') ?? $parameters['generator'] ?? 'graphviz';
+        $parameters['executable'] = $input->getOption('executable') ?? $parameters['executable'] ?? 'dot';
+        $parameters['format'] = $input->getOption('format') ?? $parameters['format'] ?? 'svg';
 
         $paths = $input->getArgument('paths');
         foreach ($paths as $index => $path) {

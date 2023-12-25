@@ -75,11 +75,6 @@ final class ConfigurationHandler
         ];
     }
 
-    public function filename(): ?string
-    {
-        return $this->filename;
-    }
-
     /**
      * @return array<string, mixed>
      */
@@ -100,12 +95,6 @@ final class ConfigurationHandler
             $this->initialize();
         }
         return $this->flatten($this->configStore);
-    }
-
-    public function getValueByKey(string $key, mixed $default = null): mixed
-    {
-        $data = $this->toFlat();
-        return array_key_exists($key, $data) ? $data[$key] : $default;
     }
 
     private function initialize(): void

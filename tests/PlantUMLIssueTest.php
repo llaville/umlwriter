@@ -26,9 +26,9 @@ class PlantUMLIssueTest extends TestCase
         $finder = new Finder();
         $finder->in(self::ISSUE_DIR)->name('gh-7.php');
 
-        $generatorFactory = new GeneratorFactory('plantuml');
+        $generatorFactory = new GeneratorFactory();
         // creates instance of Bartlett\GraphPlantUml\PlantUmlGenerator
-        $generator = $generatorFactory->getGenerator();
+        $generator = $generatorFactory->createInstance('plantuml');
 
         $renderer = new ClassDiagramRenderer();
         $graph = $renderer($finder, $generator);

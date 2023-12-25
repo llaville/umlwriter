@@ -8,8 +8,6 @@
 namespace Bartlett\UmlWriter\Console;
 
 use Bartlett\UmlWriter\Console\Command\ClassDiagramCommand;
-use Bartlett\UmlWriter\Generator\GeneratorFactory;
-use Bartlett\UmlWriter\Generator\GeneratorFactoryInterface;
 
 use Composer\InstalledVersions;
 
@@ -41,21 +39,18 @@ final class Application extends SymfonyApplication
 
 ";
 
-    private ContainerInterface $container;
-
-    public function __construct(ContainerInterface $container)
+    public function __construct(private readonly ContainerInterface $container)
     {
         parent::__construct(
             self::NAME,
             $this->getInstalledVersion(false)
         );
 
-        $this->container = $container;
         $this->setCommandLoader($this->createCommandLoader($container));
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getHelp(): string
     {
@@ -68,7 +63,7 @@ final class Application extends SymfonyApplication
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getLongVersion(): string
     {
@@ -76,21 +71,18 @@ final class Application extends SymfonyApplication
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function doRun(InputInterface $input, OutputInterface $output): int
     {
         $this->container->set(InputInterface::class, $input);                                   // @phpstan-ignore-line
         $this->container->set(OutputInterface::class, $output);                                 // @phpstan-ignore-line
-        if (!$this->container->has(GeneratorFactoryInterface::class)) {
-            $this->container->set(GeneratorFactoryInterface::class, new GeneratorFactory());    // @phpstan-ignore-line
-        }
 
         return parent::doRun($input, $output);
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function run(InputInterface $input = null, OutputInterface $output = null): int
     {

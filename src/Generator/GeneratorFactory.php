@@ -13,25 +13,21 @@ use Bartlett\GraphUml\Generator\GraphVizGenerator;
 
 use Graphp\GraphViz\GraphViz;
 
-use RuntimeException;
+use LogicException;
 use function sprintf;
+use function strtolower;
 
 /**
  * @author Laurent Laville
  */
-class GeneratorFactory extends AbstractGeneratorFactory
+class GeneratorFactory implements GeneratorFactoryInterface
 {
-    public function getGenerator(): GeneratorInterface
+    public function createInstance(string $provider, string $format = 'svg', ?string $executable = null): GeneratorInterface
     {
-        if ('graphviz' === $this->generator) {
-            return new GraphVizGenerator(new GraphViz());
-        }
-        if ('plantuml' === $this->generator) {
-            return new PlantUmlGenerator();
-        }
-
-        throw new RuntimeException(
-            sprintf('Generator "%s" is unknown', $this->generator)
-        );
+        return match (strtolower($provider)) {
+            'graphviz' => new GraphVizGenerator(new GraphViz(), 'dot', $format),
+            'plantuml' => new PlantUmlGenerator('vendor/bin/plantuml', $format),
+            default => throw new LogicException(sprintf('Provider "%s" is not supported', $provider))
+        };
     }
 }

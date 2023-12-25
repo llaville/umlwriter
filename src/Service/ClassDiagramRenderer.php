@@ -26,7 +26,7 @@ use function array_filter;
 use function array_merge;
 use function array_unique;
 use function is_string;
-use function strpos;
+use function str_starts_with;
 
 /**
  * @author Laurent Laville
@@ -103,10 +103,10 @@ final class ClassDiagramRenderer
         $this->graph = new Graph();
 
         $attributes = array_filter($parameters, function ($key) {
-            return (strpos($key, 'graph.') === 0
-                || strpos($key, 'node.') === 0
-                || strpos($key, 'edge.') === 0
-                || strpos($key, 'cluster.') === 0
+            return (str_starts_with($key, 'graph.')
+                || str_starts_with($key, 'node.')
+                || str_starts_with($key, 'edge.')
+                || str_starts_with($key, 'cluster.')
             );
         }, ARRAY_FILTER_USE_KEY);
 

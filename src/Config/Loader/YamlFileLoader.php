@@ -15,6 +15,7 @@ use InvalidArgumentException;
 use function in_array;
 use function is_array;
 use function is_string;
+use function pathinfo;
 use function sprintf;
 use const PATHINFO_EXTENSION;
 
@@ -23,6 +24,9 @@ use const PATHINFO_EXTENSION;
  */
 final class YamlFileLoader extends FileLoader
 {
+    /**
+     * @inheritDoc
+     */
     public function load(mixed $resource, string $type = null): array
     {
         try {
@@ -42,6 +46,9 @@ final class YamlFileLoader extends FileLoader
         return $configs ?? [];
     }
 
+    /**
+     * @inheritDoc
+     */
     public function supports($resource, string $type = null): bool
     {
         return is_string($resource)
