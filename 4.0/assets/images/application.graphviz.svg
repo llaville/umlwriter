@@ -10,8 +10,8 @@
 <title>%3</title>
 <g id="clust1" class="cluster">
 <title>cluster_0</title>
-<polygon fill="BurlyWood" stroke="black" points="84.5,-8 84.5,-95 1422.5,-95 1422.5,-8 84.5,-8"/>
-<text text-anchor="middle" x="753.5" y="-79.8" font-family="Times,serif" font-size="14.00">Bartlett\UmlWriter\Generator</text>
+<polygon fill="BurlyWood" stroke="black" points="106.5,-8 106.5,-95 1422.5,-95 1422.5,-8 106.5,-8"/>
+<text text-anchor="middle" x="764.5" y="-79.8" font-family="Times,serif" font-size="14.00">Bartlett\UmlWriter\Generator</text>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_1</title>
@@ -73,19 +73,19 @@
 <!-- Bartlett\\UmlWriter\\Generator\\GeneratorFactory -->
 <g id="node2" class="node">
 <title>Bartlett\\UmlWriter\\Generator\\GeneratorFactory</title>
-<polygon fill="#fefece" stroke="transparent" points="682.5,-63.5 92.5,-63.5 92.5,-16.5 682.5,-16.5 682.5,-63.5"/>
-<polygon fill="#eeeeee" stroke="transparent" points="92.5,-41 92.5,-63 682.5,-63 682.5,-41 92.5,-41"/>
-<polygon fill="none" stroke="black" points="92.5,-41 92.5,-63 682.5,-63 682.5,-41 92.5,-41"/>
+<polygon fill="#fefece" stroke="transparent" points="660.5,-63.5 114.5,-63.5 114.5,-16.5 660.5,-16.5 660.5,-63.5"/>
+<polygon fill="#eeeeee" stroke="transparent" points="114.5,-41 114.5,-63 660.5,-63 660.5,-41 114.5,-41"/>
+<polygon fill="none" stroke="black" points="114.5,-41 114.5,-63 660.5,-63 660.5,-41 114.5,-41"/>
 <text text-anchor="start" x="348" y="-46.6" font-family="Verdana" font-weight="bold" font-size="8.00">GeneratorFactory</text>
-<polygon fill="none" stroke="black" points="92.5,-35 92.5,-41 682.5,-41 682.5,-35 92.5,-35"/>
-<polygon fill="none" stroke="black" points="92.5,-16 92.5,-35 682.5,-35 682.5,-16 92.5,-16"/>
-<text text-anchor="start" x="97.5" y="-23.6" font-family="Verdana" font-size="8.00">+ createInstance(provider : string, format : string = &#39;svg&#39;, executable : string = «unknown») : Bartlett\GraphUml\Generator\GeneratorInterface</text>
+<polygon fill="none" stroke="black" points="114.5,-35 114.5,-41 660.5,-41 660.5,-35 114.5,-35"/>
+<polygon fill="none" stroke="black" points="114.5,-16 114.5,-35 660.5,-35 660.5,-16 114.5,-16"/>
+<text text-anchor="start" x="119.5" y="-23.6" font-family="Verdana" font-size="8.00">+ createInstance(provider : string, format : string = &#39;svg&#39;, executable : string = &#39;&#39;) : Bartlett\GraphUml\Generator\GeneratorInterface</text>
 </g>
 <!-- Bartlett\\UmlWriter\\Generator\\GeneratorFactory&#45;&gt;Bartlett\\UmlWriter\\Generator\\GeneratorFactoryInterface -->
 <g id="edge1" class="edge">
 <title>Bartlett\\UmlWriter\\Generator\\GeneratorFactory&#45;&gt;Bartlett\\UmlWriter\\Generator\\GeneratorFactoryInterface</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M682.55,-40C740.01,-40 800.15,-40 857.23,-40"/>
-<polygon fill="none" stroke="black" points="857.48,-43.5 867.48,-40 857.48,-36.5 857.48,-43.5"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M660.61,-40C724.51,-40 792.76,-40 857.13,-40"/>
+<polygon fill="none" stroke="black" points="857.43,-43.5 867.43,-40 857.43,-36.5 857.43,-43.5"/>
 </g>
 <!-- Bartlett\\UmlWriter\\Console\\Command\\ClassDiagramCommand -->
 <g id="node3" class="node">

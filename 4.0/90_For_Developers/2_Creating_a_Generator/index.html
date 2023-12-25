@@ -1023,7 +1023,7 @@
 <h1 id="creating-a-new-generator">Creating a new Generator</h1>
 <p>You must follow these steps:</p>
 <h2 id="1-creates-your-generator-class"><strong>1.</strong> creates your generator class</h2>
-<p>This class must have implements the <code>GeneratorInterface</code>.</p>
+<p>This class must follow the <code>GeneratorInterface</code> contract.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="k">namespace</span> <span class="nx">Name\Space</span><span class="p">;</span>
 
@@ -1048,7 +1048,12 @@
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">createScript</span><span class="p">(</span><span class="nx">Graph</span> <span class="nv">$graph</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">&#39;TODO: Implement createScript() method.&#39;</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+        <span class="k">return</span> <span class="s1">&#39;TODO: Implement createScript() method.&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">createImageFile</span><span class="p">(</span><span class="nx">Graph</span> <span class="nv">$graph</span><span class="p">,</span> <span class="nx">string</span> <span class="nv">$cmdFormat</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;/image_generation_not_implemented&#39;</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -1062,33 +1067,43 @@
 
 <span class="k">class</span> <span class="nc">MyGeneratorFactory</span> <span class="k">extends</span> <span class="nx">GeneratorFactory</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getGenerator</span><span class="p">()</span><span class="o">:</span> <span class="nx">GeneratorInterface</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">createInstance</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$provider</span><span class="p">,</span> <span class="nx">string</span> <span class="nv">$format</span> <span class="o">=</span> <span class="s1">&#39;svg&#39;</span><span class="p">,</span> <span class="nx">string</span> <span class="nv">$executable</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">:</span> <span class="nx">GeneratorInterface</span>
     <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;mygenerator&#39;</span> <span class="o">===</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generator</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="k">new</span> <span class="nx">MyGenerator</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;mygenerator&#39;</span> <span class="o">===</span> <span class="nv">$provider</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nx">MyGenerator</span><span class="p">(</span><span class="nv">$executable</span><span class="p">,</span> <span class="nv">$format</span><span class="p">);</span>
         <span class="p">}</span>
-
         <span class="c1">// fallback to default GeneratorFactory behavior (checks for GraphViz or PlantUML)</span>
-        <span class="k">return</span> <span class="k">parent</span><span class="o">::</span><span class="na">getGenerator</span><span class="p">();</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">createInstance</span><span class="p">(</span><span class="nv">$provider</span><span class="p">,</span> <span class="nv">$format</span><span class="p">,</span> <span class="nv">$executable</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="3-autoloader"><strong>3.</strong> autoloader</h2>
 <p>Of course your classes must be loadable with your autoloader.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="sd">/** @var \Composer\Autoload\ClassLoader $loader */</span>
-<span class="nv">$loader</span> <span class="o">=</span> <span class="k">require</span> <span class="nb">dirname</span><span class="p">(</span><span class="no">__DIR__</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;/vendor/autoload.php&#39;</span><span class="p">;</span>
-<span class="nv">$loader</span><span class="o">-&gt;</span><span class="na">addClassMap</span><span class="p">(</span>
-    <span class="p">[</span>
-        <span class="s1">&#39;Name\\Space\\MyGeneratorFactory&#39;</span> <span class="o">=&gt;</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/my-generator-factory.php&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;Name\\Space\\MyGenerator&#39;</span> <span class="o">=&gt;</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/my-generator.php&#39;</span><span class="p">,</span>
-    <span class="p">]</span>
-<span class="p">);</span>
+<span class="c1">// bootstrap.php</span>
+
+<span class="k">use</span> <span class="nx">Composer\Autoload\ClassLoader</span><span class="p">;</span>
+
+<span class="k">return</span> <span class="k">function</span> <span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+<span class="p">{</span>
+    <span class="sd">/** @var ClassLoader $loader */</span>
+    <span class="nv">$loader</span> <span class="o">=</span> <span class="k">require</span> <span class="nb">dirname</span><span class="p">(</span><span class="no">__DIR__</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;/vendor/autoload.php&#39;</span><span class="p">;</span>
+    <span class="nv">$loader</span><span class="o">-&gt;</span><span class="na">addClassMap</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="s1">&#39;Name\\Space\\MyGenerator&#39;</span> <span class="o">=&gt;</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/resources.php&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Name\\Space\\MyGeneratorFactory&#39;</span> <span class="o">=&gt;</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/resources.php&#39;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">);</span>
+<span class="p">};</span>
 </code></pre></div>
 <h2 id="4-on-console-command"><strong>4.</strong> on console command</h2>
 <p>Now if you want to use the <code>diagram:class</code> command, you'll need to modify the application launcher <code>bin/launcher</code>
 to inject the new generator factory in service container.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$bootstrap</span> <span class="o">=</span> <span class="k">require</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/bootstrap.php&#39;</span><span class="p">;</span>
+<span class="nv">$bootstrap</span><span class="p">();</span>
+
 <span class="k">use</span> <span class="nx">Bartlett\UmlWriter\Console\Application</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Bartlett\UmlWriter\Service\ContainerService</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Bartlett\UmlWriter\Generator\GeneratorFactoryInterface</span><span class="p">;</span>
@@ -1100,15 +1115,18 @@ to inject the new generator factory in service container.</p>
 <span class="nv">$application</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Application</span><span class="p">(</span><span class="nv">$container</span><span class="p">);</span>
 <span class="nv">$application</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">();</span>
 </code></pre></div>
-<p>You have then to invoke <code>bin/launcher diagram:class --generator=mygenerator</code> command to get results.</p>
+<p>You have then to invoke <code>bin/umlwriter diagram:class --generator=mygenerator</code> command to get results.</p>
+<p><img alt="MyGenerator Results" src="../../assets/images/mygenerator-results.png" /></p>
 <h2 id="5-on-batch-mode"><strong>5.</strong> on batch mode</h2>
 <p>Alternative way is to use the batch PHP mode.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="k">require_once</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/classmap.php&#39;</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Bartlett\UmlWriter\Service\ClassDiagramRenderer</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Name\Space\MyGeneratorFactory</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Symfony\Component\Finder\Finder</span><span class="p">;</span>
+
+<span class="nv">$bootstrap</span> <span class="o">=</span> <span class="k">require</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/bootstrap.php&#39;</span><span class="p">;</span>
+<span class="nv">$bootstrap</span><span class="p">();</span>
 
 <span class="c1">// path to directory where to find PHP source code</span>
 <span class="nv">$dataSource</span> <span class="o">=</span> <span class="nb">dirname</span><span class="p">(</span><span class="no">__DIR__</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;/src&#39;</span><span class="p">;</span>
@@ -1116,16 +1134,21 @@ to inject the new generator factory in service container.</p>
 <span class="nv">$finder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Finder</span><span class="p">();</span>
 <span class="nv">$finder</span><span class="o">-&gt;</span><span class="na">in</span><span class="p">(</span><span class="nv">$dataSource</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;*.php&#39;</span><span class="p">);</span>
 
-<span class="nv">$generatorFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyGeneratorFactory</span><span class="p">(</span><span class="s1">&#39;mygenerator&#39;</span><span class="p">);</span>
+<span class="nv">$generatorFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyGeneratorFactory</span><span class="p">();</span>
 <span class="c1">// creates instance of Name\Space\MyGenerator</span>
-<span class="nv">$generator</span> <span class="o">=</span> <span class="nv">$generatorFactory</span><span class="o">-&gt;</span><span class="na">getGenerator</span><span class="p">();</span>
+<span class="nv">$generator</span> <span class="o">=</span> <span class="nv">$generatorFactory</span><span class="o">-&gt;</span><span class="na">createInstance</span><span class="p">(</span><span class="s1">&#39;mygenerator&#39;</span><span class="p">);</span>
 
 <span class="nv">$renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ClassDiagramRenderer</span><span class="p">();</span>
 <span class="c1">// generates UML class diagram of all objects found in dataSource</span>
-<span class="nv">$script</span> <span class="o">=</span> <span class="nv">$renderer</span><span class="p">(</span><span class="nv">$finder</span><span class="p">,</span> <span class="nv">$generator</span><span class="p">);</span>
-<span class="c1">// show UML diagram statements</span>
-<span class="k">echo</span> <span class="nv">$script</span><span class="p">;</span>
+<span class="nv">$graph</span> <span class="o">=</span> <span class="nv">$renderer</span><span class="p">(</span><span class="nv">$finder</span><span class="p">,</span> <span class="nv">$generator</span><span class="p">);</span>
+
+<span class="nv">$script</span> <span class="o">=</span> <span class="nv">$generator</span><span class="o">-&gt;</span><span class="na">createScript</span><span class="p">(</span><span class="nv">$graph</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="nv">$script</span><span class="p">,</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
 </code></pre></div>
+<p>That will only display
+<div class="highlight"><pre><span></span><code>TODO: Implement createScript() method.
+</code></pre></div></p>
 <h2 id="architecture">Architecture</h2>
 <p><img alt="Graph UML Generator" src="../../assets/images/generator.graphviz.svg" /></p>
 

@@ -985,10 +985,6 @@ UmlWrite includes as alternative the <a href="https://github.com/llaville/graph-
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getLabelExtension</span><span class="p">(</span><span class="nx">ReflectionExtension</span> <span class="nv">$reflection</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">setExecutable</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$executable</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">setFormat</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$format</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span><span class="p">;</span>
-
     <span class="k">public</span> <span class="k">function</span> <span class="nf">createScript</span><span class="p">(</span><span class="nx">Graph</span> <span class="nv">$graph</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">createImageFile</span><span class="p">(</span><span class="nx">Graph</span> <span class="nv">$graph</span><span class="p">,</span> <span class="nx">string</span> <span class="nv">$cmdFormat</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span><span class="p">;</span>
@@ -1012,12 +1008,6 @@ UmlWrite includes as alternative the <a href="https://github.com/llaville/graph-
 </li>
 <li>
 <p><code>getLabelExtension()</code> is in charge to make the label of the vertex corresponding to an extension element.</p>
-</li>
-<li>
-<p><code>setExecutable()</code> changes the executable to use.</p>
-</li>
-<li>
-<p><code>setFormat()</code> defines the format of image to draw.</p>
 </li>
 <li>
 <p><code>createScript()</code> is in charge to build graph statements depends on generator used.</p>
