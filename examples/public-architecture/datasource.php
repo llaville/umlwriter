@@ -9,22 +9,15 @@
  * @since Release 4.0.0
  */
 
-use Bartlett\GraphUml\ClassDiagramBuilder;
-use Bartlett\GraphUml\Formatter\AbstractFormatter;
-use Bartlett\GraphUml\Formatter\FormatterInterface;
-use Bartlett\GraphUml\Formatter\HtmlFormatter;
-use Bartlett\GraphUml\Formatter\RecordFormatter;
+use Symfony\Component\Finder\Finder;
 
-return function (): Generator
+return function (): Finder
 {
-    $classes = [
-        AbstractFormatter::class,
-        FormatterInterface::class,
-        HtmlFormatter::class,
-        RecordFormatter::class,
-        ClassDiagramBuilder::class,
-    ];
-    foreach ($classes as $class) {
-        yield $class;
-    }
+    // path to directory where to find PHP source code
+    $dataSource = dirname(__DIR__, 2) . '/src';
+
+    $finder = new Finder();
+    $finder->in($dataSource)->name('*.php');
+
+    return $finder;
 };

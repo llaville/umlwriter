@@ -67,5 +67,7 @@ if ($writeGraphStatement) {
     file_put_contents($output, $generator->createScript($graph));
 }
 
-$target = $generator->createImageFile($graph);
+$output = rtrim($folder, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $example . '.graphviz.' . $format;
+$cmdFormat = '%E -T%F %t -o ' . $output;
+$target = $generator->createImageFile($graph, $cmdFormat);
 echo (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;

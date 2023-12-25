@@ -12,7 +12,4 @@
 return [
     'show_private' => false,
     'show_protected' => false,
-    // @link https://plantuml.com/en/color
-    'cluster.Bartlett\\GraphUml\\Formatter.graph.bgcolor' => 'LightSkyBlue',
-    'cluster.Bartlett\\GraphUml.graph.bgcolor' => 'BurlyWood',
 ];

@@ -5,13 +5,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @since Release 3.0.0
  * @author Laurent Laville
+ * @since Release 4.0.0
  */
 
 return [
-    'show_private' => false,
-    'show_protected' => false,
-    // @link https://plantuml.com/en/color
-    'clusters.graph.bgcolor' => 'white',
+    // @link https://graphviz.gitlab.io/docs/attrs/fillcolor/
+    'node.fillcolor' => 'white',
 ];

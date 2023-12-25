@@ -15,7 +15,7 @@ return [
     // @link https://graphviz.gitlab.io/docs/attrs/rankdir/
     'graph.rankdir' => 'LR',
     // @link https://plantuml.com/en/color
-    'clusters.graph.bgcolor' => 'white',
+    'cluster.Psr\\Container.graph.bgcolor' => 'LightSkyBlue',
     'cluster.Symfony\\Component\\Console.graph.bgcolor' => 'LightSkyBlue',
     'cluster.Symfony\\Component\\Console\\Command.graph.bgcolor' => 'LightSkyBlue',
     'cluster.Symfony\\Component\\Config\\Loader.graph.bgcolor' => 'LightSkyBlue',
