@@ -33,10 +33,10 @@ git clone -b 4.0 https://github.com/llaville/umlwriter.git
 Additionally, you'll have to install GraphViz (`dot` executable) and/or PlantUML jar with Java Runtime (java executable).
 Users of Debian/Ubuntu-based distributions may simply invoke:
 
-```bash
+```shell
 sudo apt update
 sudo apt-get install graphviz
-sudo apt-get install openjdk-11-jre-headless
+sudo apt-get install openjdk-17-jre-headless
 ```
 
 while remaining users should install from [GraphViz Download](http://www.graphviz.org/download/) page

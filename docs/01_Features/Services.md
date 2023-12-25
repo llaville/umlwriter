@@ -38,13 +38,13 @@ $dataSource = 'src';
 $finder = new Finder();
 $finder->in($dataSource)->name('*.php');
 
-$generatorFactory = new GeneratorFactory('graphviz');
+$generatorFactory = new GeneratorFactory();
 // creates instance of Bartlett\GraphUml\Generator\GraphVizGenerator
-$generator = $generatorFactory->getGenerator();
+$generator = $generatorFactory->createInstance('graphviz');
 
 $renderer = new ClassDiagramRenderer();
 // generates UML class diagram of all objects found in dataSource (in graphviz format)
-$script = $renderer($finder, $generator);
+$graph = $renderer($finder, $generator);
 // show all metadata
 var_dump($renderer->getMetadata());
 ```

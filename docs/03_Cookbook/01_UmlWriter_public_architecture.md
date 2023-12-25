@@ -31,9 +31,9 @@ $dataSource = dirname(__DIR__) . '/src';
 $finder = new Finder();
 $finder->in($dataSource)->name('*.php');
 
-$generatorFactory = new GeneratorFactory('graphviz');
+$generatorFactory = new GeneratorFactory();
 // creates instance of Bartlett\GraphUml\Generator\GraphVizGenerator
-$generator = $generatorFactory->getGenerator();
+$generator = $generatorFactory->createInstance('graphviz');
 
 $renderer = new ClassDiagramRenderer();
 $options = [
@@ -43,11 +43,8 @@ $options = [
     'node.style' => 'filled',
 ];
 // generates UML class diagram of all objects found in dataSource (in graphviz format)
-$script = $renderer($finder, $generator, $options);
-// show UML diagram statements
-echo $script;
+$graph = $renderer($finder, $generator, $options);
 
-// default format is PNG, change it to SVG
-$generator->setFormat('svg');
-echo $generator->createImageFile($renderer->getGraph()) . ' file generated' . PHP_EOL;
+$target = $generator->createImageFile($graph);
+echo (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;
 ```

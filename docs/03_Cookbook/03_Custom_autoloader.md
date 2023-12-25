@@ -68,18 +68,14 @@ $dataSource = __DIR__ . '/autoloader';
 $finder = new Finder();
 $finder->in($dataSource)->name('*.php');
 
-$generatorFactory = new GeneratorFactory('graphviz');
+$generatorFactory = new GeneratorFactory();
 // creates instance of Bartlett\GraphUml\Generator\GraphVizGenerator
-$generator = $generatorFactory->getGenerator();
+$generator = $generatorFactory->createInstance('graphviz');
 
 $renderer = new ClassDiagramRenderer();
 // generates UML class diagram of all objects found in dataSource
-$script = $renderer($finder, $generator);
-// show UML diagram statements
-echo $script;
+$graph = $renderer($finder, $generator);
 
-// default format is PNG, change it to SVG
-$generator->setFormat('svg');
-
-echo $generator->createImageFile($renderer->getGraph()) . ' file generated' . PHP_EOL;
+$target = $generator->createImageFile($graph);
+echo (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;
 ```

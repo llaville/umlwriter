@@ -17,7 +17,7 @@ UmlWriter v3 includes only one command `diagram:class` to print UML class diagra
 
 ## Synoptic
 
-```bash
+```text
 Description:
   Generate class diagram statements of a given data source
 
@@ -31,6 +31,7 @@ Options:
   -o, --output=OUTPUT                Path to output image file
       --format=FORMAT                Set output format (depending of each generator)
       --generator=GENERATOR          Graph generator
+      --executable=EXECUTABLE        Generator external binary resource
       --bootstrap=BOOTSTRAP          A PHP script that is included before graph run
   -c, --configuration=CONFIGURATION  Read configuration from YAML file
       --without-constants            Hide all class constants
@@ -39,14 +40,12 @@ Options:
       --hide-private                 Hide private methods/properties
       --hide-protected               Hide protected methods/properties
       --no-statement                 Do not show diagram statements
-  -h, --help                         Display this help message
+  -h, --help                         Display help for the given command. When no command is given display help for the list command
   -q, --quiet                        Do not output any message
   -V, --version                      Display this application version
-      --ansi                         Force ANSI output
-      --no-ansi                      Disable ANSI output
+      --ansi|--no-ansi               Force (or disable --no-ansi) ANSI output
   -n, --no-interaction               Do not ask any interactive question
   -v|vv|vvv, --verbose               Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
-
 ```
 
 ## Examples
