@@ -1011,13 +1011,13 @@ corresponding to data source(s) parsed.</p>
 <span class="nv">$finder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Finder</span><span class="p">();</span>
 <span class="nv">$finder</span><span class="o">-&gt;</span><span class="na">in</span><span class="p">(</span><span class="nv">$dataSource</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;*.php&#39;</span><span class="p">);</span>
 
-<span class="nv">$generatorFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GeneratorFactory</span><span class="p">(</span><span class="s1">&#39;graphviz&#39;</span><span class="p">);</span>
+<span class="nv">$generatorFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GeneratorFactory</span><span class="p">();</span>
 <span class="c1">// creates instance of Bartlett\GraphUml\Generator\GraphVizGenerator</span>
-<span class="nv">$generator</span> <span class="o">=</span> <span class="nv">$generatorFactory</span><span class="o">-&gt;</span><span class="na">getGenerator</span><span class="p">();</span>
+<span class="nv">$generator</span> <span class="o">=</span> <span class="nv">$generatorFactory</span><span class="o">-&gt;</span><span class="na">createInstance</span><span class="p">(</span><span class="s1">&#39;graphviz&#39;</span><span class="p">);</span>
 
 <span class="nv">$renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ClassDiagramRenderer</span><span class="p">();</span>
 <span class="c1">// generates UML class diagram of all objects found in dataSource (in graphviz format)</span>
-<span class="nv">$script</span> <span class="o">=</span> <span class="nv">$renderer</span><span class="p">(</span><span class="nv">$finder</span><span class="p">,</span> <span class="nv">$generator</span><span class="p">);</span>
+<span class="nv">$graph</span> <span class="o">=</span> <span class="nv">$renderer</span><span class="p">(</span><span class="nv">$finder</span><span class="p">,</span> <span class="nv">$generator</span><span class="p">);</span>
 <span class="c1">// show all metadata</span>
 <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$renderer</span><span class="o">-&gt;</span><span class="na">getMetadata</span><span class="p">());</span>
 </code></pre></div>

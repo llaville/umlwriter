@@ -1003,20 +1003,16 @@
 <span class="nv">$finder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Finder</span><span class="p">();</span>
 <span class="nv">$finder</span><span class="o">-&gt;</span><span class="na">in</span><span class="p">(</span><span class="nv">$dataSource</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;*.php&#39;</span><span class="p">);</span>
 
-<span class="nv">$generatorFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GeneratorFactory</span><span class="p">(</span><span class="s1">&#39;graphviz&#39;</span><span class="p">);</span>
+<span class="nv">$generatorFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GeneratorFactory</span><span class="p">();</span>
 <span class="c1">// creates instance of Bartlett\GraphUml\Generator\GraphVizGenerator</span>
-<span class="nv">$generator</span> <span class="o">=</span> <span class="nv">$generatorFactory</span><span class="o">-&gt;</span><span class="na">getGenerator</span><span class="p">();</span>
+<span class="nv">$generator</span> <span class="o">=</span> <span class="nv">$generatorFactory</span><span class="o">-&gt;</span><span class="na">createInstance</span><span class="p">(</span><span class="s1">&#39;graphviz&#39;</span><span class="p">);</span>
 
 <span class="nv">$renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ClassDiagramRenderer</span><span class="p">();</span>
 <span class="c1">// generates UML class diagram of all objects found in dataSource</span>
-<span class="nv">$script</span> <span class="o">=</span> <span class="nv">$renderer</span><span class="p">(</span><span class="nv">$finder</span><span class="p">,</span> <span class="nv">$generator</span><span class="p">);</span>
-<span class="c1">// show UML diagram statements</span>
-<span class="k">echo</span> <span class="nv">$script</span><span class="p">;</span>
+<span class="nv">$graph</span> <span class="o">=</span> <span class="nv">$renderer</span><span class="p">(</span><span class="nv">$finder</span><span class="p">,</span> <span class="nv">$generator</span><span class="p">);</span>
 
-<span class="c1">// default format is PNG, change it to SVG</span>
-<span class="nv">$generator</span><span class="o">-&gt;</span><span class="na">setFormat</span><span class="p">(</span><span class="s1">&#39;svg&#39;</span><span class="p">);</span>
-
-<span class="k">echo</span> <span class="nv">$generator</span><span class="o">-&gt;</span><span class="na">createImageFile</span><span class="p">(</span><span class="nv">$renderer</span><span class="o">-&gt;</span><span class="na">getGraph</span><span class="p">())</span> <span class="o">.</span> <span class="s1">&#39; file generated&#39;</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="nv">$target</span> <span class="o">=</span> <span class="nv">$generator</span><span class="o">-&gt;</span><span class="na">createImageFile</span><span class="p">(</span><span class="nv">$graph</span><span class="p">);</span>
+<span class="k">echo</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$target</span><span class="p">)</span> <span class="o">?</span> <span class="s1">&#39;no&#39;</span> <span class="o">:</span> <span class="nv">$target</span><span class="p">)</span> <span class="o">.</span> <span class="s1">&#39; file generated&#39;</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
 </code></pre></div>
 
 
