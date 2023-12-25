@@ -1100,6 +1100,7 @@
 <p>Now if you want to use the <code>diagram:class</code> command, you'll need to modify the application launcher <code>bin/launcher</code>
 to inject the new generator factory in service container.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// app.php</span>
 
 <span class="nv">$bootstrap</span> <span class="o">=</span> <span class="k">require</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/bootstrap.php&#39;</span><span class="p">;</span>
 <span class="nv">$bootstrap</span><span class="p">();</span>
@@ -1110,7 +1111,7 @@ to inject the new generator factory in service container.</p>
 <span class="k">use</span> <span class="nx">Name\Space\MyGeneratorFactory</span><span class="p">;</span>
 
 <span class="nv">$container</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ContainerService</span><span class="p">();</span>
-<span class="nv">$container</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="nx">GeneratorFactoryInterface</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="k">new</span> <span class="nx">MyGeneratorFactory</span><span class="p">());</span>
+<span class="nv">$container</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="nx">GeneratorFactoryInterface</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nx">fn</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">MyGeneratorFactory</span><span class="p">());</span>
 
 <span class="nv">$application</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Application</span><span class="p">(</span><span class="nv">$container</span><span class="p">);</span>
 <span class="nv">$application</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">();</span>
