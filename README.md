@@ -1,9 +1,10 @@
 <!-- markdownlint-disable MD013 -->
 # UmlWriter
 
-| Releases       |                     Branch                     |                               PHP                               |                          Packagist                           |                      License                      |                            Documentation                            |
-|:---------------|:----------------------------------------------:|:---------------------------------------------------------------:|:------------------------------------------------------------:|:-------------------------------------------------:|:-------------------------------------------------------------------:|
-| Stable v3.4.x  | [![Branch 3.4][Branch_34x-img]][Branch_34x] | [![Minimum PHP Version)][PHPVersion_34x-img]][PHPVersion_34x] | [![Stable Version 3.4][Packagist_34x-img]][Packagist_34x] | [![License 3.4][License_34x-img]][License_34x] | [![Documentation 3.4][Documentation_34x-img]][Documentation_34x] |
+| Releases      |                   Branch                    |                              PHP                              |                         Packagist                         |                    License                     |                          Documentation                           |
+|:--------------|:-------------------------------------------:|:-------------------------------------------------------------:|:---------------------------------------------------------:|:----------------------------------------------:|:----------------------------------------------------------------:|
+| Stable v3.4.x | [![Branch 3.4][Branch_34x-img]][Branch_34x] | [![Minimum PHP Version)][PHPVersion_34x-img]][PHPVersion_34x] | [![Stable Version 3.4][Packagist_34x-img]][Packagist_34x] | [![License 3.4][License_34x-img]][License_34x] | [![Documentation 3.4][Documentation_34x-img]][Documentation_34x] |
+| Stable v4.0.x | [![Branch 4.0][Branch_40x-img]][Branch_40x] | [![Minimum PHP Version)][PHPVersion_40x-img]][PHPVersion_40x] | [![Stable Version 4.0][Packagist_40x-img]][Packagist_40x] | [![License 4.0][License_40x-img]][License_40x] | [![Documentation 4.0][Documentation_40x-img]][Documentation_40x] |
 
 [Branch_34x-img]: https://img.shields.io/badge/branch-3.4-orange
 [Branch_34x]: https://github.com/llaville/umlwriter/tree/3.4
@@ -16,6 +17,17 @@
 [Documentation_34x-img]: https://img.shields.io/badge/documentation-v3.4-green
 [Documentation_34x]: https://github.com/llaville/umlwriter/tree/3.4/docs
 
+[Branch_40x-img]: https://img.shields.io/badge/branch-4.0-orange
+[Branch_40x]: https://github.com/llaville/umlwriter/tree/4.0
+[PHPVersion_40x-img]: https://img.shields.io/packagist/php-v/bartlett/umlwriter/4.0.0
+[PHPVersion_40x]: https://www.php.net/supported-versions.php
+[Packagist_40x-img]: https://img.shields.io/badge/packagist-v4.0.0-blue
+[Packagist_40x]: https://packagist.org/packages/bartlett/umlwriter
+[License_40x-img]: https://img.shields.io/packagist/l/bartlett/umlwriter
+[License_40x]: https://github.com/llaville/umlwriter/blob/4.0/LICENSE
+[Documentation_40x-img]: https://img.shields.io/badge/documentation-v4.0-green
+[Documentation_40x]: https://github.com/llaville/umlwriter/tree/4.0/docs
+
 [![GitHub Discussions](https://img.shields.io/github/discussions/llaville/umlwriter)](https://github.com/llaville/umlwriter/discussions)
 [![Unit Tests](https://github.com/llaville/umlwriter/actions/workflows/unit-tests.yaml/badge.svg)](https://github.com/llaville/umlwriter/actions/workflows/unit-tests.yaml)
 [![GitHub-Pages](https://github.com/llaville/umlwriter/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/llaville/umlwriter/actions/workflows/gh-pages.yml)
@@ -26,8 +38,8 @@
 ## Documentation
 
 
-All the documentation is available on [website](https://llaville.github.io/umlwriter/3.4),
-generated from the [docs](https://github.com/llaville/umlwriter/tree/3.4/docs) folder.
+All the documentation is available on [website](https://llaville.github.io/umlwriter/4.0),
+generated from the [docs](https://github.com/llaville/umlwriter/tree/4.0/docs) folder.
 
 * [Getting Started](docs/getting-started.md).
 
@@ -36,7 +48,7 @@ generated from the [docs](https://github.com/llaville/umlwriter/tree/3.4/docs) f
 This library includes a console CLI version with only one command: `diagram:class`
 
 ```bash
-bin/umlwriter diagram:class src/ --generator graphviz
+bin/umlwriter diagram:class src/
 ```
 
 **NOTE** use verbose level 1 or 2 for more details.
