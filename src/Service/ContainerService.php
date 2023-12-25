@@ -48,11 +48,12 @@ class ContainerService implements ContainerInterface
 
     public function __construct()
     {
+        $this->runtimeServices[GeneratorFactoryInterface::class] = function () {
+            return new GeneratorFactory();
+        };
+
         $this->internalServices[ClassDiagramRenderer::class] = function () {
             return new ClassDiagramRenderer();
-        };
-        $this->internalServices[GeneratorFactoryInterface::class] = function () {
-            return new GeneratorFactory();
         };
         $this->internalServices[ClassDiagramCommand::class] = function () {
             return new ClassDiagramCommand(
@@ -77,7 +78,7 @@ class ContainerService implements ContainerInterface
     public function get(string $id): mixed
     {
         if (isset($this->runtimeServices[$id])) {
-            return $this->runtimeServices[$id];
+            return call_user_func($this->runtimeServices[$id]);
         }
 
         if (isset($this->internalServices[$id])) {

@@ -5,7 +5,7 @@ You must follow these steps:
 
 ## **1.** creates your generator class
 
-This class must have implements the `GeneratorInterface`.
+This class must follow the `GeneratorInterface` contract.
 
 ```php
 <?php
@@ -32,7 +32,12 @@ class MyGenerator extends AbstractGenerator implements GeneratorInterface
 
     public function createScript(Graph $graph): string
     {
-        return 'TODO: Implement createScript() method.' . PHP_EOL;
+        return 'TODO: Implement createScript() method.';
+    }
+
+    public function createImageFile(Graph $graph, string $cmdFormat): string
+    {
+        return '/image_generation_not_implemented';
     }
 }
 ```
@@ -50,14 +55,13 @@ use Bartlett\UmlWriter\Generator\GeneratorFactory;
 
 class MyGeneratorFactory extends GeneratorFactory
 {
-    public function getGenerator(): GeneratorInterface
+    public function createInstance(string $provider, string $format = 'svg', string $executable = ''): GeneratorInterface
     {
-        if ('mygenerator' === $this->generator) {
-            return new MyGenerator();
+        if ('mygenerator' === $provider) {
+            return new MyGenerator($executable, $format);
         }
-
         // fallback to default GeneratorFactory behavior (checks for GraphViz or PlantUML)
-        return parent::getGenerator();
+        parent::createInstance($provider, $format, $executable);
     }
 }
 ```
@@ -68,14 +72,21 @@ Of course your classes must be loadable with your autoloader.
 
 ```php
 <?php
-/** @var \Composer\Autoload\ClassLoader $loader */
-$loader = require dirname(__DIR__, 2) . '/vendor/autoload.php';
-$loader->addClassMap(
-    [
-        'Name\\Space\\MyGeneratorFactory' => __DIR__ . '/my-generator-factory.php',
-        'Name\\Space\\MyGenerator' => __DIR__ . '/my-generator.php',
-    ]
-);
+// bootstrap.php
+
+use Composer\Autoload\ClassLoader;
+
+return function (): void
+{
+    /** @var ClassLoader $loader */
+    $loader = require dirname(__DIR__, 2) . '/vendor/autoload.php';
+    $loader->addClassMap(
+        [
+            'Name\\Space\\MyGenerator' => __DIR__ . '/resources.php',
+            'Name\\Space\\MyGeneratorFactory' => __DIR__ . '/resources.php',
+        ]
+    );
+};
 ```
 
 ## **4.** on console command
@@ -85,19 +96,26 @@ to inject the new generator factory in service container.
 
 ```php
 <?php
+// app.php
+
+$bootstrap = require __DIR__ . '/bootstrap.php';
+$bootstrap();
+
 use Bartlett\UmlWriter\Console\Application;
 use Bartlett\UmlWriter\Service\ContainerService;
 use Bartlett\UmlWriter\Generator\GeneratorFactoryInterface;
 use Name\Space\MyGeneratorFactory;
 
 $container = new ContainerService();
-$container->set(GeneratorFactoryInterface::class, new MyGeneratorFactory());
+$container->set(GeneratorFactoryInterface::class, fn() => new MyGeneratorFactory());
 
 $application = new Application($container);
 $application->run();
 ```
 
-You have then to invoke `bin/launcher diagram:class --generator=mygenerator` command to get results.
+You have then to invoke `bin/umlwriter diagram:class --generator=mygenerator` command to get results.
+
+![MyGenerator Results](../assets/images/mygenerator-results.png)
 
 ## **5.** on batch mode
 
@@ -105,11 +123,13 @@ Alternative way is to use the batch PHP mode.
 
 ```php
 <?php
-require_once __DIR__ . '/classmap.php';
 
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 use Name\Space\MyGeneratorFactory;
 use Symfony\Component\Finder\Finder;
+
+$bootstrap = require __DIR__ . '/bootstrap.php';
+$bootstrap();
 
 // path to directory where to find PHP source code
 $dataSource = dirname(__DIR__, 2) . '/src';
@@ -117,15 +137,22 @@ $dataSource = dirname(__DIR__, 2) . '/src';
 $finder = new Finder();
 $finder->in($dataSource)->name('*.php');
 
-$generatorFactory = new MyGeneratorFactory('mygenerator');
+$generatorFactory = new MyGeneratorFactory();
 // creates instance of Name\Space\MyGenerator
-$generator = $generatorFactory->getGenerator();
+$generator = $generatorFactory->createInstance('mygenerator');
 
 $renderer = new ClassDiagramRenderer();
 // generates UML class diagram of all objects found in dataSource
-$script = $renderer($finder, $generator);
-// show UML diagram statements
-echo $script;
+$graph = $renderer($finder, $generator);
+
+$script = $generator->createScript($graph);
+
+echo $script, PHP_EOL;
+```
+
+That will only display
+```text
+TODO: Implement createScript() method.
 ```
 
 ## Architecture

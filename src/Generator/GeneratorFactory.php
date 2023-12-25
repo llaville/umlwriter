@@ -22,7 +22,7 @@ use function strtolower;
  */
 class GeneratorFactory implements GeneratorFactoryInterface
 {
-    public function createInstance(string $provider, string $format = 'svg', ?string $executable = null): GeneratorInterface
+    public function createInstance(string $provider, string $format = 'svg', string $executable = ''): GeneratorInterface
     {
         return match (strtolower($provider)) {
             'graphviz' => new GraphVizGenerator(new GraphViz(), 'dot', $format),

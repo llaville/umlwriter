@@ -38,10 +38,6 @@ interface GeneratorInterface
 
     public function getLabelExtension(ReflectionExtension $reflection): string;
 
-    public function setExecutable(string $executable): void;
-
-    public function setFormat(string $format): void;
-
     public function createScript(Graph $graph): string;
 
     public function createImageFile(Graph $graph, string $cmdFormat): string;
@@ -59,10 +55,6 @@ interface GeneratorInterface
 - `getLabelClass()` is in charge to make the label of the vertex corresponding to a class or interface element.
 
 - `getLabelExtension()` is in charge to make the label of the vertex corresponding to an extension element.
-
-- `setExecutable()` changes the executable to use.
-
-- `setFormat()` defines the format of image to draw.
 
 - `createScript()` is in charge to build graph statements depends on generator used.
 
