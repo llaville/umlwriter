@@ -1,5 +1,7 @@
 <!-- markdownlint-disable MD013 -->
 # UmlWriter
+[![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
+[![GitHub Discussions](https://img.shields.io/github/discussions/llaville/umlwriter)](https://github.com/llaville/umlwriter/discussions)
 
 | Releases      |                   Branch                    |                              PHP                              |                         Packagist                         |                    License                     |                          Documentation                           |
 |:--------------|:-------------------------------------------:|:-------------------------------------------------------------:|:---------------------------------------------------------:|:----------------------------------------------:|:----------------------------------------------------------------:|
@@ -28,10 +30,6 @@
 [Documentation_40x-img]: https://img.shields.io/badge/documentation-v4.0-green
 [Documentation_40x]: https://github.com/llaville/umlwriter/tree/4.0/docs
 
-[![GitHub Discussions](https://img.shields.io/github/discussions/llaville/umlwriter)](https://github.com/llaville/umlwriter/discussions)
-[![Unit Tests](https://github.com/llaville/umlwriter/actions/workflows/unit-tests.yaml/badge.svg)](https://github.com/llaville/umlwriter/actions/workflows/unit-tests.yaml)
-[![GitHub-Pages](https://github.com/llaville/umlwriter/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/llaville/umlwriter/actions/workflows/gh-pages.yml)
-[![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
 
 **UmlWriter** is a library that adds the ability to generate UML class diagrams.
 
