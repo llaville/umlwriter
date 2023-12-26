@@ -35,11 +35,8 @@
 
 ## Documentation
 
-
 All the documentation is available on [website](https://llaville.github.io/umlwriter/4.0),
 generated from the [docs](https://github.com/llaville/umlwriter/tree/4.0/docs) folder.
-
-* [Getting Started](docs/getting-started.md).
 
 ## Usage
 
