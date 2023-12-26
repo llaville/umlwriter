@@ -6,23 +6,25 @@
 1. [Docker](#docker)
 1. [Phive](#phive)
 1. [Composer](#composer)
+1. [Git](#git)
 
 ## Requirements
 
-| Version | Status                 | Requirements   |
-|:--------|:-----------------------|:---------------|
-| **4.0** | **Active development** | **PHP >= 8.1** |
-| 3.4     | Active support         | PHP >= 8.0     |
-| 2.x     | End Of Life            | PHP >= 7.1     |
+* PHP 8.1 or greater
+* [graphp/graph](https://github.com/graphp/graph) package from master branch (considered as future stable v1.0.0)
+* [graphp/graphviz](https://github.com/graphp/graphviz) package from master branch (considered as future stable v1.0.0)
+* [bartlett/graph-uml](https://github.com/llaville/graph-uml) Core engine to build UML diagrams in PHP
+* [bartlett/graph-plantuml-generator](https://github.com/llaville/graph-plantuml-generator) A PlantUML generator for graph-uml.
+* [roave/better-reflection](https://github.com/Roave/BetterReflection) the Reflection API
 
 ## PHAR
 
-The preferred method of installation is to use the UmlWriter PHAR which can be downloaded from the most recent
+The preferred method of installation is to use the umlWriter PHAR version which can be downloaded from the most recent
 [Github Release][releases]. This method ensures you will not have any dependency conflict issue.
 
 ## Docker
 
-You can install `umlwriter` with [Docker][docker]
+Retrieve official image `bartlett/umlwriter` with [Docker][docker]
 
 ```shell
 docker pull ghcr.io/llaville/umlwriter:v4
@@ -32,24 +34,38 @@ docker pull ghcr.io/llaville/umlwriter:latest
 
 ## Phive
 
-You can install `umlwriter` with [Phive][phive]
+You can install `umlwriter` globally with [Phive][phive]
 
 ```shell
 phive install llaville/umlwriter --force-accept-unsigned
 ```
 
-To upgrade `umlwriter` use the following command:
+To upgrade global `umlwriter` use the following command:
 
 ```shell
 phive update llaville/umlwriter --force-accept-unsigned
 ```
 
-## Composer
+You can also install `umlwriter` locally to your project with [Phive][phive] and configuration file `.phive/phars.xml`
 
-You can install `umlwriter` with [Composer][composer]
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<phive xmlns="https://phar.io/phive">
+    <phar name="llaville/umlwriter" version="^4.0" copy="false" />
+</phive>
+```
 
 ```shell
-composer global require bartlett/umlwriter ^4
+phive install --force-accept-unsigned
+```
+
+## Composer
+
+The recommended way to install this library is [through composer][composer].
+If you don't know yet what is composer, have a look [on introduction][composer-intro].
+
+```shell
+composer require bartlett/umlwriter ^4
 ```
 
 If you cannot install it because of a dependency conflict, or you prefer to install it for your project, we recommend
@@ -62,8 +78,34 @@ composer bin umlwriter require --dev bartlett/umlwriter
 vendor/bin/umlwriter
 ```
 
+## Git
+
+The UmlWriter can be directly used from [GitHub][github-repo] by cloning the repository into a directory of your choice.
+
+```shell
+git clone -b 4.0 https://github.com/llaville/umlwriter.git
+```
+
+## Extra resources
+
+Additionally, you'll have to install GraphViz (`dot` executable) and/or PlantUML jar with Java Runtime (java executable).
+Users of Debian/Ubuntu-based distributions may simply invoke:
+
+```shell
+sudo apt update
+sudo apt-get install graphviz
+sudo apt-get install openjdk-17-jre-headless
+```
+
+while remaining users should install from [GraphViz Download][graphviz-resources] page
+and from [PlantUML Download][plantuml-resources] page.
+
 [releases]: https://github.com/llaville/umlwriter/releases
 [composer]: https://getcomposer.org
+[composer-intro]: http://getcomposer.org/doc/00-intro.md
 [bamarni/composer-bin-plugin]: https://github.com/bamarni/composer-bin-plugin
+[github-repo]: https://github.com/llaville/umlwriter.git
+[graphviz-resources]: http://www.graphviz.org/download/
+[plantuml-resources]: https://plantuml.com/en/download
 [phive]: https://github.com/phar-io/phive
 [docker]: https://docs.docker.com/get-docker/

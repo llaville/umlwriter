@@ -83,7 +83,3 @@ parameters:
     show_protected: false
 
 ```
-
-## Architecture
-
-![Graph UML Configuration](../assets/images/configuration.graphviz.svg)

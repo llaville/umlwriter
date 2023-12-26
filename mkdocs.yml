@@ -29,7 +29,8 @@ markdown_extensions:
 nav:
     - "Home": README.md
     - "Installation": installation.md
-    - "Getting-Started": getting-started.md
+    - "Getting-Started": usage/README.md
+    - "Architecture": architecture/README.md
     - "Features":
           - "Configuration": 01_Features/Configuration.md
           - "Services": 01_Features/Services.md

@@ -154,7 +154,3 @@ That will only display
 ```text
 TODO: Implement createScript() method.
 ```
-
-## Architecture
-
-![Graph UML Generator](../assets/images/generator.graphviz.svg)

@@ -92,7 +92,3 @@ array(3) {
   }
 }
 ```
-
-## Architecture
-
-![Service](../assets/images/services.graphviz.svg)

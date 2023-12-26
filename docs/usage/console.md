@@ -1,21 +1,12 @@
-<!-- markdownlint-disable MD013 -->
-# Class Diagrams
+# Console CLI
 
-UmlWriter includes only one command `diagram:class` to print UML class diagram statements.
+Generate UML class diagram from PHP source files should be as simple as running `umlwriter diagram:class`
+with one or more source paths (zero configuration by default).
 
-## Features
+It will however assume some defaults that you might want to change.
 
-* Parse one to many data source (file or directory) at same times with `paths` argument.
-* Show (default) or hide all class constants by `--without-constants` option.
-* Show (default) or hide all class properties by `--without-properties` option.
-* Show (default) or hide all class methods by `--without-methods` option.
-* Show (default) or hide private methods and private properties by `--hide-private` options.
-* Show (default) or hide protected methods and protected properties by `--hide-protected` options.
-* Can be use your own autoloader and initialize what ever you want by `--bootstrap` option.
-* Use either `GraphViz`, `PlantUml` or your own generator by `--generator` option.
-* Can be able to configure all graph render options and more by `--configuration` option.
-
-## Synoptic
+You can then find more advanced configuration settings in [the configuration documentation](../01_Features/Configuration.md).
+For more information on which options are available, you can run: `umlwriter diagram:class --help`
 
 ```text
 Description:
@@ -47,11 +38,3 @@ Options:
   -n, --no-interaction               Do not ask any interactive question
   -v|vv|vvv, --verbose               Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
 ```
-
-## Examples
-
-Here are a list of concrete examples you can find in **Cookbook**
-
-* Show only public elements in [UmlWriter architecture](../03_Cookbook/01_UmlWriter_public_architecture.md)
-* Show only public methods in [UmlWriter architecture](../03_Cookbook/02_UmlWriter_public_methods_only.md)
-* Use a [custom autoloader](../03_Cookbook/03_Custom_autoloader.md)
