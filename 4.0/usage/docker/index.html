@@ -10,13 +10,9 @@
         <meta name="author" content="Laurent Laville">
       
       
-        <link rel="canonical" href="https://llaville.github.io/umlwriter/01_Features/Services/">
+        <link rel="canonical" href="https://llaville.github.io/umlwriter/usage/docker/">
       
       
-        <link rel="prev" href="../Configuration/">
-      
-      
-        <link rel="next" href="../../02_Console_Commands/diagram_class/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +20,7 @@
     
     
       
-        <title>Services - UMLWriter</title>
+        <title>Docker CLI - UMLWriter</title>
       
     
     
@@ -76,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#services" class="md-skip">
+        <a href="#docker-cli" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Services
+              Docker CLI
             
           </span>
         </div>
@@ -251,7 +247,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../usage/" class="md-tabs__link">
+      <a href="../" class="md-tabs__link">
         
   
     
@@ -283,13 +279,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../Configuration/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../01_Features/Configuration/" class="md-tabs__link">
           
   
     
@@ -454,7 +448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -491,10 +485,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -509,12 +501,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -528,7 +520,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Features
@@ -542,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Configuration/" class="md-nav__link">
+      <a href="../../01_Features/Configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -560,30 +552,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Services
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../01_Features/Services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -592,44 +564,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#service-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      Service Container
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#class-diagram-renderer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Class Diagram Renderer
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -947,32 +881,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#service-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      Service Container
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#class-diagram-renderer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Class Diagram Renderer
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -986,100 +894,18 @@
                   
 
 
-<!-- markdownlint-disable MD013 -->
-<h1 id="services">Services</h1>
-<p>UmlWriter v3 contains two different services.</p>
-<ul>
-<li>
-<p><strong>ContainerService</strong> implements a <a href="https://www.php-fig.org/psr/psr-11/">PSR-11</a> compatible service container
-that allows you to standardize and centralize the way objects are constructed.</p>
-</li>
-<li>
-<p><strong>ClassDiagramRenderer</strong> that is in charge to add vertices and edges in the graph
-corresponding to data source(s) parsed.</p>
-</li>
-</ul>
-<h2 id="service-container">Service Container</h2>
-<p>We distinguish two kind of services:</p>
-<ul>
-<li><strong>internal</strong> like <code>ClassDiagramRenderer</code> and <code>ClassDiagramCommand</code> that cannot be changed at runtime.</li>
-<li><strong>runtime</strong> like <code>InputInterface</code>, <code>OutputInterface</code> and <code>GeneratorFactoryInterface</code> (the others) that could be changed.</li>
-</ul>
-<h2 id="class-diagram-renderer">Class Diagram Renderer</h2>
-<ul>
-<li>
-<p>Is in charge to add vertices and edge with the <code>__invoke()</code> method.</p>
-</li>
-<li>
-<p><code>getGraph()</code> method allows retrieving current graph to let you ability to personalize render by setting graph, node or edge attributes.</p>
-</li>
-<li>
-<p>Is able to retrieve all namespaces, classes, interfaces found during parse data source with <code>getMetadata()</code> method.</p>
-</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="c1">// Example</span>
-
-<span class="k">use</span> <span class="nx">Bartlett\UmlWriter\Generator\GeneratorFactory</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Bartlett\UmlWriter\Service\ClassDiagramRenderer</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Symfony\Component\Finder\Finder</span><span class="p">;</span>
-
-<span class="c1">// path to directory where to find PHP source code</span>
-<span class="nv">$dataSource</span> <span class="o">=</span> <span class="s1">&#39;src&#39;</span><span class="p">;</span>
-
-<span class="nv">$finder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Finder</span><span class="p">();</span>
-<span class="nv">$finder</span><span class="o">-&gt;</span><span class="na">in</span><span class="p">(</span><span class="nv">$dataSource</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;*.php&#39;</span><span class="p">);</span>
-
-<span class="nv">$generatorFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GeneratorFactory</span><span class="p">();</span>
-<span class="c1">// creates instance of Bartlett\GraphUml\Generator\GraphVizGenerator</span>
-<span class="nv">$generator</span> <span class="o">=</span> <span class="nv">$generatorFactory</span><span class="o">-&gt;</span><span class="na">createInstance</span><span class="p">(</span><span class="s1">&#39;graphviz&#39;</span><span class="p">);</span>
-
-<span class="nv">$renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ClassDiagramRenderer</span><span class="p">();</span>
-<span class="c1">// generates UML class diagram of all objects found in dataSource (in graphviz format)</span>
-<span class="nv">$graph</span> <span class="o">=</span> <span class="nv">$renderer</span><span class="p">(</span><span class="nv">$finder</span><span class="p">,</span> <span class="nv">$generator</span><span class="p">);</span>
-<span class="c1">// show all metadata</span>
-<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$renderer</span><span class="o">-&gt;</span><span class="na">getMetadata</span><span class="p">());</span>
+<h1 id="docker-cli">Docker CLI</h1>
+<p><strong>IMPORTANT</strong> : Docker image with <code>latest</code> tag use the PHP 8.1 runtime !</p>
+<blockquote>
+<p>Please mount your source code to <code>/workdir</code> in the container.</p>
+</blockquote>
+<p>If you want to analyse a <code>src/</code> folder in your source code, after mounting it, please don't forget to specify a full path
+based on <code>/workdir</code>, i.e: <code>/workdir/src</code></p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-t<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">&quot;</span>:/workdir<span class="w"> </span>bartlett/umlwriter:latest<span class="w"> </span>diagram:class<span class="w"> </span>/workdir/src
 </code></pre></div>
-<p>That could produce such results (with UmlWriter src directory)</p>
-<div class="highlight"><pre><span></span><code>array(3) {
-  [&quot;classes&quot;]=&gt;
-  array(8) {
-    [0]=&gt;
-    string(53) &quot;Bartlett\UmlWriter\Generator\AbstractGeneratorFactory&quot;
-    [1]=&gt;
-    string(45) &quot;Bartlett\UmlWriter\Generator\GeneratorFactory&quot;
-    [2]=&gt;
-    string(47) &quot;Bartlett\UmlWriter\Service\ConfigurationHandler&quot;
-    [3]=&gt;
-    string(47) &quot;Bartlett\UmlWriter\Service\ClassDiagramRenderer&quot;
-    [4]=&gt;
-    string(43) &quot;Bartlett\UmlWriter\Service\ContainerService&quot;
-    [5]=&gt;
-    string(38) &quot;Bartlett\UmlWriter\Console\Application&quot;
-    [6]=&gt;
-    string(54) &quot;Bartlett\UmlWriter\Console\Command\ClassDiagramCommand&quot;
-    [7]=&gt;
-    string(47) &quot;Bartlett\UmlWriter\Config\Loader\YamlFileLoader&quot;
-  }
-  [&quot;interfaces&quot;]=&gt;
-  array(1) {
-    [0]=&gt;
-    string(54) &quot;Bartlett\UmlWriter\Generator\GeneratorFactoryInterface&quot;
-  }
-  [&quot;namespaces&quot;]=&gt;
-  array(5) {
-    [0]=&gt;
-    string(28) &quot;Bartlett\UmlWriter\Generator&quot;
-    [3]=&gt;
-    string(26) &quot;Bartlett\UmlWriter\Service&quot;
-    [6]=&gt;
-    string(26) &quot;Bartlett\UmlWriter\Console&quot;
-    [7]=&gt;
-    string(34) &quot;Bartlett\UmlWriter\Console\Command&quot;
-    [8]=&gt;
-    string(32) &quot;Bartlett\UmlWriter\Config\Loader&quot;
-  }
-}
+<p>And same way if you want to generate an image (whatever format: svg, png, ...), and be able to retrieve it,
+run following command :</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-t<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">&quot;</span>:/workdir<span class="w"> </span>bartlett/umlwriter:latest<span class="w"> </span>diagram:class<span class="w"> </span>/workdir/src<span class="w"> </span>--output<span class="w"> </span>/workdir/diagram.svg
 </code></pre></div>
 
 
