@@ -15,25 +15,8 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh \
   && cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 
-# Install Composer v2 binary version
-COPY --from=composer/composer:2-bin /composer /usr/bin/composer
-ENV COMPOSER_ALLOW_SUPERUSER 1
-ENV COMPOSER_PREFER_STABLE 1
-
-# Copy codebase
-COPY bin /usr/src/umlwriter/bin
-COPY src /usr/src/umlwriter/src
-COPY patches /usr/src/umlwriter/patches
-COPY composer.json /usr/src/umlwriter/composer.json
-
 # Install dependencies
-RUN apk add --no-cache --update git bash graphviz ttf-dejavu \
-    && composer install \
-      --working-dir=/usr/src/umlwriter \
-      --no-dev  \
-      --no-progress \
-      --no-interaction \
-    && ln -sfv /usr/src/umlwriter/bin/umlwriter /usr/local/bin/umlwriter
+RUN apk add --no-cache --update git bash graphviz ttf-dejavu
 
 # Create a group and user
 RUN addgroup appgroup && adduser appuser -D -G appgroup
@@ -41,8 +24,14 @@ RUN addgroup appgroup && adduser appuser -D -G appgroup
 # Tell docker that all future commands should run as the appuser user
 USER appuser
 
-# Following recommendation at https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions#workdir
+# Install Composer v2 binary version
+COPY --from=composer/composer:2-bin /composer /usr/bin/composer
+ENV COMPOSER_ALLOW_SUPERUSER 1
+ENV COMPOSER_PREFER_STABLE 1
+RUN composer global config allow-plugins.cweagans/composer-patches true && \
+    composer global config minimum-stability dev && \
+    composer global require --no-progress bartlett/umlwriter 4.0.x-dev
 
-ENV BOX_REQUIREMENT_CHECKER=0
+# Following recommendation at https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions#workdir
 
 ENTRYPOINT ["/entrypoint.sh"]
