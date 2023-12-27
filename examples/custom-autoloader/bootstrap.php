@@ -11,8 +11,7 @@
 
 use Composer\Autoload\ClassLoader;
 
-return function (): void
-{
+return function (): void {
     /** @var ClassLoader $loader */
     $loader = require dirname(__DIR__, 2) . '/vendor/autoload.php';
     $loader->addClassMap(

@@ -11,8 +11,7 @@
 
 use Symfony\Component\Finder\Finder;
 
-return function (): Finder
-{
+return function (): Finder {
     // path to directory where to find PHP source code
     $dataSource = dirname(__FILE__);
 

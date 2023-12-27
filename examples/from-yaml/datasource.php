@@ -13,8 +13,7 @@ use Bartlett\UmlWriter\Service\ConfigurationHandler;
 
 use Symfony\Component\Finder\Finder;
 
-return function (): Finder
-{
+return function (): Finder {
     $config = (new ConfigurationHandler(__DIR__ . '/.umlwriter.yaml'))->toArray();
 
     $finder = new Finder();

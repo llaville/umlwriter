@@ -15,8 +15,7 @@ use Bartlett\GraphUml\Formatter\FormatterInterface;
 use Bartlett\GraphUml\Formatter\HtmlFormatter;
 use Bartlett\GraphUml\Formatter\RecordFormatter;
 
-return function (): Generator
-{
+return function (): Generator {
     $classes = [
         AbstractFormatter::class,
         FormatterInterface::class,

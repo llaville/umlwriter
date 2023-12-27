@@ -11,14 +11,13 @@
 
 use Composer\Autoload\ClassLoader;
 
-return function (): void
-{
+return function (): void {
     /** @var ClassLoader $loader */
     $loader = require dirname(__DIR__, 2) . '/vendor/autoload.php';
     $loader->addClassMap(
         [
-            'Name\\Space\\MyGenerator' => __DIR__ . '/resources.php',
-            'Name\\Space\\MyGeneratorFactory' => __DIR__ . '/resources.php',
+            'Name\\Space\\MyGenerator' => __DIR__ . '/my-generator.php',
+            'Name\\Space\\MyGeneratorFactory' => __DIR__ . '/my-generator-factory.php',
         ]
     );
 };

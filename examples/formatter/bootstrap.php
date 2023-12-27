@@ -9,7 +9,6 @@
  * @since Release 4.0.0
  */
 
-return function (): void
-{
+return function (): void {
     require_once dirname(__DIR__, 2) . '/vendor/autoload.php';
 };

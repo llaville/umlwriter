@@ -11,8 +11,7 @@
 
 use Symfony\Component\Finder\Finder;
 
-return function (): Finder
-{
+return function (): Finder {
     $finder = new Finder();
     $finder->in(__DIR__)->name('*.php');
 
