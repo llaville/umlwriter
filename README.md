@@ -24,7 +24,7 @@
 [Branch_40x]: https://github.com/llaville/umlwriter/tree/4.0
 [PHPVersion_40x-img]: https://img.shields.io/packagist/php-v/bartlett/umlwriter/4.0.0
 [PHPVersion_40x]: https://www.php.net/supported-versions.php
-[Packagist_40x-img]: https://img.shields.io/badge/packagist-v4.0.0-blue
+[Packagist_40x-img]: https://img.shields.io/badge/packagist-v4.0.1-blue
 [Packagist_40x]: https://packagist.org/packages/bartlett/umlwriter
 [License_40x-img]: https://img.shields.io/packagist/l/bartlett/umlwriter
 [License_40x]: https://github.com/llaville/umlwriter/blob/4.0/LICENSE
