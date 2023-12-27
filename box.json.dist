@@ -1,8 +1,11 @@
 {
     "alias": "umlwriter.phar",
-    "stub": "stub.php",
     "directories": ["bin", "src", "vendor"],
     "compression": "GZ",
+    "files": [
+        "bootstrap.php"
+    ]
+    "stub": "stub.php",
     "files-bin": [
         "console.txt",
         "manifest.txt",

@@ -1,5 +1,8 @@
 {
     "alias": "umlwriter.phar",
     "directories": ["bin", "src", "vendor"],
-    "compression": "GZ"
+    "compression": "GZ",
+    "files": [
+        "bootstrap.php"
+    ]
 }
