@@ -29,7 +29,7 @@ COPY --from=composer/composer:2-bin /composer /usr/bin/composer
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_PREFER_STABLE 1
 RUN composer global config allow-plugins.cweagans/composer-patches true && \
-    composer global config minimum-stability stable && \
+    composer global config minimum-stability dev && \
     composer global require --no-progress bartlett/umlwriter ^4
 
 # Following recommendation at https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions#workdir
