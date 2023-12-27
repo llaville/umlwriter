@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD013 -->
 # Docker CLI
 
 **IMPORTANT** : Docker image with `latest` tag use the PHP 8.1 runtime !

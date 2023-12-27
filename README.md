@@ -1,5 +1,6 @@
 <!-- markdownlint-disable MD013 -->
 # UmlWriter
+
 [![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
 [![GitHub Discussions](https://img.shields.io/github/discussions/llaville/umlwriter)](https://github.com/llaville/umlwriter/discussions)
 
@@ -29,7 +30,6 @@
 [License_40x]: https://github.com/llaville/umlwriter/blob/4.0/LICENSE
 [Documentation_40x-img]: https://img.shields.io/badge/documentation-v4.0-green
 [Documentation_40x]: https://github.com/llaville/umlwriter/tree/4.0/docs
-
 
 **UmlWriter** is a library that adds the ability to generate UML class diagrams.
 

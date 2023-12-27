@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD013 -->
 # Programmatically
 
 Repository contains an `examples` directory that have many use cases to generate either `Graphviz` or `PlantUML` format.

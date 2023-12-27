@@ -151,6 +151,7 @@ echo $script, PHP_EOL;
 ```
 
 That will only display
+
 ```text
 TODO: Implement createScript() method.
 ```

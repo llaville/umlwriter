@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD013 -->
 # Console CLI
 
 Generate UML class diagram from PHP source files should be as simple as running `umlwriter diagram:class`

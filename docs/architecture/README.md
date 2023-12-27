@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD013 -->
 # Architecture
 
 This guide is dedicated to all PHP developers that want to learn more about each UMLWriter components.
