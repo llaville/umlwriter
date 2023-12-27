@@ -902,11 +902,11 @@
 </blockquote>
 <p>If you want to analyse a <code>src/</code> folder in your source code, after mounting it, please don't forget to specify a full path
 based on <code>/workdir</code>, i.e: <code>/workdir/src</code></p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-t<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">&quot;</span>:/workdir<span class="w"> </span>bartlett/umlwriter:latest<span class="w"> </span>diagram:class<span class="w"> </span>/workdir/src
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-t<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">&quot;</span>:/workdir<span class="w"> </span>ghcr.io/llaville/umlwriter:latest<span class="w"> </span>diagram:class<span class="w"> </span>/workdir/src
 </code></pre></div>
 <p>And same way if you want to generate an image (whatever format: svg, png, ...), and be able to retrieve it,
 run following command :</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-t<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">&quot;</span>:/workdir<span class="w"> </span>bartlett/umlwriter:latest<span class="w"> </span>diagram:class<span class="w"> </span>/workdir/src<span class="w"> </span>--output<span class="w"> </span>/workdir/diagram.svg
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-t<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">&quot;</span>:/workdir<span class="w"> </span>ghcr.io/llaville/umlwriter:latest<span class="w"> </span>diagram:class<span class="w"> </span>/workdir/src<span class="w"> </span>--output<span class="w"> </span>/workdir/diagram.svg
 </code></pre></div>
 
 
