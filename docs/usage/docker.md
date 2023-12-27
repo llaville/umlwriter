@@ -9,12 +9,12 @@ If you want to analyse a `src/` folder in your source code, after mounting it, p
 based on `/workdir`, i.e: `/workdir/src`
 
 ```shell
-docker run --rm -t -v "${PWD}":/workdir bartlett/umlwriter:latest diagram:class /workdir/src
+docker run --rm -t -v "${PWD}":/workdir ghcr.io/llaville/umlwriter:latest diagram:class /workdir/src
 ```
 
 And same way if you want to generate an image (whatever format: svg, png, ...), and be able to retrieve it,
 run following command :
 
 ```shell
-docker run --rm -t -v "${PWD}":/workdir bartlett/umlwriter:latest diagram:class /workdir/src --output /workdir/diagram.svg
+docker run --rm -t -v "${PWD}":/workdir ghcr.io/llaville/umlwriter:latest diagram:class /workdir/src --output /workdir/diagram.svg
 ```
