@@ -4,7 +4,7 @@
     "compression": "GZ",
     "files": [
         "bootstrap.php"
-    ]
+    ],
     "stub": "stub.php",
     "files-bin": [
         "console.txt",
