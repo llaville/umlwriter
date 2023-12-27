@@ -1,4 +1,10 @@
 <?php declare(strict_types=1);
+/**
+ * This file is part of the UmlWriter package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 namespace Bartlett\UmlWriter\Tests;
 
@@ -12,6 +18,9 @@ use Symfony\Component\Finder\Finder;
 use Generator;
 use ReflectionException;
 
+/**
+ * @author Laurent Laville
+ */
 class FeatureTest extends TestCase
 {
     private const FIXTURE_DIR = __DIR__ . DIRECTORY_SEPARATOR . 'fixtures';
