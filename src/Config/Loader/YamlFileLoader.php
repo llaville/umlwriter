@@ -26,6 +26,7 @@ final class YamlFileLoader extends FileLoader
 {
     /**
      * @inheritDoc
+     * @return array<string, mixed>
      */
     public function load(mixed $resource, string $type = null): array
     {

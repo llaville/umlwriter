@@ -22,6 +22,6 @@ class MyGeneratorFactory extends GeneratorFactory
             return new MyGenerator($executable, $format);
         }
         // fallback to default GeneratorFactory behavior (checks for GraphViz or PlantUML)
-        parent::createInstance($provider, $format, $executable);
+        return parent::createInstance($provider, $format, $executable);
     }
 }

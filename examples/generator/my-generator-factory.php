@@ -15,13 +15,12 @@ use Bartlett\UmlWriter\Generator\GeneratorFactory;
 
 class MyGeneratorFactory extends GeneratorFactory
 {
-    public function getGenerator(): GeneratorInterface
+    public function createInstance(string $provider, string $format = 'svg', string $executable = ''): GeneratorInterface
     {
-        if ('mygenerator' === $this->generator) {
-            return new MyGenerator();
+        if ('mygenerator' === $provider) {
+            return new MyGenerator($executable, $format);
         }
-
         // fallback to default GeneratorFactory behavior (checks for GraphViz or PlantUML)
-        return parent::getGenerator();
+        return parent::createInstance($provider, $format, $executable);
     }
 }

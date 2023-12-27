@@ -42,6 +42,9 @@ final class ConfigurationHandler
         $this->optionsResolver->setDefaults(self::getDefaults());
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public static function getDefaults(): array
     {
         return [
