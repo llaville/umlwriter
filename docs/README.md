@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD013 -->
 # About
 
-![Graph UML Application](./assets/images/application.graphviz.svg)
+![Graph Composer](./assets/images/graph-composer.svg)
 
 ## Features
 

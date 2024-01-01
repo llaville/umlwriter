@@ -26,7 +26,8 @@
         "symfony/yaml": "^6.4 || ^7.0"
     },
     "require-dev": {
-        "jawira/plantuml": "^1.2023"
+        "jawira/plantuml": "^1.2023",
+        "bamarni/composer-bin-plugin": "^1.8"
     },
     "authors": [
         {
@@ -41,6 +42,7 @@
     "config": {
         "sort-packages": true,
         "allow-plugins": {
+            "bamarni/composer-bin-plugin": true,
             "cweagans/composer-patches": true
         },
         "preferred-install": {
@@ -59,6 +61,20 @@
         }
     },
     "extra": {
-        "enable-patching": true
+        "enable-patching": true,
+        "bamarni-bin": {
+            "bin-links": true,
+            "target-directory": "vendor-bin",
+            "forward-command": true
+        }
+    },
+    "scripts": {
+        "bin": "echo 'bin not installed'",
+        "post-update-cmd": [
+            "@composer bin all update --ansi"
+        ],
+        "post-install-cmd": [
+            "@composer bin all install --ansi"
+        ]
     }
 }

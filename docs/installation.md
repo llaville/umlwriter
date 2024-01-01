@@ -24,7 +24,7 @@ The preferred method of installation is to use the umlWriter PHAR version which 
 
 ## Docker
 
-Retrieve official image `bartlett/umlwriter` with [Docker][docker]
+Retrieve official image with [Docker][docker]
 
 ```shell
 docker pull ghcr.io/llaville/umlwriter:v4
@@ -34,19 +34,19 @@ docker pull ghcr.io/llaville/umlwriter:latest
 
 ## Phive
 
-You can install `umlwriter` globally with [Phive][phive]
+You can install application globally with [Phive][phive]
 
 ```shell
 phive install llaville/umlwriter --force-accept-unsigned
 ```
 
-To upgrade global `umlwriter` use the following command:
+To upgrade global installation of the application use the following command:
 
 ```shell
 phive update llaville/umlwriter --force-accept-unsigned
 ```
 
-You can also install `umlwriter` locally to your project with [Phive][phive] and configuration file `.phive/phars.xml`
+You can also install application locally to your project with [Phive][phive] and configuration file `.phive/phars.xml`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
