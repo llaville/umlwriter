@@ -1097,19 +1097,19 @@
 <p>The preferred method of installation is to use the umlWriter PHAR version which can be downloaded from the most recent
 <a href="https://github.com/llaville/umlwriter/releases">Github Release</a>. This method ensures you will not have any dependency conflict issue.</p>
 <h2 id="docker">Docker</h2>
-<p>Retrieve official image <code>bartlett/umlwriter</code> with <a href="https://docs.docker.com/get-docker/">Docker</a></p>
+<p>Retrieve official image with <a href="https://docs.docker.com/get-docker/">Docker</a></p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/llaville/umlwriter:v4
 or
 docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/llaville/umlwriter:latest
 </code></pre></div>
 <h2 id="phive">Phive</h2>
-<p>You can install <code>umlwriter</code> globally with <a href="https://github.com/phar-io/phive">Phive</a></p>
+<p>You can install application globally with <a href="https://github.com/phar-io/phive">Phive</a></p>
 <div class="highlight"><pre><span></span><code>phive<span class="w"> </span>install<span class="w"> </span>llaville/umlwriter<span class="w"> </span>--force-accept-unsigned
 </code></pre></div>
-<p>To upgrade global <code>umlwriter</code> use the following command:</p>
+<p>To upgrade global installation of the application use the following command:</p>
 <div class="highlight"><pre><span></span><code>phive<span class="w"> </span>update<span class="w"> </span>llaville/umlwriter<span class="w"> </span>--force-accept-unsigned
 </code></pre></div>
-<p>You can also install <code>umlwriter</code> locally to your project with <a href="https://github.com/phar-io/phive">Phive</a> and configuration file <code>.phive/phars.xml</code></p>
+<p>You can also install application locally to your project with <a href="https://github.com/phar-io/phive">Phive</a> and configuration file <code>.phive/phars.xml</code></p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;phive</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;https://phar.io/phive&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;phar</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;llaville/umlwriter&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;^4.0&quot;</span><span class="w"> </span><span class="na">copy=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
