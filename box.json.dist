@@ -3,7 +3,7 @@
     "directories": ["bin", "src", "vendor"],
     "compression": "GZ",
     "files": [
-        "bootstrap.php"
+        "autoload.php"
     ],
     "stub": "stub.php",
     "files-bin": [

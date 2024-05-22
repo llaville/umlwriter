@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-require_once dirname(__DIR__) . '/bootstrap.php';
+require_once dirname(__DIR__) . '/autoload.php';
 
 if (PHP_SAPI !== 'cli') {
     return;
