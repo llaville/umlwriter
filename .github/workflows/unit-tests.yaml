@@ -5,7 +5,7 @@ on:
     pull_request:
         branches:
             - master
-            - "4.0"
+            - "4.1"
         paths-ignore:
             - 'docs/**'
     workflow_call:
@@ -15,7 +15,6 @@ jobs:
         uses: llaville/.github/.github/workflows/mega-linter.yml@master
         with:
             repository: ${{ github.repository }}
-            php-version: "8.1"
 
     unit_tests:
         needs: lint_files
