@@ -51,7 +51,7 @@ You can also install application locally to your project with [Phive][phive] and
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <phive xmlns="https://phar.io/phive">
-    <phar name="llaville/umlwriter" version="^4.0" copy="false" />
+    <phar name="llaville/umlwriter" version="^4.1" copy="false" />
 </phive>
 ```
 
@@ -83,7 +83,7 @@ vendor/bin/umlwriter
 The UmlWriter can be directly used from [GitHub][github-repo] by cloning the repository into a directory of your choice.
 
 ```shell
-git clone -b 4.0 https://github.com/llaville/umlwriter.git
+git clone -b 4.1 https://github.com/llaville/umlwriter.git
 ```
 
 ## Extra resources

@@ -6,19 +6,8 @@
 
 | Releases      |                   Branch                    |                              PHP                              |                         Packagist                         |                    License                     |                          Documentation                           |
 |:--------------|:-------------------------------------------:|:-------------------------------------------------------------:|:---------------------------------------------------------:|:----------------------------------------------:|:----------------------------------------------------------------:|
-| Stable v3.4.x | [![Branch 3.4][Branch_34x-img]][Branch_34x] | [![Minimum PHP Version)][PHPVersion_34x-img]][PHPVersion_34x] | [![Stable Version 3.4][Packagist_34x-img]][Packagist_34x] | [![License 3.4][License_34x-img]][License_34x] | [![Documentation 3.4][Documentation_34x-img]][Documentation_34x] |
 | Stable v4.0.x | [![Branch 4.0][Branch_40x-img]][Branch_40x] | [![Minimum PHP Version)][PHPVersion_40x-img]][PHPVersion_40x] | [![Stable Version 4.0][Packagist_40x-img]][Packagist_40x] | [![License 4.0][License_40x-img]][License_40x] | [![Documentation 4.0][Documentation_40x-img]][Documentation_40x] |
-
-[Branch_34x-img]: https://img.shields.io/badge/branch-3.4-orange
-[Branch_34x]: https://github.com/llaville/umlwriter/tree/3.4
-[PHPVersion_34x-img]: https://img.shields.io/packagist/php-v/bartlett/umlwriter/3.4.0
-[PHPVersion_34x]: https://www.php.net/supported-versions.php
-[Packagist_34x-img]: https://img.shields.io/badge/packagist-v3.4.0-blue
-[Packagist_34x]: https://packagist.org/packages/bartlett/umlwriter
-[License_34x-img]: https://img.shields.io/packagist/l/bartlett/umlwriter
-[License_34x]: https://github.com/llaville/umlwriter/blob/3.4/LICENSE
-[Documentation_34x-img]: https://img.shields.io/badge/documentation-v3.4-green
-[Documentation_34x]: https://github.com/llaville/umlwriter/tree/3.4/docs
+| Stable v4.1.x | [![Branch 4.1][Branch_41x-img]][Branch_41x] | [![Minimum PHP Version)][PHPVersion_41x-img]][PHPVersion_41x] | [![Stable Version 4.1][Packagist_41x-img]][Packagist_41x] | [![License 4.1][License_41x-img]][License_41x] | [![Documentation 4.1][Documentation_41x-img]][Documentation_41x] |
 
 [Branch_40x-img]: https://img.shields.io/badge/branch-4.0-orange
 [Branch_40x]: https://github.com/llaville/umlwriter/tree/4.0
@@ -31,12 +20,23 @@
 [Documentation_40x-img]: https://img.shields.io/badge/documentation-v4.0-green
 [Documentation_40x]: https://github.com/llaville/umlwriter/tree/4.0/docs
 
+[Branch_41x-img]: https://img.shields.io/badge/branch-4.1-orange
+[Branch_41x]: https://github.com/llaville/umlwriter/tree/4.1
+[PHPVersion_41x-img]: https://img.shields.io/packagist/php-v/bartlett/umlwriter/4.1.0
+[PHPVersion_41x]: https://www.php.net/supported-versions.php
+[Packagist_41x-img]: https://img.shields.io/badge/packagist-v4.1.0-blue
+[Packagist_41x]: https://packagist.org/packages/bartlett/umlwriter
+[License_41x-img]: https://img.shields.io/packagist/l/bartlett/umlwriter
+[License_41x]: https://github.com/llaville/umlwriter/blob/4.1/LICENSE
+[Documentation_41x-img]: https://img.shields.io/badge/documentation-v4.1-green
+[Documentation_41x]: https://github.com/llaville/umlwriter/tree/4.1/docs
+
 **UmlWriter** is a library that adds the ability to generate UML class diagrams.
 
 ## Documentation
 
-All the documentation is available on [website](https://llaville.github.io/umlwriter/4.0),
-generated from the [docs](https://github.com/llaville/umlwriter/tree/4.0/docs) folder.
+All the documentation is available on [website](https://llaville.github.io/umlwriter/4.1),
+generated from the [docs](https://github.com/llaville/umlwriter/tree/4.1/docs) folder.
 
 ## Usage
 
