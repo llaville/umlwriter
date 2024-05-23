@@ -19,3 +19,4 @@ jobs:
             hook-script: "resources/gh-pages-hook.sh"
             force-orphan: false
             graph-uml: false
+            php-version: "8.2"
