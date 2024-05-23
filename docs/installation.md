@@ -10,7 +10,7 @@
 
 ## Requirements
 
-* PHP 8.1 or greater
+* PHP 8.2 or greater
 * [graphp/graph](https://github.com/graphp/graph) package from master branch (considered as future stable v1.0.0)
 * [graphp/graphviz](https://github.com/graphp/graphviz) package from master branch (considered as future stable v1.0.0)
 * [bartlett/graph-uml](https://github.com/llaville/graph-uml) Core engine to build UML diagrams in PHP
@@ -27,7 +27,7 @@ The preferred method of installation is to use the umlWriter PHAR version which 
 Retrieve official image with [Docker][docker]
 
 ```shell
-docker pull ghcr.io/llaville/umlwriter:v4
+docker pull ghcr.io/llaville/umlwriter:v4.2
 or
 docker pull ghcr.io/llaville/umlwriter:latest
 ```
@@ -51,7 +51,7 @@ You can also install application locally to your project with [Phive][phive] and
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <phive xmlns="https://phar.io/phive">
-    <phar name="llaville/umlwriter" version="^4.1" copy="false" />
+    <phar name="llaville/umlwriter" version="^4.2" copy="false" />
 </phive>
 ```
 
@@ -65,7 +65,7 @@ The recommended way to install this library is [through composer][composer].
 If you don't know yet what is composer, have a look [on introduction][composer-intro].
 
 ```shell
-composer require bartlett/umlwriter ^4
+composer require bartlett/umlwriter ^4.2
 ```
 
 If you cannot install it because of a dependency conflict, or you prefer to install it for your project, we recommend
@@ -83,7 +83,7 @@ vendor/bin/umlwriter
 The UmlWriter can be directly used from [GitHub][github-repo] by cloning the repository into a directory of your choice.
 
 ```shell
-git clone -b 4.1 https://github.com/llaville/umlwriter.git
+git clone -b 4.2 https://github.com/llaville/umlwriter.git
 ```
 
 ## Extra resources
