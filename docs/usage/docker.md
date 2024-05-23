@@ -1,7 +1,9 @@
 <!-- markdownlint-disable MD013 -->
 # Docker CLI
 
-**IMPORTANT** : Docker image with `latest` tag use the PHP 8.1 runtime !
+> [!IMPORTANT]
+> Docker image with `latest` tag use the PHP 8.1 runtime !
+> So, uses the tag `v4.2` if you want a PHP 8.2 compatible version.
 
 > Please mount your source code to `/workdir` in the container.
 
