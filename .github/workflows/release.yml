@@ -52,6 +52,8 @@ jobs:
                 uses: ramsey/composer-install@v2
                 with:
                     composer-options: "--prefer-dist"
+                env: # https://github.com/ramsey/composer-install?tab=readme-ov-file#fork-and-private-repositories
+                    COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.COMPOSER_AUTH }}"}}'
 
             -   # https://github.com/llaville/box-manifest
                 name: Build Release Artifacts
