@@ -1,6 +1,10 @@
 {
     "alias": "umlwriter.phar",
-    "directories": ["bin", "src", "vendor"],
+    "directories": [
+        "bin",
+        "src",
+        "vendor"
+    ],
     "compression": "GZ",
     "files": [
         "autoload.php"

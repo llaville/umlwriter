@@ -1,19 +1,31 @@
 {
     "alias": "umlwriter.phar",
-    "directories": ["bin", "src", "vendor"],
+    "directories": [
+        "bin",
+        "src",
+        "vendor"
+    ],
     "compression": "GZ",
     "files": [
         "autoload.php"
     ],
-    "stub": "stub.php",
+    "dump-autoload": false,
     "files-bin": [
-        "console.txt",
-        "manifest.txt",
-        "sbom.json"
+        "console-table.txt",
+        "plain.txt",
+        "sbom.json",
+        ".box.manifests.bin"
     ],
     "map": [
-        { "console.txt": ".box.manifests/console.txt" },
-        { "manifest.txt": ".box.manifests/manifest.txt" },
-        { "sbom.json": ".box.manifests/sbom.json" }
-    ]
+        {
+            "console-table.txt": ".box.manifests/console-table.txt"
+        },
+        {
+            "plain.txt": ".box.manifests/plain.txt"
+        },
+        {
+            "sbom.json": ".box.manifests/sbom.json"
+        }
+    ],
+    "stub": "stub.php"
 }
