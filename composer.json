@@ -70,9 +70,11 @@
     },
     "scripts": {
         "bin": "echo 'bin not installed'",
-        "style:check": "vendor/bin/phpcs --standard=.github/linters/.phpcs.xml.dist --warning-severity=0 --colors"
+        "style:check": "vendor/bin/phpcs --standard=.github/linters/.phpcs.xml.dist --warning-severity=0 --colors",
+        "tests:unit": "vendor/bin/phpunit --configuration phpunit.xml.dist"
     },
     "scripts-descriptions" : {
-        "style:check": "Run PHP CodeSniffer on project source code"
+        "style:check": "Run PHP CodeSniffer on project source code",
+        "tests:unit": "Run unit tests on project source code"
     }
 }
