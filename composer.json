@@ -69,6 +69,10 @@
         }
     },
     "scripts": {
-        "bin": "echo 'bin not installed'"
+        "bin": "echo 'bin not installed'",
+        "style:check": "vendor/bin/phpcs --standard=.github/linters/.phpcs.xml.dist --warning-severity=0 --colors"
+    },
+    "scripts-descriptions" : {
+        "style:check": "Run PHP CodeSniffer on project source code"
     }
 }
