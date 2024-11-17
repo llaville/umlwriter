@@ -49,7 +49,7 @@ jobs:
 
             -   # https://github.com/ramsey/composer-install
                 name: Install Composer dependencies
-                uses: ramsey/composer-install@v2
+                uses: ramsey/composer-install@v3
                 with:
                     composer-options: "--prefer-dist"
                 env: # https://github.com/ramsey/composer-install?tab=readme-ov-file#fork-and-private-repositories
@@ -58,7 +58,7 @@ jobs:
             -   # https://github.com/llaville/box-manifest
                 name: Download BOX Manifest Artifact
                 env:
-                    BOX_MANIFEST_VERSION: "4.0.0-rc.1"
+                    BOX_MANIFEST_VERSION: "4.0.1"
                 run: |
                     curl -Ls "https://github.com/llaville/box-manifest/releases/download/$BOX_MANIFEST_VERSION/box-manifest.phar" -o /usr/local/bin/box-manifest
                     chmod +x /usr/local/bin/box-manifest
@@ -75,7 +75,7 @@ jobs:
                 uses: softprops/action-gh-release@v2
                 with:  # https://github.com/softprops/action-gh-release#-customizing
                     prerelease: false
-                    draft: true
+                    draft: false
                     body_path: ${{ github.workspace }}/.changes/${{ github.ref_name }}.md
                     # https://github.com/softprops/action-gh-release#%EF%B8%8F-uploading-release-assets
                     files:
