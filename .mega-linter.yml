@@ -25,6 +25,7 @@ EDITORCONFIG_EDITORCONFIG_CHECKER_CLI_LINT_MODE: project
 MARKDOWN_MARKDOWNLINT_CONFIG_FILE: ".markdown-lint.json"
 MARKDOWN_MARKDOWNLINT_FILTER_REGEX_EXCLUDE: "(\\.github)"
 PHP_PHPSTAN_CLI_LINT_MODE: project  # to avoid https://github.com/nvuillam/mega-linter/issues/725
+PHP_PHPSTAN_DISABLE_ERRORS: true # because this project is not yet compatible with PHPStan 2.0 embedded with MegaLinter 8.2.0 or greater
 PHP_PHPCS_CLI_LINT_MODE: project
 PHP_PHPCS_CONFIG_FILE: ".phpcs.xml.dist"
 PHP_PHPCS_ARGUMENTS: "-n"
