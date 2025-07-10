@@ -1,8 +1,5 @@
----
-PRINT_ALPACA: false
-SHOW_ELAPSED_TIME: true
-EXCLUDED_DIRECTORIES: [".git", ".changes"]
-IGNORE_GITIGNORED_FILES: true
+EXTENDS:
+    - "https://raw.githubusercontent.com/llaville/.github/refs/heads/master/.mega-linter-base.yml"
 ENABLE:
     - ACTION
     - DOCKERFILE
@@ -21,20 +18,5 @@ DISABLE_LINTERS:
     - PHP_PSALM
     - YAML_V8R
 DOCKERFILE_HADOLINT_ARGUMENTS: "-t error"
-EDITORCONFIG_EDITORCONFIG_CHECKER_CLI_LINT_MODE: project
-MARKDOWN_MARKDOWNLINT_CONFIG_FILE: ".markdown-lint.json"
-MARKDOWN_MARKDOWNLINT_FILTER_REGEX_EXCLUDE: "(\\.github)"
-PHP_PHPSTAN_CLI_LINT_MODE: project  # to avoid https://github.com/nvuillam/mega-linter/issues/725
-PHP_PHPSTAN_DISABLE_ERRORS: true # because this project is not yet compatible with PHPStan 2.0 embedded with MegaLinter 8.2.0 or greater
-PHP_PHPCS_CLI_LINT_MODE: project
-PHP_PHPCS_CONFIG_FILE: ".phpcs.xml.dist"
-PHP_PHPCS_ARGUMENTS: "-n"
-PHP_PHPLINT_CLI_LINT_MODE: project
-PHP_PHPLINT_ARGUMENTS: "--no-cache"
-YAML_PRETTIER_FILTER_REGEX_EXCLUDE: "(\\.github|mkdocs\\.yml|\\.mega-linter\\.yml|\\.changie\\.yaml)"  # As it cannot be added in .gitignore for ML actionlint linter
-YAML_YAMLLINT_FILTER_REGEX_EXCLUDE: "(\\.github|mkdocs\\.yml)"  # As it cannot be added in .gitignore for ML actionlint linter
-CONFIG_REPORTER: false
-UPDATED_SOURCES_REPORTER: false
-CONSOLE_REPORTER: true
-LOG_LEVEL: INFO
+PHP_PHPSTAN_DISABLE_ERRORS: false
 PRINT_ALL_FILES: false
