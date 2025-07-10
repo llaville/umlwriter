@@ -17,7 +17,7 @@ use Clue\GraphComposer\Command\Export;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
 
-require_once dirname(__DIR__) . '/vendor/autoload.php';
+require_once dirname(__DIR__) . '/autoload.php';
 
 $script = $_SERVER['argv'][1] ?? null;
 $folder = $_SERVER['argv'][2] ?? sys_get_temp_dir();
