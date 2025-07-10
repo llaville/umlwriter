@@ -11,6 +11,8 @@ namespace Bartlett\UmlWriter\Tests;
 use Bartlett\UmlWriter\Generator\GeneratorFactory;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 
+use PHPUnit\Framework\Attributes\Group;
+
 use Symfony\Component\Finder\Finder;
 
 use ReflectionException;
@@ -27,9 +29,9 @@ class PlantUMLIssueTest extends TestCase
      *
      * @link https://github.com/llaville/umlwriter/issues/7
      *       "version 1.2.0 outputs invalid plantuml files "
-     * @group regression
      * @throws ReflectionException
      */
+    #[Group('regression')]
     public function testBugGH7(): void
     {
         $finder = new Finder();

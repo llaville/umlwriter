@@ -13,6 +13,8 @@ use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 use Bartlett\GraphUml\Generator\GeneratorInterface;
 use Bartlett\UmlWriter\Service\ConfigurationHandler;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+
 use Symfony\Component\Finder\Finder;
 
 use Generator;
@@ -63,9 +65,9 @@ class FeatureTest extends TestCase
     /**
      * Tests graph statements generation with the Graphviz generator
      *
-     * @dataProvider graphvizProvider
      * @throws ReflectionException
      */
+    #[DataProvider('graphvizProvider')]
     public function testGraphvizGenerator(string $fixture, Finder $finder, GeneratorInterface $generator): void
     {
         $configHandler = new ConfigurationHandler(null);
@@ -84,9 +86,9 @@ class FeatureTest extends TestCase
     /**
      * Tests graph statements generation with the PlantUML generator
      *
-     * @dataProvider plantumlProvider
      * @throws ReflectionException
      */
+    #[DataProvider('plantumlProvider')]
     public function testPlantumlGenerator(string $fixture, Finder $finder, GeneratorInterface $generator): void
     {
         $configHandler = new ConfigurationHandler(null);
