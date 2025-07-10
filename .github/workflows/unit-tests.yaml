@@ -52,6 +52,6 @@ jobs:
                 with:
                     composer-options: "--prefer-dist"
 
-            -   # https://github.com/sebastianbergmann/phpunit/tree/10.5
-                name: Unit tests with PHPUnit 10
+            -   # https://github.com/sebastianbergmann/phpunit/tree/11.5
+                name: Unit tests with PHPUnit 11
                 run: vendor/bin/phpunit --testdox --do-not-cache-result --no-progress
