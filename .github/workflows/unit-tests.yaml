@@ -5,7 +5,7 @@ on:
     pull_request:
         branches:
             - master
-            - "4.2"
+            - "4.3"
         paths-ignore:
             - 'docs/**'
     workflow_call:
