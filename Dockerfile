@@ -3,6 +3,8 @@ ARG PHP_VERSION=8.2
 
 FROM php:${PHP_VERSION}-cli-alpine
 
+ARG PACKAGE_CONSTRAINT=4.3.x-dev
+
 # https://github.com/opencontainers/image-spec/blob/main/annotations.md
 
 LABEL org.opencontainers.image.title="llaville/umlwriter"
@@ -30,7 +32,7 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_PREFER_STABLE 1
 RUN composer global config allow-plugins.cweagans/composer-patches true && \
     composer global config minimum-stability dev && \
-    composer global require --no-progress bartlett/umlwriter ^4
+    composer global require --no-progress bartlett/umlwriter $PACKAGE_CONSTRAINT
 
 # Following recommendation at https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions#workdir
 
