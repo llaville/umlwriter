@@ -15,7 +15,7 @@ LABEL org.opencontainers.image.authors="llaville"
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh \
-  && cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
+    && cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 
 # Install dependencies
 RUN apk add --no-cache --update git bash graphviz ttf-dejavu

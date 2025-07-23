@@ -3,12 +3,12 @@ parameters:
 
     graph:
         name: G
-        overlap: 'false'
+        overlap: "false"
         rankdir: LR
         bgcolor: transparent
 
     node:
-        fillcolor: 'white'
+        fillcolor: "white"
 
     edge: ~
 
@@ -17,13 +17,13 @@ parameters:
             graph:
                 bgcolor: BurlyWood
             node:
-                fillcolor: '#FEFECE'
+                fillcolor: "#FEFECE"
                 style: filled
         Symfony\Component\Console:
             graph:
                 bgcolor: LightSteelBlue
             node:
-                fillcolor: '#FEFECE'
+                fillcolor: "#FEFECE"
                 style: filled
 
     paths:

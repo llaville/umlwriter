@@ -31,6 +31,7 @@ final class Application extends SymfonyApplication
     /**
      * @link http://patorjk.com/software/taag/#p=display&f=Standard&t=umlWriter
      */
+    // editorconfig-checker-disable
     protected static string $logo = "                  ___        __    _ _
   _   _ _ __ ___ | \ \      / / __(_) |_ ___ _ __
  | | | | '_ ` _ \| |\ \ /\ / / '__| | __/ _ \ '__|
@@ -38,6 +39,7 @@ final class Application extends SymfonyApplication
   \__,_|_| |_| |_|_|  \_/\_/ |_|  |_|\__\___|_|
 
 ";
+    // editorconfig-checker-enable
 
     public function __construct(private readonly ContainerInterface $container)
     {
