@@ -13,6 +13,8 @@ permissions:
 jobs:
     tests:
         uses: ./.github/workflows/unit-tests.yaml
+        secrets:
+            personal_access_token: ${{ secrets.COMPOSER_AUTH }}
 
     build:
         needs: tests

@@ -9,6 +9,10 @@ on:
         paths-ignore:
             - 'docs/**'
     workflow_call:
+        # https://docs.github.com/en/actions/how-tos/sharing-automations/reuse-workflows#using-inputs-and-secrets-in-a-reusable-workflow
+        secrets:
+            personal_access_token:
+                required: true
 
 jobs:
     lint_files:
@@ -51,6 +55,8 @@ jobs:
                 uses: ramsey/composer-install@v3
                 with:
                     composer-options: "--prefer-dist"
+                env: # https://github.com/ramsey/composer-install?tab=readme-ov-file#fork-and-private-repositories
+                    COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.personal_access_token }}"}}'
 
             -   # https://github.com/sebastianbergmann/phpunit/tree/11.5
                 name: Unit tests with PHPUnit 11
