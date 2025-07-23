@@ -27,7 +27,7 @@ The preferred method of installation is to use the umlWriter PHAR version which 
 Retrieve official image with [Docker][docker]
 
 ```shell
-docker pull ghcr.io/llaville/umlwriter:v4.2
+docker pull ghcr.io/llaville/umlwriter:v4.3
 or
 docker pull ghcr.io/llaville/umlwriter:latest
 ```
@@ -51,7 +51,7 @@ You can also install application locally to your project with [Phive][phive] and
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <phive xmlns="https://phar.io/phive">
-    <phar name="llaville/umlwriter" version="^4.2" copy="false" />
+    <phar name="llaville/umlwriter" version="^4.3" copy="false" />
 </phive>
 ```
 
@@ -65,7 +65,7 @@ The recommended way to install this library is [through composer][composer].
 If you don't know yet what is composer, have a look [on introduction][composer-intro].
 
 ```shell
-composer require bartlett/umlwriter ^4.2
+composer require bartlett/umlwriter ^4.3
 ```
 
 If you cannot install it because of a dependency conflict, or you prefer to install it for your project, we recommend
@@ -83,7 +83,7 @@ vendor/bin/umlwriter
 The UmlWriter can be directly used from [GitHub][github-repo] by cloning the repository into a directory of your choice.
 
 ```shell
-git clone -b 4.2 https://github.com/llaville/umlwriter.git
+git clone -b 4.3 https://github.com/llaville/umlwriter.git
 ```
 
 ## Extra resources
