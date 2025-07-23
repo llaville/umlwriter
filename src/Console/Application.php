@@ -84,7 +84,7 @@ final class Application extends SymfonyApplication
     /**
      * @inheritDoc
      */
-    public function run(InputInterface $input = null, OutputInterface $output = null): int
+    public function run(?InputInterface $input = null, ?OutputInterface $output = null): int
     {
         if (null === $input) {
             if ($this->container->has(InputInterface::class)) {

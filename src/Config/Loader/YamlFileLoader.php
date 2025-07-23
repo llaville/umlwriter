@@ -28,7 +28,7 @@ final class YamlFileLoader extends FileLoader
      * @inheritDoc
      * @return array<string, mixed>
      */
-    public function load(mixed $resource, string $type = null): array
+    public function load(mixed $resource, ?string $type = null): array
     {
         try {
             $configs = Yaml::parseFile($resource, Yaml::PARSE_CONSTANT);
@@ -50,7 +50,7 @@ final class YamlFileLoader extends FileLoader
     /**
      * @inheritDoc
      */
-    public function supports($resource, string $type = null): bool
+    public function supports($resource, ?string $type = null): bool
     {
         return is_string($resource)
             && in_array(pathinfo($resource, PATHINFO_EXTENSION), ['yml', 'yaml']);

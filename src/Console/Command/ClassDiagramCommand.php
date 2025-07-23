@@ -53,7 +53,7 @@ final class ClassDiagramCommand extends Command
     public function __construct(
         private readonly ClassDiagramRenderer $renderer,
         private readonly GeneratorFactoryInterface $generatorFactory,
-        string $name = null
+        ?string $name = null
     ) {
         parent::__construct($name);
     }
