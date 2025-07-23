@@ -2,7 +2,7 @@
   "Verbose": false,
   "Debug": false,
   "IgnoreDefaults": false,
-  "SpacesAftertabs": false,
+  "SpacesAfterTabs": false,
   "NoColor": false,
   "Exclude": ["\\.idea", "\\.editorconfig", "\\.github", "vendor", "LICENSE", "mkdocs\\.yml", "**/*\\.gv", "**/*\\.puml", "\\.changes"],
   "AllowedContentTypes": [],
