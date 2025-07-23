@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD013 MD024 -->
 # Changes in 4.x
 
-All notable changes of the UmlWriter 3 release series will be documented in this file.
+All notable changes of the UmlWriter 4 release series will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html),
