@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://llaville.github.io/umlwriter/</loc>
+         <loc>https://llaville.github.io/umlwriter/4.3/</loc>
          <lastmod>2025-07-23</lastmod>
     </url>
     <url>
-         <loc>https://llaville.github.io/umlwriter/installation/</loc>
+         <loc>https://llaville.github.io/umlwriter/4.3/installation/</loc>
          <lastmod>2025-07-23</lastmod>
     </url>
     <url>
-         <loc>https://llaville.github.io/umlwriter/01_Features/Configuration/</loc>
+         <loc>https://llaville.github.io/umlwriter/4.3/01_Features/Configuration/</loc>
          <lastmod>2025-07-23</lastmod>
     </url>
     <url>
-         <loc>https://llaville.github.io/umlwriter/01_Features/Services/</loc>
+         <loc>https://llaville.github.io/umlwriter/4.3/01_Features/Services/</loc>
          <lastmod>2025-07-23</lastmod>
     </url>
     <url>
-         <loc>https://llaville.github.io/umlwriter/02_Console_Commands/diagram_class/</loc>
+         <loc>https://llaville.github.io/umlwriter/4.3/02_Console_Commands/diagram_class/</loc>
          <lastmod>2025-07-23</lastmod>
     </url>
     <url>
-         <loc>https://llaville.github.io/umlwriter/03_Cookbook/01_UmlWriter_public_architecture/</loc>
+         <loc>https://llaville.github.io/umlwriter/4.3/03_Cookbook/01_UmlWriter_public_architecture/</loc>
          <lastmod>2025-07-23</lastmod>
     </url>
     <url>
-         <loc>https://llaville.github.io/umlwriter/03_Cookbook/02_UmlWriter_public_methods_only/</loc>
+         <loc>https://llaville.github.io/umlwriter/4.3/03_Cookbook/02_UmlWriter_public_methods_only/</loc>
          <lastmod>2025-07-23</lastmod>
     </url>
     <url>
-         <loc>https://llaville.github.io/umlwriter/03_Cookbook/03_Custom_autoloader/</loc>
+         <loc>https://llaville.github.io/umlwriter/4.3/03_Cookbook/03_Custom_autoloader/</loc>
          <lastmod>2025-07-23</lastmod>
     </url>
     <url>
-         <loc>https://llaville.github.io/umlwriter/90_For_Developers/1_Generators/</loc>
+         <loc>https://llaville.github.io/umlwriter/4.3/90_For_Developers/1_Generators/</loc>
          <lastmod>2025-07-23</lastmod>
     </url>
     <url>
-         <loc>https://llaville.github.io/umlwriter/90_For_Developers/2_Creating_a_Generator/</loc>
+         <loc>https://llaville.github.io/umlwriter/4.3/90_For_Developers/2_Creating_a_Generator/</loc>
          <lastmod>2025-07-23</lastmod>
     </url>
     <url>
-         <loc>https://llaville.github.io/umlwriter/architecture/</loc>
+         <loc>https://llaville.github.io/umlwriter/4.3/architecture/</loc>
          <lastmod>2025-07-23</lastmod>
     </url>
     <url>
-         <loc>https://llaville.github.io/umlwriter/usage/</loc>
+         <loc>https://llaville.github.io/umlwriter/4.3/usage/</loc>
          <lastmod>2025-07-23</lastmod>
     </url>
     <url>
-         <loc>https://llaville.github.io/umlwriter/usage/console/</loc>
+         <loc>https://llaville.github.io/umlwriter/4.3/usage/console/</loc>
          <lastmod>2025-07-23</lastmod>
     </url>
     <url>
-         <loc>https://llaville.github.io/umlwriter/usage/docker/</loc>
+         <loc>https://llaville.github.io/umlwriter/4.3/usage/docker/</loc>
          <lastmod>2025-07-23</lastmod>
     </url>
     <url>
-         <loc>https://llaville.github.io/umlwriter/usage/programmatically/</loc>
+         <loc>https://llaville.github.io/umlwriter/4.3/usage/programmatically/</loc>
          <lastmod>2025-07-23</lastmod>
     </url>
 </urlset>
