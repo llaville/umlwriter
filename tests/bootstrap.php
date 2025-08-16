@@ -20,5 +20,6 @@ $loader->addClassMap(
         'FixtureEight\\OneClass' => __DIR__ . '/fixtures/008_Property.php',
         // Issue(s) resource(s)
         'ltta\\model\\BackupProject' => __DIR__ . '/issues/gh-7.php',
+        'App\\Foo' => __DIR__ . '/issues/when-dot-not-installed.php',
     ]
 );

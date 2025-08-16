@@ -178,23 +178,21 @@ final class ClassDiagramCommand extends Command
 
     private function handleOutput(Graph $graph, GeneratorInterface $generator, ?string $target, ?string $format, SymfonyStyle $io): int
     {
-        if (null === $target && null === $format) {
+        if (null === $target) {
             // do not generate image file
             return 0;
         }
 
         $path = $generator->createImageFile($graph, '');
 
-        if ($target !== null) {
-            if (is_dir($target)) {
-                $target = rtrim($target, '/') . '/umlwriter.' . $format;
-            }
-            if (!@rename($path, $target)) {
-                $io->error(sprintf('Cannot write diagram into %s', $target));
-                return 1;
-            }
-            $path = realpath($target);
+        if (is_dir($target)) {
+            $target = rtrim($target, '/') . '/umlwriter.' . $format;
         }
+        if (!@rename($path, $target)) {
+            $io->error(sprintf('Cannot write diagram into %s', $target));
+            return 1;
+        }
+        $path = realpath($target);
         $io->note(sprintf('Image built into %s', $path));
 
         return 0;
