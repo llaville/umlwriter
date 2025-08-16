@@ -7,11 +7,10 @@
         "fail-on-first-error": false,
         "plugins": [],
         "includes": [
-            ".config/captainhook/pre-push.json",
-            ".config/captainhook/pre-commit.json"
-        ],
-        "custom": {
-            "vendor-bin-dir": "vendor/bin/"
-        }
+            ".config/captainhook/pre-push.phpstan.json",
+            ".config/captainhook/pre-push.phpunit.json",
+            ".config/captainhook/pre-commit.phplint.json",
+            ".config/captainhook/pre-commit.phpcs.json"
+        ]
     }
 }
