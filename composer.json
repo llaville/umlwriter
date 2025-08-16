@@ -11,12 +11,8 @@
     },
     "require": {
         "php": "^8.2",
-        "bartlett/graph-plantuml-generator": "^1.6",
         "bartlett/graph-uml": "^1.6",
         "composer-runtime-api": "^2.0",
-        "cweagans/composer-patches": "^1.7",
-        "graphp/graph": "1.x-dev#0adb04d as 1.0.0",
-        "graphp/graphviz": "1.x-dev#686f747 as 1.0.0",
         "psr/container": "^2.0",
         "roave/better-reflection": "^6.0",
         "symfony/config": "^7.0",
@@ -26,7 +22,6 @@
         "symfony/yaml": "^7.0"
     },
     "require-dev": {
-        "jawira/plantuml": "^1.2025",
         "bamarni/composer-bin-plugin": "^1.8"
     },
     "authors": [
@@ -39,15 +34,13 @@
     "bin": [
         "bin/umlwriter"
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "config": {
         "sort-packages": true,
         "allow-plugins": {
             "bamarni/composer-bin-plugin": true,
             "cweagans/composer-patches": true
-        },
-        "preferred-install": {
-            "graphp/graphviz": "source",
-            "*": "dist"
         }
     },
     "autoload": {
@@ -70,6 +63,9 @@
     },
     "scripts": {
         "bin": "echo 'bin not installed'",
-        "post-autoload-dump": "vendor/bin/captainhook install --configuration=captainhook.json --only-enabled"
+        "post-autoload-dump": [
+            "@composer bin captainhook update",
+            "vendor/bin/captainhook install --configuration=captainhook.json --only-enabled"
+        ]
     }
 }

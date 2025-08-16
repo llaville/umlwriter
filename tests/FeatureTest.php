@@ -13,12 +13,16 @@ use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 use Bartlett\GraphUml\Generator\GeneratorInterface;
 use Bartlett\UmlWriter\Service\ConfigurationHandler;
 
+use Composer\InstalledVersions;
+
 use PHPUnit\Framework\Attributes\DataProvider;
 
 use Symfony\Component\Finder\Finder;
 
 use Generator;
+use LogicException;
 use ReflectionException;
+use function sprintf;
 
 /**
  * @author Laurent Laville
@@ -29,11 +33,21 @@ class FeatureTest extends TestCase
 
     private static function provider(string $name): Generator
     {
-        $generatorFactory = new GeneratorFactory();
-        // creates either instance of:
-        // - Bartlett\GraphUml\GraphVizGenerator
-        // - Bartlett\GraphPlantUml\PlantUmlGenerator
-        $generator = $generatorFactory->createInstance($name);
+        $package = match ($name) {
+            'graphviz' => 'bartlett/graph-uml',
+            'plantuml' => 'bartlett/graph-plantuml-generator',
+            default => throw new LogicException(sprintf('Provider "%s" is not implemented by Tests', $name))
+        };
+
+        if (InstalledVersions::isInstalled($package)) {
+            $generatorFactory = new GeneratorFactory();
+            // creates either instance of:
+            // - Bartlett\GraphUml\GraphVizGenerator
+            // - Bartlett\GraphPlantUml\PlantUmlGenerator
+            $generator = $generatorFactory->createInstance($name);
+        } else {
+            $generator = null;
+        }
 
         $fixtures = new Finder();
         $fixtures->in(self::FIXTURE_DIR)->name('*.php')->sortByName();
@@ -68,8 +82,13 @@ class FeatureTest extends TestCase
      * @throws ReflectionException
      */
     #[DataProvider('graphvizProvider')]
-    public function testGraphvizGenerator(string $fixture, Finder $finder, GeneratorInterface $generator): void
+    public function testGraphvizGenerator(string $fixture, Finder $finder, ?GeneratorInterface $generator): void
     {
+        if (null === $generator) {
+            $provider = 'graphviz';
+            $this->markTestSkipped(sprintf('Provider "%s" is not supported. Additional dependencies need to be installed.', $provider));
+        }
+
         $configHandler = new ConfigurationHandler(null);
         $parameters = $configHandler->toFlat();
         $renderer = new ClassDiagramRenderer();
@@ -89,8 +108,13 @@ class FeatureTest extends TestCase
      * @throws ReflectionException
      */
     #[DataProvider('plantumlProvider')]
-    public function testPlantumlGenerator(string $fixture, Finder $finder, GeneratorInterface $generator): void
+    public function testPlantumlGenerator(string $fixture, Finder $finder, ?GeneratorInterface $generator): void
     {
+        if (null === $generator) {
+            $provider = 'plantuml';
+            $this->markTestSkipped(sprintf('Provider "%s" is not supported. Additional dependencies need to be installed.', $provider));
+        }
+
         $configHandler = new ConfigurationHandler(null);
         $parameters = $configHandler->toFlat();
         $renderer = new ClassDiagramRenderer();

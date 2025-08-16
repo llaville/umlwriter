@@ -11,6 +11,8 @@ use Bartlett\GraphPlantUml\PlantUmlGenerator;
 use Bartlett\GraphUml\Generator\GeneratorInterface;
 use Bartlett\GraphUml\Generator\GraphVizGenerator;
 
+use Composer\InstalledVersions;
+
 use Graphp\GraphViz\GraphViz;
 
 use LogicException;
@@ -24,9 +26,16 @@ class GeneratorFactory implements GeneratorFactoryInterface
 {
     public function createInstance(string $provider, string $format = 'svg', string $executable = ''): GeneratorInterface
     {
+        if (InstalledVersions::isInstalled('bartlett/graph-plantuml-generator')) {
+            return match (strtolower($provider)) {
+                'graphviz' => new GraphVizGenerator(new GraphViz(), 'dot', $format),
+                'plantuml' => new PlantUmlGenerator('vendor/bin/plantuml', $format),    // @phpstan-ignore class.notFound
+                default => throw new LogicException(sprintf('Provider "%s" is not supported', $provider))
+            };
+        }
+
         return match (strtolower($provider)) {
             'graphviz' => new GraphVizGenerator(new GraphViz(), 'dot', $format),
-            'plantuml' => new PlantUmlGenerator('vendor/bin/plantuml', $format),
             default => throw new LogicException(sprintf('Provider "%s" is not supported', $provider))
         };
     }

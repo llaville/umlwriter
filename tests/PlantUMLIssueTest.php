@@ -11,11 +11,15 @@ namespace Bartlett\UmlWriter\Tests;
 use Bartlett\UmlWriter\Generator\GeneratorFactory;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 
+use Composer\InstalledVersions;
+
 use PHPUnit\Framework\Attributes\Group;
 
 use Symfony\Component\Finder\Finder;
 
 use ReflectionException;
+
+use function sprintf;
 
 /**
  * @author Laurent Laville
@@ -34,6 +38,11 @@ class PlantUMLIssueTest extends TestCase
     #[Group('regression')]
     public function testBugGH7(): void
     {
+        $package = 'bartlett/graph-plantuml-generator';
+        if (!InstalledVersions::isInstalled($package)) {
+            $this->markTestSkipped(sprintf('The "%s" package is not installed.', $package));
+        }
+
         $finder = new Finder();
         $finder->in(self::ISSUE_DIR)->name('gh-7.php');
 

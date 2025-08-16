@@ -12,10 +12,14 @@ use Bartlett\UmlWriter\Generator\GeneratorFactory;
 use Bartlett\UmlWriter\Service\ClassDiagramRenderer;
 use Bartlett\GraphUml\Generator\GraphVizGenerator;
 
+use Composer\InstalledVersions;
+
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 
 use Symfony\Component\Finder\Finder;
+
+use function sprintf;
 
 /**
  * @author Laurent Laville
@@ -35,6 +39,11 @@ class GraphVizIssueTest extends TestCase
     #[DataProvider('dpDotExecutable')]
     public function testBugGH32(string $executable, bool $expectedException): void
     {
+        $package = 'bartlett/graph-uml';
+        if (!InstalledVersions::isInstalled($package)) {
+            $this->markTestSkipped(sprintf('The "%s" package is not installed.', $package));
+        }
+
         if ($expectedException) {
             $this->expectExceptionMessage('Unable to invoke "dot" to create image file');
         }
