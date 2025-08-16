@@ -1,0 +1,13 @@
+{
+    "pre-commit": {
+        "enabled": false,
+        "actions": [
+            {
+                "action": "{$ENV|value-of:VENDOR_BIN_DIR|default:vendor/bin/}ecs --config=.github/linters/ecs.php {$STAGED_FILES|of-type:php|separated-by: }",
+                "config": {
+                    "label": "Checks Coding Standard (with ECS)"
+                }
+            }
+        ]
+    }
+}
