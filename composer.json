@@ -65,7 +65,7 @@
         "bamarni-bin": {
             "bin-links": true,
             "target-directory": "vendor-bin",
-            "forward-command": true
+            "forward-command": false
         }
     },
     "scripts": {
