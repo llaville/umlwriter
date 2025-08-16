@@ -1,0 +1,62 @@
+---
+name: Unit Tests
+
+on:
+    workflow_call:
+        # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onworkflow_callinputs
+        inputs:
+            operating-system:
+                description: "OS name and version runtime"
+                required: false
+                default: "ubuntu-latest"
+                type: string
+            composer-options:
+                description: "Composer options for ramsey/composer-install GitHub Action"
+                required: false
+                default: "--prefer-dist --no-scripts"
+                type: string
+
+permissions:
+    contents: read
+
+jobs:
+    unit_tests:
+        runs-on: ${{ matrix.os }}
+
+        strategy:
+            fail-fast: false
+            matrix:
+                os:
+                    - ${{ inputs.operating-system }}
+                php:
+                    - "8.2"
+                    - "8.3"
+                    - "8.4"
+                tools:
+                    - phpunit:11.5
+
+        steps:
+            -   # https://github.com/actions/checkout
+                name: Checkout
+                uses: actions/checkout@v4.3.0
+                with:
+                    # Make sure the value of GITHUB_TOKEN will not be persisted in repo's config
+                    persist-credentials: false
+
+            -   # https://github.com/shivammathur/setup-php
+                name: Setup PHP runtime
+                uses: shivammathur/setup-php@2.35.3
+                with:
+                    php-version: ${{ matrix.php }}
+                    tools: ${{ matrix.tools }}
+
+            -   # https://github.com/ramsey/composer-install
+                name: Install Composer dependencies
+                uses: ramsey/composer-install@3.1.1
+                with:
+                    dependency-versions: "highest"
+                    composer-options: ${{ inputs.composer-options }}
+
+            -   # https://github.com/sebastianbergmann/phpunit
+                name: Unit tests with PHPUnit
+                run: phpunit --testdox --do-not-cache-result --no-progress
