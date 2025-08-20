@@ -10,7 +10,7 @@ on:
             operating-system:
                 description: "OS name and version runtime"
                 required: false
-                default: "ubuntu-latest"
+                default: "ubuntu-22.04"
                 type: string
             php-version:
                 description: "PHP runtime version in format Major.minor"
