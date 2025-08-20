@@ -7,6 +7,7 @@ Here are the links to the documentation for versions of UmlWriter that are still
 - [UmlWriter 4.1](http://llaville.github.io/umlwriter/4.1/)
 - [UmlWriter 4.2](http://llaville.github.io/umlwriter/4.2/)
 - [UmlWriter 4.3](http://llaville.github.io/umlwriter/4.3/)
+- [UmlWriter 4.4](http://llaville.github.io/umlwriter/4.4/)
 
 Full documentation may be found in `docs` folder into this repository, and may be read online without to do anything else.
 
