@@ -14,7 +14,7 @@
 * [graphp/graph](https://github.com/graphp/graph) package from master branch (considered as future stable v1.0.0)
 * [graphp/graphviz](https://github.com/graphp/graphviz) package from master branch (considered as future stable v1.0.0)
 * [bartlett/graph-uml](https://github.com/llaville/graph-uml) Core engine to build UML diagrams in PHP
-* [bartlett/graph-plantuml-generator](https://github.com/llaville/graph-plantuml-generator) A PlantUML generator for graph-uml.
+* [bartlett/graph-plantuml-generator](https://github.com/llaville/graph-plantuml-generator) A PlantUML generator for graph-uml (optional since v4.4)
 * [roave/better-reflection](https://github.com/Roave/BetterReflection) the Reflection API
 
 ## PHAR
@@ -27,7 +27,7 @@ The preferred method of installation is to use the umlWriter PHAR version which 
 Retrieve official image with [Docker][docker]
 
 ```shell
-docker pull ghcr.io/llaville/umlwriter:v4.3
+docker pull ghcr.io/llaville/umlwriter:v4.4
 or
 docker pull ghcr.io/llaville/umlwriter:latest
 ```
@@ -51,7 +51,7 @@ You can also install application locally to your project with [Phive][phive] and
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <phive xmlns="https://phar.io/phive">
-    <phar name="llaville/umlwriter" version="^4.3" copy="false" />
+    <phar name="llaville/umlwriter" version="^4.4" copy="false" />
 </phive>
 ```
 
@@ -65,25 +65,68 @@ The recommended way to install this library is [through composer][composer].
 If you don't know yet what is composer, have a look [on introduction][composer-intro].
 
 ```shell
-composer require bartlett/umlwriter ^4.3
+composer require bartlett/umlwriter ^4.4
 ```
 
 If you cannot install it because of a dependency conflict, or you prefer to install it for your project, we recommend
 you to take a look at [bamarni/composer-bin-plugin][bamarni/composer-bin-plugin]. Example:
 
+### Install the Composer Bin Plugin
+
 ```shell
 composer require --dev bamarni/composer-bin-plugin
-composer bin umlwriter require --dev bartlett/umlwriter
-
-vendor/bin/umlwriter
 ```
+
+And answer YES to question `Do you trust "bamarni/composer-bin-plugin" to execute code and wish to enable it now? (writes "allow-plugins" to composer.json) [y,n,d,?]`
+
+This is equivalent to such `composer.json` contents
+
+```json
+{
+    "require-dev": {
+        "bamarni/composer-bin-plugin": "^1.8"
+    },
+    "config": {
+        "allow-plugins": {
+            "bamarni/composer-bin-plugin": true
+        }
+    }
+}
+```
+
+### Create the `umlwriter` namespace into `vendor-bin` directory (for the Composer Bin Plugin)
+
+```shell
+mkdir -p vendor-bin/umlwriter
+```
+
+### Then add the following `composer.json` file into `vendor-bin/umlwriter`
+
+```json
+{
+    "require-dev": {
+        "bartlett/umlwriter": "^4.4"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "cweagans/composer-patches": true
+        }
+    }
+}
+```
+
+### And finally install the `bartlett\umlwriter` package
+
+run `composer bin umlwriter update`
 
 ## Git
 
 The UmlWriter can be directly used from [GitHub][github-repo] by cloning the repository into a directory of your choice.
 
 ```shell
-git clone -b 4.3 https://github.com/llaville/umlwriter.git
+git clone -b 4.4 https://github.com/llaville/umlwriter.git
 ```
 
 ## Extra resources

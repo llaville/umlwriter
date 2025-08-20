@@ -1,6 +1,6 @@
 ---
 site_name: UMLWriter
-site_url: https://llaville.github.io/umlwriter/4.3
+site_url: https://llaville.github.io/umlwriter/4.4
 repo_url: https://github.com/llaville/umlwriter # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#repository
 site_author: Laurent Laville
 edit_uri: "" # hide edit button -- https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#edit-button
@@ -23,9 +23,30 @@ theme:
         - navigation.tabs # Navigation tabs -- https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-tabs
         - navigation.indexes # Section index pages -- https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#section-index-pages
         - navigation.top # Back-To-Top button -- https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#back-to-top-button
+        - navigation.footer # Setting up the footer -- https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/
+        - content.code.copy # Code copy button -- https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-copy-button
+        - content.code.annotate # Code blocks, Adding annotations -- https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#adding-annotations
 markdown_extensions:
-    - pymdownx.highlight # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#highlight
-    - pymdownx.superfences # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#superfences
+    - attr_list
+    - md_in_html # https://squidfunk.github.io/mkdocs-material/reference/grids/
+    - tables # https://squidfunk.github.io/mkdocs-material/reference/data-tables/
+    - footnotes # https://squidfunk.github.io/mkdocs-material/reference/footnotes/
+    - pymdownx.highlight: # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#highlight
+          anchor_linenums: true
+          line_spans: __span
+          pygments_lang_class: true
+    - pymdownx.snippets
+    - pymdownx.tabbed: # https://squidfunk.github.io/mkdocs-material/reference/content-tabs/#content-tabs
+          alternate_style: true
+    - pymdownx.superfences: # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#superfences
+          custom_fences:
+              - name: mermaid
+                class: mermaid
+                format: !!python/name:pymdownx.superfences.fence_code_format
+    - pymdownx.emoji: # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#emoji
+          emoji_index: !!python/name:material.extensions.emoji.twemoji
+          emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    - github-callouts
 nav:
     - "Home": README.md
     - "Installation": installation.md
