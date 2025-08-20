@@ -3,7 +3,7 @@ ARG PHP_VERSION=8.2
 
 FROM php:${PHP_VERSION}-cli-alpine
 
-ARG PACKAGE_CONSTRAINT=4.3.x-dev
+ARG PACKAGE_CONSTRAINT=4.4.x-dev
 
 # https://github.com/opencontainers/image-spec/blob/main/annotations.md
 
