@@ -1,11 +1,26 @@
 {
     "pre-commit": {
-        "enabled": false,
+        "enabled": true,
         "actions": [
             {
-                "action": "{$ENV|value-of:VENDOR_BIN_DIR|default:vendor/bin/}ecs --config=.github/linters/ecs.php {$STAGED_FILES|of-type:php|separated-by: }",
+                "action": [
+                    "{$ENV|value-of:XDG_BIN_HOME}ecs",
+                    "check",
+                    "--config={$ENV|value-of:XDG_CONFIG_HOME|cache:false}",
+                    "--no-diffs",
+                    "--no-progress-bar",
+                    "{$CONFIG|value-of:plugin>>\\Bartlett\\CaptainHookBinPlugin\\BinPlugin.ansi-colors-flag}",
+                    "{$STAGED_FILES|of-type:php|separated-by: }"
+                ],
                 "config": {
                     "label": "Checks Coding Standard (with ECS)"
+                },
+                "options": {
+                    "config-file": "ecs.php",
+                    "package-require": [
+                        "symplify/easy-coding-standard",
+                        "^12.3.1 || ^13.0"
+                    ]
                 }
             }
         ]

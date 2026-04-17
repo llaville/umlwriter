@@ -1,11 +1,24 @@
 {
     "pre-push": {
-        "enabled": true,
+        "enabled": false,
         "actions": [
             {
-                "action": "{$ENV|value-of:VENDOR_BIN_DIR|default:vendor/bin/}phpunit --configuration phpunit.xml.dist",
+                "action": [
+                    "{$ENV|value-of:XDG_BIN_HOME}phpunit",
+                    "--config {$ENV|value-of:XDG_CONFIG_HOME|cache:false|default:./phpunit.xml.dist}",
+                    "--do-not-fail-on-phpunit-warning",
+                    "--no-progress",
+                    "{$CONFIG|value-of:plugin>>\\Bartlett\\CaptainHookBinPlugin\\BinPlugin.always-colors-flag}"
+                ],
                 "config": {
                     "label": "Unit Tests (with PHPUnit)"
+                },
+                "options": {
+                    "config-file": "phpunit.xml.dist",
+                    "package-require": [
+                        "phpunit/phpunit",
+                        "^10.5 || ^11.5 || ^12.5 || ^13.0"
+                    ]
                 }
             }
         ]
