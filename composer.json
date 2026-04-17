@@ -11,7 +11,7 @@
     },
     "require": {
         "php": "^8.2",
-        "bartlett/graph-uml": "^1.6",
+        "bartlett/graph-uml": "^1.7",
         "composer-runtime-api": "^2.0",
         "psr/container": "^2.0",
         "roave/better-reflection": "^6.0",
