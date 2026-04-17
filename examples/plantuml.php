@@ -74,4 +74,4 @@ $target = rtrim($folder, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $example .
 if (!rename($from, $target)) {
     $target = null;
 }
-echo (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;
+echo "[info] " . (empty($target) ? 'no' : $target) . ' file generated' . PHP_EOL;
