@@ -34,9 +34,9 @@
 
 [Branch_44x-img]: https://img.shields.io/badge/branch-4.4-orange
 [Branch_44x]: https://github.com/llaville/umlwriter/tree/4.4
-[PHPVersion_44x-img]: https://img.shields.io/packagist/php-v/bartlett/umlwriter/4.4.0
+[PHPVersion_44x-img]: https://img.shields.io/packagist/php-v/bartlett/umlwriter/4.4.1
 [PHPVersion_44x]: https://www.php.net/supported-versions.php
-[Packagist_44x-img]: https://img.shields.io/badge/packagist-v4.4.0-blue
+[Packagist_44x-img]: https://img.shields.io/badge/packagist-v4.4.1-blue
 [Packagist_44x]: https://packagist.org/packages/bartlett/umlwriter
 [License_44x-img]: https://img.shields.io/packagist/l/bartlett/umlwriter
 [License_44x]: https://github.com/llaville/umlwriter/blob/4.4/LICENSE
