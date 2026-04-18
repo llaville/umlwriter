@@ -115,7 +115,7 @@ final class Application extends SymfonyApplication
         return new ContainerCommandLoader(
             $container,
             [
-                ClassDiagramCommand::getDefaultName() => ClassDiagramCommand::class,
+                ClassDiagramCommand::NAME => ClassDiagramCommand::class,
             ]
         );
     }

@@ -47,9 +47,11 @@ use const ARRAY_FILTER_USE_KEY;
 /**
  * @author Laurent Laville
  */
-#[AsCommand(name: 'diagram:class')]
+#[AsCommand(name: ClassDiagramCommand::NAME)]
 final class ClassDiagramCommand extends Command
 {
+    public const NAME = 'diagram:class';
+
     public function __construct(
         private readonly ClassDiagramRenderer $renderer,
         private readonly GeneratorFactoryInterface $generatorFactory,
