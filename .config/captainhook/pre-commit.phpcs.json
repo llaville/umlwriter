@@ -5,7 +5,7 @@
             {
                 "action": [
                     "{$ENV|value-of:XDG_BIN_HOME}phpcs",
-                    "--standard={$ENV|value-of:XDG_CONFIG_HOME|cache:false}",
+                    "--standard={$ENV|value-of:\\Bartlett\\CaptainHookBinPlugin\\BinPlugin.config-file|cache:false}",
                     "--warning-severity=0",
                     "--colors",
                     "{$STAGED_FILES|of-type:php|separated-by: }"
@@ -14,7 +14,7 @@
                     "label": "Checks Coding Standard (with PHP_CodeSniffer)"
                 },
                 "options": {
-                    "config-file": ".phpcs.xml.dist",
+                    "config-file": "{$ENV|value-of:XDG_CONFIG_HOME}/.phpcs.xml.dist",
                     "package-require": [
                         "squizlabs/php_codesniffer",
                         "^3.3 || ^4.0"

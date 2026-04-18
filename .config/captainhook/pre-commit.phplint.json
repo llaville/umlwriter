@@ -5,16 +5,17 @@
             {
                 "action": [
                     "{$ENV|value-of:XDG_BIN_HOME}phplint",
-                    "--configuration={$ENV|value-of:XDG_CONFIG_HOME|cache:false}",
+                    "--configuration={$ENV|value-of:\\Bartlett\\CaptainHookBinPlugin\\BinPlugin.config-file|cache:false}",
                     "--no-progress",
-                    "{$CONFIG|value-of:plugin>>\\Bartlett\\CaptainHookBinPlugin\\BinPlugin.ansi-colors-flag}",
+                    "{$ENV|value-of:\\Bartlett\\CaptainHookBinPlugin\\BinPlugin.colors-flag|cache:false}",
                     "{$STAGED_FILES|of-type:php|separated-by: }"
                 ],
                 "config": {
                     "label": "Lint Files (with PHPLint)"
                 },
                 "options": {
-                    "config-file": ".phplint.yml",
+                    "colors": "ansi",
+                    "config-file": "{$ENV|value-of:XDG_CONFIG_HOME}/.phplint.yml",
                     "package-require": [
                         "overtrue/phplint",
                         "^9.7"

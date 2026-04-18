@@ -21,10 +21,11 @@
             }
         ],
         "includes": [
-            ".config/captainhook/pre-push.phpstan.json",
-            ".config/captainhook/pre-push.phpunit.json",
+            ".config/captainhook/pre-commit.ecs.json",
+            ".config/captainhook/pre-commit.phpcs.json",
             ".config/captainhook/pre-commit.phplint.json",
-            ".config/captainhook/pre-commit.phpcs.json"
+            ".config/captainhook/pre-push.phpstan.json",
+            ".config/captainhook/pre-push.phpunit.json"
         ]
     }
 }

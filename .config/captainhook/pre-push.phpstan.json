@@ -6,15 +6,16 @@
                 "action": [
                     "{$ENV|value-of:XDG_BIN_HOME}phpstan",
                     "analyse",
-                    "--configuration={$ENV|value-of:XDG_CONFIG_HOME|cache:false}",
+                    "--configuration={$ENV|value-of:\\Bartlett\\CaptainHookBinPlugin\\BinPlugin.config-file|cache:false}",
                     "--verbose",
-                    "{$CONFIG|value-of:plugin>>\\Bartlett\\CaptainHookBinPlugin\\BinPlugin.ansi-colors-flag}"
+                    "{$ENV|value-of:\\Bartlett\\CaptainHookBinPlugin\\BinPlugin.colors-flag|cache:false}"
                 ],
                 "config": {
                     "label": "Static Analysis (with PHPStan)"
                 },
                 "options": {
-                    "config-file": "phpstan.neon.dist",
+                    "colors": "ansi",
+                    "config-file": "{$ENV|value-of:XDG_CONFIG_HOME}/phpstan.neon.dist",
                     "package-require": [
                         "phpstan/phpstan",
                         "^2.0"

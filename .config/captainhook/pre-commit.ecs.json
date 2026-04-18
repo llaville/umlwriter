@@ -1,22 +1,23 @@
 {
     "pre-commit": {
-        "enabled": true,
+        "enabled": false,
         "actions": [
             {
                 "action": [
                     "{$ENV|value-of:XDG_BIN_HOME}ecs",
                     "check",
-                    "--config={$ENV|value-of:XDG_CONFIG_HOME|cache:false}",
+                    "--config={$ENV|value-of:\\Bartlett\\CaptainHookBinPlugin\\BinPlugin.config-file|cache:false}",
                     "--no-diffs",
                     "--no-progress-bar",
-                    "{$CONFIG|value-of:plugin>>\\Bartlett\\CaptainHookBinPlugin\\BinPlugin.ansi-colors-flag}",
+                    "{$ENV|value-of:\\Bartlett\\CaptainHookBinPlugin\\BinPlugin.colors-flag|cache:false}",
                     "{$STAGED_FILES|of-type:php|separated-by: }"
                 ],
                 "config": {
                     "label": "Checks Coding Standard (with ECS)"
                 },
                 "options": {
-                    "config-file": "ecs.php",
+                    "colors": "ansi",
+                    "config-file": "{$ENV|value-of:XDG_CONFIG_HOME}/ecs.php",
                     "package-require": [
                         "symplify/easy-coding-standard",
                         "^12.3.1 || ^13.0"
