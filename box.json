@@ -8,5 +8,6 @@
     "compression": "GZ",
     "files": [
         "autoload.php"
-    ]
+    ],
+    "dump-autoload": false
 }

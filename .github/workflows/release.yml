@@ -29,12 +29,12 @@ on:
                 # https://github.com/llaville/box-manifest
                 description: "BOX Manifest runtime version in semver format"
                 required: false
-                default: "4.2.0"
+                default: "4.4.0"
                 type: string
             box-manifest-options:
                 description: "Additional options to pass to BOX Manifest (e.g. `--bootstrap bootstrap.php -r plain.txt -r sbom.json`)"
                 required: false
-                default: "-r console-table.txt -r plain.txt -r sbom.json"
+                default: "-r console-table.txt -r plain.txt -r sbom.json -r pkg.composer.txt"
                 type: string
             tag-name:
                 description: "New Release Tag"
