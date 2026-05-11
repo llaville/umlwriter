@@ -1,5 +1,5 @@
 {
     "require-dev": {
-        "symplify/easy-coding-standard": "^12.3.1 || ^13.0"
+        "symplify/easy-coding-standard": "^13.0"
     }
 }
