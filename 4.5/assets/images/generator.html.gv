@@ -1,0 +1,90 @@
+digraph {
+  graph [name="G" overlap="false" rankdir="TB" bgcolor="transparent"]
+  node [fontname="Verdana" fontsize=8 shape="none" margin=0 fillcolor="#FEFECE" style="filled"]
+  edge [fontname="Verdana" fontsize=8]
+  subgraph cluster_0 {
+    graph [bgcolor="LightSkyBlue"]
+    label = "Name\\Space"
+    "Name\\Space\\MyGeneratorFactory" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>MyGeneratorFactory</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ createInstance(provider : string, format : string = 'svg', executable : string = '') : Bartlett\\GraphUml\\Generator\\GeneratorInterface</td></tr>
+</table></td></tr>
+</table>>]
+    "Name\\Space\\MyGenerator" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>MyGenerator</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getFormatter() : Bartlett\\GraphUml\\Formatter\\FormatterInterface</td></tr>
+    <tr><td align="left">+ getName() : string</td></tr>
+    <tr><td align="left">+ createScript(graph : Graphp\\Graph\\Graph) : string</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_1 {
+    label = "Bartlett\\UmlWriter\\Generator"
+    "Bartlett\\UmlWriter\\Generator\\GeneratorFactory" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>GeneratorFactory</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ createInstance(provider : string, format : string = 'svg', executable : string = '') : Bartlett\\GraphUml\\Generator\\GeneratorInterface</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\UmlWriter\\Generator\\GeneratorFactoryInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>GeneratorFactoryInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» createInstance(provider : string, format : string, executable : string) : Bartlett\\GraphUml\\Generator\\GeneratorInterface</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_2 {
+    label = "Bartlett\\GraphUml\\Generator"
+    "Bartlett\\GraphUml\\Generator\\AbstractGenerator" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>AbstractGenerator</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» CMD_EXECUTABLE : string = "\%E" {readOnly}</td></tr>
+    <tr><td align="left">+ «static» CMD_FORMAT : string = "\%F" {readOnly}</td></tr>
+    <tr><td align="left">+ «static» CMD_OUTPUT_FILE : string = "\%o" {readOnly}</td></tr>
+    <tr><td align="left">+ «static» CMD_TEMP_FILE : string = "\%t" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(executable : string, format : string)</td></tr>
+    <tr><td align="left">+ setOptions(values : array) : void</td></tr>
+    <tr><td align="left">+ «abstract» getFormatter() : Bartlett\\GraphUml\\Formatter\\FormatterInterface</td></tr>
+    <tr><td align="left">+ «abstract» getName() : string</td></tr>
+    <tr><td align="left">+ getPrefix() : string</td></tr>
+    <tr><td align="left">+ getLabelClass(reflection : ReflectionClass) : string</td></tr>
+    <tr><td align="left">+ getLabelExtension(reflection : ReflectionExtension) : string</td></tr>
+    <tr><td align="left">+ «abstract» createScript(graph : Graphp\\Graph\\Graph) : string</td></tr>
+    <tr><td align="left">+ createImageFile(graph : Graphp\\Graph\\Graph, cmdFormat : string) : string</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\GraphUml\\Generator\\GeneratorInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>GeneratorInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» setOptions(values : array) : void</td></tr>
+    <tr><td align="left">+ «abstract» getFormatter() : Bartlett\\GraphUml\\Formatter\\FormatterInterface</td></tr>
+    <tr><td align="left">+ «abstract» getName() : string</td></tr>
+    <tr><td align="left">+ «abstract» getPrefix() : string</td></tr>
+    <tr><td align="left">+ «abstract» getLabelClass(reflection : ReflectionClass) : string</td></tr>
+    <tr><td align="left">+ «abstract» getLabelExtension(reflection : ReflectionExtension) : string</td></tr>
+    <tr><td align="left">+ «abstract» createScript(graph : Graphp\\Graph\\Graph) : string</td></tr>
+    <tr><td align="left">+ «abstract» createImageFile(graph : Graphp\\Graph\\Graph, cmdFormat : string) : string</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  "Bartlett\\UmlWriter\\Generator\\GeneratorFactory" -> "Bartlett\\UmlWriter\\Generator\\GeneratorFactoryInterface" [arrowhead="empty" style="dashed"]
+  "Name\\Space\\MyGeneratorFactory" -> "Bartlett\\UmlWriter\\Generator\\GeneratorFactory" [arrowhead="empty" style="filled"]
+  "Name\\Space\\MyGenerator" -> "Bartlett\\GraphUml\\Generator\\AbstractGenerator" [arrowhead="empty" style="filled"]
+  "Name\\Space\\MyGenerator" -> "Bartlett\\GraphUml\\Generator\\GeneratorInterface" [arrowhead="empty" style="dashed"]
+}

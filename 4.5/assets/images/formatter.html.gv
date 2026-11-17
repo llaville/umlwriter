@@ -1,0 +1,98 @@
+digraph {
+  graph [name="G" overlap="false" rankdir="TB" bgcolor="transparent"]
+  node [fontname="Verdana" fontsize=8 shape="none" margin=0 fillcolor="#FEFECE" style="filled"]
+  edge [fontname="Verdana" fontsize=8]
+  subgraph cluster_0 {
+    graph [bgcolor="LightSkyBlue"]
+    label = "Bartlett\\GraphUml\\Formatter"
+    "Bartlett\\GraphUml\\Formatter\\AbstractFormatter" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«abstract»<br/>AbstractFormatter</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» EOL : string = "\\n" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(options : array)</td></tr>
+    <tr><td align="left">+ getFormat() : string</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\GraphUml\\Formatter\\FormatterInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>FormatterInterface</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» getFormat() : string</td></tr>
+    <tr><td align="left">+ «abstract» getLabelExtension(reflection : ReflectionExtension) : string</td></tr>
+    <tr><td align="left">+ «abstract» getLabelClass(reflection : ReflectionClass) : string</td></tr>
+    <tr><td align="left">+ «abstract» getLabelConstants(reflection) : string</td></tr>
+    <tr><td align="left">+ «abstract» getLabelProperties(reflection : ReflectionClass) : string</td></tr>
+    <tr><td align="left">+ «abstract» getLabelFunctions(functions : array, class : string = '') : string</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\GraphUml\\Formatter\\HtmlFormatter" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>HtmlFormatter</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» DEFAULT_ROW_FORMAT : string = "\ \ \ \ \&lt;tr\&gt;\&lt;td\ align\=\&quot;left\&quot;\&gt;\%s\&lt;\/td\&gt;\&lt;\/tr\&gt;" {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(options : array)</td></tr>
+    <tr><td align="left">+ getLabelExtension(reflection : ReflectionExtension) : string</td></tr>
+    <tr><td align="left">+ getLabelClass(reflection : ReflectionClass) : string</td></tr>
+    <tr><td align="left">+ getLabelConstants(reflection) : string</td></tr>
+    <tr><td align="left">+ getLabelProperties(reflection : ReflectionClass) : string</td></tr>
+    <tr><td align="left">+ getLabelFunctions(functions : array, class : string = '') : string</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\GraphUml\\Formatter\\RecordFormatter" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>RecordFormatter</b></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ getLabelExtension(reflection : ReflectionExtension) : string</td></tr>
+    <tr><td align="left">+ getLabelClass(reflection : ReflectionClass) : string</td></tr>
+    <tr><td align="left">+ getLabelProperties(reflection : ReflectionClass) : string</td></tr>
+    <tr><td align="left">+ getLabelConstants(reflection) : string</td></tr>
+    <tr><td align="left">+ getLabelFunctions(functions : array, class : string = '') : string</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  subgraph cluster_1 {
+    graph [bgcolor="BurlyWood"]
+    label = "Bartlett\\GraphUml"
+    "Bartlett\\GraphUml\\ClassDiagramBuilder" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b><br/>ClassDiagramBuilder</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» OPTIONS_DEFAULTS : array = […] {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ __construct(generator : Bartlett\\GraphUml\\Generator\\GeneratorInterface, graph : Graphp\\Graph\\Graph, options : array = [])</td></tr>
+    <tr><td align="left">+ createVertexClass(source, attributes : array = []) : Graphp\\Graph\\Vertex</td></tr>
+    <tr><td align="left">+ createVertexExtension(source, attributes : array = []) : Graphp\\Graph\\Vertex</td></tr>
+    <tr><td align="left">+ createVerticesFromCallable(callback : callable, vertices : Generator) : void</td></tr>
+</table></td></tr>
+</table>>]
+    "Bartlett\\GraphUml\\ClassDiagramBuilderInterface" [shape="none" label=<
+<table cellspacing="0" border="0" cellborder="1">
+    <tr><td bgcolor="#eeeeee"><b>«interface»<br/>ClassDiagramBuilderInterface</b></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «static» OPTIONS_DEFAULTS : array = […] {readOnly}</td></tr>
+</table></td></tr>
+    <tr><td></td></tr>
+    <tr><td><table border="0" cellspacing="0" cellpadding="2">
+    <tr><td align="left">+ «abstract» createVertexClass(source : mixed, attributes : array = []) : Graphp\\Graph\\Vertex</td></tr>
+    <tr><td align="left">+ «abstract» createVertexExtension(source, attributes : array = []) : Graphp\\Graph\\Vertex</td></tr>
+    <tr><td align="left">+ «abstract» createVerticesFromCallable(callback : callable, vertices : Generator) : void</td></tr>
+</table></td></tr>
+</table>>]
+  }
+  "Bartlett\\GraphUml\\Formatter\\HtmlFormatter" -> "Bartlett\\GraphUml\\Formatter\\AbstractFormatter" [arrowhead="empty" style="filled"]
+  "Bartlett\\GraphUml\\Formatter\\HtmlFormatter" -> "Bartlett\\GraphUml\\Formatter\\FormatterInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\GraphUml\\Formatter\\RecordFormatter" -> "Bartlett\\GraphUml\\Formatter\\AbstractFormatter" [arrowhead="empty" style="filled"]
+  "Bartlett\\GraphUml\\Formatter\\RecordFormatter" -> "Bartlett\\GraphUml\\Formatter\\FormatterInterface" [arrowhead="empty" style="dashed"]
+  "Bartlett\\GraphUml\\ClassDiagramBuilder" -> "Bartlett\\GraphUml\\ClassDiagramBuilderInterface" [arrowhead="empty" style="dashed"]
+}
