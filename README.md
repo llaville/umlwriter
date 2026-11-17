@@ -9,6 +9,7 @@
 | Stable v4.2.x | [![Branch 4.2][Branch_42x-img]][Branch_42x] | [![Minimum PHP Version)][PHPVersion_42x-img]][PHPVersion_42x] | [![Stable Version 4.2][Packagist_42x-img]][Packagist_42x] | [![License 4.2][License_42x-img]][License_42x] | [![Documentation 4.2][Documentation_42x-img]][Documentation_42x] |
 | Stable v4.3.x | [![Branch 4.3][Branch_43x-img]][Branch_43x] | [![Minimum PHP Version)][PHPVersion_43x-img]][PHPVersion_43x] | [![Stable Version 4.3][Packagist_43x-img]][Packagist_43x] | [![License 4.3][License_43x-img]][License_43x] | [![Documentation 4.3][Documentation_43x-img]][Documentation_43x] |
 | Stable v4.4.x | [![Branch 4.4][Branch_44x-img]][Branch_44x] | [![Minimum PHP Version)][PHPVersion_44x-img]][PHPVersion_44x] | [![Stable Version 4.4][Packagist_44x-img]][Packagist_44x] | [![License 4.4][License_44x-img]][License_44x] | [![Documentation 4.4][Documentation_44x-img]][Documentation_44x] |
+| Stable v4.5.x | [![Branch 4.5][Branch_45x-img]][Branch_45x] | [![Minimum PHP Version)][PHPVersion_45x-img]][PHPVersion_45x] | [![Stable Version 4.5][Packagist_45x-img]][Packagist_45x] | [![License 4.5][License_45x-img]][License_45x] | [![Documentation 4.5][Documentation_45x-img]][Documentation_45x] |
 
 [Branch_42x-img]: https://img.shields.io/badge/branch-4.2-orange
 [Branch_42x]: https://github.com/llaville/umlwriter/tree/4.2
@@ -43,12 +44,23 @@
 [Documentation_44x-img]: https://img.shields.io/badge/documentation-v4.4-green
 [Documentation_44x]: https://github.com/llaville/umlwriter/tree/4.4/docs
 
+[Branch_45x-img]: https://img.shields.io/badge/branch-4.5-orange
+[Branch_45x]: https://github.com/llaville/umlwriter/tree/4.5
+[PHPVersion_45x-img]: https://img.shields.io/packagist/php-v/bartlett/umlwriter/4.5.0
+[PHPVersion_45x]: https://www.php.net/supported-versions.php
+[Packagist_45x-img]: https://img.shields.io/badge/packagist-v4.5.0-blue
+[Packagist_45x]: https://packagist.org/packages/bartlett/umlwriter
+[License_45x-img]: https://img.shields.io/packagist/l/bartlett/umlwriter
+[License_45x]: https://github.com/llaville/umlwriter/blob/4.5/LICENSE
+[Documentation_45x-img]: https://img.shields.io/badge/documentation-v4.5-green
+[Documentation_45x]: https://github.com/llaville/umlwriter/tree/4.5/docs
+
 **UmlWriter** is a library that adds the ability to generate UML class diagrams.
 
 ## Documentation
 
-All the documentation is available on [website](https://llaville.github.io/umlwriter/4.4),
-generated from the [docs](https://github.com/llaville/umlwriter/tree/4.4/docs) folder.
+All the documentation is available on [website](https://llaville.github.io/umlwriter/4.5),
+generated from the [docs](https://github.com/llaville/umlwriter/tree/4.5/docs) folder.
 
 ## Usage
 
