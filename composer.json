@@ -10,7 +10,7 @@
         "issues": "https://github.com/llaville/umlwriter/issues"
     },
     "require": {
-        "php": "^8.2",
+        "php": "8.3 - 8.5",
         "bartlett/graph-uml": "^1.7",
         "composer-runtime-api": "^2.0",
         "psr/container": "^2.0",

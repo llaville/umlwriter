@@ -10,7 +10,7 @@
 
 ## Requirements
 
-* PHP 8.2 or greater
+* PHP 8.3 or greater
 * [graphp/graph](https://github.com/graphp/graph) package from master branch (considered as future stable v1.0.0)
 * [graphp/graphviz](https://github.com/graphp/graphviz) package from master branch (considered as future stable v1.0.0)
 * [bartlett/graph-uml](https://github.com/llaville/graph-uml) Core engine to build UML diagrams in PHP
