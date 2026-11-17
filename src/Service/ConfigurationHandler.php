@@ -110,6 +110,9 @@ final class ConfigurationHandler
                 $this->filename = $fileLocator->locate($resource);
                 $loaderResolver = new LoaderResolver([new YamlFileLoader($fileLocator)]);
                 $loader = $loaderResolver->resolve($resource);
+                if (!$loader) {
+                    throw new InvalidArgumentException("Unable to locate resource '{$resource}'");
+                }
                 $configs = $loader->load($this->filename);
                 $options = $configs['parameters'];
             } catch (FileLocatorFileNotFoundException $exception) {
