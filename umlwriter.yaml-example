@@ -1,0 +1,44 @@
+#
+# Attributes to configure graph (node, edge, cluster):
+# - https://graphviz.gitlab.io/_pages/doc/info/attrs.html
+# - https://graphviz.gitlab.io/_pages/doc/info/colors.html
+# - https://plantuml.com/en/color
+#
+# Specify data source(s)
+#
+# And choose what to show (constants, properties, methods)
+#
+parameters:
+    generator: graphviz
+
+    graph:
+        name: G
+        overlap: 'false'
+        rankdir: LR
+        bgcolor: transparent
+
+    node:
+        fillcolor: '#FEFECE'
+        style: filled
+
+    edge: ~
+
+    cluster:
+        Bartlett\UmlWriter\Console:
+            graph:
+                bgcolor: BurlyWood
+        Symfony\Component\Console:
+            graph:
+                bgcolor: LightSteelBlue
+        Symfony\Contracts\Service:
+            graph:
+                bgcolor: LightSteelBlue
+
+    paths:
+        - src/
+
+    show_constants: true
+    show_properties: true
+    show_methods: true
+    show_private: false
+    show_protected: false

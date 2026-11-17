@@ -53,6 +53,9 @@ final class YamlFileLoader extends FileLoader
     public function supports($resource, ?string $type = null): bool
     {
         return is_string($resource)
-            && in_array(pathinfo($resource, PATHINFO_EXTENSION), ['yml', 'yaml']);
+            && in_array(
+                pathinfo($resource, PATHINFO_EXTENSION),
+                ['yml', 'yaml', 'yaml-example']
+            );
     }
 }
