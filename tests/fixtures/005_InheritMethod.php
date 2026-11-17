@@ -1,4 +1,5 @@
 <?php
+
 namespace FixtureFive;
 
 class ParentClass

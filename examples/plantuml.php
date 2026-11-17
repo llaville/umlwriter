@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Examples of PlantUML UML class diagrams
  *

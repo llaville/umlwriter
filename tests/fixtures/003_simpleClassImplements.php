@@ -1,4 +1,5 @@
 <?php
+
 namespace FixtureThree;
 
 interface OneInterface

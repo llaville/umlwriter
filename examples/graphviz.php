@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Examples of Graphviz UML class diagrams
  *

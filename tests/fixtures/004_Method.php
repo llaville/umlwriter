@@ -1,4 +1,5 @@
 <?php
+
 namespace FixtureFour;
 
 class OneClass
