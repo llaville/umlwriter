@@ -86,7 +86,7 @@ This is equivalent to such `composer.json` contents
 ```json
 {
     "require-dev": {
-        "bamarni/composer-bin-plugin": "^1.8"
+        "bamarni/composer-bin-plugin": "^1.9"
     },
     "config": {
         "allow-plugins": {
