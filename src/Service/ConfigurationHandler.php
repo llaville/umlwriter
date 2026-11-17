@@ -18,6 +18,7 @@ use Symfony\Component\Config\Loader\LoaderResolver;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use InvalidArgumentException;
+
 use function array_key_exists;
 use function basename;
 use function dirname;

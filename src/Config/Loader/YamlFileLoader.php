@@ -14,11 +14,13 @@ use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Yaml;
 
 use InvalidArgumentException;
+
 use function in_array;
 use function is_array;
 use function is_string;
 use function pathinfo;
 use function sprintf;
+
 use const PATHINFO_EXTENSION;
 
 /**

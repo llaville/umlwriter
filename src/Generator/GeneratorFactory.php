@@ -18,6 +18,7 @@ use Composer\InstalledVersions;
 use Graphp\GraphViz\GraphViz;
 
 use LogicException;
+
 use function sprintf;
 use function strtolower;
 

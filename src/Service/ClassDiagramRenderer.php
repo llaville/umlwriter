@@ -24,6 +24,7 @@ use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 
 use ReflectionException;
+
 use function array_filter;
 use function array_merge;
 use function array_unique;

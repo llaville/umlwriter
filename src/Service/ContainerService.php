@@ -21,6 +21,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 use RuntimeException;
+
 use function array_key_exists;
 use function call_user_func;
 use function sprintf;
