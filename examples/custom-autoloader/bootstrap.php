@@ -20,6 +20,6 @@ return function (): void {
         [
             'Name\\Space\\Foo' => __DIR__ . '/reflection-properties.php',
             'Name\\Space\\Bar' => __DIR__ . '/reflection-properties.php',
-        ]
+        ],
     );
 };

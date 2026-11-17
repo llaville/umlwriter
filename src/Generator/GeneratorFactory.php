@@ -7,6 +7,7 @@ declare(strict_types=1);
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace Bartlett\UmlWriter\Generator;
 
 use Bartlett\GraphPlantUml\PlantUmlGenerator;
@@ -33,13 +34,13 @@ class GeneratorFactory implements GeneratorFactoryInterface
             return match (strtolower($provider)) {
                 'graphviz' => new GraphVizGenerator(new GraphViz(), 'dot', $format),
                 'plantuml' => new PlantUmlGenerator('vendor/bin/plantuml', $format),    // @phpstan-ignore class.notFound
-                default => throw new LogicException(sprintf('Provider "%s" is not supported', $provider))
+                default => throw new LogicException(sprintf('Provider "%s" is not supported', $provider)),
             };
         }
 
         return match (strtolower($provider)) {
             'graphviz' => new GraphVizGenerator(new GraphViz(), 'dot', $format),
-            default => throw new LogicException(sprintf('Provider "%s" is not supported', $provider))
+            default => throw new LogicException(sprintf('Provider "%s" is not supported', $provider)),
         };
     }
 }

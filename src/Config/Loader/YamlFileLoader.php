@@ -7,6 +7,7 @@ declare(strict_types=1);
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace Bartlett\UmlWriter\Config\Loader;
 
 use Symfony\Component\Config\Loader\FileLoader;
@@ -40,7 +41,7 @@ final class YamlFileLoader extends FileLoader
             throw new InvalidArgumentException(
                 sprintf('The file "%s" does not contain valid YAML: ', $resource) . $e->getMessage(),
                 0,
-                $e
+                $e,
             );
         }
 
@@ -59,7 +60,7 @@ final class YamlFileLoader extends FileLoader
         return is_string($resource)
             && in_array(
                 pathinfo($resource, PATHINFO_EXTENSION),
-                ['yml', 'yaml', 'yaml-example']
+                ['yml', 'yaml', 'yaml-example'],
             );
     }
 }

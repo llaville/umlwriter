@@ -20,6 +20,6 @@ return function (): void {
         [
             'Name\\Space\\MyGenerator' => __DIR__ . '/my-generator.php',
             'Name\\Space\\MyGeneratorFactory' => __DIR__ . '/my-generator-factory.php',
-        ]
+        ],
     );
 };

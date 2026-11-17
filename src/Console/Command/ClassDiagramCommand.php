@@ -7,6 +7,7 @@ declare(strict_types=1);
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace Bartlett\UmlWriter\Console\Command;
 
 use Bartlett\GraphUml\Generator\GeneratorInterface;
@@ -59,7 +60,7 @@ final class ClassDiagramCommand extends Command
     public function __construct(
         private readonly ClassDiagramRenderer $renderer,
         private readonly GeneratorFactoryInterface $generatorFactory,
-        ?string $name = null
+        ?string $name = null,
     ) {
         parent::__construct($name);
     }
@@ -106,7 +107,7 @@ final class ClassDiagramCommand extends Command
             $generator = $this->generatorFactory->createInstance(
                 $parameters['generator'],
                 $parameters['format'],
-                $parameters['executable']
+                $parameters['executable'],
             );
         } catch (Throwable $e) {
             $io->error($e->getMessage());
@@ -119,7 +120,7 @@ final class ClassDiagramCommand extends Command
         $io->definitionList(
             ['Path(s)' => implode(', ', $paths)],
             ['Generator' => $parameters['generator']],
-            ['Configuration' => $parameters['__from'] ?? '']
+            ['Configuration' => $parameters['__from'] ?? ''],
         );
         unset($parameters['__from']);
 
@@ -156,26 +157,26 @@ final class ClassDiagramCommand extends Command
         });
         $io->horizontalTable(
             array_keys($parameters),
-            [array_values($parameters)]
+            [array_values($parameters)],
         );
 
         $io->section('Entities summary');
 
         $metaData = $this->renderer->getMetadata();
         $io->definitionList(
-            ['classes' => count($metaData['classes'])]
+            ['classes' => count($metaData['classes'])],
         );
         if ($output->isVeryVerbose()) {
             $io->comment($metaData['classes']);
         }
         $io->definitionList(
-            ['interfaces' => count($metaData['interfaces'])]
+            ['interfaces' => count($metaData['interfaces'])],
         );
         if ($output->isVeryVerbose()) {
             $io->comment($metaData['interfaces']);
         }
         $io->definitionList(
-            ['namespaces' => count($metaData['namespaces'])]
+            ['namespaces' => count($metaData['namespaces'])],
         );
         if ($output->isVeryVerbose()) {
             $io->comment($metaData['namespaces']);

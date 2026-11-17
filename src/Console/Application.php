@@ -7,6 +7,7 @@ declare(strict_types=1);
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace Bartlett\UmlWriter\Console;
 
 use Bartlett\UmlWriter\Console\Command\ClassDiagramCommand;
@@ -47,7 +48,7 @@ final class Application extends SymfonyApplication
     {
         parent::__construct(
             self::NAME,
-            $this->getInstalledVersion(false)
+            $this->getInstalledVersion(false),
         );
 
         $this->setCommandLoader($this->createCommandLoader($container));
@@ -62,7 +63,7 @@ final class Application extends SymfonyApplication
             '<comment>%s</comment><info>%s</info> version <comment>%s</comment>',
             self::$logo,
             $this->getName(),
-            $this->getVersion()
+            $this->getVersion(),
         );
     }
 
@@ -118,7 +119,7 @@ final class Application extends SymfonyApplication
             $container,
             [
                 ClassDiagramCommand::NAME => ClassDiagramCommand::class,
-            ]
+            ],
         );
     }
 

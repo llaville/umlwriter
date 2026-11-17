@@ -7,6 +7,7 @@ declare(strict_types=1);
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace Bartlett\UmlWriter\Service;
 
 use Bartlett\UmlWriter\Console\Command\ClassDiagramCommand;
@@ -61,7 +62,7 @@ class ContainerService implements ContainerInterface
         $this->internalServices[ClassDiagramCommand::class] = function () {
             return new ClassDiagramCommand(
                 $this->get(ClassDiagramRenderer::class),
-                $this->get(GeneratorFactoryInterface::class)
+                $this->get(GeneratorFactoryInterface::class),
             );
         };
     }
@@ -70,7 +71,7 @@ class ContainerService implements ContainerInterface
     {
         if (!array_key_exists($id, $this->runtimeServices)) {
             throw new class (
-                sprintf('The "%s" runtime service is not expected.', $id)
+                sprintf('The "%s" runtime service is not expected.', $id),
             ) extends RuntimeException implements ContainerExceptionInterface {
             };
         }
@@ -89,7 +90,7 @@ class ContainerService implements ContainerInterface
         }
 
         throw new class (
-            sprintf('The "%s" service is not registered in the service container.', $id)
+            sprintf('The "%s" service is not registered in the service container.', $id),
         ) extends RuntimeException implements NotFoundExceptionInterface {
         };
     }
