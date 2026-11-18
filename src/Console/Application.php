@@ -29,7 +29,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 final class Application extends SymfonyApplication
 {
-    public const NAME = 'umlWriter';
+    public const string NAME = 'umlWriter';
 
     /**
      * @link http://patorjk.com/software/taag/#p=display&f=Standard&t=umlWriter
