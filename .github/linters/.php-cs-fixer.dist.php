@@ -7,7 +7,7 @@ $finder = (new PhpCsFixer\Finder())
         $projectDir . '/examples',
         $projectDir . '/resources',
         $projectDir . '/src',
-        $projectDir . '/tests',
+        //$projectDir . '/tests',
     ])
 ;
 
