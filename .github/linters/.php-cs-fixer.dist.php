@@ -20,6 +20,7 @@ return (new PhpCsFixer\Config())
     // use default @link https://www.php-fig.org/per/coding-style/
     ->setRules([
         '@PER-CS' => true,
+        'no_unused_imports' => true,
         'single_line_empty_body' => false,
         'no_extra_blank_lines' => false, // because conflict with `blank_line_between_import_groups` rule (set to true)
     ])
